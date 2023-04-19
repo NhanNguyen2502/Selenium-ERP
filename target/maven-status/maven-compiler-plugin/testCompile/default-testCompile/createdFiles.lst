@@ -1,0 +1,10 @@
+erp\testcases\DashboardTest.class
+erp\testcases\SignInTest.class
+erp\base\BaseSetup.class
+erp\base\ValidateHelper.class
+erp\pages\CompanyListPage$1.class
+erp\pages\DashBoardPage.class
+erp\pages\CompanyListPage.class
+erp\pages\SignInPage$1.class
+erp\pages\SignInPage.class
+erp\testcases\CompanyListTest.class

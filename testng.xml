@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/Nhan/AutoTest/ERPTest">
+        <classes>
+            <class name="erp.testcases.SignInTest">
+                <methods>
+                    <include name="signInTest"/>
+                </methods>
+            </class>
+            <class name="erp.testcases.CompanyListTest"></class>
+            <class name="erp.testcases.SignUpTest"></class>
+        </classes>
+    </test>
+</suite>
