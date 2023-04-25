@@ -1,0 +1,4217 @@
+{
+    "auth": {
+        "accessDenied": {
+            "title": "",
+            "description1": "",
+            "description2": "",
+            "previousPage": "",
+            "dashboardPage": ""
+        },
+        "changeEmail": {
+            "text": {
+                "validateSuccess": "",
+                "validateHasExpired": "",
+                "validateFail": "",
+                "keyAlreadyBeUsed": ""
+            },
+            "link": {
+                "goToLogin": "",
+                "goToCompanyPage": "",
+                "goToChangeEmailPage": ""
+            }
+        },
+        "selfEnable": {
+            "text": {
+                "validateSuccess": "",
+                "validateHasExpired": "",
+                "validateFail": "",
+                "keyAlreadyBeUsed": ""
+            }
+        },
+        "common": {
+            "button": {
+                "ok": ""
+            },
+            "errorMessage": {
+                "emailInvalid": "",
+                "emailRequired": "",
+                "passwordRequired": "",
+                "passwordPattern": ""
+            },
+            "icon": {
+                "hidePassword": "",
+                "showPassword": "",
+                "hideRepeatPassword": "",
+                "showRepeatPassword": ""
+            },
+            "text": {
+                "contactUs": "",
+                "ifYouNeedHelp": "",
+                "unauthenticatedFooter": "",
+                "accountia": ""
+            }
+        },
+        "forgotPasswordPage": {
+            "button": {
+                "sendRequest": "",
+                "sendRequestTooltip": "",
+                "submittingRequest": ""
+            },
+            "error": {
+                "emailRequired": "",
+                "emailInvalid": ""
+            },
+            "inputField": {
+                "email": "",
+                "emailTooltip": ""
+            },
+            "link": {
+                "signUp": "",
+                "signUpTooltip": ""
+            },
+            "text": {
+                "forgotPasswordHeader": "",
+                "requestSent": "",
+                "forgotPasswordMessage": "",
+                "forgotPasswordMailSent": "",
+                "verificationEmailNotFound": "",
+                "verificationEmailNotReceived": ""
+            }
+        },
+        "notification": {
+            "resendEmail": {
+                "success": ""
+            },
+            "enableUser": {
+                "success": "",
+                "error": ""
+            },
+            "contactUs": {
+                "error": ""
+            }
+        },
+        "resendVerificationEmail": {
+            "button": {
+                "resendEmail": ""
+            },
+            "text": {
+                "header": "",
+                "content": ""
+            }
+        },
+        "resetPasswordPage": {
+            "button": {
+                "submitting": "",
+                "resetPasswordRequest": ""
+            },
+            "error": {
+                "passwordRequired": "",
+                "passwordPattern": "",
+                "repeatRequired": "",
+                "repeatMatch": ""
+            },
+            "inputField": {
+                "password": "",
+                "repeatPassword": "",
+                "passwordTooltip": "",
+                "repeatPasswordTooltip": "",
+                "resetPassword": ""
+            },
+            "text": {
+                "resetPasswordHeader": ""
+            }
+        },
+        "signInPage": {
+            "button": {
+                "signIn": "",
+                "signInTooltip": "",
+                "submittingSignIn": ""
+            },
+            "inputField": {
+                "email": "",
+                "emailTooltip": "",
+                "password": "",
+                "passwordTooltip": ""
+            },
+            "placeholder": {
+                "email": "",
+                "phoneNumber": ""
+            },
+            "link": {
+                "forgotPassword": "",
+                "forgotPasswordTooltip": "",
+                "signUp": "",
+                "signUpTooltip": ""
+            },
+            "text": {
+                "welcomeHeader": ""
+            },
+            "dialog": {
+                "enableAccountTitle": "",
+                "enableAccountMessage": "",
+                "enableAccountMessage2": ""
+            }
+        },
+        "signUpPage": {
+            "button": {
+                "signUp": "",
+                "submittingRequest": "",
+                "ok": ""
+            },
+            "error": {
+                "emailRequired": "",
+                "invalidEmail": "",
+                "nameRequired": "",
+                "phoneRequired": "",
+                "phoneInvalid": "",
+                "passwordRequired": "",
+                "emailAlreadyExist": "",
+                "existPhoneNumber": "",
+                "recaptchaRequired": ""
+            },
+            "inputField": {
+                "email": "",
+                "emailTooltip": "",
+                "name": "",
+                "nameTooltip": "",
+                "password": "",
+                "passwordTooltip": "",
+                "phoneNumber": "",
+                "phoneTooltip": "",
+                "username": "",
+                "phoneNumbers": ""
+            },
+            "placeholder": {
+                "email": "",
+                "phoneNumber": "",
+                "name": ""
+            },
+            "text": {
+                "verificationEmailNotFound": "",
+                "passwordPattern": "",
+                "signUpHeader": "",
+                "signUpSuccessHeader": "",
+                "signUpSuccessMsg": "",
+                "byClickingHere": "",
+                "customerAgreement": ""
+            },
+            "link": {
+                "signIn": "",
+                "signInTooltip": ""
+            }
+        },
+        "selectOptions": {
+            "GeneralSupport": "",
+            "LoginIssues": "",
+            "ApplicationError": ""
+        },
+        "confirmSignUpSuccessPage": {
+            "text": {
+                "keyAlreadyBeUsedTitle": "",
+                "keyAlreadyBeUsed": "",
+                "keyNotFoundTitle": "",
+                "keyNotFound": ""
+            }
+        }
+    },
+    "company": {
+        "dialog": {
+            "deleteCompany": {
+                "title": "",
+                "confirmMessage": ""
+            },
+            "deleteManyCompany": {
+                "title": "",
+                "confirmMessage": ""
+            },
+            "deleteDemoCompany": {
+                "confirmMessage": ""
+            },
+            "deleteRealCompany": {
+                "confirmMessage": ""
+            }
+        },
+        "listPage": {
+            "title": "",
+            "text": {
+                "demo": "",
+                "real": ""
+            },
+            "button": {
+                "createTooltip": "",
+                "create": "",
+                "delete": "",
+                "edit": ""
+            },
+            "setting": {
+                "settingTooltip": "",
+                "dragAndDrop": "",
+                "checkboxTooltip": ""
+            },
+            "columnHeader": {
+                "checkAllTooltip": "",
+                "checkOneTooltip": "",
+                "name": "",
+                "nameTooltip": "",
+                "phoneNumber": "",
+                "phoneNumberTooltip": "",
+                "email": "",
+                "emailTooltip": "",
+                "type": "",
+                "typeTooltip": "",
+                "moreOptionsForSelectedTooltip": "",
+                "moreOptionsTooltip": ""
+            },
+            "select": {
+                "filterTooltip": "",
+                "option": {
+                    "enabled": "",
+                    "all": "",
+                    "disabled": "",
+                    "demo": "",
+                    "real": ""
+                },
+                "error": {
+                    "passwordIncorrect": "",
+                    "passwordRequired": ""
+                }
+            },
+            "error": {
+                "passwordIncorrect": "",
+                "passwordRequired": ""
+            }
+        },
+        "createPage": {
+            "text": {
+                "newCompany": "",
+                "legalCompany": "",
+                "legalCompanyDescription": "",
+                "testCompany": "",
+                "testCompanyDescription": "",
+                "enterCompanyInformation": "",
+                "createABusiness": "",
+                "legalCompanyTitle": "",
+                "testCompanyTitle": "",
+                "description": "",
+                "generateText": "",
+                "contactInfo": "",
+                "createCompanySuccess": "",
+                "createCompanySuccessMessage": ""
+            },
+            "button": {
+                "registerLegalCompany": "",
+                "registerLegalCompanyTooltip": "",
+                "registerTestCompany": "",
+                "registerTestCompanyTooltip": "",
+                "createLegalCompanyProhibited": "",
+                "createTestCompanyProhibited": "",
+                "companyList": "",
+                "createNewCompany": "",
+                "returnCompanyListTooltip": "",
+                "continueCreateNewTooltip": "",
+                "goToDetailTooltip": "",
+                "expandTooltip": "",
+                "collapseTooltip": "",
+                "goBackCreateCompany": ""
+            },
+            "inputField": {
+                "organisationNumber": "",
+                "organisationNumberTooltip": "",
+                "organNoWarning": "",
+                "companyName": "",
+                "companyNameTooltip": "",
+                "mainCurrency": "",
+                "mainCurrencyTooltip": "",
+                "mainCurrencyWarning": "",
+                "establishDate": "",
+                "establishDateTooltip": "",
+                "phone": "",
+                "email": "",
+                "emailTooltip": "",
+                "address": "",
+                "firstStreetAddress": "",
+                "firstStreetAddressTooltip": "",
+                "secondStreetAddress": "",
+                "secondStreetAddressTooltip": "",
+                "thirdStreetAddress": "",
+                "thirdStreetAddressTooltip": "",
+                "zipcode": "",
+                "zipcodeTooltip": "",
+                "city": "",
+                "country": "",
+                "countryCode": "",
+                "website": "",
+                "websiteTooltip": "",
+                "disabledOrganisationNumberTooltip": "",
+                "disabledCompanyNameTooltip": "",
+                "companyPhoneNumbers": "",
+                "timezone": "",
+                "timezoneTooltip": ""
+            },
+            "error": {
+                "organisationNumberRequired": "",
+                "companyNameRequired": "",
+                "mainCurrencyRequired": "",
+                "establishDateInvalid": "",
+                "emailInvalid": "",
+                "websitePatternInvalid": "",
+                "organisationNumberExistErrorMessage": ""
+            },
+            "placeholder": {
+                "organisationNumber": "",
+                "companyName": "",
+                "phoneNumber": "",
+                "email": "",
+                "website": "",
+                "firstStreetAddress": "",
+                "secondStreetAddress": "",
+                "thirdStreetAddress": "",
+                "zipCode": "",
+                "city": ""
+            }
+        },
+        "editViewPage": {
+            "text": {
+                "companyTitle": "",
+                "general": "",
+                "generalTooltip": "",
+                "format": "",
+                "formatTooltip": "",
+                "bankAccount": "",
+                "bankAccountTooltip": "",
+                "invoiceTemplate": "",
+                "invoiceTemplateTooltip": "",
+                "enabled": "",
+                "disabled": "",
+                "basisInfo": "",
+                "disabledFormatTooltip": "",
+                "disabledBankAccountTooltip": "",
+                "disabledTemplateTooltip": "",
+                "disabledEventLog": "",
+                "eventLogsTooltip": "",
+                "eventLogs": ""
+            },
+            "dialog": {
+                "deleteLogo": {
+                    "title": "",
+                    "message": ""
+                },
+                "disableCompany": {
+                    "title": "",
+                    "message": ""
+                },
+                "enableCompany": {
+                    "title": "",
+                    "message": ""
+                }
+            },
+            "tabGeneral": {
+                "text": {
+                    "enabled": "",
+                    "disabled": "",
+                    "enabledTooltip": "",
+                    "basisInfo": "",
+                    "companyIsDisabled": "",
+                    "disableCompanyText": ""
+                },
+                "inputField": {
+                    "companyName": "",
+                    "companyNameTooltip": "",
+                    "disabledCompanyNameTooltip": "",
+                    "organisationNumber": "",
+                    "disabledOrganisationNumberTooltip": ""
+                },
+                "error": {
+                    "companyNameRequired": ""
+                },
+                "button": {
+                    "saveTooltip": "",
+                    "expandTooltip": "",
+                    "collapseTooltip": "",
+                    "enable": "",
+                    "enableTooltip": ""
+                }
+            },
+            "tabFormat": {
+                "inputField": {
+                    "startOfWeek": "",
+                    "startOfWeekTooltip": "",
+                    "dateFormat": "",
+                    "dateFormatTooltip": "",
+                    "hourFormat": "",
+                    "hourFormatTooltip": "",
+                    "currency": "",
+                    "currencyTooltipTooltip": ""
+                },
+                "select": {
+                    "option": {
+                        "monday": "",
+                        "tuesday": "",
+                        "wednesday": "",
+                        "thursday": "",
+                        "friday": "",
+                        "saturday": "",
+                        "sunday": "",
+                        "use24Hours": "",
+                        "useAMPM": ""
+                    }
+                },
+                "button": {
+                    "saveTooltip": ""
+                }
+            },
+            "tabBankAccount": {
+                "columnHeader": {
+                    "name": "",
+                    "nameTooltip": "",
+                    "number": "",
+                    "numberTooltip": "",
+                    "status": "",
+                    "statusTooltip": "",
+                    "moreOptionsTooltip": ""
+                },
+                "noBankAccount": "",
+                "inputField": {
+                    "name": "",
+                    "nameTooltip": "",
+                    "accountNumber": "",
+                    "accountNumberTooltip": "",
+                    "accountType": "",
+                    "accountTypeTooltip": "",
+                    "openingBalance": "",
+                    "balanceDate": "",
+                    "balanceDateTooltip": "",
+                    "openingBalanceTooltip": ""
+                },
+                "placeholder": {
+                    "accountName": "",
+                    "accountNumber": ""
+                },
+                "text": {
+                    "enabled": "",
+                    "disabled": "",
+                    "cashRegister": ""
+                },
+                "dialog": {
+                    "enableAccount": {
+                        "title": "",
+                        "message": ""
+                    },
+                    "disableAccount": {
+                        "title": "",
+                        "message": ""
+                    },
+                    "deleteAccount": {
+                        "title": ""
+                    }
+                },
+                "error": {
+                    "nameRequired": "",
+                    "accountNumberRequired": "",
+                    "accountNumberInvalid": "",
+                    "accountNameExists": "",
+                    "accountNumberExists": "",
+                    "accountNumberNegative": ""
+                },
+                "toggleButton": {
+                    "enableToggle": "",
+                    "disableToggle": "",
+                    "cashTooltip": ""
+                },
+                "button": {
+                    "update": "",
+                    "delete": "",
+                    "enable": "",
+                    "disable": "",
+                    "createTooltip": "",
+                    "cancelTooltip": "",
+                    "saveTooltip": "",
+                    "deleteTooltip": ""
+                },
+                "title": "",
+                "keyData": {
+                    "openingTooltip": "",
+                    "opening": "",
+                    "incoming": "",
+                    "incomingTooltip": "",
+                    "outGoing": "",
+                    "outGoingTooltip": "",
+                    "balance": "",
+                    "balanceTooltip": ""
+                },
+                "openingBalanceInfoTitle": "",
+                "openingBalanceInfoContent": ""
+            },
+            "tabInvoiceTemplate": {
+                "text": {
+                    "chooseInvoice": ""
+                },
+                "button": {
+                    "setAsDefault": "",
+                    "setAsDefaultTooltip": "",
+                    "prevTooltip": "",
+                    "nextTooltip": ""
+                }
+            }
+        },
+        "notification": {
+            "bankAccount": {
+                "deleteBankAccountHavePayment": "",
+                "deleteBankAccountHavePaymentOrInvoice": ""
+            },
+            "editView": {
+                "uploadCompanyLogoSuccessfully": "",
+                "uploadPhotoCompanyFailed": "",
+                "deleteCompanyLogoSuccess": "",
+                "deleteCompanyLogoFail": "",
+                "nameAlreadyExist": ""
+            },
+            "settings": {
+                "getSettingCompanyFailed": "",
+                "updateCompanySettingSuccessfully": "",
+                "updateCompanySettingFailed": ""
+            },
+            "invoiceTemplate": {
+                "getInvoiceTemplateFail": "",
+                "updateInvoiceTemplateSuccessfully": "",
+                "updateInvoiceTemplateFail": ""
+            },
+            "confirmDeleteCompany": "",
+            "goBackToAccount": "",
+            "deleteCompany": "",
+            "confirmDeleteCompanyFail": ""
+        }
+    },
+    "contact": {
+        "listPage": {
+            "text": {
+                "title": "",
+                "customers": "",
+                "customerTabTooltip": "",
+                "suppliers": "",
+                "supplierTabTooltip": "",
+                "enabled": "",
+                "enabledTooltip": "",
+                "disabled": "",
+                "disabledTooltip": "",
+                "customer": "",
+                "supplier": ""
+            },
+            "button": {
+                "settingTooltip": "",
+                "delete": "",
+                "enable": "",
+                "disable": "",
+                "create": "",
+                "createTooltip": "",
+                "createCustomerTooltip": "",
+                "createSupplierTooltip": ""
+            },
+            "setting": {
+                "displayColumn": "",
+                "dragAndDrop": "",
+                "contactNumber": "",
+                "contactName": "",
+                "contactType": "",
+                "phoneNumbers": "",
+                "status": ""
+            },
+            "columnHeader": {
+                "checkAllTooltip": "",
+                "checkTooltip": "",
+                "contactNumber": "",
+                "contactNumberTooltip": "",
+                "phoneNumbers": "",
+                "phoneNumbersTooltip": "",
+                "status": "",
+                "statusTooltip": "",
+                "contactName": "",
+                "contactNameTooltip": "",
+                "contactType": "",
+                "contactTypeTooltip": "",
+                "moreOptionsForSelectedTooltip": "",
+                "moreOptionsTooltip": ""
+            },
+            "select": {
+                "option": {
+                    "enabled": "",
+                    "all": "",
+                    "disabled": ""
+                },
+                "inputField": {
+                    "filterTooltip": ""
+                }
+            }
+        },
+        "createEditViewPage": {
+            "text": {
+                "createTittle": "",
+                "detailTittle": "",
+                "general": "",
+                "generalTooltip": "",
+                "contactPerson": "",
+                "contactPersonTooltip": "",
+                "documents": "",
+                "documentsTooltip": "",
+                "contactInfo": "",
+                "addressTitle": "",
+                "language": "",
+                "invoiceSettings": "",
+                "notes": "",
+                "noNotes": "",
+                "noDocuments": "",
+                "notFound": "",
+                "customerDetailTittle": "",
+                "supplierDetailTittle": "",
+                "createNewCustomer": "",
+                "createNewSupplier": ""
+            },
+            "placeholder": {
+                "contactName": "",
+                "group": "",
+                "email": "",
+                "companyName": "",
+                "firstStreetAddress": "",
+                "secondStreetAddress": "",
+                "thirdStreetAddress": "",
+                "contactPersonName": "",
+                "contactPersonEmail": ""
+            },
+            "inputField": {
+                "contactName": "",
+                "contactNameTooltip": "",
+                "phoneNumbers": "",
+                "email": "",
+                "emailTooltip": "",
+                "contactPersonEmail": "",
+                "contactPersonEmailTooltip": "",
+                "country": "",
+                "city": "",
+                "firstStreetAddress": "",
+                "firstStreetAddressTooltip": "",
+                "secondStreetAddress": "",
+                "secondStreetAddressTooltip": "",
+                "thirdStreetAddress": "",
+                "thirdStreetAddressTooltip": "",
+                "zipcode": "",
+                "zipcodeTooltip": "",
+                "discount": "",
+                "discountTooltip": "",
+                "group": "",
+                "role": "",
+                "roleTooltip": "",
+                "currency": "",
+                "currencyTooltip": "",
+                "notes": "",
+                "notesTooltip": "",
+                "contactPersonName": "",
+                "contactPersonNameTooltip": ""
+            },
+            "button": {
+                "addPhoneNumber": "",
+                "emailInvalid": "",
+                "remove": "",
+                "addPhoneNumberTooltip": "",
+                "deleteTooltip": "",
+                "cancelTooltip": "",
+                "saveTooltip": "",
+                "createTooltip": "",
+                "leaveANote": "",
+                "leaveANoteTooltip": "",
+                "edit": "",
+                "delete": "",
+                "createContactPersonTooltip": ""
+            },
+            "error": {
+                "emailInvalid": "",
+                "nameRequired": "",
+                "emailRequired": "",
+                "nameExist": "",
+                "contactPersonEmailExist": "",
+                "emailExist": ""
+            },
+            "dialog": {
+                "removePhone": {
+                    "title": "",
+                    "message": ""
+                },
+                "deleteImage": {
+                    "title": "",
+                    "message": ""
+                },
+                "sameNameAndPhoneWarning": {
+                    "title": "",
+                    "message": ""
+                },
+                "removeContactPersonImage": {
+                    "title": "",
+                    "message": ""
+                }
+            },
+            "columnHeader": {
+                "checkAllTooltip": "",
+                "checkTooltip": "",
+                "name": "",
+                "nameTooltip": "",
+                "phoneNumber": "",
+                "phoneNumberTooltip": "",
+                "email": "",
+                "emailTooltip": "",
+                "moreOptionsTooltip": "",
+                "moreOptionsForSelectedTooltip": ""
+            }
+        },
+        "resendEmail": {
+            "button": {
+                "resendEmail": ""
+            },
+            "text": {
+                "header": "",
+                "content": ""
+            }
+        },
+        "dialog": {
+            "deleteDocument": {
+                "title": "",
+                "message": ""
+            }
+        },
+        "notification": {
+            "getAllCustomerContactsFailed": "",
+            "getAllSupplierContactsFailed": "",
+            "deleteContactAvatarSuccessfully": "",
+            "deleteContactAvatarFail": "",
+            "uploadContactAvatarSuccessfully": "",
+            "uploadContactAvatarFail": "",
+            "emailAlreadyExist": "",
+            "nameAlreadyExist": "",
+            "contactPersonEmailAlreadyExist": "",
+            "contactPersonNameAndPhoneNumberAlreadyExist": "",
+            "deleteContactPersonImageSuccessfully": "",
+            "deleteContactPersonImageFail": "",
+            "uploadContactPersonImageSuccess": "",
+            "uploadContactPersonImageFail": "",
+            "contactEmailAlreadyExist": ""
+        }
+    },
+    "contactUs": {
+        "button": {
+            "submit": "",
+            "submitTooltip": ""
+        },
+        "inputField": {
+            "email": "",
+            "emailTooltip": "",
+            "description": "",
+            "descriptionTooltip": "",
+            "name": "",
+            "nameTooltip": "",
+            "phoneNumber": "",
+            "phoneTooltip": "",
+            "subject": "",
+            "subjectTooltip": "",
+            "uploadFileTooltip": ""
+        },
+        "placeholder": {
+            "name": "",
+            "email": "",
+            "description": ""
+        },
+        "error": {
+            "nameRequired": "",
+            "descriptionRequired": "",
+            "emailRequired": "",
+            "invalidEmail": "",
+            "phoneRequired": "",
+            "phoneInvalid": "",
+            "recaptchaRequired": ""
+        },
+        "select": {
+            "option": {
+                "generalSupport": "",
+                "loginIssues": "",
+                "applicationError": ""
+            }
+        },
+        "text": {
+            "contactUsHeader": "",
+            "sendContactSupportSuccessMessage": "",
+            "contactUsMessage": "",
+            "fullName": ""
+        },
+        "dialog": {
+            "leavePage": {
+                "title": "",
+                "message": ""
+            }
+        }
+    },
+    "managementList": {
+        "param": {
+            "employee": "",
+            "employees": "",
+            "fee": "",
+            "fees": "",
+            "product": "",
+            "products": "",
+            "contact": "",
+            "contacts": "",
+            "customer": "",
+            "customers": "",
+            "supplier": "",
+            "suppliers": "",
+            "contactPerson": "",
+            "contactPersons": "",
+            "draftInvoice": "",
+            "company": "",
+            "bankAccount": "",
+            "user": "",
+            "salaryType": "",
+            "sale": ""
+        },
+        "action": {
+            "enable": "",
+            "disable": "",
+            "delete": "",
+            "create": "",
+            "update": "",
+            "activate": "",
+            "deactivate": "",
+            "successfulUpdateNotification": "",
+            "successfulCreateNotification": "",
+            "successfulDeleteNotification": "",
+            "successfulDisableNotification": "",
+            "successfulEnableNotification": "",
+            "successfulEnableManyItemsNotification": "",
+            "successfulDisableManyItemsNotification": "",
+            "successfulDeleteManyItemsNotification": ""
+        },
+        "dialog": {
+            "actionTitle": "",
+            "actionConfirmMessage": "",
+            "actionConfirmMessageMany": ""
+        },
+        "notification": {
+            "actionSuccess": "",
+            "actionManySuccess": "",
+            "actionFail": ""
+        }
+    },
+    "versionUpdate": {
+        "update": {
+            "title": "",
+            "message": ""
+        }
+    },
+    "eventLog": {
+        "eventLogParam": "",
+        "columnHeader": {
+            "date": "",
+            "dateTooltip": "",
+            "companyName": "",
+            "companyNameTooltip": "",
+            "action": "",
+            "actionTooltip": "",
+            "description": "",
+            "descriptionTooltip": ""
+        },
+        "text": {
+            "userTitle": "",
+            "companyTitle": "",
+            "startDate": "",
+            "endDate": "",
+            "createCompany": "",
+            "deleteCompany": "",
+            "updateCompany": "",
+            "createAccount": "",
+            "deleteAccount": "",
+            "createProduct": "",
+            "deleteProduct": "",
+            "createContact": "",
+            "deleteContact": "",
+            "createEmployee": "",
+            "deleteEmployee": "",
+            "createFee": "",
+            "deleteFee": "",
+            "createInvoice": "",
+            "deleteDraftInvoice": "",
+            "finalizeDraftToInvoicedInvoice": "",
+            "addPayment": "",
+            "addCreditNote": "",
+            "addFee": "",
+            "regretPayment": "",
+            "deleteManyCustomer": "",
+            "deleteManySupplier": "",
+            "deleteManyEmployees": "",
+            "deleteManyFees": "",
+            "deleteManyProducts": "",
+            "createInstantSale": "",
+            "regretInstantSale": "",
+            "uploadContactDocuments": "",
+            "deleteContactDocument": "",
+            "deleteManyContactDocument": "",
+            "deleteCustomer": "",
+            "deleteSupplier": "",
+            "by": "",
+            "dateOfTheEventTooltip": "",
+            "cancelInvoice": "",
+            "sendInvoice": "",
+            "updateSettledStatus": "",
+            "updateDueDate": "",
+            "createCashSale": "",
+            "sendMailCashSale": "",
+            "cancelCashSale": ""
+        },
+        "description": {
+            "createInvoice": "",
+            "createDraft": "",
+            "createCompany": "",
+            "updateCompany": "",
+            "createContact": "",
+            "createEmployee": "",
+            "createFee": "",
+            "createProduct": "",
+            "createAccount": "",
+            "addPayment": "",
+            "addCreditNote": "",
+            "deleteCompany": "",
+            "deleteContact": "",
+            "deleteEmployee": "",
+            "deleteFee": "",
+            "deleteDraftInvoice": "",
+            "deleteProduct": "",
+            "deleteAccount": "",
+            "regretPayment": "",
+            "createInstantSale": "",
+            "regretInstantSale": "",
+            "uploadContactDocuments": "",
+            "deleteContactDocument": "",
+            "deleteManyContactDocument": "",
+            "deleteCustomer": "",
+            "deleteSupplier": "",
+            "deleteManyEmployees": "",
+            "deleteManyFees": "",
+            "deleteManyProducts": "",
+            "deleteManyCustomer": "",
+            "deleteManySupplier": "",
+            "cancelInvoice": "",
+            "sendInvoice": "",
+            "updateSettledStatus": "",
+            "updateDueDate": "",
+            "prePayment": "",
+            "updateMailingStatusToInvoice": "",
+            "createPurchase": "",
+            "sendMailCashSale": "",
+            "cancelCashSale": "",
+            "updateMailingStatusNotSent": "",
+            "updateMailingStatusSentOutsideSystem": ""
+        },
+        "notification": {
+            "deleteCompany": "",
+            "deleteContact": "",
+            "deleteEmployee": "",
+            "deleteFee": "",
+            "deleteDraftInvoice": "",
+            "deleteProduct": "",
+            "deleteAccount": "",
+            "deleteManyCustomer": "",
+            "deleteManySupplier": "",
+            "deleteManyEmployees": "",
+            "deleteManyFees": "",
+            "deleteManyProducts": "",
+            "deleteContactDocument": "",
+            "deleteManyContactDocument": "",
+            "deleteCustomer": "",
+            "deleteSupplier": "",
+            "getUserEventLogFail": "",
+            "getCompanyEventLogFail": "",
+            "deletedAccount": ""
+        },
+        "error": {
+            "invalidDateFormat": "",
+            "invalidDateRange": ""
+        },
+        "dashboard": {
+            "title": {
+                "company": "",
+                "employee": "",
+                "fee": "",
+                "invoice": "",
+                "draftInvoice": "",
+                "customer": "",
+                "supplier": "",
+                "employees": "",
+                "product": "",
+                "instantSale": "",
+                "contact": "",
+                "account": ""
+            },
+            "description": {
+                "createInvoice": "",
+                "createDraft": "",
+                "createCompany": "",
+                "updateCompany": "",
+                "createContact": "",
+                "createEmployee": "",
+                "createFee": "",
+                "createProduct": "",
+                "createAccount": "",
+                "addPayment": "",
+                "addCreditNote": "",
+                "deleteCompany": "",
+                "deleteContact": "",
+                "deleteEmployee": "",
+                "deleteFee": "",
+                "deleteDraftInvoice": "",
+                "deleteProduct": "",
+                "deleteAccount": "",
+                "regretPayment": "",
+                "createInstantSale": "",
+                "regretInstantSale": "",
+                "uploadContactDocuments": "",
+                "deleteContactDocument": "",
+                "deleteManyContactDocument": "",
+                "deleteCustomer": "",
+                "deleteSupplier": "",
+                "deleteManyEmployees": "",
+                "deleteManyFees": "",
+                "deleteManyProducts": "",
+                "deleteManyCustomer": "",
+                "deleteManySupplier": "",
+                "cancelInvoice": "",
+                "sendInvoice": "",
+                "updateSettledStatus": "",
+                "sendMailCashSale": "",
+                "cancelCashSale": ""
+            }
+        },
+        "document": {
+            "sendInvoice": "",
+            "sendMailCashSale": ""
+        }
+    },
+    "customDateRange": {
+        "text": {
+            "today": "",
+            "yesterday": "",
+            "thisWeek": "",
+            "thisMonth": "",
+            "lastMonth": "",
+            "thisYear": "",
+            "lastYear": ""
+        }
+    },
+    "devices": {
+        "text": {
+            "thisDevice": "",
+            "recentActivity": "",
+            "browserLogin": "",
+            "ipAddress": ""
+        },
+        "button": {
+            "signOut": ""
+        }
+    },
+    "notification": {
+        "incompleteRequiredFields": "",
+        "deletedItems": "",
+        "disabledItems": "",
+        "attention": "",
+        "disabledOrDeleteItems": ""
+    },
+    "confirmLeavePage": {
+        "title": "",
+        "message": ""
+    },
+    "dashboard": {
+        "text": {
+            "title": "",
+            "outstanding": "",
+            "overdue": "",
+            "invoiced": "",
+            "totalSale": "",
+            "result": "",
+            "bankAccount": "",
+            "totalAmount": "",
+            "outstandingTooltip": "",
+            "overdueTooltip": "",
+            "salesTooltip": "",
+            "revenue": "",
+            "sales": "",
+            "lastEventLogs": "",
+            "viewAll": "",
+            "yearlyRecapReport": "",
+            "viewMore": "",
+            "yearTotal": "",
+            "yearPickerTooltip": "",
+            "periodStats": "",
+            "invoices": "",
+            "mostPopularProducts": "",
+            "mostPopularProductsTooltip": "",
+            "customer": "",
+            "cashRegister": "",
+            "product": "",
+            "periodStatsTooltip": "",
+            "qty": "",
+            "versus": "",
+            "saleNumberIncreaseTooltip": "",
+            "saleNumberDecreaseTooltip": "",
+            "revenueIncreaseTooltip": "",
+            "revenueDecreaseTooltip": "",
+            "topThreeCustomer": "",
+            "periodStatistic": "",
+            "growth": "",
+            "na": "",
+            "invoicesTooltip": "",
+            "revenueTooltip": "",
+            "invoiceValueTooltip": "",
+            "revenueValueTooltip": "",
+            "growthTooltip": "",
+            "bankAccountTooltip": "",
+            "bankAccountAmountTooltip": "",
+            "yearTotalAmountTooltip": "",
+            "mostPopularProductsNumberOfInvoicesTooltip": "",
+            "mostPopularProductsQuantityTooltip": "",
+            "topThreeCustomersTooltip": "",
+            "topThreeCustomersValueTooltip": "",
+            "productIsDeleted": "",
+            "customerIsDeleted": ""
+        },
+        "button": {
+            "createSale": ""
+        },
+        "chart": {
+            "shortMonth": {
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": "",
+                "6": "",
+                "7": "",
+                "8": "",
+                "9": "",
+                "10": "",
+                "11": "",
+                "12": ""
+            },
+            "month": {
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": "",
+                "6": "",
+                "7": "",
+                "8": "",
+                "9": "",
+                "10": "",
+                "11": "",
+                "12": ""
+            }
+        }
+    },
+    "employee": {
+        "listPage": {
+            "text": {
+                "title": "",
+                "enabled": "",
+                "disabled": "",
+                "usedInDraftInvoice": ""
+            },
+            "select": {
+                "option": {
+                    "enabled": "",
+                    "all": "",
+                    "disabled": ""
+                },
+                "inputField": {
+                    "filterTooltip": ""
+                }
+            },
+            "button": {
+                "create": "",
+                "createTooltip": "",
+                "delete": "",
+                "disable": "",
+                "edit": "",
+                "enable": "",
+                "settingTooltip": ""
+            },
+            "setting": {
+                "displayColumn": "",
+                "dragAndDrop": ""
+            },
+            "columnHeader": {
+                "checkAllTooltip": "",
+                "checkTooltip": "",
+                "name": "",
+                "nameTooltip": "",
+                "phoneNumber": "",
+                "phoneNumberTooltip": "",
+                "email": "",
+                "emailTooltip": "",
+                "status": "",
+                "statusTooltip": "",
+                "moreOptionsForSelectedTooltip": "",
+                "moreOptionsTooltip": "",
+                "number": "",
+                "numberTooltip": ""
+            },
+            "status": {
+                "disableToggle": "",
+                "enableToggle": ""
+            }
+        },
+        "notification": {
+            "getAllEmployeesFail": "",
+            "uploadImageSuccess": "",
+            "uploadImageFail": "",
+            "deleteImageSuccess": "",
+            "deleteImageFail": ""
+        },
+        "createEditViewPage": {
+            "button": {
+                "addPhoneNumber": "",
+                "remove": "",
+                "addPhoneNumberTooltip": "",
+                "deleteTooltip": "",
+                "cancelTooltip": "",
+                "saveTooltip": "",
+                "createTooltip": ""
+            },
+            "text": {
+                "addressTitle": "",
+                "createTitle": "",
+                "detailTitle": "",
+                "status": "",
+                "contactInfo": "",
+                "general": "",
+                "notFound": "",
+                "bothNameAndPhoneExist": "",
+                "nameExistWarning": ""
+            },
+            "inputField": {
+                "name": "",
+                "nameTooltip": "",
+                "birthday": "",
+                "birthdayTooltip": "",
+                "email": "",
+                "emailTooltip": "",
+                "city": "",
+                "country": "",
+                "countryCode": "",
+                "firstStreetAddress": "",
+                "firstStreetAddressTooltip": "",
+                "secondStreetAddress": "",
+                "secondStreetAddressTooltip": "",
+                "thirdStreetAddress": "",
+                "thirdStreetAddressTooltip": "",
+                "zipcode": "",
+                "zipcodeTooltip": "",
+                "phone": "",
+                "id": "",
+                "idTooltip": "",
+                "employeePhoneNumbers": "",
+                "birthDate": ""
+            },
+            "placeholder": {
+                "employeeName": "",
+                "birthday": "",
+                "email": "",
+                "firstStreetAddress": "",
+                "secondStreetAddress": "",
+                "thirdStreetAddress": ""
+            },
+            "error": {
+                "nameRequired": "",
+                "emailInvalid": "",
+                "birthdayInvalid": "",
+                "employeeEmailExist": "",
+                "duplicateNameAndPhoneNumber": ""
+            },
+            "dialog": {
+                "removePhone": {
+                    "title": "",
+                    "message": ""
+                },
+                "deleteImage": {
+                    "title": "",
+                    "message": ""
+                },
+                "sameNameAndPhoneWarning": {
+                    "title": "",
+                    "message": ""
+                }
+            }
+        }
+    },
+    "fee": {
+        "listPage": {
+            "text": {
+                "title": "",
+                "enabled": "",
+                "enabledTooltip": "",
+                "disabled": "",
+                "disabledTooltip": ""
+            },
+            "button": {
+                "createTooltip": "",
+                "delete": "",
+                "enable": "",
+                "disable": ""
+            },
+            "columnHeader": {
+                "checkAllTooltip": "",
+                "checkTooltip": "",
+                "name": "",
+                "nameTooltip": "",
+                "feeStatus": "",
+                "feeStatusTooltip": "",
+                "moreOptionsForSelectedTooltip": "",
+                "moreOptionsTooltip": "",
+                "feeNumber": "",
+                "feeNumberTooltip": "",
+                "amount": "",
+                "amountTooltip": ""
+            },
+            "select": {
+                "option": {
+                    "enabled": "",
+                    "all": "",
+                    "disabled": ""
+                },
+                "inputField": {
+                    "filterTooltip": ""
+                }
+            }
+        },
+        "createEditViewPage": {
+            "text": {
+                "createPageTitle": "",
+                "detailPageTitle": "",
+                "notFound": "",
+                "general": "",
+                "enabled": "",
+                "enabledTooltip": "",
+                "disabled": "",
+                "disabledTooltip": "",
+                "amount": "",
+                "currency": "",
+                "feeAmount": "",
+                "unitAmountInOtherCurrencies": "",
+                "automaticallyRound": ""
+            },
+            "inputField": {
+                "name": "",
+                "nameTooltip": "",
+                "amount": "",
+                "amountTooltip": "",
+                "feeAmounts": "",
+                "otherCurrencies": "",
+                "currency": ""
+            },
+            "placeholder": {
+                "feeName": ""
+            },
+            "error": {
+                "feeNameRequired": "",
+                "feeAmountRequired": "",
+                "feeNameExists": ""
+            },
+            "button": {
+                "collapseTooltip": "",
+                "expandTooltip": "",
+                "add": "",
+                "addFeeAmountTooltip": "",
+                "removeFeeAmountTooltip": "",
+                "cancelTooltip": "",
+                "createTooltip": "",
+                "deleteTooltip": "",
+                "saveTooltip": ""
+            },
+            "dialog": {
+                "removeFeeAmount": {
+                    "title": "",
+                    "message": ""
+                },
+                "removeAmount": {
+                    "title": "",
+                    "message": ""
+                },
+                "updateAmountWarning": {
+                    "title": "",
+                    "message": ""
+                }
+            }
+        }
+    },
+    "general": {
+        "button": {
+            "save": "",
+            "cancel": "",
+            "ok": "",
+            "yes": "",
+            "no": "",
+            "create": "",
+            "loading": "",
+            "back": "",
+            "externalUsers": "",
+            "internalUsers": "",
+            "close": "",
+            "remove": "",
+            "add": "",
+            "download": "",
+            "expand": "",
+            "collapse": "",
+            "confirm": "",
+            "browse": "",
+            "createCopy": "",
+            "delete": "",
+            "removeBtn": ""
+        },
+        "error": {
+            "maxLength": "",
+            "duplicatedPhoneNumberError": "",
+            "maxLength500Character": ""
+        },
+        "pageTitle": {
+            "derfet": "",
+            "signIn": "",
+            "signUp": "",
+            "forgotPassword": "",
+            "resetPassword": "",
+            "accessDenied": "",
+            "createCompany": "",
+            "contactSupport": "",
+            "confirmSignUpSuccess": "",
+            "signUpSuccess": "",
+            "forgotPasswordMailSent": "",
+            "dashboard": "",
+            "externalUsers": "",
+            "internalUsers": "",
+            "userDetail": "",
+            "SystemSetting": "",
+            "company": "",
+            "format": "",
+            "general": "",
+            "account": "",
+            "password": "",
+            "invoiceTemplate": "",
+            "bankAccount": "",
+            "customers": "",
+            "suppliers": "",
+            "contactDetail": "",
+            "products": "",
+            "productDetail": "",
+            "newSale": "",
+            "invoiceDetail": "",
+            "draftSale": "",
+            "fees": "",
+            "feeDetail": "",
+            "employees": "",
+            "employeeDetail": "",
+            "employeeCreate": "",
+            "warehouses": "",
+            "warehouseDetail": "",
+            "purchase": "",
+            "createPurchase": "",
+            "eventsLog": "",
+            "companyEventsLog": "",
+            "eventLogs": "",
+            "contactUs": "",
+            "invoices": "",
+            "companies": "",
+            "profile": "",
+            "selfEnableFinish": "",
+            "devices": "",
+            "deviceDetail": "",
+            "contactCreate": "",
+            "document": "",
+            "contactPerson": "",
+            "create": "",
+            "feeCreate": "",
+            "drafts": "",
+            "instant": "",
+            "instantInvoiceDetail": "",
+            "newInstant": "",
+            "searchResults": "",
+            "contactPersonDetail": "",
+            "customerDetail": "",
+            "purchases": "",
+            "newPurchase": ""
+        },
+        "select": {
+            "text": {
+                "select": ""
+            }
+        },
+        "bankAccount": {
+            "cash": "",
+            "bank": ""
+        },
+        "accountType": {
+            "select": {
+                "option": {
+                    "bank": ""
+                }
+            }
+        },
+        "text": {
+            "thisRecordDeleted": "",
+            "none": ""
+        },
+        "dialog": {
+            "confirmLeavePage": {
+                "button": {
+                    "ok": "",
+                    "cancel": ""
+                }
+            }
+        }
+    },
+    "globalSearch": {
+        "text": {
+            "searchResultTitle": "",
+            "searchResultForTitle": "",
+            "company": "",
+            "contact": "",
+            "draftInvoice": "",
+            "employee": "",
+            "fee": "",
+            "invoice": "",
+            "instantSale": "",
+            "product": "",
+            "real": "",
+            "demo": "",
+            "standard": "",
+            "installment": "",
+            "customer": "",
+            "supplier": "",
+            "finalized": "",
+            "cancel": "",
+            "overdue": "",
+            "overpaid": "",
+            "search": "",
+            "recentSearches": "",
+            "anything": "",
+            "paid": "",
+            "unpaid": "",
+            "partlyPaid": "",
+            "canceled": "",
+            "invoiced": "",
+            "partlyCanceled": "",
+            "payment": "",
+            "accountingAccount": "",
+            "creditNote": "",
+            "bankAccount": "",
+            "contactPerson": "",
+            "regretPayment": "",
+            "prePayment": "",
+            "deleted": "",
+            "clear": ""
+        },
+        "label": {
+            "productName": "",
+            "productNumber": "",
+            "productPrice": "",
+            "productStatus": "",
+            "contactName": "",
+            "contactNumber": "",
+            "contactType": "",
+            "companyName": "",
+            "organisationNumber": "",
+            "companyType": "",
+            "date": "",
+            "dueDate": "",
+            "amount": "",
+            "invoiceType": "",
+            "employeeName": "",
+            "employeeNumber": "",
+            "phoneNumber": "",
+            "email": "",
+            "status": "",
+            "feeName": "",
+            "feeNumber": "",
+            "feeAmount": "",
+            "invoiceNumber": "",
+            "invoiceStatus": "",
+            "paymentStatus": "",
+            "accountName": "",
+            "accountNumber": "",
+            "accountStatus": "",
+            "creditNoteNumber": "",
+            "invoiceCurrencyAmount": "",
+            "comment": "",
+            "creditNoteDate": "",
+            "paymentNumber": "",
+            "paymentDate": "",
+            "description": "",
+            "contactPersonName": "",
+            "contactPersonEmail": "",
+            "customerStatus": "",
+            "supplierStatus": ""
+        },
+        "placeholder": {
+            "searchEntireCompany": ""
+        }
+    },
+    "installmentInvoice": {
+        "text": {
+            "prePayments": "",
+            "installmentPlan": "",
+            "createPlanTooltipQuestion": "",
+            "createPlanTooltipDescription": "",
+            "installmentBalance": "",
+            "totalPayment": "",
+            "preCreditNotes": "",
+            "invoiceBalance": "",
+            "outStandingPayment": "",
+            "noInvoice": "",
+            "prepaymentWarning": "",
+            "preCreditNoteWarning": "",
+            "installmentsPlan": "",
+            "payments": "",
+            "creditNotes": "",
+            "installmentConfiguration": "",
+            "installmentMonthlyAmount": "",
+            "noPayments": "",
+            "normalPayment": "",
+            "regretPayment": "",
+            "prePayment": "",
+            "creditNote": "",
+            "preCreditNote": "",
+            "paidBalance": "",
+            "noCreditNotes": "",
+            "creditedAmount": "",
+            "createInstallmentPlan": "",
+            "calculatedOutstandingPayment": "",
+            "calculatedBalance": "",
+            "paid": "",
+            "outstanding": "",
+            "credited": "",
+            "totalCreditNote": "",
+            "noInstalmentPlan": ""
+        },
+        "inputField": {
+            "installmentPeriod": "",
+            "installmentPeriodTooltip": "",
+            "firstInstallmentPayment": "",
+            "firstInstallmentPaymentTooltip": "",
+            "installmentAmount": "",
+            "installmentAmountTooltip": "",
+            "installmentAmountPlaceholder": "",
+            "paymentDate": "",
+            "payment": "",
+            "numberOfDays": "",
+            "numberOfDaysTooltip": "",
+            "prePaymentDate": "",
+            "prePaymentDateTooltip": "",
+            "prePaymentAmount": "",
+            "prePaymentAmountTooltip": "",
+            "creditNoteDate": "",
+            "creditNoteDateTooltip": "",
+            "createNoteAmount": "",
+            "creditNoteAmountTooltip": "",
+            "creditNoteCommentTooltip": ""
+        },
+        "button": {
+            "createPlan": "",
+            "addInstallment": "",
+            "addPrepayment": "",
+            "addCreditNotes": "",
+            "addPrePaymentTooltip": "",
+            "addCreditNoteTooltip": "",
+            "addPayment": "",
+            "addPaymentTooltip": "",
+            "addCreditNote": "",
+            "regretTooltip": "",
+            "save": "",
+            "infoAboutCreditNoteTooltip": "",
+            "createBankAccountTooltip": "",
+            "editBankAccountTooltip": ""
+        },
+        "dialog": {
+            "info": {
+                "infoTooltipCreditNotes": "",
+                "creditNoteInformation": "",
+                "instalmentInformationTitle": "",
+                "instalmentInformationContent": ""
+            },
+            "addPrepayment": {
+                "addPaymentTitle": "",
+                "editPaymentTitle": ""
+            },
+            "createEditCreditNote": {
+                "addTitle": "",
+                "editTitle": "",
+                "creditNoteTitle": "",
+                "informationMessage1": "",
+                "informationMessage2": "",
+                "customer": ""
+            },
+            "deletePrepayment": {
+                "title": "",
+                "message": ""
+            },
+            "addPayment": {
+                "addPaymentTitle": "",
+                "customer": "",
+                "inputField": {
+                    "paymentTo": "",
+                    "paymentToTooltip": "",
+                    "paymentToPlaceholder": "",
+                    "paymentDate": "",
+                    "paymentDateTooltip": "",
+                    "paymentAmount": "",
+                    "paymentAmountTooltip": "",
+                    "coverEntireAmount": "",
+                    "invoiceCurrencyAmountPlaceHolder": "",
+                    "invoiceCurrencyAmountTooltip": "",
+                    "companyCurrencyAmountPlaceHolder": "",
+                    "companyCurrencyAmountTooltip": "",
+                    "paymentExchangeRate": "",
+                    "invoiceExchangeRate": ""
+                },
+                "button": {
+                    "today": "",
+                    "registerPayment": ""
+                },
+                "editPaymentTitle": ""
+            }
+        },
+        "select": {
+            "option": {
+                "weekly": "",
+                "monthly": "",
+                "quarterly": "",
+                "yearly": "",
+                "custom": ""
+            }
+        },
+        "error": {
+            "numberOfDaysRequired": "",
+            "isBeforeDate": "",
+            "expectedDateIsRequired": "",
+            "expectedDateMessage": "",
+            "installmentAmountIsRequired": "",
+            "installmentMaxAmount": "",
+            "negativeInstallmentAmount": "",
+            "paymentDateMin": "",
+            "invalidPaymentDate": "",
+            "paymentAmountRequired": "",
+            "paymentAmountNegative": "",
+            "paymentDateMax": "",
+            "descriptionRequired": "",
+            "matDatepickerMax": "",
+            "matDatepickerMin": "",
+            "paymentMaxAmount": "",
+            "negativePayment": "",
+            "amountRequired": "",
+            "noInstallmentPaymentPlan": "",
+            "planHasAmountLeft": "",
+            "isPlanAmountNegative": "",
+            "setUpInstallationPlanChange": "",
+            "createPlanRequired": ""
+        },
+        "hint": {
+            "backwardDateHint": ""
+        }
+    },
+    "instantSale": {
+        "instantSaleTitle": "",
+        "newInstantSaleTitle": "",
+        "text": {
+            "sale": "",
+            "date": "",
+            "dates": "",
+            "saleDate": "",
+            "saleCurrency": "",
+            "popular": "",
+            "item": "",
+            "service": "",
+            "productList": "",
+            "paymentStatus": "",
+            "customerEmail": "",
+            "our": "",
+            "company": "",
+            "paidTo": "",
+            "cash": "",
+            "saleAmount": "",
+            "payments": "",
+            "description": "",
+            "normalPayment": "",
+            "regretPayment": "",
+            "latestProducts": "",
+            "noProducts": "",
+            "balance": "",
+            "invoiceLanguage": "",
+            "latestProductsTooltip": "",
+            "invoiceLanguageTooltip": ""
+        },
+        "button": {
+            "closeSale": "",
+            "closeSaleTooltip": "",
+            "sendMailInvoice": "",
+            "sendMailInvoiceTooltip": "",
+            "downloadPdf": "",
+            "regretSale": "",
+            "registerSale": "",
+            "registerSaleTooltip": "",
+            "newSale": "",
+            "newSaleTooltip": "",
+            "regretSaleTooltip": "",
+            "downloadPdfTooltip": "",
+            "newSimilarSale": "",
+            "newSimilarSaleTooltip": "",
+            "editProductTooltip": "",
+            "createProductTooltip": "",
+            "removeProductTooltip": ""
+        },
+        "inputField": {
+            "customerEmailTooltip": "",
+            "customerPlaceholder": ""
+        },
+        "error": {
+            "invalidEmail": "",
+            "productRequired": "",
+            "quantityMustGreaterThan0": ""
+        }
+    },
+    "invoicesCommon": {
+        "text": {
+            "date": "",
+            "customer": "",
+            "account": "",
+            "amount": "",
+            "productDiscount": "",
+            "totalFees": "",
+            "totalAmount": "",
+            "addComment": "",
+            "invoiceAmount": "",
+            "name": "",
+            "price": "",
+            "discount": "",
+            "quantity": "",
+            "total": "",
+            "comment": "",
+            "status": "",
+            "noInvoice": "",
+            "day": "",
+            "days": "",
+            "original": "",
+            "paidAmount": "",
+            "creditedAmount": "",
+            "totalDiscountExchange": "",
+            "calculatedAmount": "",
+            "invoiceTotalAmount": "",
+            "calculatedProductPrice": "",
+            "calculatedFee": "",
+            "calculatedTotalAmount": "",
+            "calculatedInvoiceAmount": "",
+            "calculatedAmountPrepayment": "",
+            "calculatedOutstandingPayment": "",
+            "calculatedInstallmentBalance": "",
+            "calculatedSalesAmount": "",
+            "calculatedTotalPayment": "",
+            "currencyGain": "",
+            "calculatedBalance": "",
+            "currencyLoss": "",
+            "paidAmountInCompanyCurrency": "",
+            "totalPaidAmountInCompanyCurrency": "",
+            "calculatedCreditNote": "",
+            "none": "",
+            "productIsDeleted": "",
+            "feeIsDeleted": "",
+            "bankAccountIsDeleted": "",
+            "ourReferenceIsDeleted": "",
+            "customerIsDeleted": "",
+            "contactPersonIsDeleted": "",
+            "mainCompanyCurrencyAmoountTooltip": "",
+            "saleAmount": "",
+            "discountAmount": "",
+            "title": "",
+            "dateAndType": ""
+        },
+        "inputField": {
+            "selectProduct": "",
+            "selectProductTooltip": "",
+            "selectProductPlaceHolder": "",
+            "price": "",
+            "priceTooltip": "",
+            "pricePlaceHolder": "",
+            "items": "",
+            "quantityTooltip": "",
+            "quantityPlaceHolder": "",
+            "discount": "",
+            "discountTooltip": "",
+            "discountPlaceHolder": "",
+            "productComment": "",
+            "productCommentTooltip": "",
+            "productCommentPlaceHolder": "",
+            "description": "",
+            "descriptionTooltip": "",
+            "descriptionPlaceholder": "",
+            "accountNumber": "",
+            "accountNumberTooltip": "",
+            "accountNumberPlaceholder": "",
+            "companyCurrency": "",
+            "company": ""
+        },
+        "button": {
+            "addProduct": "",
+            "addProductTooltip": "",
+            "cancelInvoice": "",
+            "cancelInvoiceTooltip": "",
+            "dragAndDropTooltip": "",
+            "changeDueDate": "",
+            "changeDueDateTooltip": "",
+            "settledInvoiceTooltip": "",
+            "addFeeTooltip": ""
+        },
+        "chip": {
+            "finalized": "",
+            "overdue": "",
+            "overpaid": "",
+            "normalPayment": "",
+            "regretPayment": "",
+            "prePayment": "",
+            "creditNote": "",
+            "regretCreditNote": "",
+            "normalCreditNote": "",
+            "prepayment": "",
+            "canceled": "",
+            "standard": "",
+            "installment": "",
+            "create": "",
+            "invoiced": "",
+            "regretPrePayment": "",
+            "paid": "",
+            "unpaid": "",
+            "partlyPaid": "",
+            "partlyCanceled": "",
+            "settled": "",
+            "unsettled": "",
+            "sendInvoice": "",
+            "updateSettledStatus": "",
+            "createInvoice": "",
+            "addCreditNote": "",
+            "finalizeDraftToInvoicedInvoice": "",
+            "cancelInvoice": "",
+            "cashSale": "",
+            "createCompany": "",
+            "deleteCompany": "",
+            "updateCompany": "",
+            "createAccount": "",
+            "deleteAccount": "",
+            "createProduct": "",
+            "deleteProduct": "",
+            "createContact": "",
+            "deleteContact": "",
+            "createEmployee": "",
+            "deleteEmployee": "",
+            "createFee": "",
+            "deleteFee": "",
+            "deleteDraftInvoice": "",
+            "addPayment": "",
+            "addFee": "",
+            "deleteManyCustomer": "",
+            "deleteManySupplier": "",
+            "deleteManyEmployees": "",
+            "deleteManyFees": "",
+            "deleteManyProducts": "",
+            "createInstantSale": "",
+            "regretInstantSale": "",
+            "uploadContactDocuments": "",
+            "deleteContactDocument": "",
+            "deleteManyContactDocument": "",
+            "deleteCustomer": "",
+            "deleteSupplier": "",
+            "updateDueDate": "",
+            "updateMailingStatusToInvoice": "",
+            "cashPurchase": "",
+            "createPurchase": "",
+            "sendMailCashSale": "",
+            "cancelCashSale": ""
+        },
+        "dialog": {
+            "createEditEmployee": {
+                "title": {
+                    "create": "",
+                    "edit": ""
+                },
+                "inputField": {
+                    "employeeName": "",
+                    "employeeNameTooltip": "",
+                    "birthDate": "",
+                    "birthDateTooltip": "",
+                    "email": "",
+                    "emailTooltip": "",
+                    "city": "",
+                    "country": "",
+                    "firstStreetAddress": "",
+                    "firstStreetAddressTooltip": "",
+                    "secondStreetAddress": "",
+                    "secondStreetAddressTooltip": "",
+                    "thirdStreetAddress": "",
+                    "thirdStreetAddressTooltip": "",
+                    "zipcode": "",
+                    "zipcodeTooltip": "",
+                    "phone": "",
+                    "id": "",
+                    "idTooltip": "",
+                    "employeePhoneNumbers": ""
+                },
+                "text": {
+                    "addressTitle": ""
+                },
+                "placeholder": {
+                    "employeeName": "",
+                    "email": "",
+                    "firstStreetAddress": "",
+                    "secondStreetAddress": "",
+                    "thirdStreetAddress": ""
+                },
+                "error": {
+                    "nameRequired": "",
+                    "emailInvalid": "",
+                    "birthDateInvalid": "",
+                    "employeeEmailExist": ""
+                },
+                "button": {
+                    "addPhoneNumber": ""
+                }
+            },
+            "createEditContact": {
+                "title": {
+                    "create": "",
+                    "edit": ""
+                },
+                "text": {
+                    "address": "",
+                    "language": ""
+                },
+                "inputField": {
+                    "contactName": "",
+                    "contactNameTooltip": "",
+                    "phoneNumbers": "",
+                    "email": "",
+                    "emailTooltip": "",
+                    "contactPersonEmail": "",
+                    "contactPersonEmailTooltip": "",
+                    "country": "",
+                    "city": "",
+                    "firstStreetAddress": "",
+                    "firstStreetAddressTooltip": "",
+                    "secondStreetAddress": "",
+                    "secondStreetAddressTooltip": "",
+                    "thirdStreetAddress": "",
+                    "thirdStreetAddressTooltip": "",
+                    "zipcode": "",
+                    "zipcodeTooltip": "",
+                    "discount": "",
+                    "discountTooltip": "",
+                    "group": "",
+                    "role": "",
+                    "roleTooltip": "",
+                    "currency": "",
+                    "currencyTooltip": "",
+                    "notes": "",
+                    "notesTooltip": "",
+                    "contactPersonName": "",
+                    "contactPersonNameTooltip": ""
+                },
+                "button": {
+                    "addPhoneNumber": ""
+                },
+                "placeholder": {
+                    "contactName": "",
+                    "email": "",
+                    "companyName": "",
+                    "firstStreetAddress": "",
+                    "secondStreetAddress": "",
+                    "thirdStreetAddress": "",
+                    "contactPersonName": "",
+                    "contactPersonEmail": ""
+                },
+                "error": {
+                    "nameRequired": "",
+                    "nameExist": "",
+                    "emailInvalid": "",
+                    "emailExist": ""
+                }
+            },
+            "createEditContactPerson": {
+                "createTitle": "",
+                "editTitle": "",
+                "text": {
+                    "address": ""
+                },
+                "inputField": {
+                    "contactPersonName": "",
+                    "contactPersonNameTooltip": "",
+                    "email": "",
+                    "emailTooltip": "",
+                    "contactPersonEmail": "",
+                    "contactPersonEmailTooltip": "",
+                    "country": "",
+                    "city": "",
+                    "firstStreetAddress": "",
+                    "firstStreetAddressTooltip": "",
+                    "secondStreetAddress": "",
+                    "secondStreetAddressTooltip": "",
+                    "thirdStreetAddress": "",
+                    "thirdStreetAddressTooltip": "",
+                    "zipcode": "",
+                    "zipcodeTooltip": "",
+                    "address": "",
+                    "phoneNumbers": "",
+                    "priceList": ""
+                },
+                "placeholder": {
+                    "email": "",
+                    "firstStreetAddress": "",
+                    "secondStreetAddress": "",
+                    "thirdStreetAddress": "",
+                    "contactPersonName": "",
+                    "contactPersonEmail": ""
+                },
+                "button": {
+                    "addPhoneNumber": "",
+                    "addPhoneNumberTooltip": ""
+                },
+                "error": {
+                    "emailInvalid": "",
+                    "emailRequired": "",
+                    "nameExist": "",
+                    "contactPersonEmailExist": ""
+                },
+                "title": ""
+            },
+            "createEditProduct": {
+                "title": {
+                    "create": "",
+                    "edit": ""
+                },
+                "text": {
+                    "unitPriceInOtherCurrencies": "",
+                    "otherPrices": ""
+                },
+                "inputField": {
+                    "productName": "",
+                    "productNameTooltip": "",
+                    "productType": "",
+                    "productTypeTooltip": "",
+                    "standardPrice": "",
+                    "standardPriceTooltip": "",
+                    "price": "",
+                    "priceTooltip": "",
+                    "otherCurrencies": "",
+                    "currency": "",
+                    "currencyTooltip": "",
+                    "productPrices": "",
+                    "productNamePlaceholder": ""
+                },
+                "button": {
+                    "add": "",
+                    "addProductPriceTooltip": "",
+                    "removeProductPriceTooltip": ""
+                },
+                "error": {
+                    "productNameRequired": "",
+                    "productPriceRequired": "",
+                    "productNameExist": ""
+                }
+            },
+            "createEditFee": {
+                "title": {
+                    "create": "",
+                    "edit": ""
+                },
+                "inputField": {
+                    "name": "",
+                    "nameTooltip": "",
+                    "comment": "",
+                    "commentTooltip": "",
+                    "amount": "",
+                    "amountTooltip": "",
+                    "feeAmounts": "",
+                    "currency": ""
+                },
+                "placeholder": {
+                    "feeName": "",
+                    "feeComment": ""
+                },
+                "error": {
+                    "feeNameRequired": "",
+                    "feeAmountRequired": "",
+                    "feeNameExists": ""
+                },
+                "button": {
+                    "add": "",
+                    "addFeeAmountTooltip": "",
+                    "removeFeeAmountTooltip": ""
+                }
+            },
+            "regretPayment": {
+                "title": "",
+                "text": {
+                    "paymentDate": "",
+                    "mainMessage": ""
+                },
+                "inputField": {
+                    "descriptionPlaceholder": ""
+                }
+            },
+            "regretCreditNote": {
+                "text": {
+                    "creditNote": "",
+                    "description": ""
+                }
+            },
+            "paymentDetail": {
+                "title": {
+                    "normalPayment": "",
+                    "prePayment": "",
+                    "regretPayment": ""
+                },
+                "text": {
+                    "date": {
+                        "normalPayment": "",
+                        "prePayment": "",
+                        "regretPayment": ""
+                    },
+                    "amount": {
+                        "normalPayment": "",
+                        "prePayment": "",
+                        "regretPayment": ""
+                    },
+                    "description": "",
+                    "accountName": "",
+                    "accountNumber": ""
+                },
+                "button": {
+                    "preview": "",
+                    "sendMail": ""
+                }
+            },
+            "creditNoteDetail": {
+                "title": {
+                    "creditNote": ""
+                },
+                "text": {
+                    "date": {
+                        "creditNote": "",
+                        "preCreditNote": ""
+                    },
+                    "amount": {
+                        "creditNote": ""
+                    },
+                    "comment": ""
+                },
+                "button": {
+                    "preview": "",
+                    "sendMail": ""
+                }
+            },
+            "historyDetail": {
+                "type": {
+                    "create": "",
+                    "normalPayment": "",
+                    "regretPayment": "",
+                    "prePayment": "",
+                    "creditNote": "",
+                    "regretCreditNote": "",
+                    "regretPrePayment": ""
+                },
+                "text": {
+                    "date": "",
+                    "invoiceCurrencyAmount": "",
+                    "description": "",
+                    "accountName": "",
+                    "accountNumber": ""
+                }
+            },
+            "regretInstantSale": {
+                "title": "",
+                "text": {
+                    "saleDate": "",
+                    "mainMessage": ""
+                },
+                "inputField": {
+                    "descriptionPlaceholder": ""
+                },
+                "error": {
+                    "descriptionRequired": ""
+                }
+            },
+            "addSaleProduct": {
+                "addTitle": "",
+                "updateTitle": "",
+                "text": {
+                    "total": ""
+                },
+                "button": {
+                    "addProduct": "",
+                    "updateProduct": ""
+                }
+            },
+            "addSaleFee": {
+                "addTitle": "",
+                "updateTitle": "",
+                "button": {
+                    "addFee": "",
+                    "updateFee": ""
+                }
+            },
+            "deleteDraft": {
+                "title": "",
+                "message": ""
+            },
+            "previewInvoice": {
+                "button": {
+                    "download": ""
+                },
+                "previewAllPayments": "",
+                "creditNoteTitle": "",
+                "instantInvoiceTitle": "",
+                "title": "",
+                "paymentTitle": "",
+                "allPaymentsTitle": "",
+                "creditNoteSendMail": "",
+                "close": "",
+                "return": "",
+                "dueDate": "",
+                "amountDue": "",
+                "accountNumber": "",
+                "invoiceNumber": "",
+                "date": "",
+                "customerNumber": "",
+                "customerName": "",
+                "customerReference": "",
+                "ourReference": "",
+                "warningIncludeInvoiceNumber": "",
+                "invoice": "",
+                "productName": "",
+                "productComment": "",
+                "price": "",
+                "quantity": "",
+                "discount": "",
+                "productNumber": "",
+                "amountCurrency": "",
+                "amountInCurrency": "",
+                "organizationNo": "",
+                "downloadFile": "",
+                "creditNote": "",
+                "creditNoteForInvoice": "",
+                "payment": "",
+                "normalPayment": "",
+                "prepayment": "",
+                "regretPayment": "",
+                "normalCreditNote": "",
+                "regretCreditNote": "",
+                "paymentAmount": "",
+                "paymentDate": "",
+                "paymentNumber": "",
+                "paymentTo": "",
+                "paymentFrom": "",
+                "registeredBy": "",
+                "remainingAmount": "",
+                "returnTitle": "",
+                "totalAmount": "",
+                "totalPaid": "",
+                "creditNoteAmount": "",
+                "creditNoteDescription": "",
+                "creditNoteDate": "",
+                "creditNoteType": "",
+                "feeAmount": "",
+                "feeDescription": "",
+                "feeName": "",
+                "feeNumber": "",
+                "installmentList": "",
+                "installmentListAmount": "",
+                "installmentListDate": "",
+                "installmentListName": "",
+                "installmentListStatus": "",
+                "invoiceAmount": "",
+                "totalFee": "",
+                "paymentType": "",
+                "previewFee": "",
+                "paymentText": "",
+                "preview": "",
+                "exchangeRate": "",
+                "paymentDescription": "",
+                "totalFees": "",
+                "installment": "",
+                "productAmount": "",
+                "feeComment": "",
+                "preCreditNoteAmount": "",
+                "preCreditNoteDate": "",
+                "preCreditNoteName": "",
+                "preCreditNoteStatus": "",
+                "prePaymentAmount": "",
+                "prePaymentDate": "",
+                "prePaymentList": "",
+                "prePaymentName": "",
+                "prePaymentStatus": "",
+                "preCreditNote": "",
+                "prePayment": "",
+                "paymentAccount": "",
+                "creditNoteNumber": "",
+                "cash": "",
+                "invoiceStatus": "",
+                "draft": ""
+            },
+            "cancelInvoice": {
+                "text": {
+                    "cancelTitle": "",
+                    "cancelInvoiceMessage": ""
+                },
+                "button": {
+                    "cancelInvoice": "",
+                    "confirm": "",
+                    "continue": ""
+                }
+            },
+            "confirmCreateInvoice": {
+                "title": "",
+                "message": ""
+            },
+            "cancelSale": {
+                "text": {
+                    "cancelTitle": "",
+                    "cancelSaleMessage": "",
+                    "cancelSaleWarningMessage": ""
+                },
+                "button": {
+                    "cancelSale": "",
+                    "cancelSaleTooltip": ""
+                }
+            },
+            "creatingInvoice": {
+                "message": ""
+            },
+            "deleteNote": {
+                "title": "",
+                "message": ""
+            }
+        },
+        "notification": {
+            "updateMailingStatusSuccess": "",
+            "updateMailingStatusFail": "",
+            "sendEmailInvoiceSuccess": "",
+            "sendEmailInvoiceFail": "",
+            "previewPaymentFail": "",
+            "previewAllPaymentFail": "",
+            "createInvoiceSuccess": "",
+            "createInvoiceFail": "",
+            "previewInvoiceFail": "",
+            "deleteDraftInvoiceSuccess": "",
+            "deleteDraftInvoiceFail": "",
+            "updateDraftInvoiceSuccess": "",
+            "updateDraftInvoiceFail": "",
+            "createBankAccountSuccess": "",
+            "createBankAccountFail": "",
+            "updateBankAccountSuccess": "",
+            "updateBankAccountFail": "",
+            "finalizeInvoiceSuccess": "",
+            "finalizeInvoiceFail": "",
+            "createContactSuccess": "",
+            "createContactFail": "",
+            "updateContactSuccess": "",
+            "updateContactFail": "",
+            "registerNewPaymentSuccess": "",
+            "registerNewPaymentFail": "",
+            "addContactPersonSuccess": "",
+            "addContactPersonFail": "",
+            "updateContactPersonSuccess": "",
+            "updateContactPersonFail": "",
+            "updateProductSuccess": "",
+            "updateProductFail": "",
+            "createProductSuccess": "",
+            "createProductFail": "",
+            "createNewFeeSuccess": "",
+            "createNewFeeFail": "",
+            "updateFeeSuccess": "",
+            "updateFeeFail": "",
+            "addCreditNoteSuccess": "",
+            "addCreditNoteFail": "",
+            "sendEmailAllPaymentSuccess": "",
+            "sendEmailAllPaymentFail": "",
+            "regretCreditNoteFail": "",
+            "regretPaymentSuccess": "",
+            "regretPaymentFail": "",
+            "sendPaymentEmailSuccess": "",
+            "sendPaymentEmailFail": "",
+            "previewCreditNoteFail": "",
+            "sendCreditNoteEmailSuccess": "",
+            "sendCreditNoteEmailFail": "",
+            "sendMailInstantInvoiceSuccess": "",
+            "sendMailInstantInvoiceFail": "",
+            "createInstantSaleSuccess": "",
+            "createInstantSaleFail": "",
+            "cancelEntireInvoiceSuccess": "",
+            "cancelEntireInvoiceFail": "",
+            "cancelPartialInvoiceSuccess": "",
+            "cancelPartialInvoiceFai": "",
+            "updateDueDateSuccess": "",
+            "updateDueDateFail": "",
+            "updatePaymentSuccess": "",
+            "updatePaymentFail": "",
+            "updateCreditNoteSuccess": "",
+            "updateCreditNoteFail": "",
+            "createEmployeeSuccess": "",
+            "createEmployeeFail": "",
+            "sameNameAndPhoneWarning": "",
+            "updateEmployeeSuccess": "",
+            "updateEmployeeFail": "",
+            "updateSettledStatusSuccess": "",
+            "updateSettledStatusFail": "",
+            "updateUnSettledStatusSuccess": "",
+            "updateUnSettledStatusFail": "",
+            "uploadAttachmentsFail": "",
+            "deleteAttachmentFail": "",
+            "cancelEntireSaleSuccess": "",
+            "createSaleSuccess": "",
+            "createSaleFail": "",
+            "cancelEntireSaleFail": "",
+            "addNoteFail": "",
+            "addNoteSuccess": "",
+            "deleteNoteSuccess": ""
+        },
+        "sendMailInvoice": {
+            "installmentsList": "",
+            "amount": "",
+            "date": "",
+            "name": "",
+            "status": "",
+            "prepayment": "",
+            "cash": "",
+            "return": "",
+            "dueDate": "",
+            "accountNumber": "",
+            "amountDue": "",
+            "invoiceNumber": "",
+            "customerNumber": "",
+            "customerName": "",
+            "customerReference": "",
+            "ourReference": "",
+            "warningIncludeInvoiceNumber": "",
+            "invoice": "",
+            "productName": "",
+            "productComment": "",
+            "price": "",
+            "quantity": "",
+            "discount": "",
+            "productNumber": "",
+            "amountCurrency": "",
+            "amountInCurrency": "",
+            "organizationNo": "",
+            "fee": "",
+            "feeAmount": "",
+            "feeComment": "",
+            "feeName": "",
+            "installmentList": "",
+            "installmentListAmount": "",
+            "installmentListDate": "",
+            "installmentListName": "",
+            "installmentListStatus": "",
+            "exchangeRate": "",
+            "totalAmount": "",
+            "invoiceAmount": "",
+            "totalFees": "",
+            "feeNumber": "",
+            "normalCreditNote": "",
+            "creditNote": "",
+            "creditNoteAmount": "",
+            "creditNoteComment": "",
+            "creditNoteDate": "",
+            "creditNoteType": "",
+            "creditNoteNumber": "",
+            "payment": "",
+            "paymentAmount": "",
+            "paymentDate": "",
+            "paymentTo": "",
+            "paymentType": "",
+            "paymentNumber": "",
+            "paymentDescription": "",
+            "remainingAmount": "",
+            "returnTitle": "",
+            "totalPaid": "",
+            "creditNoteList": "",
+            "creditNoteName": "",
+            "creditNoteStatus": "",
+            "paymentList": "",
+            "paymentName": "",
+            "paymentStatus": "",
+            "normalPayment": "",
+            "productAmount": "",
+            "productDiscount": "",
+            "productPrice": "",
+            "productQuantity": "",
+            "invoiceStatus": "",
+            "finalized": "",
+            "overdue": "",
+            "overpaid": "",
+            "paid": "",
+            "unpaid": "",
+            "partlyPaid": "",
+            "canceled": "",
+            "standard": "",
+            "installment": "",
+            "invoiced": "",
+            "partlyCanceled": "",
+            "prePayment": "",
+            "fees": "",
+            "orgNo": "",
+            "contact": "",
+            "reference": "",
+            "customerNo": "",
+            "invoiceDate": "",
+            "account": "",
+            "customer": "",
+            "address": "",
+            "firstPaymentDate": "",
+            "comment": "",
+            "originalDueDate": "",
+            "id": "",
+            "qty": "",
+            "totalDiscount": "",
+            "installmentCols": "",
+            "totalPrePayment": "",
+            "totalPayments": "",
+            "totalCreditNotes": "",
+            "outStandingAmount": "",
+            "paymentForInvoice": "",
+            "regretPayments": "",
+            "page": "",
+            "paymentTitle": "",
+            "creditNoteTitle": "",
+            "totalCreditNote": "",
+            "sale": "",
+            "saleDate": "",
+            "na": "",
+            "draftInvoice": "",
+            "prePaymentCols": "",
+            "firstPayment": "",
+            "productId": "",
+            "feeId": "",
+            "contactInformation": "",
+            "feeNameTitle": "",
+            "tel": ""
+        },
+        "error": {
+            "dateIsInvalid": ""
+        }
+    },
+    "product": {
+        "listPage": {
+            "text": {
+                "title": "",
+                "download": "",
+                "import": "",
+                "enabled": "",
+                "enabledTooltip": "",
+                "disabled": "",
+                "disabledTooltip": ""
+            },
+            "button": {
+                "createTooltip": "",
+                "delete": "",
+                "enable": "",
+                "disable": ""
+            },
+            "columnHeader": {
+                "checkAllTooltip": "",
+                "checkTooltip": "",
+                "productName": "",
+                "productNameTooltip": "",
+                "productPrice": "",
+                "productPriceTooltip": "",
+                "productStatus": "",
+                "productStatusTooltip": "",
+                "moreOptionsForSelectedTooltip": "",
+                "moreOptionsTooltip": "",
+                "productNumber": "",
+                "productNumberTooltip": ""
+            },
+            "select": {
+                "option": {
+                    "enabled": "",
+                    "all": "",
+                    "disabled": ""
+                },
+                "inputField": {
+                    "filterTooltip": ""
+                }
+            }
+        },
+        "createEditViewPage": {
+            "button": {
+                "add": "",
+                "addProductPriceTooltip": "",
+                "removeProductPriceTooltip": "",
+                "deleteTooltip": "",
+                "cancelTooltip": "",
+                "saveTooltip": "",
+                "createTooltip": "",
+                "expandTooltip": "",
+                "collapseTooltip": ""
+            },
+            "dialog": {
+                "removePrice": {
+                    "title": "",
+                    "message": ""
+                },
+                "removeLogo": {
+                    "title": "",
+                    "message": ""
+                },
+                "updatePriceWarning": {
+                    "title": "",
+                    "message": ""
+                }
+            },
+            "text": {
+                "createTitle": "",
+                "general": "",
+                "enabled": "",
+                "enabledTooltip": "",
+                "disabled": "",
+                "disabledTooltip": "",
+                "price": "",
+                "unitPriceInOtherCurrencies": "",
+                "productDetail": "",
+                "notFound": "",
+                "automaticallyRound": "",
+                "enabledRoundTooltip": "",
+                "disabledRoundTooltip": "",
+                "typeDescription": ""
+            },
+            "inputField": {
+                "productName": "",
+                "productNameTooltip": "",
+                "productType": "",
+                "productTypeTooltip": "",
+                "standardPrice": "",
+                "standardPriceTooltip": "",
+                "price": "",
+                "priceTooltip": "",
+                "otherCurrencies": "",
+                "currency": "",
+                "currencyTooltip": "",
+                "productPrices": ""
+            },
+            "placeholder": {
+                "productName": ""
+            },
+            "error": {
+                "productNameRequired": "",
+                "productPriceRequired": "",
+                "productNameExist": ""
+            }
+        },
+        "notification": {
+            "removeProductImageSuccess": "",
+            "removeProductImageFail": "",
+            "uploadProductImageSuccess": "",
+            "uploadProductImageFail": ""
+        }
+    },
+    "profile": {
+        "title": "",
+        "confirmEditProfileDialog": {
+            "button": {
+                "confirm": ""
+            },
+            "error": {
+                "emailAlreadyExist": "",
+                "passwordIncorrect": "",
+                "passwordRequired": ""
+            },
+            "inputField": {
+                "currentPassword": "",
+                "currentPasswordTooltip": ""
+            },
+            "text": {
+                "confirmPassword": ""
+            }
+        },
+        "notification": {
+            "changeCurrentEmail": "",
+            "changeEmailFail": "",
+            "changeEmailSuccess": "",
+            "changePasswordFail": "",
+            "changePasswordSubTitle": "",
+            "changePasswordSuccess": "",
+            "currentPasswordRequired": "",
+            "dateFormat": "",
+            "deleteFail": "",
+            "deleteUserAvatarFail": "",
+            "deleteUserAvatarSuccess": "",
+            "disableUserSuccess": "",
+            "getProfileFail": "",
+            "hourFormat": "",
+            "newPasswordRequired": "",
+            "oldPasswordIncorrect": "",
+            "passwordIncorrect": "",
+            "updateFail": "",
+            "updateSuccess": "",
+            "updateUserAvatarFail": "",
+            "updateUserAvatarSuccess": "",
+            "userWithEmailAlreadyExist": "",
+            "kickOutOneDeviceSuccess": "",
+            "kickOutOneDeviceFail": "",
+            "kickOutAllExceptMeSuccess": "",
+            "kickOutAllExceptMeFail": "",
+            "getDevicesFail": "",
+            "getDeviceByDeviceIdFail": ""
+        },
+        "tab": {
+            "account": "",
+            "accountTooltip": "",
+            "devices": "",
+            "devicesTooltip": "",
+            "general": "",
+            "generalTooltip": "",
+            "password": "",
+            "passwordTooltip": ""
+        },
+        "tabAccount": {
+            "zero": "",
+            "one": "",
+            "two": "",
+            "few": "",
+            "many": "",
+            "other": ""
+        },
+        "tabDevices": {
+            "text": {
+                "title": "",
+                "deviceParam": "",
+                "signedOut": "",
+                "signedIn": "",
+                "thisDevice": ""
+            },
+            "columnHeader": {
+                "checkTooltip": "",
+                "checkAllTooltip": "",
+                "date": "",
+                "dateTooltip": "",
+                "devices": "",
+                "devicesTooltip": "",
+                "country": "",
+                "countryTooltip": "",
+                "ip": "",
+                "ipTooltip": "",
+                "status": "",
+                "statusTooltip": "",
+                "browser": "",
+                "browserTooltip": ""
+            },
+            "button": {
+                "signOut": "",
+                "signOutAll": "",
+                "dontRecognize": "",
+                "moreDetail": "",
+                "moreOptionsForSelectedTooltip": "",
+                "moreOptionsTooltip": "",
+                "goBack": "",
+                "goBackTooltip": ""
+            },
+            "select": {
+                "option": {
+                    "all": "",
+                    "signIn": "",
+                    "signOut": ""
+                },
+                "inputField": {
+                    "filterTooltip": ""
+                }
+            },
+            "dialog": {
+                "signOutMany": {
+                    "title": "",
+                    "message": ""
+                },
+                "signOutOne": {
+                    "title": "",
+                    "message": ""
+                },
+                "dontRecognize": {
+                    "title": "",
+                    "message": "",
+                    "changePassword": ""
+                }
+            },
+            "setting": {
+                "displayColumn": "",
+                "dragAndDrop": ""
+            }
+        },
+        "tabGeneral": {
+            "button": {
+                "addPhoneNumber": "",
+                "addPhoneNumberTooltip": "",
+                "collapseTooltip": "",
+                "disableProfile": "",
+                "expandTooltip": "",
+                "remove": "",
+                "saveTooltip": ""
+            },
+            "dialog": {
+                "disableProfile": {
+                    "enterConfirmPassword": "",
+                    "error": {
+                        "passwordIncorrect": ""
+                    },
+                    "message": "",
+                    "title": ""
+                },
+                "removeAvatar": {
+                    "message": "",
+                    "title": ""
+                },
+                "removePhone": {
+                    "message": "",
+                    "title": ""
+                }
+            },
+            "error": {
+                "emailInvalid": "",
+                "emailRequired": "",
+                "nameRequired": "",
+                "is": "",
+                "are": "",
+                "invalid": ""
+            },
+            "inputField": {
+                "address": "",
+                "city": "",
+                "companyAdministrator": "",
+                "country": "",
+                "countryCode": "",
+                "email": "",
+                "username": "",
+                "emailTooltip": "",
+                "firstStreetAddress": "",
+                "firstStreetAddressTooltip": "",
+                "lastTimeLogIn": "",
+                "mobileNumbers": "",
+                "name": "",
+                "nameTooltip": "",
+                "role": "",
+                "secondStreetAddress": "",
+                "secondStreetAddressTooltip": "",
+                "status": "",
+                "thirdStreetAddress": "",
+                "thirdStreetAddressTooltip": "",
+                "userName": "",
+                "zipcode": "",
+                "zipcodeTooltip": ""
+            },
+            "placeholder": {
+                "profileName": "",
+                "email": "",
+                "firstStreetAddress": "",
+                "secondStreetAddress": "",
+                "thirdStreetAddress": ""
+            },
+            "select": {
+                "dateFormatTooltip": "",
+                "hourFormatTooltip": "",
+                "option": {
+                    "useAMPM": "",
+                    "use24Hours": ""
+                }
+            },
+            "text": {
+                "contactInfo": "",
+                "dateFormat": "",
+                "dateFormatExample": "",
+                "disableStatusTooltip": "",
+                "hourFormat": "",
+                "language": "",
+                "status": ""
+            }
+        },
+        "tabPassword": {
+            "button": {
+                "changePassword": "",
+                "generate": "",
+                "generateTooltip": ""
+            },
+            "errorMessage": {
+                "currentPasswordRequired": "",
+                "passwordRequired": "",
+                "passwordInvalid": "",
+                "passwordsNotMatch": "",
+                "repeatNewPasswordRequired": "",
+                "passwordPattern": ""
+            },
+            "inputField": {
+                "currentPassword": "",
+                "currentPasswordTooltip": "",
+                "password": "",
+                "passwordTooltip": "",
+                "repeatPassword": "",
+                "repeatPasswordTooltip": ""
+            },
+            "text": {
+                "passwordChangeInfo": "",
+                "contactInfo": "",
+                "strong": "",
+                "medium": "",
+                "weak": ""
+            }
+        }
+    },
+    "regularInvoice": {
+        "inputField": {
+            "type": "",
+            "remainingDays": "",
+            "dueDate": "",
+            "invoiceDate": "",
+            "customerTooltip": "",
+            "customerPlaceholder": "",
+            "contactPerson": "",
+            "contactPersonTooltip": "",
+            "contactPersonPlaceholder": "",
+            "customerReference": "",
+            "customerReferenceTooltip": "",
+            "customerReferencePlaceholder": "",
+            "ourReference": "",
+            "ourReferenceTooltip": "",
+            "ourReferencePlaceholder": "",
+            "feeTooltip": "",
+            "feePlaceHolder": "",
+            "feeAmountTooltip": "",
+            "feeAmountPlaceHolder": "",
+            "feeComment": "",
+            "feeCommentPlaceHolder": "",
+            "feeCommentTooltip": "",
+            "remainingDaysTooltip": "",
+            "remainingDaysPlaceholder": "",
+            "typeTooltip": "",
+            "dueDateTooltip": "",
+            "invoiceDateTooltip": "",
+            "exchangeRate": "",
+            "exchangeRateTooltip": "",
+            "selectFee": "",
+            "bankAccountName": "",
+            "bankAccountNameTooltip": "",
+            "bankAccountNamePlaceHolder": "",
+            "bankAccountNumberPlaceholder": "",
+            "accountType": "",
+            "accountTypeTooltip": "",
+            "invoiceProducts": "",
+            "date": "",
+            "productComment": "",
+            "contact": "",
+            "installmentAmount": "",
+            "numberOfDays": "",
+            "salesCurrency": "",
+            "comment": "",
+            "commentTooltip": "",
+            "commentPlaceholder": "",
+            "attachments": ""
+        },
+        "text": {
+            "draft": "",
+            "dateAndType": "",
+            "newSale": "",
+            "dateWarning": "",
+            "invoiceLines": "",
+            "addComment": "",
+            "feeName": "",
+            "invoice": "",
+            "withDueDate": "",
+            "dueDate": "",
+            "quantity": "",
+            "mail": "",
+            "mailingStatusTooltip": "",
+            "ourReference": "",
+            "contactPerson": "",
+            "cashRegister": "",
+            "accountNumber": "",
+            "type": "",
+            "description": "",
+            "invoiceHistory": "",
+            "invoiceType": "",
+            "paymentStatus": "",
+            "invoiceStatus": "",
+            "paymentTooltip": "",
+            "creditNoteTooltip": "",
+            "noAttachments": "",
+            "previewAttachment": "",
+            "saleDate": "",
+            "saleCurrency": "",
+            "changeDate": "",
+            "note": "",
+            "noteTooltip": "",
+            "notePlaceholder": "",
+            "attachment": "",
+            "newInvoice": "",
+            "mailingStatusNotSendTooltip": "",
+            "mailingStatusSentFromTheSystemTooltip": "",
+            "mailingStatusSentOutsideTheSystemTooltip": "",
+            "noteTitle": "",
+            "edited": ""
+        },
+        "button": {
+            "createEmployeeTooltip": "",
+            "editEmployeeTooltip": "",
+            "createBankAccount": "",
+            "editBankAccount": "",
+            "addFee": "",
+            "closeDraft": "",
+            "createInvoice": "",
+            "preview": "",
+            "delete": "",
+            "saveDraft": "",
+            "createContactTooltip": "",
+            "editContactTooltip": "",
+            "createContactPersonTooltip": "",
+            "editContactPersonTooltip": "",
+            "createProductTooltip": "",
+            "editProductTooltip": "",
+            "createFeeTooltip": "",
+            "editFeeTooltip": "",
+            "removeProductCommentTooltip": "",
+            "removeProductTooltip": "",
+            "removeFee": "",
+            "removeFeeTooltip": "",
+            "sendMailInvoice": "",
+            "sendMailInvoiceTooltip": "",
+            "sendMailAllPayments": "",
+            "sendPaymentDetailsTooltip": "",
+            "receiptOfAllPayments": "",
+            "receiptOfAllPaymentsTooltip": "",
+            "closeTooltip": "",
+            "previewAndSend": "",
+            "previewAndSendInvoiceTooltip": "",
+            "downloadAttachmentTooltip": "",
+            "deleteAttachmentTooltip": "",
+            "previewAttachmentTooltip": ""
+        },
+        "select": {
+            "option": {
+                "installment": "",
+                "standard": "",
+                "sent": "",
+                "notSent": "",
+                "sentOutsideSystem": "",
+                "cashSale": ""
+            }
+        },
+        "error": {
+            "exchangeRateMustGreaterThan0": "",
+            "exchangeRateRequired": "",
+            "invoiceDateRequired": "",
+            "dueDateInvalid": "",
+            "dueDateRequired": "",
+            "dueDateMin": "",
+            "accountNameRequired": "",
+            "accountNameExists": "",
+            "accountNumberRequired": "",
+            "accountNumberInvalid": "",
+            "accountNumberExists": "",
+            "accountNumberNegative": "",
+            "productRequired": "",
+            "feeRequired": "",
+            "contactRequired": "",
+            "invoiceFormInvalid": "",
+            "invalidDate": "",
+            "invoiceDateGreaterToday": "",
+            "previewFail": "",
+            "quantityMustGreaterThan0": "",
+            "warningTextForCreatedFutureDate": "",
+            "warningTextForCreatedPastDate": "",
+            "isDisabled": "",
+            "moreThanSixDecimalNumber": "",
+            "customerIsDisabled": "",
+            "productIsDisabled": "",
+            "feeIsDisabled": "",
+            "accountIsDisabled": "",
+            "referencePersonIsDisabled": ""
+        },
+        "dialog": {
+            "removeProductComment": {
+                "title": "",
+                "message": ""
+            },
+            "removeProduct": {
+                "title": "",
+                "message": ""
+            },
+            "removeFeeComment": {
+                "title": "",
+                "message": ""
+            },
+            "removeFee": {
+                "title": "",
+                "message": ""
+            },
+            "createEditBankAccount": {
+                "editTitle": "",
+                "createTitle": ""
+            },
+            "deleteDraftInvoice": {
+                "title": "",
+                "message": ""
+            },
+            "sendMailInvoice": {
+                "text": {
+                    "to": "",
+                    "invoice": "",
+                    "selectContactPerson": "",
+                    "contactPersonName": "",
+                    "contactPersonEmail": "",
+                    "invoiceTemplateLanguage": ""
+                },
+                "inputField": {
+                    "nameTooltip": "",
+                    "name": "",
+                    "emailTooltip": "",
+                    "email": "",
+                    "contactPersonTooltip": "",
+                    "contactPersonPlaceholder": "",
+                    "contactPersonNamePlaceholder": "",
+                    "contactPersonEmailPlaceholder": ""
+                },
+                "error": {
+                    "nameRequired": "",
+                    "emailInvalid": "",
+                    "emailRequired": ""
+                },
+                "button": {
+                    "send": "",
+                    "preview": "",
+                    "download": ""
+                },
+                "title": "",
+                "customer": "",
+                "to": "",
+                "subject": "",
+                "subjectContent": "",
+                "invoiceDocument": "",
+                "paymentsDocument": "",
+                "creditnotesDocument": "",
+                "selectAtLeastOneDocumentWarning": "",
+                "saleDocument": ""
+            },
+            "sendMailSale": {
+                "subjectContent": "",
+                "title": ""
+            },
+            "previewInvoiceDocument": {
+                "title": ""
+            }
+        },
+        "toggle": {
+            "settledStatus": "",
+            "unSettledStatus": ""
+        },
+        "info": {
+            "settledStatus": {
+                "message": "",
+                "title": ""
+            }
+        },
+        "confirm": {
+            "settledStatus": "",
+            "unSettledStatus": "",
+            "modal": {
+                "settled": "",
+                "unsettled": ""
+            }
+        }
+    },
+    "salesList": {
+        "title": "",
+        "columnHeader": {
+            "invoiceNumber": "",
+            "invoiceNumberTooltip": "",
+            "contactName": "",
+            "contactNameTooltip": "",
+            "createdDate": "",
+            "createdDateTooltip": "",
+            "date": "",
+            "dateTooltip": "",
+            "dueDate": "",
+            "dueDateTooltip": "",
+            "invoiceCurrencyAmount": "",
+            "invoiceCurrencyAmountTooltip": "",
+            "invoiceStatus": "",
+            "invoiceStatusTooltip": "",
+            "paymentStatus": "",
+            "paymentStatusTooltip": "",
+            "invoiceType": "",
+            "invoiceTypeTooltip": "",
+            "moreOption": "",
+            "paymentType": "",
+            "paymentTypeTooltip": ""
+        },
+        "filter": {
+            "text": {
+                "filter": "",
+                "invoiceTypes": "",
+                "invoiceStatus": "",
+                "paymentStatus": "",
+                "status": "",
+                "period&Currency": "",
+                "selectDateRange": "",
+                "invoiceAmount": "",
+                "settings": "",
+                "reset": "",
+                "resetTooltip": "",
+                "dueStatus": ""
+            },
+            "inputField": {
+                "currencyTooltip": "",
+                "currencyPlaceholder": ""
+            }
+        },
+        "button": {
+            "newSale": "",
+            "newSaleTooltip": "",
+            "newInstantSale": "",
+            "newInstantSaleTooltip": ""
+        },
+        "tab": {
+            "draftSales": "",
+            "sales": "",
+            "instantSales": ""
+        },
+        "text": {
+            "registerPayment": "",
+            "sendToCustomer": "",
+            "registerCreditNote": "",
+            "delete": "",
+            "anonymous": "",
+            "showDetails": "",
+            "outstanding": "",
+            "overdue": "",
+            "invoiced": "",
+            "totalSale": "",
+            "overdueDays": "",
+            "resetData": "",
+            "resetDataTooltip": "",
+            "installmentOverdueDays": "",
+            "copyToNewSale": "",
+            "due": ""
+        },
+        "chip": {
+            "finalized": "",
+            "overdue": "",
+            "overpaid": "",
+            "paid": "",
+            "unpaid": "",
+            "partlyPaid": "",
+            "canceled": "",
+            "standard": "",
+            "installment": "",
+            "invoiced": "",
+            "partlyCanceled": "",
+            "purchased": ""
+        }
+    },
+    "errorFromServer": {
+        "serverError": "",
+        "signUpFail": "",
+        "accountHasNotBeenActivated": "",
+        "userNotFound": "",
+        "userEmailExist": "",
+        "usernameOrPasswordIncorrect": "",
+        "UnknownError": "",
+        "404": "",
+        "403": "",
+        "somethingWentWrong": "",
+        "UserNotActive": "",
+        "UnknownErrorLogin": "",
+        "userIsDisabled": {
+            "enableAccount": "",
+            "firstSentence": ""
+        },
+        "noInternet": "",
+        "here": "",
+        "unknownError": "",
+        "resetPasswordKeyAlreadyBeUsed": {
+            "firstSegment": "",
+            "secondSegment": "",
+            "thirdSegment": ""
+        },
+        "keyNotFound": "",
+        "userIsDisabledBySystem": ""
+    },
+    "fileUpload": {
+        "text": {
+            "validFileTypesAndSize": "",
+            "validFileTypes": "",
+            "maxNumberOfFiles": "",
+            "uploadImage": "",
+            "imageTypeInvalid": "",
+            "uploadFiles": "",
+            "maxFileSize": ""
+        }
+    },
+    "contactDocument": {
+        "text": {
+            "documents": "",
+            "noDocuments": ""
+        },
+        "dialog": {
+            "duplicatedFiles": {
+                "title": "",
+                "message": ""
+            }
+        }
+    },
+    "sidebar": {
+        "sidebarItem": {
+            "dashboard": "",
+            "dashboardTooltip": "",
+            "sales": "",
+            "salesTooltip": "",
+            "contacts": "",
+            "contactsTooltip": "",
+            "products": "",
+            "productsTooltip": "",
+            "fees": "",
+            "feesTooltip": "",
+            "employees": "",
+            "employeesTooltip": "",
+            "report": "",
+            "reportTooltip": "",
+            "contactUs": "",
+            "contactUsTooltip": "",
+            "companySetting": "",
+            "companySettingTooltip": "",
+            "customersTooltip": "",
+            "suppliersTooltip": "",
+            "customers": "",
+            "suppliers": "",
+            "purchases": "",
+            "purchasesTooltip": ""
+        },
+        "button": {
+            "collapse": "",
+            "expand": ""
+        }
+    },
+    "country": {
+        "inputField": {
+            "findCountry": "",
+            "noCountryFound": "",
+            "city": "",
+            "cityTooltip": "",
+            "zipcode": "",
+            "zipcodeTooltip": "",
+            "country": "",
+            "countryTooltip": ""
+        },
+        "text": {
+            "noZipcode": "",
+            "noCity": ""
+        },
+        "placeholder": {
+            "organizationNo": "",
+            "companyName": "",
+            "phoneNumber": "",
+            "email": "",
+            "website": "",
+            "firstStreetAddress": "",
+            "secondStreetAddress": "",
+            "thirdStreetAddress": "",
+            "zipcode": "",
+            "city": ""
+        }
+    },
+    "languageSelect": {
+        "option": {
+            "selectLanguageTooltip": "",
+            "english": "",
+            "arabic": "",
+            "badini": "",
+            "sorani": "",
+            "keyCode": ""
+        },
+        "notification": {
+            "updateLanguageSuccess": "",
+            "updateLanguageFail": ""
+        },
+        "inputField": {
+            "language": "",
+            "languageTooltip": ""
+        }
+    },
+    "header": {
+        "breadcrumb": {
+            "noCompany": "",
+            "companyList": "",
+            "companies": "",
+            "signIn": "",
+            "signUp": "",
+            "forgotPassword": "",
+            "resetPassword": "",
+            "accessDenied": "",
+            "contactSupport": "",
+            "confirmChangeEmailSuccess": "",
+            "confirmSignUpSuccess": "",
+            "signUpSuccess": "",
+            "forgotPasswordMailSent": "",
+            "dashboard": "",
+            "externalUsers": "",
+            "internalUsers": "",
+            "userDetail": "",
+            "SystemSetting": "",
+            "company": "",
+            "profiles": "",
+            "general": "",
+            "format": "",
+            "password": "",
+            "invoiceTemplate": "",
+            "bankAccount": "",
+            "customers": "",
+            "suppliers": "",
+            "contactDetail": "",
+            "products": "",
+            "productDetail": "",
+            "createInvoice": "",
+            "invoiceDetail": "",
+            "invoiceHistory": "",
+            "draftSale": "",
+            "fees": "",
+            "feeDetail": "",
+            "employees": "",
+            "employeeDetail": "",
+            "employeeCreate": "",
+            "warehouses": "",
+            "warehouseDetail": "",
+            "purchase": "",
+            "createPurchase": "",
+            "eventsLog": "",
+            "companyEventsLog": "",
+            "eventLogs": "",
+            "contactUs": "",
+            "create": "",
+            "createTestCompany": "",
+            "createCompany": "",
+            "setting": "",
+            "account": "",
+            "profile": "",
+            "invoices": "",
+            "sales": "",
+            "contacts": "",
+            "devices": "",
+            "deviceDetail": "",
+            "document": "",
+            "contactPerson": "",
+            "detail": "",
+            "drafts": "",
+            "instant": "",
+            "tooltip": {
+                "selectCompany": "",
+                "moveTo": "",
+                "currentPage": ""
+            },
+            "feeCreate": "",
+            "instantInvoiceDetail": "",
+            "newInstant": "",
+            "newSale": "",
+            "searchResults": "",
+            "admin": "",
+            "userManagement": "",
+            "systemSettings": "",
+            "systemProperty": "",
+            "draftSalaryTypes": "",
+            "activeSalaryTypes": "",
+            "contactPersonDetail": "",
+            "purchases": "",
+            "draftPurchases": "",
+            "newPurchase": "",
+            "purchaseDetail": "",
+            "newInvoice": ""
+        },
+        "notifications": "",
+        "userProfile": "",
+        "userProfileMenu": {
+            "text": {
+                "profile": "",
+                "eventLogOfUser": "",
+                "yourDevices": ""
+            }
+        },
+        "logout": "",
+        "menuTooltip": "",
+        "sidebarTooltip": ""
+    },
+    "phoneNumber": {
+        "inputField": {
+            "phoneNumber": "",
+            "phoneTooltip": "",
+            "dialCode": "",
+            "dialCodeTooltip": ""
+        },
+        "error": {
+            "phoneRequired": "",
+            "phoneInvalid": ""
+        }
+    },
+    "pagination": {
+        "inputField": {
+            "rowsPerPage": "",
+            "pageSizeTooltip": ""
+        },
+        "control": {
+            "nextPageTooltip": "",
+            "previousPageTooltip": ""
+        }
+    },
+    "search": {
+        "inputField": {
+            "search": "",
+            "searchTooltip": ""
+        }
+    },
+    "noItem": {
+        "emptyList": "",
+        "noItemFound": ""
+    },
+    "fileList": {
+        "button": {
+            "removeAttachment": "",
+            "downloadTooltip": ""
+        }
+    },
+    "currency": {
+        "inputField": {
+            "currency": "",
+            "currencyTooltip": ""
+        },
+        "error": {
+            "currencyRequired": ""
+        }
+    },
+    "tableColumnConfig": {
+        "settingTooltip": "",
+        "dragAndDrop": "",
+        "displayColumn": ""
+    },
+    "notes": {
+        "text": {
+            "notes": "",
+            "noNotes": ""
+        },
+        "inputField": {
+            "notes": "",
+            "notesTooltip": ""
+        },
+        "button": {
+            "leaveANote": "",
+            "leaveANoteTooltip": "",
+            "expandTooltip": "",
+            "collapseTooltip": ""
+        }
+    },
+    "avatar": {
+        "text": {
+            "dragAndDrop": ""
+        },
+        "tooltips": {
+            "uploadImageTooltip": ""
+        }
+    },
+    "dialog": {
+        "confirmChangeCurrency": {
+            "title": "",
+            "currencyMessage": "",
+            "customerMessage": ""
+        }
+    },
+    "contactTypeSelect": {
+        "inputField": {
+            "role": "",
+            "roleTooltip": "",
+            "addUserRoleTooltip": ""
+        },
+        "chip": {
+            "customer": "",
+            "supplier": "",
+            "both": ""
+        }
+    },
+    "contactGroup": {
+        "inputField": {
+            "groupTooltip": ""
+        },
+        "placeholder": {
+            "group": ""
+        }
+    },
+    "passwordRequirement": {
+        "text": {
+            "includeNumbers": "",
+            "hasAtLeast8Characters": "",
+            "notContainSpace": "",
+            "notContainNameOrEmail": "",
+            "hasUppercaseAndLowercaseMixture": ""
+        },
+        "button": {
+            "generate": "",
+            "generateTooltip": ""
+        },
+        "error": {
+            "passwordInvalid": "",
+            "passwordPattern": ""
+        }
+    },
+    "multiSelection": {
+        "text": {
+            "itemsSelected": "",
+            "selectItems": ""
+        },
+        "button": {
+            "disable": "",
+            "enable": ""
+        }
+    },
+    "systemProperty": {
+        "button": {
+            "save": "",
+            "saveTooltip": ""
+        },
+        "inputField": {
+            "companySettings": "",
+            "userSettings": "",
+            "sequenceSettings": "",
+            "emailSettings": "",
+            "defaultMaxNumberOfCompanies": "",
+            "startDateOfWeek": "",
+            "dateFormat": "",
+            "dateFormatTooltip": "",
+            "currency": "",
+            "companyHourFormat": "",
+            "companyHourFormatTooltip": "",
+            "userHourFormat": "",
+            "userHourFormatTooltip": "",
+            "defaultInvoiceTemplate": "",
+            "defaultInvoiceTemplateTooltip": "",
+            "defaultMaxNumberOfCompaniesTooltip": "",
+            "emailSender": "",
+            "emailSenderTooltip": "",
+            "disableAccountDaysRemaining": "",
+            "disableAccountDaysRemainingTooltip": "",
+            "startOfAccountCode": "",
+            "startOfAccountCodeTooltip": "",
+            "startOfPaymentNumber": "",
+            "startOfPaymentNumberTooltip": "",
+            "startOfProductNumber": "",
+            "startOfProductNumberTooltip": "",
+            "startOfInvoiceNumber": "",
+            "startOfInvoiceNumberTooltip": "",
+            "startOfFeeNumber": "",
+            "startOfFeeNumberTooltip": "",
+            "startOfContactNumber": "",
+            "startOfContactNumberTooltip": "",
+            "startOfPurchaseNumber": "",
+            "startOfPurchaseNumberTooltip": "",
+            "englishDateFormat": "",
+            "englishDateFormatTooltip": "",
+            "arabicDateFormat": "",
+            "arabicDateFormatTooltip": "",
+            "language": "",
+            "emailSupport": "",
+            "emailSupportTooltip": ""
+        },
+        "select": {
+            "startDateOfWeek": "",
+            "option": {
+                "useAMPM": "",
+                "use24Hours": ""
+            }
+        },
+        "notification": {
+            "updateSystemPropertySuccess": "",
+            "updateSystemPropertyFail": ""
+        },
+        "error": {
+            "exceedMaxFileSize": ""
+        }
+    },
+    "adminHeader": {
+        "text": {
+            "overview": "",
+            "logOut": ""
+        }
+    },
+    "userManagement": {
+        "text": {
+            "enabled": "",
+            "disabled": "",
+            "disableToggle": "",
+            "enableToggle": "",
+            "userDetail": "",
+            "userManagement": "",
+            "internalUsers": "",
+            "internalUsersTooltip": "",
+            "externalUsers": "",
+            "externalUsersTooltip": "",
+            "systemSettings": "",
+            "systemProperties": ""
+        },
+        "columnHeader": {
+            "name": "",
+            "nameTooltip": "",
+            "username": "",
+            "usernameTooltip": "",
+            "phoneNumbers": "",
+            "phoneNumbersTooltip": "",
+            "lastTimeLogged": "",
+            "lastTimeLoggedTooltip": "",
+            "status": "",
+            "statusTooltip": ""
+        }
+    },
+    "userDetail": {
+        "text": {
+            "userNotFound": "",
+            "updateUser": "",
+            "name": "",
+            "userName": "",
+            "phoneNumber": "",
+            "status": "",
+            "role": "",
+            "client": "",
+            "support": "",
+            "admin": ""
+        },
+        "inputField": {
+            "username": "",
+            "usernameTooltip": "",
+            "usernamePlaceholder": "",
+            "phone": "",
+            "status": "",
+            "changeStatusTooltip": ""
+        },
+        "button": {
+            "edit": ""
+        },
+        "select": {
+            "option": {
+                "enabled": "",
+                "disabled": ""
+            }
+        },
+        "error": {
+            "usernameRequired": ""
+        }
+    },
+    "salaryType": {
+        "text": {
+            "createSalaryType": "",
+            "updateSalaryType": "",
+            "salaryTypeDetail": "",
+            "draftSalaryTypes": "",
+            "draftSalaryTypesTooltip": "",
+            "activeSalaryTypes": "",
+            "activeSalaryTypesTooltip": "",
+            "draft": "",
+            "active": "",
+            "activateSalaryType": "",
+            "activateSalaryTypeTooltip": "",
+            "deactivateSalaryType": "",
+            "deactivateSalaryTypeTooltip": ""
+        },
+        "inputField": {
+            "salaryName": "",
+            "salaryNameTooltip": "",
+            "salaryNamePlaceholder": "",
+            "description": "",
+            "descriptionTooltip": "",
+            "descriptionPlaceholder": "",
+            "salaryType": "",
+            "salaryTypeTooltip": "",
+            "salaryTypePlaceholder": "",
+            "accountFrom": "",
+            "accountFromTooltip": "",
+            "accountFromPlaceholder": "",
+            "accountTo": "",
+            "accountToTooltip": "",
+            "accountToPlaceholder": "",
+            "note": "",
+            "noteTooltip": "",
+            "notePlaceholder": ""
+        },
+        "button": {
+            "createNewSalaryType": "",
+            "delete": "",
+            "update": "",
+            "detail": "",
+            "activate": "",
+            "deactivate": ""
+        },
+        "select": {
+            "option": {
+                "cashBenefit": "",
+                "expenseAllowance": "",
+                "naturalBenefit": ""
+            }
+        },
+        "columnHeader": {
+            "name": "",
+            "nameTooltip": "",
+            "status": "",
+            "statusTooltip": "",
+            "type": "",
+            "typeTooltip": "",
+            "action": "",
+            "actionTooltip": ""
+        },
+        "error": {
+            "typeRequired": "",
+            "accountFromRequired": "",
+            "accountToRequired": ""
+        }
+    },
+    "admin": {
+        "dashboard": {
+            "text": {
+                "welcome": "",
+                "genieSolution": "",
+                "companyManagement": ""
+            }
+        },
+        "notification": {
+            "getDraftSalaryTypesFail": "",
+            "getActiveSalaryTypesFail": "",
+            "createSalaryTypeSuccess": "",
+            "createSalaryTypeFail": "",
+            "updateSalaryTypeSuccess": "",
+            "updateSalaryTypeFail": "",
+            "deleteSalaryTypeSuccess": "",
+            "deleteSalaryTypeFail": "",
+            "getSalaryTypeByIdFail": "",
+            "activateSalaryTypeSuccess": "",
+            "activateSalaryTypeFail": "",
+            "deactivateSalaryTypeSuccess": "",
+            "deactivateSalaryTypeFail": "",
+            "updateUserSuccess": "",
+            "updateUserFail": ""
+        }
+    },
+    "emailTemplate": {
+        "systemNotification": {
+            "disableAccount": "",
+            "changePassword": "",
+            "forgotPassword": "",
+            "signUp": "",
+            "enableAccount": "",
+            "contactUsToUser": "",
+            "disableAccountSubject": "",
+            "changePasswordSubject": "",
+            "forgotPasswordSubject": "",
+            "signUpSubject": "",
+            "enableAccountSubject": "",
+            "contactUsToUserSubject": "",
+            "changeEmailSubject": "",
+            "changeEmail": ""
+        },
+        "invoice": {
+            "canceledInvoice": "",
+            "partlyCanceledInvoice": "",
+            "registeredPayment": "",
+            "createdInvoice": "",
+            "multipleDocuments": "",
+            "multipleDocumentsSubject": "",
+            "createdInvoiceSubject": "",
+            "registeredPaymentSubject": "",
+            "canceledInvoiceSubject": "",
+            "partlyCanceledInvoiceSubject": "",
+            "saleIsRegistered": "",
+            "saleIsRegisteredSubject": "",
+            "saleIsCanceled": "",
+            "saleIsCanceledSubject": ""
+        },
+        "footer": "",
+        "company": {
+            "confirmDeleteRealCompanySubject": "",
+            "confirmDeleteRealCompany": ""
+        }
+    },
+    "accountType": {
+        "select": {
+            "option": {
+                "bank": "",
+                "cash": ""
+            }
+        }
+    },
+    "companySettings": {
+        "invoiceTemplate": {
+            "title": ""
+        },
+        "invoiceType": {
+            "default": "",
+            "fromType": "",
+            "defaultTooltip": "",
+            "confirmEnabled": "",
+            "confirmDisabled": "",
+            "updateEnabled": "",
+            "updateDisabled": "",
+            "updateFailEnabled": "",
+            "updateFailDisabled": "",
+            "titleEnabled": "",
+            "titleDisabled": "",
+            "type": "",
+            "defaultInvoiceType": "",
+            "title": {
+                "defaultInvoiceType": ""
+            },
+            "updateTemplate": {
+                "success": "",
+                "fail": ""
+            },
+            "toggle": {
+                "enabled": "",
+                "disabled": ""
+            },
+            "enabled": "",
+            "disabled": "",
+            "infoTitle": "",
+            "message": "",
+            "invoiceTypeDisabled": ""
+        }
+    },
+    "companySetting": {
+        "invoiceType": {
+            "type": ""
+        }
+    },
+    "invoiceDetails": {
+        "history": {
+            "invoice": "",
+            "paymentReceipt": "",
+            "creditNote": ""
+        }
+    },
+    "createProduct": {
+        "select": {
+            "option": {
+                "service": "",
+                "item": ""
+            }
+        }
+    },
+    "purchasesList": {
+        "title": "",
+        "tab": {
+            "purchases": "",
+            "draftPurchases": ""
+        },
+        "button": {
+            "newPurchase": "",
+            "newPurchaseTooltip": ""
+        }
+    },
+    "purchases": {
+        "text": {
+            "newPurchase": "",
+            "dateAndType": "",
+            "changeDate": "",
+            "purchaseDate": "",
+            "totalDebt": "",
+            "addPaymentTitle": "",
+            "outstandingDebt": "",
+            "calculatedOutstandingDebt": "",
+            "dateWarning": "",
+            "productLines": "",
+            "overdueDebt": "",
+            "registered": "",
+            "dateRange": "",
+            "currency": "",
+            "purchaseAmount": "",
+            "reference": "",
+            "referenceTooltip": "",
+            "purchaseType": "",
+            "purchaseCurrency": "",
+            "calculatedPurchaseAmount": "",
+            "purchaseHistory": "",
+            "purchaseStatus": "",
+            "purchaseExchangeRate": ""
+        },
+        "inputField": {
+            "type": "",
+            "typeTooltip": "",
+            "remainingDaysPlaceholder": "",
+            "remainingDaysTooltip": "",
+            "remainingDays": "",
+            "purchaseDate": "",
+            "purchaseDateTooltip": "",
+            "dueDate": "",
+            "dueDateTooltip": "",
+            "supplier": "",
+            "name": "",
+            "invoiceReference": "",
+            "salesCurrency": "",
+            "exchangeRate": "",
+            "supplierTooltip": "",
+            "supplierPlaceholder": "",
+            "invoiceReferencePlaceholder": "",
+            "exchangeRateTooltip": "",
+            "payment": "",
+            "paymentAccount": "",
+            "description": "",
+            "comment": "",
+            "commentPlaceholder": "",
+            "commentTooltip": "",
+            "product": "",
+            "productPlaceholder": "",
+            "accounts": "",
+            "accountsPlaceholder": "",
+            "accountsTooltip": "",
+            "purchaseCurrencyAmountPlaceHolder": ""
+        },
+        "select": {
+            "option": {
+                "cashPurchase": "",
+                "invoicedPurchase": ""
+            }
+        },
+        "error": {
+            "exchangeRateMustGreaterThan0": "",
+            "exchangeRateRequired": "",
+            "accountRequired": ""
+        },
+        "button": {
+            "registerPurchase": "",
+            "cancelPurchase": "",
+            "cancelPurchaseTooltip": "",
+            "previewAndSendPurchaseTooltip": ""
+        },
+        "columnHeader": {
+            "supplier": "",
+            "billingDate": "",
+            "billingDateTooltip": "",
+            "purchaseNumber": "",
+            "paymentStatus": "",
+            "amount": "",
+            "dueDate": ""
+        },
+        "info": {
+            "settledStatus": {
+                "message": ""
+            }
+        }
+    },
+    "attachment": {
+        "dialog": {
+            "cropImage": {
+                "button": {
+                    "submit": ""
+                },
+                "title": ""
+            }
+        }
+    }
+}
