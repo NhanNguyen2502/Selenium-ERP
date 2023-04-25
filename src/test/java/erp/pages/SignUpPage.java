@@ -21,7 +21,7 @@ public class SignUpPage {
 
     @FindBy(xpath = "//img[@src='assets/images/erp-logo.svg']")
     private WebElement logoAccountia;
-    @FindBy(xpath = "//span[text()='Accountia' and @class]")
+    @FindBy(xpath = "//a//div//span[text()='Accountia']")
     private WebElement nameAccountia;
     @FindBy(xpath = "//h1[@data-cy='formTitle']")
     private WebElement formTitle;
@@ -43,7 +43,7 @@ public class SignUpPage {
     private WebElement passwordConditonBox;
     @FindBys(@FindBy(how = How.XPATH, using = "//div[@fxlayoutalign='start center']"))
     private List<WebElement> passwordConditions;
-    private By signUpLink = By.xpath("//span[contains(.,'Sign up')]");
+    private By signUpLink = By.xpath("//a[@routerlink='/auth/signup']");
 
     public SignUpPage(WebDriver driver) {
         this.driver = driver;
@@ -52,28 +52,6 @@ public class SignUpPage {
         validateHelper = new ValidateHelper(driver);
     }
 
-    public void verifyAllElements() {
-        wait.until(ExpectedConditions.elementToBeClickable(logoAccountia));
-        wait.until(ExpectedConditions.elementToBeClickable(nameAccountia));
-        wait.until(ExpectedConditions.elementToBeClickable(formTitle));
-        wait.until(ExpectedConditions.elementToBeClickable(emailField));
-        wait.until(ExpectedConditions.elementToBeClickable(passwordField));
-        wait.until(ExpectedConditions.elementToBeClickable(eyeCloseIcon));
-        wait.until(ExpectedConditions.elementToBeClickable(signUpButton));
-        wait.until(ExpectedConditions.elementToBeClickable(reCaptcha));
-        wait.until(ExpectedConditions.elementToBeClickable(generateButton));
-        wait.until(ExpectedConditions.elementToBeClickable(passwordConditonBox));
-        logoAccountia.isDisplayed();
-        nameAccountia.isDisplayed();
-        formTitle.isDisplayed();
-        emailField.isDisplayed();
-        passwordField.isDisplayed();
-        eyeCloseIcon.isDisplayed();
-        signUpButton.isDisplayed();
-        reCaptcha.isDisplayed();
-        generateButton.isDisplayed();
-        passwordConditonBox.isDisplayed();
-    }
 
     public void goToSignUpPage() {
         validateHelper.clickElement(signUpLink);

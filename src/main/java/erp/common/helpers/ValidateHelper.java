@@ -8,10 +8,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class ValidateHelper {
     private WebDriver driver;
     private WebDriverWait wait;
+
 
     public ValidateHelper(WebDriver driver) {
         this.driver = driver;
@@ -42,9 +44,12 @@ public class ValidateHelper {
     public boolean checkDisplayed(By element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         if (driver.findElement(element).isDisplayed())
-            return  true;
+            return true;
         return false;
     }
 
-
+    public String getLanguageToTest() {
+        PropertiesHelper.loadAllFile();
+         return  PropertiesHelper.getValue("language");
+    }
 }

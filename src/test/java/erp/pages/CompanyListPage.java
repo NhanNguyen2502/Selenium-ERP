@@ -1,5 +1,7 @@
 package erp.pages;
 
+import erp.common.helpers.TranslationHelpers;
+import erp.common.helpers.ValidateHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,10 +16,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class CompanyListPage {
     private WebDriver driver;
     private WebDriverWait wait;
+    private ValidateHelper  validateHelper;
 
 
     private By selecteCompanyDropdown = By.xpath("//div[@data-cy='select-company-button']");
@@ -27,7 +31,7 @@ public class CompanyListPage {
     //private By currentPageTitle = By.xpath("//span[@data-cy='breadcrumb-label']");
     @FindBy(xpath = "//span[@data-cy='breadcrumb-label']")
     WebElement currentPageTitle;
-    private By contactUsLink = By.xpath("//a//span[contains(text(),'Contact Us')]");
+    private By contactUsLink = By.xpath("//a[@data-cy='contact-us-link']");
     //private By languageOption = By.xpath("//app-language-option//button[@data-cy='language-option-btn']");
     @FindBy(xpath = "//app-language-option//button[@data-cy='language-option-btn']")
     WebElement languageOption;
@@ -57,12 +61,37 @@ public class CompanyListPage {
     //private By tableTitle = By.xpath("//mat-header-row[@role='row']");
     @FindBy(xpath = "//mat-header-row[@role='row']")
     WebElement tableTitle;
+    private By languageButton = By.xpath("//app-language-option");
+    private By languageOptions = By.xpath("//div[@data-cy='language-option-item']");
 
     public CompanyListPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        validateHelper = new ValidateHelper(driver);
         PageFactory.initElements(driver, this);
     }
+
+    public void verifylanguage(String language) {
+        validateHelper.clickElement(languageButton);
+        wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
+        List<WebElement> options = driver.findElements(languageOptions);
+        String key = "$.languageSelect.option.english";
+        switch (language) {
+            case "English" -> key = "$.languageSelect.option.english";
+            case "Arabic" -> key = "$.languageSelect.option.arabic";
+            case "Kurdish - Badini" -> key = "$.languageSelect.option.badini";
+            case "Kurdish - Sorani" -> key = "$.languageSelect.option.sorani";
+            default -> System.out.println("default");
+        }
+
+        for (WebElement o : options) {
+            if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(validateHelper.getLanguageToTest(), key))) {
+                System.out.println(o.getText());
+                o.click();
+            }
+        }
+    }
+
 
     public boolean verifySelectCompanyonLeftMenu() {
         WebElement element = driver.findElement(selecteCompanyDropdown);
@@ -82,14 +111,14 @@ public class CompanyListPage {
         return false;
     }
 
-    public boolean verifyBodyOfPage() {
+    public boolean verifyBodyOfPage(String Companies, String companyList, String rowtext) {
         if (true) {
-            currentPageTitle.getText().contains("Companies");
-            tableTitle.getText().contains("Company list");
+            currentPageTitle.getText().equals(Companies);
+            tableTitle.getText().equals(companyList);
             createButton.isDisplayed();
             companyStatusList.isDisplayed();
             columnConfigButton.isDisplayed();
-            rowPagePerText.getText().contains("Rows per page:");
+            rowPagePerText.getText().equals(rowtext);
             rowPagePerSelection.isDisplayed();
             searchField.isDisplayed();
             return true;
