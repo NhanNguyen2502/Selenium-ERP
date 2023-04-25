@@ -1,7 +1,9 @@
 package erp.pages;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import erp.common.helpers.TranslationHelpers;
 import erp.common.helpers.ValidateHelper;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 
 public class SignInPage {
@@ -21,12 +24,12 @@ public class SignInPage {
     private WebDriverWait wait = null;
     private final int timeout = 20;
     //private By headerText = By.xpath("//h1[text()='Welcome']");
-    @FindBy(xpath = ("//h1[text()='Welcome']"))
+    @FindBy(xpath = ("//h1[@data-cy='formTitle']"))
     private WebElement headerText;
-    private By formtitle = By.xpath("//h1[normalize-space()='Welcome']");
+    private By formtitle = By.xpath("//h1[@data-cy='formTitle']");
     private By usernameTextBox = By.xpath("//input[@id='mat-input-0']");
     private By passwordTextBox = By.xpath("//input[@data-cy='password']");
-    private By loginButton = By.xpath("//span[text()='Sign In']");
+    private By loginButton = By.xpath("//button[@data-cy='linkToDashboard']");
     private By logoAccountia = By.xpath("//a[@class='text-decoration-none']");
     private By forgetPassword = By.xpath("//a[text()=' Forgot your password? ']");
     private By signUpText = By.xpath("//span[text()=' Sign up ']");
@@ -40,6 +43,8 @@ public class SignInPage {
     private By cancleButtonResendDialog = By.xpath("//button[@data-cy='dialog-cancel-button']");
     private By closeResendDialog = By.xpath("//button[@data-cy='dialog-close-button']");
     private By resnedEmailButton = By.xpath("//button[@data-cy='dialog-resend-button']");
+    private By languageButton = By.xpath("//app-language-option[@class='ng-tns-c166-1 ng-star-inserted']//button[@id='language-option-btn']");
+    private By languageOptions = By.xpath("//div[@data-cy='language-option-item']");
 
     public ValidateHelper validateHelper;
 
@@ -48,6 +53,53 @@ public class SignInPage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         validateHelper = new ValidateHelper(driver);
         PageFactory.initElements(driver, this);
+    }
+
+    public void verifylanguage(String language) {
+        switch (language) {
+            case "english":
+                System.out.println("Language is english");
+                break;
+            case "Arabic": {
+                validateHelper.clickElement(languageButton);
+                wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
+                List<WebElement> options = driver.findElements(languageOptions);
+                for (WebElement o : options) {
+                    if (o.getText().contains("Arabic")) {
+                        System.out.println(o.getText());
+                        o.click();
+                    }
+                }
+            }
+            break;
+            case "Kurdish - Badini": {
+                validateHelper.clickElement(languageButton);
+                wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
+                List<WebElement> options = driver.findElements(languageOptions);
+                for (WebElement o : options) {
+                    if (o.getText().contains("Kurdish - Badini")) {
+                        System.out.println(o.getText());
+                        o.click();
+                    }
+                }
+            }
+            break;
+            case "Kurdish - Sorani": {
+                validateHelper.clickElement(languageButton);
+                wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
+                List<WebElement> options = driver.findElements(languageOptions);
+                for (WebElement o : options) {
+                    if (o.getText().contains("Kurdish - Sorani")) {
+                        System.out.println(o.getText());
+                        o.click();
+                    }
+                }
+            }
+            break;
+            default:
+                System.out.println("default");
+
+        }
     }
 
 
@@ -61,9 +113,9 @@ public class SignInPage {
         return element.isDisplayed();
     }
 
-    public boolean verifyTitle() {
+    public boolean verifyTitle(String content) {
         wait.until(ExpectedConditions.elementToBeClickable(headerText));
-        return headerText.getText().contains("Welcome");
+        return headerText.getText().contains(content);
     }
 
     public boolean verifyUsernameTextBox() {
@@ -114,16 +166,16 @@ public class SignInPage {
         return validateHelper.getMessage(wrongUsernameOrPass);
     }
 
-    public void verifyAccountInactive(String Email, String Pass, String ContentOfInform) {
+    public void verifyAccountInactive(String Email, String Pass, String ContentOfInform, String language) {
         validateHelper.setText(usernameTextBox, Email);
         validateHelper.setText(passwordTextBox, Pass);
         validateHelper.clickElement(loginButton);
         wait.until(ExpectedConditions.elementToBeClickable(resendEmailActiveDialog));
-        Assert.assertEquals(validateHelper.getMessage(resendTitle), "Email not verified");
+        Assert.assertEquals(validateHelper.getMessage(resendTitle), TranslationHelpers.setFile(language, "$.auth.resendVerificationEmail.text.header"));
         Assert.assertEquals(validateHelper.getMessage(resendContent), ContentOfInform);
-        Assert.assertTrue(validateHelper.checkDisplayed(cancleButtonResendDialog),"The cancel button doesn't display!");
-        Assert.assertTrue(validateHelper.checkDisplayed(resnedEmailButton),"The resend button doesn't display!");
-        Assert.assertTrue(validateHelper.checkDisplayed(closeResendDialog),"The close button not display!");
+        Assert.assertTrue(validateHelper.checkDisplayed(cancleButtonResendDialog), "The cancel button doesn't display!");
+        Assert.assertTrue(validateHelper.checkDisplayed(resnedEmailButton), "The resend button doesn't display!");
+        Assert.assertTrue(validateHelper.checkDisplayed(closeResendDialog), "The close button not display!");
         validateHelper.clickElement(cancleButtonResendDialog);
     }
 
