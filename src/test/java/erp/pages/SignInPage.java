@@ -1,9 +1,7 @@
 package erp.pages;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import erp.common.helpers.TranslationHelpers;
-import erp.common.helpers.ValidateHelper;
-import org.jetbrains.annotations.NotNull;
+import erp.common.helpers.ValidateHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -46,12 +44,12 @@ public class SignInPage {
     private By languageButton = By.xpath("//app-language-option[@class='ng-tns-c166-1 ng-star-inserted']//button[@id='language-option-btn']");
     private By languageOptions = By.xpath("//div[@data-cy='language-option-item']");
 
-    public ValidateHelper validateHelper;
+    public ValidateHelpers validateHelpers;
 
     public SignInPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        validateHelper = new ValidateHelper(driver);
+        validateHelpers = new ValidateHelpers(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -61,7 +59,7 @@ public class SignInPage {
                 System.out.println("Language is english");
                 break;
             case "Arabic": {
-                validateHelper.clickElement(languageButton);
+                validateHelpers.clickElement(languageButton);
                 wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
                 List<WebElement> options = driver.findElements(languageOptions);
                 for (WebElement o : options) {
@@ -73,7 +71,7 @@ public class SignInPage {
             }
             break;
             case "Kurdish - Badini": {
-                validateHelper.clickElement(languageButton);
+                validateHelpers.clickElement(languageButton);
                 wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
                 List<WebElement> options = driver.findElements(languageOptions);
                 for (WebElement o : options) {
@@ -85,7 +83,7 @@ public class SignInPage {
             }
             break;
             case "Kurdish - Sorani": {
-                validateHelper.clickElement(languageButton);
+                validateHelpers.clickElement(languageButton);
                 wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
                 List<WebElement> options = driver.findElements(languageOptions);
                 for (WebElement o : options) {
@@ -135,16 +133,16 @@ public class SignInPage {
 
     public CompanyListPage login(String Username, String Password) {
         //validateHelper.setText(usernameTextBox, "testdeferp@yopmail.com");
-        validateHelper.setText(usernameTextBox, Username);
-        validateHelper.setText(passwordTextBox, Password);
-        validateHelper.clickElement(loginButton);
+        validateHelpers.setText(usernameTextBox, Username);
+        validateHelpers.setText(passwordTextBox, Password);
+        validateHelpers.clickElement(loginButton);
         return new CompanyListPage(driver);
     }
 
     public String verifyEmailnull() throws Exception {
 
-        validateHelper.setText(usernameTextBox, "");
-        validateHelper.clickElement(formtitle);
+        validateHelpers.setText(usernameTextBox, "");
+        validateHelpers.clickElement(formtitle);
         Thread.sleep(1000);
         return driver.findElement(userInform).getText();
 
@@ -152,31 +150,38 @@ public class SignInPage {
 
     public String verifyPasswordNUll() throws Exception {
 
-        validateHelper.setText(passwordTextBox, "");
-        validateHelper.clickElement(formtitle);
+        validateHelpers.setText(passwordTextBox, "");
+        validateHelpers.clickElement(formtitle);
         Thread.sleep(1000);
         return driver.findElement(passwordInform).getText();
     }
 
     public String verifyWrongEmailOrPassword(String Email, String Password) throws Exception {
-        validateHelper.setText(usernameTextBox, Email);
-        validateHelper.setText(passwordTextBox, Password);
-        validateHelper.clickElement(loginButton);
+        validateHelpers.setText(usernameTextBox, Email);
+        validateHelpers.setText(passwordTextBox, Password);
+        validateHelpers.clickElement(loginButton);
         Thread.sleep(1000);
-        return validateHelper.getMessage(wrongUsernameOrPass);
+        return validateHelpers.getMessage(wrongUsernameOrPass);
     }
 
     public void verifyAccountInactive(String Email, String Pass, String ContentOfInform, String language) {
-        validateHelper.setText(usernameTextBox, Email);
-        validateHelper.setText(passwordTextBox, Pass);
-        validateHelper.clickElement(loginButton);
+        validateHelpers.setText(usernameTextBox, Email);
+        validateHelpers.setText(passwordTextBox, Pass);
+        validateHelpers.clickElement(loginButton);
         wait.until(ExpectedConditions.elementToBeClickable(resendEmailActiveDialog));
-        Assert.assertEquals(validateHelper.getMessage(resendTitle), TranslationHelpers.setFile(language, "$.auth.resendVerificationEmail.text.header"));
-        Assert.assertEquals(validateHelper.getMessage(resendContent), ContentOfInform);
-        Assert.assertTrue(validateHelper.checkDisplayed(cancleButtonResendDialog), "The cancel button doesn't display!");
-        Assert.assertTrue(validateHelper.checkDisplayed(resnedEmailButton), "The resend button doesn't display!");
-        Assert.assertTrue(validateHelper.checkDisplayed(closeResendDialog), "The close button not display!");
-        validateHelper.clickElement(cancleButtonResendDialog);
+        Assert.assertEquals(validateHelpers.getMessage(resendTitle), TranslationHelpers.setFile(language, "$.auth.resendVerificationEmail.text.header"));
+        Assert.assertEquals(validateHelpers.getMessage(resendContent), ContentOfInform);
+        Assert.assertTrue(validateHelpers.checkDisplayed(cancleButtonResendDialog), "The cancel button doesn't display!");
+        Assert.assertTrue(validateHelpers.checkDisplayed(resnedEmailButton), "The resend button doesn't display!");
+        Assert.assertTrue(validateHelpers.checkDisplayed(closeResendDialog), "The close button not display!");
+        validateHelpers.clickElement(cancleButtonResendDialog);
+    }
+
+    public  CreateCompanyPage signinWithCreateCompany(String email, String password){
+        validateHelpers.setText(usernameTextBox, email);
+        validateHelpers.setText(passwordTextBox, password);
+        validateHelpers.clickElement(loginButton);
+        return  new CreateCompanyPage(driver);
     }
 
 

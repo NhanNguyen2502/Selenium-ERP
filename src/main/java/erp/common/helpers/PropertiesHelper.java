@@ -95,4 +95,9 @@ public class PropertiesHelper {
         }
     }
 
+    public static String getLanguageToTest() {
+        PropertiesHelper.loadAllFile();
+        return PropertiesHelper.getValue("language");
+    }
+
 }

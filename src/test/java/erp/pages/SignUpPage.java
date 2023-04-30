@@ -1,6 +1,6 @@
 package erp.pages;
 
-import erp.common.helpers.ValidateHelper;
+import erp.common.helpers.ValidateHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +17,7 @@ import java.util.List;
 public class SignUpPage {
     private WebDriver driver;
     private WebDriverWait wait;
-    public ValidateHelper validateHelper;
+    public ValidateHelpers validateHelpers;
 
     @FindBy(xpath = "//img[@src='assets/images/erp-logo.svg']")
     private WebElement logoAccountia;
@@ -49,12 +49,12 @@ public class SignUpPage {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
-        validateHelper = new ValidateHelper(driver);
+        validateHelpers = new ValidateHelpers(driver);
     }
 
 
     public void goToSignUpPage() {
-        validateHelper.clickElement(signUpLink);
+        validateHelpers.clickElement(signUpLink);
     }
 
     public void verifyEyeOpen() {
