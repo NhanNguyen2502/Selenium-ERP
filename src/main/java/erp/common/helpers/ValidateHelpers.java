@@ -10,12 +10,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class ValidateHelper {
+public class ValidateHelpers {
     private WebDriver driver;
     private WebDriverWait wait;
+    private By logoutButton = By.xpath("//button[@data-cy='log-out-button']");
 
 
-    public ValidateHelper(WebDriver driver) {
+    public ValidateHelpers(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
@@ -48,8 +49,8 @@ public class ValidateHelper {
         return false;
     }
 
-    public String getLanguageToTest() {
-        PropertiesHelper.loadAllFile();
-         return  PropertiesHelper.getValue("language");
+
+    public void logout() {
+        clickElement(logoutButton);
     }
 }

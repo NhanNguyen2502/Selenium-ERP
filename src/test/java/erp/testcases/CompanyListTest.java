@@ -4,7 +4,7 @@ import erp.base.BaseSetup;
 import erp.common.helpers.ExcelHelper;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
-import erp.common.helpers.ValidateHelper;
+import erp.common.helpers.ValidateHelpers;
 import erp.pages.CompanyListPage;
 import erp.pages.SignInPage;
 import org.openqa.selenium.JavascriptExecutor;
@@ -18,16 +18,16 @@ public class CompanyListTest extends BaseSetup {
     public SignInPage signInPage;
     public CompanyListPage companyListPage;
     private ExcelHelper excelHelper;
-    private ValidateHelper validateHelper;
+    private ValidateHelpers validateHelpers;
 
     @BeforeClass
     public void setUp() {
         this.driver = getDriver();
         signInPage = new SignInPage(driver);
         excelHelper = new ExcelHelper();
-        validateHelper = new ValidateHelper(driver);
+        validateHelpers = new ValidateHelpers(driver);
         PropertiesHelper.loadAllFile();
-        signInPage.verifylanguage(validateHelper.getLanguageToTest());
+        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
     }
 
@@ -42,12 +42,12 @@ public class CompanyListTest extends BaseSetup {
     public void verifyElements() throws Exception {
         Thread.sleep(2000);
         companyListPage.waitForPageLoaded();
-        companyListPage.verifylanguage(validateHelper.getLanguageToTest());
+        companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
         companyListPage.verifySelectCompanyonLeftMenu();
         companyListPage.verifyHeader();
-        Assert.assertTrue(companyListPage.verifyBodyOfPage(TranslationHelpers.setFile(validateHelper.getLanguageToTest(), "$.general.pageTitle.companies"),
-                TranslationHelpers.setFile(validateHelper.getLanguageToTest(), "$.header.breadcrumb.companyList"),
-                TranslationHelpers.setFile(validateHelper.getLanguageToTest(), "$.pagination.inputField.rowsPerPage") + ":"), "False");
+        Assert.assertTrue(companyListPage.verifyBodyOfPage(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.general.pageTitle.companies"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.header.breadcrumb.companyList"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.pagination.inputField.rowsPerPage") + ":"), "False");
     }
 
 

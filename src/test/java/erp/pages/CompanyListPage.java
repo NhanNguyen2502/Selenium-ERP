@@ -1,27 +1,27 @@
 package erp.pages;
 
+import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
-import erp.common.helpers.ValidateHelper;
+import erp.common.helpers.ValidateHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.PageFactoryFinder;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Properties;
 
 public class CompanyListPage {
     private WebDriver driver;
     private WebDriverWait wait;
-    private ValidateHelper  validateHelper;
+    private ValidateHelpers validateHelpers;
 
 
     private By selecteCompanyDropdown = By.xpath("//div[@data-cy='select-company-button']");
@@ -67,12 +67,12 @@ public class CompanyListPage {
     public CompanyListPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        validateHelper = new ValidateHelper(driver);
+        validateHelpers = new ValidateHelpers(driver);
         PageFactory.initElements(driver, this);
     }
 
     public void verifylanguage(String language) {
-        validateHelper.clickElement(languageButton);
+        validateHelpers.clickElement(languageButton);
         wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
         List<WebElement> options = driver.findElements(languageOptions);
         String key = "$.languageSelect.option.english";
@@ -85,7 +85,7 @@ public class CompanyListPage {
         }
 
         for (WebElement o : options) {
-            if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(validateHelper.getLanguageToTest(), key))) {
+            if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), key))) {
                 System.out.println(o.getText());
                 o.click();
             }
