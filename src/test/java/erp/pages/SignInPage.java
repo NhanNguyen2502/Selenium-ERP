@@ -177,7 +177,7 @@ public class SignInPage {
         validateHelpers.clickElement(cancleButtonResendDialog);
     }
 
-    public  CreateCompanyPage signinWithCreateCompany(String email, String password){
+    public CreateCompanyPage signinWithCreateCompany(String email, String password){
         validateHelpers.setText(usernameTextBox, email);
         validateHelpers.setText(passwordTextBox, password);
         validateHelpers.clickElement(loginButton);

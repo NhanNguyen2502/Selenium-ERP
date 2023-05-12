@@ -95,6 +95,9 @@ public class CreateCompanyPage extends BaseSetup {
     private By addTimeZoneButton = By.xpath("//app-timezone//button");
     private By cancelCreateButton = By.xpath("//button[@data-cy='cancel-company-button']");
     private By createButton = By.xpath("//button[@data-cy='create-legal-company-button']");
+    private By leaveButton = By.xpath("//button[@data-cy='dialog-yes-button']");
+    private By demoCompanyButton = By.xpath("//button[@data-cy='move-to-create-test-company-button']");
+
 
 
     public CreateCompanyPage(WebDriver driver) {
@@ -105,33 +108,20 @@ public class CreateCompanyPage extends BaseSetup {
         action = new Actions(driver);
     }
 
-    public void verifyTextOfContactSection() {
-        action.moveToElement(driver.findElement(companyContactInfor)).build().perform();
-        Assert.assertTrue(validateHelpers.checkDisplayed(companyContactInfor), "Error at verifyTextOfContactSection row 1");
-        Assert.assertTrue(validateHelpers.checkDisplayed(companyContactInforTitle), "Error at verifyTextOfContactSection row 2");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctEmailTitle), "Error at verifyTextOfContactSection row 3");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctEmailField), "Error at verifyTextOfContactSection row 4");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctPhoneTitle), "Error at verifyTextOfContactSection row 5");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctPhoneCodefield), "Error at verifyTextOfContactSection row 6");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctPhonenumberField), "Error at verifyTextOfContactSection row 10");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctWebsitetitle), "Error at verifyTextOfContactSection row 11");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctWebSiteField), "Error at verifyTextOfContactSection row 12");
-        Assert.assertTrue(validateHelpers.checkDisplayed(addressSectionTitle), "Error at verifyTextOfContactSection row 13");
-        Assert.assertTrue(validateHelpers.checkDisplayed(addFirst), "Error at verifyTextOfContactSection row 14");
-        Assert.assertTrue(validateHelpers.checkDisplayed(addFirstField), "Error at verifyTextOfContactSection row 15");
-       //Assert.assertEquals(validateHelpers.getMessage(companyInformationTitle));
-
+    public CreateDemoCompanyPage goToCreateDemoCompanyForm(){
+        validateHelpers.clickElement(demoCompanyButton);
+        return  new CreateDemoCompanyPage(driver);
+    }
+    public void leaveFormcreate(){
+        action.moveToElement(driver.findElement(cancelCreateButton)).build().perform();
+        WebElement a = driver.findElement(cancelCreateButton);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();",a);
+        validateHelpers.clickElement(leaveButton);
     }
 
-    public void verifyTextofheaderPage(String breadcrumtitle, String createCompanyTitlePage, String appDescription) {
-        Assert.assertTrue(validateHelpers.checkDisplayed(breadcrumbTitle));
-        Assert.assertTrue(validateHelpers.checkDisplayed(createCompanyTitle));
-        Assert.assertTrue(validateHelpers.checkDisplayed(appPageDescription));
-        Assert.assertEquals(validateHelpers.getMessage(step1Completed), "Completed", "verifyTextofheaderPage wrong text 1");
-        Assert.assertEquals(validateHelpers.getMessage(breadcrumbTitle), breadcrumtitle, "verifyTextofheaderPage wrong text 2");
-        Assert.assertEquals(validateHelpers.getMessage(createCompanyTitle), createCompanyTitlePage, "verifyTextofheaderPage wrong text 3");
-        Assert.assertEquals(validateHelpers.getMessage(appPageDescription), appDescription, "verifyTextofheaderPage wrong text 4");
-    }
+
+
 
 
     public void verifyTextOfStep(String ContentOfStep1, String ContentOfStep2, String ContentOfStep3) {
@@ -141,52 +131,6 @@ public class CreateCompanyPage extends BaseSetup {
         Assert.assertEquals(validateHelpers.getMessage(markstep1Content), ContentOfStep1, "Mark1 wrong text");
         Assert.assertEquals(validateHelpers.getMessage(markstep2Content), ContentOfStep2, "Mark2 wrong text");
         Assert.assertEquals(validateHelpers.getMessage(markstep3Content), ContentOfStep3, "Mark3 wrong text");
-    }
-
-    public void verifyTextofCompanySection(String companytitle, String organization, String orWarning, String coTitle, String mainTitle, String mainWarning,
-                                           String esTitle) {
-        Assert.assertTrue(validateHelpers.checkDisplayed(companyInformation));
-        Assert.assertTrue(validateHelpers.checkDisplayed(companyInformationTitle));
-        Assert.assertTrue(validateHelpers.checkDisplayed(organizationNo));
-        Assert.assertTrue(validateHelpers.checkDisplayed(organizationNoField));
-        Assert.assertTrue(validateHelpers.checkDisplayed(organisationWarning));
-        Assert.assertTrue(validateHelpers.checkDisplayed(companyTitle));
-        Assert.assertTrue(validateHelpers.checkDisplayed(companyFiled));
-        Assert.assertTrue(validateHelpers.checkDisplayed(maincurrencyTitle));
-        Assert.assertTrue(validateHelpers.checkDisplayed(mainCurrencyField));
-        Assert.assertTrue(validateHelpers.checkDisplayed(mainCurrencyWarning));
-        Assert.assertTrue(validateHelpers.checkDisplayed(establishedTitle));
-        Assert.assertTrue(validateHelpers.checkDisplayed(establishedDate));
-        Assert.assertTrue(validateHelpers.checkDisplayed(establishedDateButton));
-        Assert.assertEquals(validateHelpers.getMessage(companyInformationTitle), companytitle);
-        Assert.assertEquals(validateHelpers.getMessage(organizationNo), organization);
-        Assert.assertEquals(validateHelpers.getMessage(organisationWarning), orWarning);
-        Assert.assertEquals(validateHelpers.getMessage(organisationWarning), orWarning);
-        Assert.assertEquals(validateHelpers.getMessage(companyTitle), coTitle);
-        Assert.assertEquals(validateHelpers.getMessage(maincurrencyTitle), mainTitle);
-        Assert.assertEquals(validateHelpers.getMessage(mainCurrencyWarning), mainWarning);
-        Assert.assertEquals(validateHelpers.getMessage(establishedTitle), esTitle);
-    }
-
-    public void verifyFieldIsRequiredAndErrorMessage(String orErrorMessage, String comErrormessage, String mainErrorMessage) {
-        Assert.assertTrue(validateHelpers.checkDisplayed(companyFiled));
-        Assert.assertTrue(validateHelpers.checkDisplayed(organizationNoField));
-        Assert.assertTrue(validateHelpers.checkDisplayed(mainCurrencyField));
-        validateHelpers.clickElement(companyFiled);
-        validateHelpers.clickElement(organizationNoField);
-        validateHelpers.clickElement(mainCurrencyField);
-        validateHelpers.clickElement(mainCurrencyWarning);
-        Assert.assertEquals(validateHelpers.getMessage(orgaisationErrorMessage), orErrorMessage);
-        Assert.assertEquals(validateHelpers.getMessage(companyErrorMessage), comErrormessage);
-        Assert.assertEquals(validateHelpers.getMessage(mainCurrencyErrorMessage), mainErrorMessage);
-    }
-
-    public void verifyTextAndFormatDateOfEstablished(String esErrorMessage) {
-        action.moveToElement(driver.findElement(establishedDate)).build().perform();
-        validateHelpers.clearElement(establishedDate);
-        validateHelpers.setText(establishedDate, "asdasd123");
-        validateHelpers.clickElement(establishedDate);
-        Assert.assertEquals(validateHelpers.getMessage(estabErrorMessage), esErrorMessage, "Wrong established error message");
     }
 
     public void verifyTextOfCreateSection(String realHeader, String realContent,
@@ -203,19 +147,14 @@ public class CreateCompanyPage extends BaseSetup {
 
     }
 
-    public void goToCreatecRealCompanyPage() {
+    public CreateRealCompanyPage goToCreatecRealCompanyPage() {
         validateHelpers.clickElement(createRealCompanyButton);
+        return new CreateRealCompanyPage(driver);
     }
 
     public void goToCreateDemoCompany() {
         validateHelpers.clickElement(createDemoCompanyButton);
     }
-
-    public void verifyTextOfBankAccountdetailesSection() {
-        validateHelpers.checkDisplayed(companyInformation);
-
-    }
-
 
     public void verifylanguage(String language) {
         validateHelpers.clickElement(languageButton);

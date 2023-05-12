@@ -48,6 +48,11 @@ public class ValidateHelpers {
 
     }
 
+//    public boolean checkDisabled(By element) {
+//        wait.until(ExpectedConditions.elementToBeClickable(element));
+//        return driver.findElement(element);
+//    }
+
 
     public void logout() {
         clickElement(logoutButton);
