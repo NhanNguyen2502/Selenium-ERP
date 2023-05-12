@@ -1,11 +1,11 @@
 package erp.testcases;
 
 import erp.base.BaseSetup;
-import erp.common.helpers.Helper;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
-import erp.common.helpers.ValidateHelpers;
 import erp.pages.CreateCompanyPage;
+import erp.pages.CreateDemoCompanyPage;
+import erp.pages.CreateRealCompanyPage;
 import erp.pages.SignInPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
@@ -15,6 +15,8 @@ public class CreateCompanyTest extends BaseSetup {
     private WebDriver driver;
     private SignInPage signInPage;
     private CreateCompanyPage createCompanyPage;
+    private CreateDemoCompanyPage createDemoCompanyPage;
+    private CreateRealCompanyPage createRealCompanyPage;
 
     @BeforeClass
     public void beforeClass() {
@@ -44,29 +46,51 @@ public class CreateCompanyTest extends BaseSetup {
     }
 
     @Test(priority = 2)
-    public void verifyCreateRealcompany() {
+    public void verifyTextCreateRealcompany() throws Exception {
         createCompanyPage.verifylanguage(PropertiesHelper.getLanguageToTest());
         createCompanyPage.waitForPageLoaded();
-        createCompanyPage.goToCreatecRealCompanyPage();
-        createCompanyPage.verifyTextofheaderPage(
+        createRealCompanyPage = createCompanyPage.goToCreatecRealCompanyPage();
+        createRealCompanyPage.verifyTextofheaderPage(
                 TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.header.breadcrumb.companies"),
                 TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.text.legalCompanyTitle"),
                 TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.text.description")
         );
-        createCompanyPage.verifyTextofCompanySection(
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.editViewPage.tabBankAccount.title"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.createPage.inputField.organisationNumber"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.createPage.inputField.organNoWarning"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.createPage.inputField.companyName"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.createPage.inputField.mainCurrency"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.createPage.inputField.mainCurrencyWarning"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.createPage.inputField.establishDate"));
-        createCompanyPage.verifyFieldIsRequiredAndErrorMessage(
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.createPage.error.organisationNumberRequired"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.createPage.error.companyNameRequired"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.createPage.error.mainCurrencyRequired")
+        createRealCompanyPage.verifyTextofCompanySection(
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.editViewPage.tabBankAccount.title"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.organisationNumber"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.organNoWarning"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.companyName"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.mainCurrency"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.mainCurrencyWarning"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.establishDate"));
+        createRealCompanyPage.verifyFieldIsRequiredAndErrorMessage(
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.error.organisationNumberRequired"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.error.companyNameRequired"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.error.mainCurrencyRequired")
         );
-        createCompanyPage.verifyTextAndFormatDateOfEstablished(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.createPage.error.establishDateInvalid"));
-        createCompanyPage.verifyTextOfContactSection();
+        createRealCompanyPage.verifyTextAndFormatDateOfEstablished(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.error.establishDateInvalid"));
+        createRealCompanyPage.verifyTextOfContactSection(
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.text.contactInfo"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.email"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.companyPhoneNumbers"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.website"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.address"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.firstStreetAddress"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.secondStreetAddress"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.thirdStreetAddress"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.country"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.zipcode"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.city"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.createPage.inputField.timezone")
+        );
+        createCompanyPage.leaveFormcreate();
     }
+
+    @Test(priority = 3)
+    public void verifyTextCreateDmoCompanyForm() {
+        createCompanyPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        createDemoCompanyPage = createCompanyPage.goToCreateDemoCompanyForm();
+        createDemoCompanyPage.waitForPageLoaded();
+    }
+
 }
