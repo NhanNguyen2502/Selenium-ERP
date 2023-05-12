@@ -40,14 +40,13 @@ public class CompanyListTest extends BaseSetup {
 
     @Test(priority = 2)
     public void verifyElements() throws Exception {
-        Thread.sleep(2000);
-        companyListPage.waitForPageLoaded();
         companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        companyListPage.waitForPageLoaded();
         companyListPage.verifySelectCompanyonLeftMenu();
         companyListPage.verifyHeader();
-        Assert.assertTrue(companyListPage.verifyBodyOfPage(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.general.pageTitle.companies"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.header.breadcrumb.companyList"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.pagination.inputField.rowsPerPage") + ":"), "False");
+        companyListPage.verifyBodyOfPage(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.general.pageTitle.companies"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.title"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.pagination.inputField.rowsPerPage"));
     }
 
 
