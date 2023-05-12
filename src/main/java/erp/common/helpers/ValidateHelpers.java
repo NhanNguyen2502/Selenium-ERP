@@ -44,9 +44,8 @@ public class ValidateHelpers {
 
     public boolean checkDisplayed(By element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
-        if (driver.findElement(element).isDisplayed())
-            return true;
-        return false;
+        return driver.findElement(element).isDisplayed();
+
     }
 
 

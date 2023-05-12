@@ -25,12 +25,12 @@ public class CompanyListPage {
 
 
     private By selecteCompanyDropdown = By.xpath("//div[@data-cy='select-company-button']");
-    //private By companyListTitle = By.xpath("//span[@data-cy='company-list-title']");
-    @FindBy(xpath = "//span[@data-cy='company-list-title']")
-    WebElement companyListTitle;
-    //private By currentPageTitle = By.xpath("//span[@data-cy='breadcrumb-label']");
-    @FindBy(xpath = "//span[@data-cy='breadcrumb-label']")
-    WebElement currentPageTitle;
+    private By companyListTitle = By.xpath("//span[@data-cy='company-list-title']");
+//    @FindBy(xpath = "//span[@data-cy='company-list-title']")
+//    WebElement companyListTitle;
+    private By currentPageTitle = By.xpath("//span[@data-cy='breadcrumb-label']");
+    //    @FindBy(xpath = "//span[@data-cy='breadcrumb-label']")
+//    WebElement currentPageTitle;
     private By contactUsLink = By.xpath("//a[@data-cy='contact-us-link']");
     //private By languageOption = By.xpath("//app-language-option//button[@data-cy='language-option-btn']");
     @FindBy(xpath = "//app-language-option//button[@data-cy='language-option-btn']")
@@ -46,9 +46,9 @@ public class CompanyListPage {
     //private By columnConfigButton = By.xpath("//div//button[@data-cy='table-column-config-button']");
     @FindBy(xpath = "//div//button[@data-cy='table-column-config-button']")
     WebElement columnConfigButton;
-    //private By rowPagePerText = By.xpath("//span[@class='text-truncate']");
-    @FindBy(xpath = "//span[@class='text-truncate']")
-    WebElement rowPagePerText;
+    private By rowPagePerText = By.xpath("//span[@class='text-truncate']");
+    //    @FindBy(xpath = "//span[@class='text-truncate']")
+//    WebElement rowPagePerText;
     //private By rowPagePerSelection = By.xpath("//div//input[@data-cy='page-size']");
     @FindBy(xpath = "//div//input[@data-cy='page-size']")
     WebElement rowPagePerSelection;
@@ -58,9 +58,9 @@ public class CompanyListPage {
     //private By companyTable = By.xpath("//table[@id='company-list-table']");
     @FindBy(xpath = "//table[@id='company-list-table']")
     WebElement companyTable;
-    //private By tableTitle = By.xpath("//mat-header-row[@role='row']");
-    @FindBy(xpath = "//mat-header-row[@role='row']")
-    WebElement tableTitle;
+    private By tableTitle = By.xpath("//mat-header-row[@role='row']");
+//    @FindBy(xpath = "//mat-header-row[@role='row']")
+//    WebElement tableTitle;
     private By languageButton = By.xpath("//app-language-option");
     private By languageOptions = By.xpath("//div[@data-cy='language-option-item']");
 
@@ -111,19 +111,17 @@ public class CompanyListPage {
         return false;
     }
 
-    public boolean verifyBodyOfPage(String Companies, String companyList, String rowtext) {
-        if (true) {
-            currentPageTitle.getText().equals(Companies);
-            tableTitle.getText().equals(companyList);
-            createButton.isDisplayed();
-            companyStatusList.isDisplayed();
-            columnConfigButton.isDisplayed();
-            rowPagePerText.getText().equals(rowtext);
-            rowPagePerSelection.isDisplayed();
-            searchField.isDisplayed();
-            return true;
-        }
-        return false;
+    public void verifyBodyOfPage(String Companies, String companyList, String rowtext) {
+        Assert.assertTrue(createButton.isDisplayed());
+        Assert.assertTrue(companyStatusList.isDisplayed());
+        Assert.assertTrue(columnConfigButton.isDisplayed());
+        Assert.assertTrue(rowPagePerSelection.isDisplayed());
+        Assert.assertTrue(searchField.isDisplayed());
+        Assert.assertEquals(validateHelpers.getMessage(currentPageTitle), Companies);
+        Assert.assertEquals(validateHelpers.getMessage(companyListTitle), companyList);
+        Assert.assertEquals(validateHelpers.getMessage(rowPagePerText), rowtext);
+
+
     }
 
     public void waitForPageLoaded() {
@@ -135,7 +133,7 @@ public class CompanyListPage {
         };
         try {
             Thread.sleep(1000);
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(expectation);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
