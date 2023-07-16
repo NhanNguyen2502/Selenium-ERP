@@ -1,5 +1,6 @@
 package erp.pages;
 
+import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
 import erp.common.helpers.ValidateHelpers;
 import org.openqa.selenium.By;
@@ -24,16 +25,16 @@ public class SignInPage {
     //private By headerText = By.xpath("//h1[text()='Welcome']");
     @FindBy(xpath = ("//h1[@data-cy='formTitle']"))
     private WebElement headerText;
-    private By formtitle = By.xpath("//h1[@data-cy='formTitle']");
-    private By usernameTextBox = By.xpath("//input[@id='mat-input-0']");
-    private By passwordTextBox = By.xpath("//input[@data-cy='password']");
-    private By loginButton = By.xpath("//button[@data-cy='linkToDashboard']");
+    private By formtitle = By.xpath("//h1[@id='kc-page-title']");
+    private By usernameTextBox = By.xpath("//input[@id='username']");
+    private By passwordTextBox = By.xpath("//input[@id='password']");
+    private By loginButton = By.xpath("//div[@id='kc-form-buttons']");
     private By logoAccountia = By.xpath("//a[@class='text-decoration-none']");
     private By forgetPassword = By.xpath("//a[text()=' Forgot your password? ']");
     private By signUpText = By.xpath("//span[text()=' Sign up ']");
-    private By userInform = By.xpath("//div[@data-cy='usernameRequiredErrorMessage']");
+    private By usernameRequied = By.xpath("//span[@id='input-error-email-required']");
     private By userInvalidInform = By.xpath("//div[@data-cy='usernamePatternErrorMessage']");
-    private By passwordInform = By.xpath("//div[@data-cy='passwordErrorMessage']");
+    private By passwordRequied = By.xpath("//span[@id='input-error-password-required']");
     private By wrongUsernameOrPass = By.xpath("//mat-card[@data-cy='errorMessage']");
     private By resendEmailActiveDialog = By.xpath("//app-resend-email-dialog");
     private By resendTitle = By.xpath("//h4[@data-cy='resend-email-title']");
@@ -41,8 +42,8 @@ public class SignInPage {
     private By cancleButtonResendDialog = By.xpath("//button[@data-cy='dialog-cancel-button']");
     private By closeResendDialog = By.xpath("//button[@data-cy='dialog-close-button']");
     private By resnedEmailButton = By.xpath("//button[@data-cy='dialog-resend-button']");
-    private By languageButton = By.xpath("//app-language-option[@class='ng-tns-c166-1 ng-star-inserted']//button[@id='language-option-btn']");
-    private By languageOptions = By.xpath("//div[@data-cy='language-option-item']");
+    private By languageButton = By.xpath("//div[@id='kc-locale-wrapper']");
+    private By languageOptions = By.xpath("//li[@id='kc-language-option']/div");
 
     public ValidateHelpers validateHelpers;
 
@@ -54,49 +55,23 @@ public class SignInPage {
     }
 
     public void verifylanguage(String language) {
+        validateHelpers.clickElement(languageButton);
+        wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
+        List<WebElement> options = driver.findElements(languageOptions);
+        String key = "$.languageSelect.option.english";
         switch (language) {
-            case "english":
-                System.out.println("Language is english");
+            case "English" -> key = "$.languageSelect.option.english";
+            case "Arabic" -> key = "$.languageSelect.option.arabic";
+            case "Kurdish - Badini" -> key = "$.languageSelect.option.badini";
+            case "Kurdish - Sorani" -> key = "$.languageSelect.option.sorani";
+            default -> System.out.println("default");
+        }
+        for (WebElement o : options) {
+                if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), key))) {
+                System.out.println(o.getText());
+                o.click();
                 break;
-            case "Arabic": {
-                validateHelpers.clickElement(languageButton);
-                wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
-                List<WebElement> options = driver.findElements(languageOptions);
-                for (WebElement o : options) {
-                    if (o.getText().contains("Arabic")) {
-                        System.out.println(o.getText());
-                        o.click();
-                    }
-                }
             }
-            break;
-            case "Kurdish - Badini": {
-                validateHelpers.clickElement(languageButton);
-                wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
-                List<WebElement> options = driver.findElements(languageOptions);
-                for (WebElement o : options) {
-                    if (o.getText().contains("Kurdish - Badini")) {
-                        System.out.println(o.getText());
-                        o.click();
-                    }
-                }
-            }
-            break;
-            case "Kurdish - Sorani": {
-                validateHelpers.clickElement(languageButton);
-                wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
-                List<WebElement> options = driver.findElements(languageOptions);
-                for (WebElement o : options) {
-                    if (o.getText().contains("Kurdish - Sorani")) {
-                        System.out.println(o.getText());
-                        o.click();
-                    }
-                }
-            }
-            break;
-            default:
-                System.out.println("default");
-
         }
     }
 
@@ -144,7 +119,8 @@ public class SignInPage {
         validateHelpers.setText(usernameTextBox, "");
         validateHelpers.clickElement(formtitle);
         Thread.sleep(1000);
-        return driver.findElement(userInform).getText();
+        System.out.println(driver.findElement(usernameRequied).getText());
+        return driver.findElement(usernameRequied).getText();
 
     }
 
@@ -153,7 +129,8 @@ public class SignInPage {
         validateHelpers.setText(passwordTextBox, "");
         validateHelpers.clickElement(formtitle);
         Thread.sleep(1000);
-        return driver.findElement(passwordInform).getText();
+        System.out.println(driver.findElement(passwordRequied).getText());
+        return driver.findElement(passwordRequied).getText();
     }
 
     public String verifyWrongEmailOrPassword(String Email, String Password) throws Exception {
@@ -194,7 +171,7 @@ public class SignInPage {
         };
         try {
             Thread.sleep(1000);
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(expectation);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");

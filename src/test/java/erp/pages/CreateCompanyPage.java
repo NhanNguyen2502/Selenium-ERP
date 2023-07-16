@@ -120,10 +120,6 @@ public class CreateCompanyPage extends BaseSetup {
         validateHelpers.clickElement(leaveButton);
     }
 
-
-
-
-
     public void verifyTextOfStep(String ContentOfStep1, String ContentOfStep2, String ContentOfStep3) {
         Assert.assertTrue(validateHelpers.checkDisplayed(markstep1));
         Assert.assertTrue(validateHelpers.checkDisplayed(markstep2));
@@ -168,7 +164,6 @@ public class CreateCompanyPage extends BaseSetup {
             case "Kurdish - Sorani" -> key = "$.languageSelect.option.sorani";
             default -> key = "$.languageSelect.option.english";
         }
-
         for (WebElement o : options) {
             if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), key))) {
                 System.out.println(o.getText());
