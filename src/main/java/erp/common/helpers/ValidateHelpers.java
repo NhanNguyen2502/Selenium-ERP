@@ -1,9 +1,12 @@
 package erp.common.helpers;
 
+import org.checkerframework.checker.units.qual.A;
+import org.jsoup.Jsoup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,11 +17,13 @@ public class ValidateHelpers {
     private WebDriver driver;
     private WebDriverWait wait;
     private By logoutButton = By.xpath("//button[@data-cy='log-out-button']");
+    private Actions actions;
 
 
     public ValidateHelpers(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        actions = new Actions(driver);
     }
 
     public void setText(By element, String text) {
@@ -48,13 +53,14 @@ public class ValidateHelpers {
 
     }
 
-//    public boolean checkDisabled(By element) {
-//        wait.until(ExpectedConditions.elementToBeClickable(element));
-//        return driver.findElement(element);
-//    }
-
+    public void clickOutside() {
+        actions.moveByOffset(0, 0).click().build().perform();
+    }
 
     public void logout() {
         clickElement(logoutButton);
+    }
+    public String removeHtmlTags(String content) {
+        return Jsoup.parse(content).text();
     }
 }
