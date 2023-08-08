@@ -23,13 +23,13 @@ public class SignInPage {
     private WebDriverWait wait = null;
     private final int timeout = 20;
     //private By headerText = By.xpath("//h1[text()='Welcome']");
-    @FindBy(xpath = ("//h1[@data-cy='formTitle']"))
+    @FindBy(xpath = ("//h1[@id='kc-page-title']"))
     private WebElement headerText;
     private By formtitle = By.xpath("//h1[@id='kc-page-title']");
     private By usernameTextBox = By.xpath("//input[@id='username']");
     private By passwordTextBox = By.xpath("//input[@id='password']");
     private By loginButton = By.xpath("//div[@id='kc-form-buttons']");
-    private By logoAccountia = By.xpath("//a[@class='text-decoration-none']");
+    private By logoAccountia = By.xpath("//img[@id='kc-logo-size']");
     private By forgetPassword = By.xpath("//a[text()=' Forgot your password? ']");
     private By signUpText = By.xpath("//span[text()=' Sign up ']");
     private By usernameRequied = By.xpath("//span[@id='input-error-email-required']");

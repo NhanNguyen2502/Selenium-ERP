@@ -193,7 +193,15 @@
                 "signUpSuccessHeader": "You have successfully signed up.",
                 "signUpSuccessMsg": "Your sign up has been successful and your account is almost ready. An email is sent to {{email}}. Please click on 'Activate my account' in the email to verify your email address. The email will be sent within a couple of minutes and it is valid for an hour.",
                 "byClickingHere": "By clicking here, you agree to our",
-                "customerAgreement": "Customer Agreement"
+                "customerAgreement": "Customer Agreement",
+                "enableAccountEmailInvalidBlank": "Email may not be blank.",
+                "enableAccountEmailInvalidPattern": "Email is not valid.",
+                "enableAccountUserNotFound": "is not found.",
+                "enableAccountUserEnabled": "This user has been enabled.",
+                "enableAccountDisabledBySystem": "This user is disabled by system.",
+                "enableAccountSuccess": "Your account has been enabled.",
+                "enableAccountVerificationEmailSent": "Verification has been sent to your email.",
+                "forgotPasswordEmailVerify": "Haven't received an email yet?"
             },
             "link": {
                 "signIn": "Sign in",
@@ -346,7 +354,8 @@
                 "disabledCompanyNameTooltip": "Company name is auto-generated for test companies and cannot be changed",
                 "companyPhoneNumbers": "Phone No.",
                 "timezone": "Timezone",
-                "timezoneTooltip": "Select your timezone"
+                "timezoneTooltip": "Select your timezone",
+                "addressPlaceholder": "Enter Address Street, Flat, suit, unit, building, floor, etc."
             },
             "error": {
                 "organisationNumberRequired": "Organization number is required",
@@ -403,6 +412,10 @@
                 "enableCompany": {
                     "title": "Confirm enabling the company",
                     "message": "Are you sure you want to enable the company \"{{name}}\"?"
+                },
+                "info": {
+                    "internationalPaymentInformationTitle": "International payment information",
+                    "internationalPaymentInformationContent": "IBAN is a code that uniquely identifies your bank account for international transactions, while BIC\/SWIFT code identifies the specific bank where your account is held. Both codes ensure secure and accurate transfer of money between banks around the world.\n\nIf these are available in your Bank you may use the account to accept international transfers, you can register the information by selecting the checkbox and filling out the form. The information will be printed on all invoices and sales associated with the account."
                 }
             },
             "tabGeneral": {
@@ -468,7 +481,9 @@
                     "numberTooltip": "Sort by account number",
                     "status": "Status",
                     "statusTooltip": "Sort by status",
-                    "moreOptionsTooltip": "More options"
+                    "moreOptionsTooltip": "More options",
+                    "currentBalance": "Current balance",
+                    "type": "Type"
                 },
                 "noBankAccount": "No payment account has been registered yet.",
                 "inputField": {
@@ -481,11 +496,27 @@
                     "openingBalance": "Opening balance",
                     "balanceDate": "Balance on a Date",
                     "balanceDateTooltip": "Select the date when the opening balance was checked",
-                    "openingBalanceTooltip": "Add opening balance of the account"
+                    "openingBalanceTooltip": "Add opening balance of the account",
+                    "accountHolderName": "Account holder name",
+                    "addBalance": "Add balance",
+                    "internationalPaymentInformation": "International payment information",
+                    "ibanNumber": "IBAN number",
+                    "swiftNumber": "BIC\/Swift",
+                    "paymentService": "Payment service",
+                    "paymentServiceTooltip": "Select the payment service",
+                    "fromAccount": "From Account",
+                    "transferAmount": "Transfer Amount",
+                    "transferDate": "Transfer Date",
+                    "originalOpeningBalance": "Original opening balance",
+                    "originalBalanceOnDate": "Original balance on date",
+                    "paymentAccountHistory": "Payment Account History",
+                    "addAmount": "Add amount"
                 },
                 "placeholder": {
                     "accountName": "Accountia",
-                    "accountNumber": "123456789"
+                    "accountNumber": "123456789",
+                    "ibanNumber": "Enter IBAN number",
+                    "swiftNumber": "Enter BIC\/Swift number"
                 },
                 "text": {
                     "enabled": "Enabled",
@@ -511,7 +542,21 @@
                     "accountNumberInvalid": "Account number is invalid",
                     "accountNameExists": "Account name already exists",
                     "accountNumberExists": "Account number already exists",
-                    "accountNumberNegative": "Account number should not be negative"
+                    "accountNumberNegative": "Account number should not be negative",
+                    "accountHolderRequired": "Account holder name is required",
+                    "balanceDateRequired": "Balance on a Date is required",
+                    "ibanNumberInvalid": "Invalid IBAN format. Please enter a valid IBAN number.",
+                    "swiftNumberInvalid": "Invalid BIC\/SWIFT code. Please enter a valid IBAN BIC\/SWIFT code.",
+                    "ibanNumberRequired": "IBAN number is required",
+                    "swiftNumberRequired": "BIC\/Swift is required",
+                    "paymentServiceRequired": "Payment service is required",
+                    "toAccountRequired": "To account is required",
+                    "fromAccountRequired": "From account is required",
+                    "transferDateRequired": "Transfer date is required",
+                    "transferAmountRequired": "Transfer amount is required",
+                    "openingBalanceInvalid": "Opening balance is invalid",
+                    "transferAmountInvalid": "Transfer amount is invalid",
+                    "openingBalanceRequired": "Opening balance is required"
                 },
                 "toggleButton": {
                     "enableToggle": "The payment account is enabled and can be used for accounting purposes",
@@ -540,7 +585,9 @@
                     "balanceTooltip": "Current balance"
                 },
                 "openingBalanceInfoTitle": "Information about opening balance",
-                "openingBalanceInfoContent": "Opening balance is brought forward from the end of the previous accounting period at the beginning of a new accounting period. \r\n\r\nThe date on which the opening balance was checked may be entered when registering the opening balance in the system. \r\n\r\nThe payment account can be used retrospectively to record sales and purchases.  Transactions assigned to a date earlier than the opening balance date won't affect the opening balance and won't appear in the account's paid or received entries."
+                "openingBalanceInfoContent": "Opening balance is brought forward from the end of the previous accounting period at the beginning of a new accounting period. \r\n\r\nThe date on which the opening balance was checked may be entered when registering the opening balance in the system. \r\n\r\nThe payment account can be used retrospectively to record sales and purchases.  Transactions assigned to a date earlier than the opening balance date won't affect the opening balance and won't appear in the account's paid or received entries.",
+                "defaultAccount": "Default",
+                "setAsDefault": "Set as default"
             },
             "tabInvoiceTemplate": {
                 "text": {
@@ -552,6 +599,9 @@
                     "prevTooltip": "Previous template",
                     "nextTooltip": "Next template"
                 }
+            },
+            "tabTransfer": {
+                "createTransfer": "Transfer"
             }
         },
         "notification": {
@@ -837,7 +887,13 @@
             "contactUsHeader": "Contact Us",
             "sendContactSupportSuccessMessage": "Your request has been sent to our service department, and we will process it as soon as possible. Thank you for contacting us.",
             "contactUsMessage": "Please do not hesitate to contact us with any questions or concerns. We are looking forward to hearing from you.",
-            "fullName": "Full name"
+            "fullName": "Full name",
+            "contactUsSubjectGeneralSupportValue": "Accountia. General Support",
+            "contactUsSubjectGeneralLoginIssuesValue": "Accountia. Login Issues",
+            "contactUsNameInvalidBlank": "Name may not be blank.",
+            "contactUsSubjectInvalidBlank": "Subject may not be blank.",
+            "contactUsDescriptionInvalidBlank": "Description may not be blank.",
+            "contactUsSuccessTitle": "Send Contact Us successfully."
         },
         "dialog": {
             "leavePage": {
@@ -867,7 +923,9 @@
             "bankAccount": "payment account",
             "user": "user",
             "salaryType": "salary type",
-            "sale": "sale"
+            "sale": "sale",
+            "transfer": "transfer",
+            "draftPurchase": "draft purchase"
         },
         "action": {
             "enable": "enable",
@@ -884,12 +942,15 @@
             "successfulEnableNotification": "has been enabled.",
             "successfulEnableManyItemsNotification": "have been enabled.",
             "successfulDisableManyItemsNotification": "have been disabled.",
-            "successfulDeleteManyItemsNotification": "have been deleted."
+            "successfulDeleteManyItemsNotification": "have been deleted.",
+            "successfulSetAsDefaultNotification": "Payment account has been set as the default"
         },
         "dialog": {
             "actionTitle": "Confirm {{action}} the {{type}}",
             "actionConfirmMessage": "Are you sure you want to {{action}} the {{type}}?",
-            "actionConfirmMessageMany": "Are you sure you want to {{action}} the selected {{type}}?"
+            "actionConfirmMessageMany": "Are you sure you want to {{action}} the selected {{type}}?",
+            "changeOpeningBalanceTitle": "Confirm changing the opening balance",
+            "changeOpeningBalanceConfirmMessage": "Are you sure you want to change the opening Balance information?"
         },
         "notification": {
             "actionSuccess": "The {{type}} {{action}}",
@@ -913,7 +974,9 @@
             "action": "Action",
             "actionTooltip": "Sort by action",
             "description": "Description",
-            "descriptionTooltip": "Sort by description"
+            "descriptionTooltip": "Sort by description",
+            "amount": "Amount",
+            "type": "Type"
         },
         "text": {
             "userTitle": "Event log of user",
@@ -960,7 +1023,18 @@
             "updateDueDate": "Update due date",
             "createCashSale": "Create sale",
             "sendMailCashSale": "Send sale receipt",
-            "cancelCashSale": "Cancel sale receipt"
+            "cancelCashSale": "Cancel sale receipt",
+            "uploadInvoiceAttachments": "Upload attachments",
+            "updateAccount": "Update payment account",
+            "changeAccountStatus": "Payment account status was changed",
+            "changeAccountDefault": "Payment account was set as default",
+            "transferAccountingAccount": "Transfer between own accounts",
+            "regretTransferAccountingAccount": "Regret transfer",
+            "uploadPaymentTransferAttachment": "Upload transfer attachment",
+            "deletePaymentTransferAttachment": "Delete transfer attachment",
+            "addPaymentTransferNoteAttachment": "Add transfer note",
+            "uploadPaymentTransferNoteAttachment": "Upload transfer note attachment",
+            "deletePaymentTransferNoteAttachment": "Delete transfer note attachment"
         },
         "description": {
             "createInvoice": "Invoice was created on {{createdDate}}",
@@ -971,7 +1045,7 @@
             "createEmployee": "Employee was created on {{createdDate}}",
             "createFee": "Fee was created on {{createdDate}}",
             "createProduct": "Product was created on {{createdDate}}",
-            "createAccount": "Payment account created on {{createdDate}}",
+            "createAccount": "Payment account was created on {{createdDate}}",
             "addPayment": "Payment was created on {{createdDate}}",
             "addCreditNote": "Credit note was created on {{createdDate}}",
             "deleteCompany": "Company was deleted on {{createdDate}}",
@@ -1004,7 +1078,18 @@
             "sendMailCashSale": "Sale receipt was sent on {{createdDate}}",
             "cancelCashSale": "Sale receipt was canceled on {{createdDate}}",
             "updateMailingStatusNotSent": "Mailing status was changed to Not sent on {{date}}",
-            "updateMailingStatusSentOutsideSystem": "Mailing status  was changed to Sent outside the system on {{date}}"
+            "updateMailingStatusSentOutsideSystem": "Mailing status  was changed to Sent outside the system on {{date}}",
+            "uploadInvoiceAttachments": "Uploading attachments was changed on {{createdDate}}",
+            "updateAccount": "Payment account was updated on {{createdDate}}",
+            "changeAccountStatus": "Payment account status was changed on {{createdDate}}",
+            "changeAccountDefault": "Payment account was set as default on {{createdDate}}",
+            "transferAccountingAccount": "Transfer between own accounts was registered on {{createdDate}}",
+            "regretTransferAccountingAccount": "Regret transfer was updated on {{createdDate}}",
+            "uploadPaymentTransferAttachment": "Upload transfer attachment was updated on {{createdDate}}",
+            "deletePaymentTransferAttachment": "Delete transfer attachment was updated on {{createdDate}}",
+            "addPaymentTransferNoteAttachment": "Add transfer note was updated on {{createdDate}}",
+            "uploadPaymentTransferNoteAttachment": "Upload transfer note attachment was updated on {{createdDate}}",
+            "deletePaymentTransferNoteAttachment": "Delete transfer note attachment was updated on {{createdDate}}"
         },
         "notification": {
             "deleteCompany": "Company was deleted on {{date}}",
@@ -1082,7 +1167,18 @@
                 "sendInvoice": "Sent Invoice",
                 "updateSettledStatus": "Invoice settle status changed",
                 "sendMailCashSale": "Sent sale receipt",
-                "cancelCashSale": "Canceled sale receipt"
+                "cancelCashSale": "Canceled sale receipt",
+                "uploadInvoiceAttachments": "Uploading attachments changed",
+                "updateAccount": "Updated account",
+                "transferAccountingAccount": "Transfer between own accounts",
+                "changeAccountStatus": "Changed account status",
+                "changeAccountDefault": "Changed default account",
+                "regretTransferAccountingAccount": "Regret transfer changed",
+                "uploadPaymentTransferAttachment": "Upload transfer attachment changed",
+                "deletePaymentTransferAttachment": "Delete transfer attachment changed",
+                "addPaymentTransferNoteAttachment": "Add transfer note changed",
+                "uploadPaymentTransferNoteAttachment": "Upload transfer note attachment changed",
+                "deletePaymentTransferNoteAttachment": "Delete transfer note attachment changed"
             }
         },
         "document": {
@@ -1468,7 +1564,8 @@
             "browse": "Browse",
             "createCopy": "Create copy",
             "delete": "Delete",
-            "removeBtn": "Remove"
+            "removeBtn": "Remove",
+            "addTransfer": "Transfer"
         },
         "error": {
             "maxLength": "Input length must be less than 256 characters",
@@ -1539,7 +1636,12 @@
             "contactPersonDetail": "Contact Person Details",
             "customerDetail": "Customer details",
             "purchases": "Purchases",
-            "newPurchase": "New purchase"
+            "newPurchase": "New purchase",
+            "paymentAccounts": "Payment accounts",
+            "paymentAccountDetails": "Payment account details",
+            "transfer": "Transfer",
+            "createTransfer": "Register transfer",
+            "draftPurchase": "Draft purchase"
         },
         "select": {
             "text": {
@@ -2032,7 +2134,14 @@
             "cashPurchase": "Cash purchase",
             "createPurchase": "Create purchase",
             "sendMailCashSale": "Send document",
-            "cancelCashSale": "Cancel sale receipt"
+            "cancelCashSale": "Cancel sale receipt",
+            "uploadInvoiceAttachments": "Upload Attachments",
+            "regretTransferAccountingAccount": "Regret transfer",
+            "uploadPaymentTransferAttachment": "Upload transfer attachment",
+            "deletePaymentTransferAttachment": "Delete transfer attachment",
+            "addPaymentTransferNoteAttachment": "Add transfer note",
+            "uploadPaymentTransferNoteAttachment": "Upload transfer note attachment",
+            "deletePaymentTransferNoteAttachment": "Delete transfer note attachment"
         },
         "dialog": {
             "createEditEmployee": {
@@ -2698,7 +2807,8 @@
             "feeId": "Fee id",
             "contactInformation": "Contact information",
             "feeNameTitle": "Fee name",
-            "tel": "Tel"
+            "tel": "Tel",
+            "accountHolder": "Account holder"
         },
         "error": {
             "dateIsInvalid": "Date is invalid. Please enter a valid date."
@@ -2979,7 +3089,8 @@
                 "nameRequired": "Name is required",
                 "is": "is",
                 "are": "are",
-                "invalid": "invalid"
+                "invalid": "invalid",
+                "emailExist": "This email address already exists. Please enter another email."
             },
             "inputField": {
                 "address": "Address",
@@ -3152,7 +3263,8 @@
             "mailingStatusSentFromTheSystemTooltip": "{{date}} {{documentType}} was sent to {{email}}",
             "mailingStatusSentOutsideTheSystemTooltip": "The invoice was cehecked as sent outside the system on {{date}}",
             "noteTitle": "Notes for internal use",
-            "edited": "edited"
+            "edited": "edited",
+            "internalAttachmentsTooltip": "Attach documents related to the sales. These attachments are for internal use only and are not available for sending to your customer."
         },
         "button": {
             "createEmployeeTooltip": "Create new employee",
@@ -3250,7 +3362,10 @@
             },
             "createEditBankAccount": {
                 "editTitle": "Payment account details",
-                "createTitle": "Create payment account"
+                "createTitle": "Create payment account",
+                "transferFromAccount": "Transfer From Account",
+                "transferToAccount": "To Account",
+                "enterYourDescription": "Enter your description"
             },
             "deleteDraftInvoice": {
                 "title": "Confirm removing the draft invoice",
@@ -3395,7 +3510,11 @@
             "resetDataTooltip": "Reset all key data to default values",
             "installmentOverdueDays": "Instalment overdue {{days}} days",
             "copyToNewSale": "Copy to new sale",
-            "due": "Due"
+            "due": "Due",
+            "cancelWholeInvoice": "Cancel whole invoice",
+            "addNewAttachment": "Add new attachment",
+            "cancelWholeSale": "Cancel whole sale",
+            "addAttachment": "Add attachment"
         },
         "chip": {
             "finalized": "Finalized",
@@ -3488,7 +3607,10 @@
             "customers": "Customers",
             "suppliers": "Suppliers",
             "purchases": "Purchases",
-            "purchasesTooltip": "Go to purchases"
+            "purchasesTooltip": "Go to purchases",
+            "paymentAccountsTooltip": "Go to payment accounts",
+            "paymentAccounts": "Payment accounts",
+            "transfers": "Transfers"
         },
         "button": {
             "collapse": "Collapse",
@@ -3627,7 +3749,12 @@
             "draftPurchases": "Draft purchases",
             "newPurchase": "New purchase",
             "purchaseDetail": "Purchase Details",
-            "newInvoice": "New invoice"
+            "newInvoice": "New invoice",
+            "paymentAccounts": "Payment accounts",
+            "paymentAccountDetails": "Payment account details",
+            "transfer": "Transfers",
+            "createTransfer": "Register Transfer",
+            "draftPurchase": "Draft purchase"
         },
         "notifications": "Notifications",
         "userProfile": "User profile and settings",
@@ -4039,7 +4166,9 @@
         "select": {
             "option": {
                 "bank": "Bank",
-                "cash": "Cash"
+                "cash": "Cash",
+                "payment-service": "Payment service",
+                "payment_service": "Payment service"
             }
         }
     },
@@ -4134,7 +4263,8 @@
             "calculatedPurchaseAmount": "Calculated purchase amount",
             "purchaseHistory": "Purchase history",
             "purchaseStatus": "Purchase status",
-            "purchaseExchangeRate": "Purchase exchange rate"
+            "purchaseExchangeRate": "Purchase exchange rate",
+            "noPurchase": "Purchase is not found"
         },
         "inputField": {
             "type": "Type",
@@ -4183,7 +4313,8 @@
             "registerPurchase": "Register",
             "cancelPurchase": "Cancel purchase",
             "cancelPurchaseTooltip": "Cancel the entire purchase",
-            "previewAndSendPurchaseTooltip": "Select the documents (such as purchases, payment lists, etc.) you want to download to preview or send to the supplier."
+            "previewAndSendPurchaseTooltip": "Select the documents (such as purchases, payment lists, etc.) you want to download to preview or send to the supplier.",
+            "previewAndSend": "Preview and Send"
         },
         "columnHeader": {
             "supplier": "Supplier",
@@ -4208,6 +4339,41 @@
                 },
                 "title": "Crop Image"
             }
+        }
+    },
+    "paymentService": {
+        "select": {
+            "option": {
+                "aliPay": "Ali pay",
+                "applePay": "Apple pay",
+                "googlePay": "Google Pay",
+                "paypal": "Paypal",
+                "wepay": "WePay",
+                "wise": "Wise",
+                "other": "Other",
+                "stripe": "Stripe"
+            }
+        }
+    },
+    "footer": {
+        "text": "Powered by Accountia v1.0.0"
+    },
+    "paymentAccount": {
+        "text": {
+            "fromAccount": "From",
+            "toAccount": "To",
+            "transferDate": "Date",
+            "transferAmount": "Amount",
+            "createTransfer": "Register transfer",
+            "transferDetail": "Transfer details",
+            "regretTransferMessage": "The given transaction will be reversed. There will not be a deletion of the original transfer details information, but a new reversed transaction will be added to the transfer history.",
+            "regretTransferTitle": "Confirm regretting the transfer",
+            "entryNumber": "Entry number",
+            "regretTransferSuccess": "The transfer has been regretted.",
+            "regretTransferText": "This transfer was reversed and can't be edited.",
+            "regretTransferFail": "Regret payment has failed.",
+            "noNote": "No note is added.",
+            "cancelBtnTooltip": "Cancel and go back to the transfer list"
         }
     }
 }

@@ -193,7 +193,15 @@
                 "signUpSuccessHeader": "",
                 "signUpSuccessMsg": "",
                 "byClickingHere": "",
-                "customerAgreement": ""
+                "customerAgreement": "",
+                "enableAccountEmailInvalidBlank": "",
+                "enableAccountEmailInvalidPattern": "",
+                "enableAccountUserNotFound": "",
+                "enableAccountUserEnabled": "",
+                "enableAccountDisabledBySystem": "",
+                "enableAccountSuccess": "",
+                "enableAccountVerificationEmailSent": "",
+                "forgotPasswordEmailVerify": ""
             },
             "link": {
                 "signIn": "",
@@ -346,7 +354,8 @@
                 "disabledCompanyNameTooltip": "",
                 "companyPhoneNumbers": "",
                 "timezone": "",
-                "timezoneTooltip": ""
+                "timezoneTooltip": "",
+                "addressPlaceholder": ""
             },
             "error": {
                 "organisationNumberRequired": "",
@@ -403,6 +412,10 @@
                 "enableCompany": {
                     "title": "",
                     "message": ""
+                },
+                "info": {
+                    "internationalPaymentInformationTitle": "",
+                    "internationalPaymentInformationContent": ""
                 }
             },
             "tabGeneral": {
@@ -468,7 +481,9 @@
                     "numberTooltip": "",
                     "status": "",
                     "statusTooltip": "",
-                    "moreOptionsTooltip": ""
+                    "moreOptionsTooltip": "",
+                    "currentBalance": "",
+                    "type": ""
                 },
                 "noBankAccount": "",
                 "inputField": {
@@ -481,11 +496,27 @@
                     "openingBalance": "",
                     "balanceDate": "",
                     "balanceDateTooltip": "",
-                    "openingBalanceTooltip": ""
+                    "openingBalanceTooltip": "",
+                    "accountHolderName": "",
+                    "addBalance": "",
+                    "internationalPaymentInformation": "",
+                    "ibanNumber": "",
+                    "swiftNumber": "",
+                    "paymentService": "",
+                    "paymentServiceTooltip": "",
+                    "fromAccount": "",
+                    "transferAmount": "",
+                    "transferDate": "",
+                    "originalOpeningBalance": "",
+                    "originalBalanceOnDate": "",
+                    "paymentAccountHistory": "",
+                    "addAmount": ""
                 },
                 "placeholder": {
                     "accountName": "",
-                    "accountNumber": ""
+                    "accountNumber": "",
+                    "ibanNumber": "",
+                    "swiftNumber": ""
                 },
                 "text": {
                     "enabled": "",
@@ -511,7 +542,21 @@
                     "accountNumberInvalid": "",
                     "accountNameExists": "",
                     "accountNumberExists": "",
-                    "accountNumberNegative": ""
+                    "accountNumberNegative": "",
+                    "accountHolderRequired": "",
+                    "balanceDateRequired": "",
+                    "ibanNumberInvalid": "",
+                    "swiftNumberInvalid": "",
+                    "ibanNumberRequired": "",
+                    "swiftNumberRequired": "",
+                    "paymentServiceRequired": "",
+                    "toAccountRequired": "",
+                    "fromAccountRequired": "",
+                    "transferDateRequired": "",
+                    "transferAmountRequired": "",
+                    "openingBalanceInvalid": "",
+                    "transferAmountInvalid": "",
+                    "openingBalanceRequired": ""
                 },
                 "toggleButton": {
                     "enableToggle": "",
@@ -540,7 +585,9 @@
                     "balanceTooltip": ""
                 },
                 "openingBalanceInfoTitle": "",
-                "openingBalanceInfoContent": ""
+                "openingBalanceInfoContent": "",
+                "defaultAccount": "",
+                "setAsDefault": ""
             },
             "tabInvoiceTemplate": {
                 "text": {
@@ -552,6 +599,9 @@
                     "prevTooltip": "",
                     "nextTooltip": ""
                 }
+            },
+            "tabTransfer": {
+                "createTransfer": ""
             }
         },
         "notification": {
@@ -837,7 +887,13 @@
             "contactUsHeader": "",
             "sendContactSupportSuccessMessage": "",
             "contactUsMessage": "",
-            "fullName": ""
+            "fullName": "",
+            "contactUsSubjectGeneralSupportValue": "",
+            "contactUsSubjectGeneralLoginIssuesValue": "",
+            "contactUsNameInvalidBlank": "",
+            "contactUsSubjectInvalidBlank": "",
+            "contactUsDescriptionInvalidBlank": "",
+            "contactUsSuccessTitle": ""
         },
         "dialog": {
             "leavePage": {
@@ -867,7 +923,9 @@
             "bankAccount": "",
             "user": "",
             "salaryType": "",
-            "sale": ""
+            "sale": "",
+            "transfer": "",
+            "draftPurchase": ""
         },
         "action": {
             "enable": "",
@@ -884,12 +942,15 @@
             "successfulEnableNotification": "",
             "successfulEnableManyItemsNotification": "",
             "successfulDisableManyItemsNotification": "",
-            "successfulDeleteManyItemsNotification": ""
+            "successfulDeleteManyItemsNotification": "",
+            "successfulSetAsDefaultNotification": ""
         },
         "dialog": {
             "actionTitle": "",
             "actionConfirmMessage": "",
-            "actionConfirmMessageMany": ""
+            "actionConfirmMessageMany": "",
+            "changeOpeningBalanceTitle": "",
+            "changeOpeningBalanceConfirmMessage": ""
         },
         "notification": {
             "actionSuccess": "",
@@ -913,7 +974,9 @@
             "action": "",
             "actionTooltip": "",
             "description": "",
-            "descriptionTooltip": ""
+            "descriptionTooltip": "",
+            "amount": "",
+            "type": ""
         },
         "text": {
             "userTitle": "",
@@ -960,7 +1023,18 @@
             "updateDueDate": "",
             "createCashSale": "",
             "sendMailCashSale": "",
-            "cancelCashSale": ""
+            "cancelCashSale": "",
+            "uploadInvoiceAttachments": "",
+            "updateAccount": "",
+            "changeAccountStatus": "",
+            "changeAccountDefault": "",
+            "transferAccountingAccount": "",
+            "regretTransferAccountingAccount": "",
+            "uploadPaymentTransferAttachment": "",
+            "deletePaymentTransferAttachment": "",
+            "addPaymentTransferNoteAttachment": "",
+            "uploadPaymentTransferNoteAttachment": "",
+            "deletePaymentTransferNoteAttachment": ""
         },
         "description": {
             "createInvoice": "",
@@ -1004,7 +1078,18 @@
             "sendMailCashSale": "",
             "cancelCashSale": "",
             "updateMailingStatusNotSent": "",
-            "updateMailingStatusSentOutsideSystem": ""
+            "updateMailingStatusSentOutsideSystem": "",
+            "uploadInvoiceAttachments": "",
+            "updateAccount": "",
+            "changeAccountStatus": "",
+            "changeAccountDefault": "",
+            "transferAccountingAccount": "",
+            "regretTransferAccountingAccount": "",
+            "uploadPaymentTransferAttachment": "",
+            "deletePaymentTransferAttachment": "",
+            "addPaymentTransferNoteAttachment": "",
+            "uploadPaymentTransferNoteAttachment": "",
+            "deletePaymentTransferNoteAttachment": ""
         },
         "notification": {
             "deleteCompany": "",
@@ -1082,7 +1167,18 @@
                 "sendInvoice": "",
                 "updateSettledStatus": "",
                 "sendMailCashSale": "",
-                "cancelCashSale": ""
+                "cancelCashSale": "",
+                "uploadInvoiceAttachments": "",
+                "updateAccount": "",
+                "transferAccountingAccount": "",
+                "changeAccountStatus": "",
+                "changeAccountDefault": "",
+                "regretTransferAccountingAccount": "",
+                "uploadPaymentTransferAttachment": "",
+                "deletePaymentTransferAttachment": "",
+                "addPaymentTransferNoteAttachment": "",
+                "uploadPaymentTransferNoteAttachment": "",
+                "deletePaymentTransferNoteAttachment": ""
             }
         },
         "document": {
@@ -1468,7 +1564,8 @@
             "browse": "",
             "createCopy": "",
             "delete": "",
-            "removeBtn": ""
+            "removeBtn": "",
+            "addTransfer": ""
         },
         "error": {
             "maxLength": "",
@@ -1539,7 +1636,12 @@
             "contactPersonDetail": "",
             "customerDetail": "",
             "purchases": "",
-            "newPurchase": ""
+            "newPurchase": "",
+            "paymentAccounts": "",
+            "paymentAccountDetails": "",
+            "transfer": "",
+            "createTransfer": "",
+            "draftPurchase": ""
         },
         "select": {
             "text": {
@@ -2032,7 +2134,14 @@
             "cashPurchase": "",
             "createPurchase": "",
             "sendMailCashSale": "",
-            "cancelCashSale": ""
+            "cancelCashSale": "",
+            "uploadInvoiceAttachments": "",
+            "regretTransferAccountingAccount": "",
+            "uploadPaymentTransferAttachment": "",
+            "deletePaymentTransferAttachment": "",
+            "addPaymentTransferNoteAttachment": "",
+            "uploadPaymentTransferNoteAttachment": "",
+            "deletePaymentTransferNoteAttachment": ""
         },
         "dialog": {
             "createEditEmployee": {
@@ -2698,7 +2807,8 @@
             "feeId": "",
             "contactInformation": "",
             "feeNameTitle": "",
-            "tel": ""
+            "tel": "",
+            "accountHolder": ""
         },
         "error": {
             "dateIsInvalid": ""
@@ -2983,7 +3093,8 @@
                 "nameRequired": "",
                 "is": "",
                 "are": "",
-                "invalid": ""
+                "invalid": "",
+                "emailExist": ""
             },
             "inputField": {
                 "address": "",
@@ -3156,7 +3267,8 @@
             "mailingStatusSentFromTheSystemTooltip": "",
             "mailingStatusSentOutsideTheSystemTooltip": "",
             "noteTitle": "",
-            "edited": ""
+            "edited": "",
+            "internalAttachmentsTooltip": ""
         },
         "button": {
             "createEmployeeTooltip": "",
@@ -3254,7 +3366,10 @@
             },
             "createEditBankAccount": {
                 "editTitle": "",
-                "createTitle": ""
+                "createTitle": "",
+                "transferFromAccount": "",
+                "transferToAccount": "",
+                "enterYourDescription": ""
             },
             "deleteDraftInvoice": {
                 "title": "",
@@ -3399,7 +3514,11 @@
             "resetDataTooltip": "",
             "installmentOverdueDays": "",
             "copyToNewSale": "",
-            "due": ""
+            "due": "",
+            "cancelWholeInvoice": "",
+            "addNewAttachment": "",
+            "cancelWholeSale": "",
+            "addAttachment": ""
         },
         "chip": {
             "finalized": "",
@@ -3492,7 +3611,10 @@
             "customers": "",
             "suppliers": "",
             "purchases": "",
-            "purchasesTooltip": ""
+            "purchasesTooltip": "",
+            "paymentAccountsTooltip": "",
+            "paymentAccounts": "",
+            "transfers": ""
         },
         "button": {
             "collapse": "",
@@ -3631,7 +3753,12 @@
             "draftPurchases": "",
             "newPurchase": "",
             "purchaseDetail": "",
-            "newInvoice": ""
+            "newInvoice": "",
+            "paymentAccounts": "",
+            "paymentAccountDetails": "",
+            "transfer": "",
+            "createTransfer": "",
+            "draftPurchase": ""
         },
         "notifications": "",
         "userProfile": "",
@@ -4043,7 +4170,9 @@
         "select": {
             "option": {
                 "bank": "",
-                "cash": ""
+                "cash": "",
+                "payment-service": "",
+                "payment_service": ""
             }
         }
     },
@@ -4138,7 +4267,8 @@
             "calculatedPurchaseAmount": "",
             "purchaseHistory": "",
             "purchaseStatus": "",
-            "purchaseExchangeRate": ""
+            "purchaseExchangeRate": "",
+            "noPurchase": ""
         },
         "inputField": {
             "type": "",
@@ -4187,7 +4317,8 @@
             "registerPurchase": "",
             "cancelPurchase": "",
             "cancelPurchaseTooltip": "",
-            "previewAndSendPurchaseTooltip": ""
+            "previewAndSendPurchaseTooltip": "",
+            "previewAndSend": ""
         },
         "columnHeader": {
             "supplier": "",
@@ -4212,6 +4343,41 @@
                 },
                 "title": ""
             }
+        }
+    },
+    "paymentService": {
+        "select": {
+            "option": {
+                "aliPay": "",
+                "applePay": "",
+                "googlePay": "",
+                "paypal": "",
+                "wepay": "",
+                "wise": "",
+                "other": "",
+                "stripe": ""
+            }
+        }
+    },
+    "footer": {
+        "text": ""
+    },
+    "paymentAccount": {
+        "text": {
+            "fromAccount": "",
+            "toAccount": "",
+            "transferDate": "",
+            "transferAmount": "",
+            "createTransfer": "",
+            "transferDetail": "",
+            "regretTransferMessage": "",
+            "regretTransferTitle": "",
+            "entryNumber": "",
+            "regretTransferSuccess": "",
+            "regretTransferText": "",
+            "regretTransferFail": "",
+            "noNote": "",
+            "cancelBtnTooltip": ""
         }
     }
 }
