@@ -193,7 +193,15 @@
                 "signUpSuccessHeader": "تم التسجيل بنجاح.",
                 "signUpSuccessMsg": "تم تسجيلك بنجاح وحسابك جاهز تقريبًا. تم إرسال بريد إلكتروني إلى {{email}}. الرجاء النقر فوق \"تنشيط حسابي\" في البريد الإلكتروني للتحقق من عنوان بريدك الإلكتروني. سيتم إرسال البريد الإلكتروني في غضون بضع دقائق وهو صالح لمدة ساعة.",
                 "byClickingHere": "بالضغط هنا ، فإنك توافق على",
-                "customerAgreement": "اتفاقية العميل"
+                "customerAgreement": "اتفاقية العميل",
+                "enableAccountEmailInvalidBlank": "لا يجوز أن يكون البريد الإلكتروني فارغًا.",
+                "enableAccountEmailInvalidPattern": "البريد الإلكتروني غير صالح.",
+                "enableAccountUserNotFound": "غير موجود.",
+                "enableAccountUserEnabled": "تم تفعيل هذا المستخدم.",
+                "enableAccountDisabledBySystem": "تم تعطيل هذا المستخدم من قبل النظام.",
+                "enableAccountSuccess": "تم تفعيل حسابك.",
+                "enableAccountVerificationEmailSent": "تم إرسال رمز التحقق إلى بريدك الإلكتروني.",
+                "forgotPasswordEmailVerify": "ألم تتلق بريدًا إلكترونيًا بعد؟"
             },
             "link": {
                 "signIn": "تسجيل الدخول",
@@ -346,7 +354,8 @@
                 "disabledCompanyNameTooltip": "يتم إنشاء اسم الشركة تلقائيًا لشركات تجريبية ولا يمكن تغييره.",
                 "companyPhoneNumbers": "رقم الهاتف.",
                 "timezone": "منطقة زمنية",
-                "timezoneTooltip": "حدد منطقتك الزمنية"
+                "timezoneTooltip": "حدد منطقتك الزمنية",
+                "addressPlaceholder": "أدخل  عنوان شارع ، شقة ، جناح ، وحدة ، مبنى ، طابق ، إلخ."
             },
             "error": {
                 "organisationNumberRequired": "رقم المنظمة مطلوب",
@@ -403,6 +412,10 @@
                 "enableCompany": {
                     "title": "قم بتفعيل الشركة",
                     "message": "هل أنت متأكد أنك تريد تفعيل الشركة \"{{name}}\"؟"
+                },
+                "info": {
+                    "internationalPaymentInformationTitle": "معلومات الدفع الدولية",
+                    "internationalPaymentInformationContent": "IBAN هو رمز يحدد بشكل فريد حسابك المصرفي للمعاملات الدولية ، بينما يحدد رمز BIC \/ SWIFT البنك المحدد الذي يوجد به حسابك. يضمن كلا الرمزين التحويل الآمن والدقيق للأموال بين البنوك حول العالم.\n\nإذا كانت هذه الرموز متوفرة في البنك الذي تتعامل معه ، فيمكنك استخدام الحساب لقبول التحويلات الدولية ، ويمكنك تسجيل المعلومات عن طريق تحديد خانة الاختيار وملء النموذج. ستتم طباعة المعلومات على جميع الفواتير والمبيعات المرتبطة بالحساب"
                 }
             },
             "tabGeneral": {
@@ -468,7 +481,9 @@
                     "numberTooltip": "ترتيب حسب رقم الحساب",
                     "status": "الحالة",
                     "statusTooltip": "ترتيب حسب الحالة",
-                    "moreOptionsTooltip": "المزيد من الخيارات"
+                    "moreOptionsTooltip": "المزيد من الخيارات",
+                    "currentBalance": "الرصيد الحالي",
+                    "type": "النوع"
                 },
                 "noBankAccount": "لم يتم تسجيل أي حساب دفع حتى الآن.",
                 "inputField": {
@@ -481,11 +496,27 @@
                     "openingBalance": "الرصيد الافتتاحي",
                     "balanceDate": "الرصيد في التاريخ",
                     "balanceDateTooltip": "حدد التاريخ الذي تم فيه التحقق من الرصيد الافتتاحي",
-                    "openingBalanceTooltip": "اضافة الرصيد الافتتاحي للحساب"
+                    "openingBalanceTooltip": "اضافة الرصيد الافتتاحي للحساب",
+                    "accountHolderName": "اسم صاحب الحساب",
+                    "addBalance": "أضف رصيد الحساب",
+                    "internationalPaymentInformation": "معلومات الدفع الدولية",
+                    "ibanNumber": "رقم IBAN",
+                    "swiftNumber": "رمز BIC \/ Swift",
+                    "paymentService": "خدمة الدفع",
+                    "paymentServiceTooltip": "حدد خدمة الدفع",
+                    "fromAccount": "من حساب",
+                    "transferAmount": "مبلغ التحويل",
+                    "transferDate": "تاريخ التحويل",
+                    "originalOpeningBalance": "الرصيد الافتتاحي الأصلي",
+                    "originalBalanceOnDate": "الرصيد الأصلي في تاريخ",
+                    "paymentAccountHistory": "تاريخ حساب الدفع",
+                    "addAmount": "أضف المبلغ"
                 },
                 "placeholder": {
                     "accountName": "اكاونتيا",
-                    "accountNumber": "123456789"
+                    "accountNumber": "123456789",
+                    "ibanNumber": "أدخل رقم IBAN",
+                    "swiftNumber": "أدخل رقم BIC \/ Swift"
                 },
                 "text": {
                     "enabled": "مفعلة",
@@ -511,7 +542,21 @@
                     "accountNumberInvalid": "رقم الحساب غيرصالح",
                     "accountNameExists": "اسم الحساب موجود",
                     "accountNumberExists": "رقم الحساب موجود",
-                    "accountNumberNegative": "يجب ألا يكون رقم الحساب سالبًا"
+                    "accountNumberNegative": "يجب ألا يكون رقم الحساب سالبًا",
+                    "accountHolderRequired": "اسم صاحب الحساب مطلوب",
+                    "balanceDateRequired": "تاريخ رصيد الحساب مطلوب",
+                    "ibanNumberInvalid": "رقم IBAN غير صالح. الرجاء إدخال رقم IBAN صالح.",
+                    "swiftNumberInvalid": "رمز BIC \/ SWIFT غير صالح. الرجاء إدخال رمز IBAN BIC \/ SWIFT صالح.",
+                    "ibanNumberRequired": "رقم IBAN مطلوب",
+                    "swiftNumberRequired": "رمز BIC \/ Swift مطلوب",
+                    "paymentServiceRequired": "خدمة الدفع مطلوبة",
+                    "toAccountRequired": "الحساب المحول له مطلوب",
+                    "fromAccountRequired": "الحساب المحول منه مطلوب",
+                    "transferDateRequired": "تاريخ التحويل مطلوب",
+                    "transferAmountRequired": "مبلغ التحويل مطلوب",
+                    "openingBalanceInvalid": "الرصيد الافتتاحي غير صالح",
+                    "transferAmountInvalid": "مبلغ التحويل غير صالح",
+                    "openingBalanceRequired": "الرصيد الافتتاحي مطلوب"
                 },
                 "toggleButton": {
                     "enableToggle": "تم تفعيل حساب الدفع ويمكن استخدامه للأغراض المحاسبية.",
@@ -540,7 +585,9 @@
                     "balanceTooltip": "الرصيد الحالي"
                 },
                 "openingBalanceInfoTitle": "معلومات عن الرصيد الافتتاحي",
-                "openingBalanceInfoContent": "يتم تقديم الرصيد الافتتاحي من نهاية الفترة المحاسبية السابقة في بداية فترة محاسبية جديدة.\n\nيمكن إدخال التاريخ الذي تم فيه التحقق من الرصيد الافتتاحي عند تسجيل الرصيد الافتتاحي في النظام.\n\nيمكن استخدام حساب الدفع بأثر رجعي لتسجيل المبيعات والمشتريات. لن تؤثر المعاملات المعينة لتاريخ أقدم من تاريخ الرصيد الافتتاحي على الرصيد الافتتاحي ولن تظهر في واردات الحساب المدفوعة أو المستلمة."
+                "openingBalanceInfoContent": "يتم تقديم الرصيد الافتتاحي من نهاية الفترة المحاسبية السابقة في بداية فترة محاسبية جديدة.\n\nيمكن إدخال التاريخ الذي تم فيه التحقق من الرصيد الافتتاحي عند تسجيل الرصيد الافتتاحي في النظام.\n\nيمكن استخدام حساب الدفع بأثر رجعي لتسجيل المبيعات والمشتريات. لن تؤثر المعاملات المعينة لتاريخ أقدم من تاريخ الرصيد الافتتاحي على الرصيد الافتتاحي ولن تظهر في واردات الحساب المدفوعة أو المستلمة.",
+                "defaultAccount": "إفتراضي",
+                "setAsDefault": "تعيين كافتراضي"
             },
             "tabInvoiceTemplate": {
                 "text": {
@@ -552,6 +599,9 @@
                     "prevTooltip": "النموذج السابق",
                     "nextTooltip": "النموذج التالي"
                 }
+            },
+            "tabTransfer": {
+                "createTransfer": "تحويل"
             }
         },
         "notification": {
@@ -837,7 +887,13 @@
             "contactUsHeader": "اتصل بنا",
             "sendContactSupportSuccessMessage": "تم إرسال طلبك إلى قسم الخدمة لدينا ، وسنقوم بمعالجته في أقرب وقت ممكن. أشكركم على الاتصال بنا.",
             "contactUsMessage": "لا تترددوا في الاتصال بنا لطرح أي أسئلة أو استفسارات. ونحن نتطلع الى الاستماع اليك.",
-            "fullName": "الاسم الكامل"
+            "fullName": "الاسم الكامل",
+            "contactUsSubjectGeneralSupportValue": "Accountia. الدعم العام",
+            "contactUsSubjectGeneralLoginIssuesValue": "Accountia. مشاكل تسجيل الدخول",
+            "contactUsNameInvalidBlank": "لا يجوز أن يكون الاسم فارغًا.",
+            "contactUsSubjectInvalidBlank": "لا يجوز أن يكون الموضوع فارغًا.",
+            "contactUsDescriptionInvalidBlank": "لا يجوز أن يكون الوصف فارغًا.",
+            "contactUsSuccessTitle": "تم إرسال طلبك بنجاح"
         },
         "dialog": {
             "leavePage": {
@@ -867,7 +923,9 @@
             "bankAccount": "حساب الدفع",
             "user": "المستخدم",
             "salaryType": "نوع الراتب",
-            "sale": "بيع"
+            "sale": "بيع",
+            "transfer": "تحويل",
+            "draftPurchase": "نموذج الشراء"
         },
         "action": {
             "enable": "تفعيل",
@@ -884,12 +942,15 @@
             "successfulEnableNotification": "تم تفعيل",
             "successfulEnableManyItemsNotification": "تم تفعيل",
             "successfulDisableManyItemsNotification": "تم تعطيل",
-            "successfulDeleteManyItemsNotification": "تم حذف"
+            "successfulDeleteManyItemsNotification": "تم حذف",
+            "successfulSetAsDefaultNotification": "تم تعيينه كإعداد افتراضي"
         },
         "dialog": {
             "actionTitle": "قم بتأكيد {{action}}  {{type}}",
             "actionConfirmMessage": "هل أنت متأكد أنك تريد  {{action}} {{type}} ؟",
-            "actionConfirmMessageMany": "هل أنت متأكد من أنك تريد {{action}} المحدد{{type}}؟"
+            "actionConfirmMessageMany": "هل أنت متأكد من أنك تريد {{action}} المحدد{{type}}؟",
+            "changeOpeningBalanceTitle": "تأكيد تغيير الرصيد الافتتاحي",
+            "changeOpeningBalanceConfirmMessage": "هل أنت متأكد أنك تريد تغير معلومات الرصيد الافتتاحي؟"
         },
         "notification": {
             "actionSuccess": "{{action}} {{type}} بنجاح",
@@ -913,7 +974,9 @@
             "action": "الاجراء",
             "actionTooltip": "ترتيب حسب الاجراء",
             "description": "الوصف",
-            "descriptionTooltip": "ترتيب حسب الوصف"
+            "descriptionTooltip": "ترتيب حسب الوصف",
+            "amount": "مبلغ",
+            "type": "نوع"
         },
         "text": {
             "userTitle": "سجل أحداث المستخدم",
@@ -960,7 +1023,18 @@
             "updateDueDate": "تحديث تاريخ الاستحقاق",
             "createCashSale": "إنشاء بيع",
             "sendMailCashSale": "إرسال إيصال البيع",
-            "cancelCashSale": "إلغاء إيصال البيع"
+            "cancelCashSale": "إلغاء إيصال البيع",
+            "uploadInvoiceAttachments": "تحميل المرفقات",
+            "updateAccount": "تحديث حساب الدفع",
+            "changeAccountStatus": "تغيير حالة حساب الدفع",
+            "changeAccountDefault": "تغيير حساب الدفع إلى الافتراضي",
+            "transferAccountingAccount": "تحويل حساب المحاسبة",
+            "regretTransferAccountingAccount": "إلغاء التحويل",
+            "uploadPaymentTransferAttachment": "تحميل مرفق التحويل",
+            "deletePaymentTransferAttachment": "حذف مرفق التحويل",
+            "addPaymentTransferNoteAttachment": "أضف ملاحظة التحويل",
+            "uploadPaymentTransferNoteAttachment": "تحميل مرفق مذكرة التحويل",
+            "deletePaymentTransferNoteAttachment": "حذف مرفق مذكرة التحويل"
         },
         "description": {
             "createInvoice": "تم إنشاء الفاتورة في {{createdDate}}",
@@ -1004,7 +1078,18 @@
             "sendMailCashSale": "تم إرسال إيصال البيع في {{createdDate}}",
             "cancelCashSale": "تم إلغاء إيصال البيع في {{createdDate}}",
             "updateMailingStatusNotSent": "تم تغيير حالة البريد إلى لم يتم الإرسال في {{date}}",
-            "updateMailingStatusSentOutsideSystem": "تم تغيير حالة البريد إلى مرسل خارج النظام في {{date}}"
+            "updateMailingStatusSentOutsideSystem": "تم تغيير حالة البريد إلى مرسل خارج النظام في {{date}}",
+            "uploadInvoiceAttachments": "تم تغيير المرفقات في{{createdDate}}",
+            "updateAccount": "تم تحديث حساب الدفع في{{createdDate}}",
+            "changeAccountStatus": "تم تغيير حالة حساب الدفع في {{createdDate}}",
+            "changeAccountDefault": "تم تغيير حساب الدفع إلى الافتراضي في {{createdDate}}",
+            "transferAccountingAccount": "تم إنشاء حساب التحويل في {{createdDate}}",
+            "regretTransferAccountingAccount": "تم تحديث إلغاء التحويل في {{createdDate}}",
+            "uploadPaymentTransferAttachment": "تم تحديث مرفق التحويل في {{createdDate}}",
+            "deletePaymentTransferAttachment": "تم حذف مرفق التحويل في {{createdDate}}",
+            "addPaymentTransferNoteAttachment": "تم تحديث ملاحظة التحويل في {{createdDate}}",
+            "uploadPaymentTransferNoteAttachment": "تم تحديث ملاحظة مرفق التحويل في {{createdDate}}",
+            "deletePaymentTransferNoteAttachment": "تم تحديث حذف مذكرة التحويل المرفقة في {{createdDate}}"
         },
         "notification": {
             "deleteCompany": "تم حذف الشركة في {{date}}",
@@ -1082,7 +1167,18 @@
                 "sendInvoice": "تم إرسال الفاتورة",
                 "updateSettledStatus": "تم تحديث حالة التسديد",
                 "sendMailCashSale": "إيصال بيع مرسل",
-                "cancelCashSale": "إيصال بيع ملغى"
+                "cancelCashSale": "إيصال بيع ملغى",
+                "uploadInvoiceAttachments": "تم تغيير المرفقات",
+                "updateAccount": "تحديث الحساب",
+                "transferAccountingAccount": "تحويل حساب المحاسبة",
+                "changeAccountStatus": "تغيير حالة الحساب",
+                "changeAccountDefault": "تغيير الحساب الافتراضي",
+                "regretTransferAccountingAccount": "تم تغيير مذكرة إلغاء التحويل",
+                "uploadPaymentTransferAttachment": "تم تغيير مرفق التحويل",
+                "deletePaymentTransferAttachment": "تم تغيير حذف مرفق التحويل",
+                "addPaymentTransferNoteAttachment": "تم تغيير ملاحظة التحويل",
+                "uploadPaymentTransferNoteAttachment": "تم تغيير مرفق مذكرة التحويل المرفقة",
+                "deletePaymentTransferNoteAttachment": "تم تغيير إلغاء مرفق مذكرة التحويل"
             }
         },
         "document": {
@@ -1328,7 +1424,7 @@
                 "emailInvalid": "البريد الإلكتروني غير صالح. يرجى إدخال عنوان بريد إلكتروني صالح.",
                 "birthdayInvalid": "تاريخ الميلاد غير صالح. ارجوك ادخل تاريخ صحيح.",
                 "employeeEmailExist": "هناك موظف بنفس البريد الإلكتروني. الرجاء إدخال بريد إلكتروني آخر.",
-                "duplicateNameAndPhoneNumber": ""
+                "duplicateNameAndPhoneNumber": "يوجد موظف بنفس الاسم ورقم الهاتف بالفعل. الرجاء تغيير الاسم أو رقم الهاتف."
             },
             "dialog": {
                 "removePhone": {
@@ -1468,7 +1564,8 @@
             "browse": "تصفح",
             "createCopy": "إنشاء نسخة",
             "delete": "مسح",
-            "removeBtn": "إزالة"
+            "removeBtn": "إزالة",
+            "addTransfer": "أضف تحويل"
         },
         "error": {
             "maxLength": "يجب أن يكون طول الإدخال أقل من ٢٥٦ حرفًا",
@@ -1539,7 +1636,12 @@
             "contactPersonDetail": "تفاصيل جهة الاتصال",
             "customerDetail": "تفاصيل العميل",
             "purchases": "المشتريات",
-            "newPurchase": "شراء جديد"
+            "newPurchase": "شراء جديد",
+            "paymentAccounts": "حسابات الدفع",
+            "paymentAccountDetails": "تفاصيل حساب الدفع",
+            "transfer": "تحويل",
+            "createTransfer": "إنشاء تحويل",
+            "draftPurchase": "نموذج الشراء"
         },
         "select": {
             "text": {
@@ -2032,7 +2134,14 @@
             "cashPurchase": "شراء نقداً",
             "createPurchase": "إنشاء عملية شراء",
             "sendMailCashSale": "أرسل المستند",
-            "cancelCashSale": "إلغاء إيصال البيع"
+            "cancelCashSale": "إلغاء إيصال البيع",
+            "uploadInvoiceAttachments": "تحميل المرفقات",
+            "regretTransferAccountingAccount": "إلغاء التحويل",
+            "uploadPaymentTransferAttachment": "تحميل مرفق التحويل",
+            "deletePaymentTransferAttachment": "حذف مرفق التحويل",
+            "addPaymentTransferNoteAttachment": "أضف ملاحظة التحويل",
+            "uploadPaymentTransferNoteAttachment": "تحميل مرفق مذكرة التحويل",
+            "deletePaymentTransferNoteAttachment": "حذف مرفق مذكرة التحويل"
         },
         "dialog": {
             "createEditEmployee": {
@@ -2481,7 +2590,7 @@
                 "text": {
                     "cancelTitle": "إلغاء البيع",
                     "cancelSaleMessage": "أنت على وشك إلغاء البيع. سيتم حذف مدفوعات هذا البيع. يجب التعامل مع أي إسترداد للأموال مع العميل يدويًا. <br> <br>\nهل تريد إلغاء البيع؟ هذه العملية غير قابلة للعكس.",
-                    "cancelSaleWarningMessage": ""
+                    "cancelSaleWarningMessage": "هذه العملية غير قابلة للعكس."
                 },
                 "button": {
                     "cancelSale": "إلغاء البيع",
@@ -2492,8 +2601,8 @@
                 "message": "نوع البيع هذا معطل ولا يمكن استخدامه لإنشاء فاتورة.\nيمكنك تغيير هذا الإعداد في إعدادات شركتك.\nيرجى إعادة تفعيل نوع البيع أولاً إذا كنت تريد متابعة التعديل."
             },
             "deleteNote": {
-                "title": "",
-                "message": ""
+                "title": "حذف الملاحظة الداخلية",
+                "message": "هل أنت متأكد أنك تريد حذف الملاحظة الداخلية؟"
             }
         },
         "notification": {
@@ -2575,9 +2684,9 @@
             "createSaleSuccess": "تم تسجيل بيع جديد",
             "createSaleFail": "فشل في تسجيل البيع",
             "cancelEntireSaleFail": "فشل في إلغاء البيع",
-            "addNoteFail": "",
-            "addNoteSuccess": "",
-            "deleteNoteSuccess": ""
+            "addNoteFail": "فشل في إضافة ملاحظة داخلية",
+            "addNoteSuccess": "تم تحديث الملاحظة الداخلية.",
+            "deleteNoteSuccess": "تم حذف الملاحظة الداخلية."
         },
         "sendMailInvoice": {
             "installmentsList": "قائمة التقسيط",
@@ -2698,7 +2807,8 @@
             "feeId": "معرف الرسوم",
             "contactInformation": "معلومات الاتصال",
             "feeNameTitle": "اسم الرسوم",
-            "tel": "هاتف"
+            "tel": "هاتف",
+            "accountHolder": "صاحب الحساب"
         },
         "error": {
             "dateIsInvalid": "التاريخ غير صالح. الرجاء إدخال تاريخ صحيح."
@@ -2983,7 +3093,8 @@
                 "nameRequired": "الاسم مطلوب",
                 "is": "يكون",
                 "are": "نكون",
-                "invalid": "غير صالح"
+                "invalid": "غير صالح",
+                "emailExist": "عنوان البريد الإلكتروني هذا موجود بالفعل. الرجاء إدخال بريد إلكتروني آخر."
             },
             "inputField": {
                 "address": "العنوان",
@@ -3148,15 +3259,16 @@
             "saleCurrency": "عملة البيع",
             "changeDate": "تغيير التاريخ",
             "note": "ملاحظات للاستخدام الداخلي",
-            "noteTooltip": "",
-            "notePlaceholder": "",
+            "noteTooltip": "أضف ملاحظة جديدة و \/ أو قم بتحرير ملاحظة موجودة إلى الفاتورة. تُستخدم هذه الملاحظة داخليًا فقط في الشركة ولا تتوفر لعملاء الشركة.",
+            "notePlaceholder": "اترك ملاحظة داخل النظام هنا",
             "attachment": "مرفق",
             "newInvoice": "فاتورة جديدة",
             "mailingStatusNotSendTooltip": "لم يتم التحقق من الفاتورة على أنها مرسلة إلى العميل",
             "mailingStatusSentFromTheSystemTooltip": "{{date}} {{documentType}} أرسل إلى {{email}}",
             "mailingStatusSentOutsideTheSystemTooltip": "تم التحقق من الفاتورة على أنها مرسلة خارج النظام في {{date}}",
-            "noteTitle": "",
-            "edited": ""
+            "noteTitle": "ملاحظات للاستخدام الداخلي",
+            "edited": "معدلة",
+            "internalAttachmentsTooltip": "إرفاق المستندات المتعلقة بالمبيعات. هذه المرفقات للاستخدام الداخلي فقط وليست متاحة لإرسالها إلى عميلك."
         },
         "button": {
             "createEmployeeTooltip": "إنشاء موظف جديد",
@@ -3198,7 +3310,7 @@
             "option": {
                 "installment": "التقسيط",
                 "standard": "إعتيادي",
-                "sent": "",
+                "sent": "مرسلة من النظام",
                 "notSent": "لم ترسل",
                 "sentOutsideSystem": "تم إرسال خارج النظام",
                 "cashSale": "بيع نقدي"
@@ -3254,7 +3366,10 @@
             },
             "createEditBankAccount": {
                 "editTitle": "تفاصيل حساب الدفع",
-                "createTitle": "إنشاء حساب دفع"
+                "createTitle": "إنشاء حساب دفع",
+                "transferFromAccount": "التحويل من حساب",
+                "transferToAccount": "إلى حساب",
+                "enterYourDescription": "أدخل الوصف الخاص بك"
             },
             "deleteDraftInvoice": {
                 "title": "تأكيد إزالة مسودة الفاتورة",
@@ -3399,7 +3514,11 @@
             "resetDataTooltip": "إعادة تعيين كافة البيانات الرئيسية إلى القيمة الافتراضية",
             "installmentOverdueDays": "تأخر تسديد القسط ب {{days}} أيام",
             "copyToNewSale": "النسخ إلى بيع جديد",
-            "due": ""
+            "due": "مستحق",
+            "cancelWholeInvoice": "إلغاء الفاتورة بأكملها",
+            "addNewAttachment": "أضف مرفقًا جديدًا",
+            "cancelWholeSale": "إلغاء البيع بالكامل",
+            "addAttachment": "إضافة مرفق"
         },
         "chip": {
             "finalized": "تم الانتهاء",
@@ -3492,7 +3611,10 @@
             "customers": "العملاء",
             "suppliers": "المزودين",
             "purchases": "المشتريات",
-            "purchasesTooltip": "الذهاب إلى قائمة المشتريات"
+            "purchasesTooltip": "الذهاب إلى قائمة المشتريات",
+            "paymentAccountsTooltip": "الذهاب إلى حسابات الدفع",
+            "paymentAccounts": "حسابات الدفع",
+            "transfers": "التحويلات"
         },
         "button": {
             "collapse": "اخفاء",
@@ -3631,7 +3753,12 @@
             "draftPurchases": "مسودة المشتريات",
             "newPurchase": "شراء جديد",
             "purchaseDetail": "تفاصيل الشراء",
-            "newInvoice": "فاتورة جديدة"
+            "newInvoice": "فاتورة جديدة",
+            "paymentAccounts": "حسابات الدفع",
+            "paymentAccountDetails": "تفاصيل حساب الدفع",
+            "transfer": "التحويلات",
+            "createTransfer": "إنشاء تحويل",
+            "draftPurchase": "نموذج الشراء"
         },
         "notifications": "الاشعارات",
         "userProfile": "ملف تعريف المستخدم والإعدادات",
@@ -4043,7 +4170,9 @@
         "select": {
             "option": {
                 "bank": "بنك",
-                "cash": "نقد"
+                "cash": "نقد",
+                "payment-service": "خدمة الدفع",
+                "payment_service": "خدمة الدفع"
             }
         }
     },
@@ -4138,7 +4267,8 @@
             "calculatedPurchaseAmount": "مبلغ الشراء المحسوب",
             "purchaseHistory": "تاريخ الشراء",
             "purchaseStatus": "حالة الشراء",
-            "purchaseExchangeRate": "سعر الصرف للشراء"
+            "purchaseExchangeRate": "سعر الصرف للشراء",
+            "noPurchase": "لم يتم العثور على الشراء"
         },
         "inputField": {
             "type": "النوع",
@@ -4187,7 +4317,8 @@
             "registerPurchase": "تسجيل",
             "cancelPurchase": "إلغاء عملية الشراء",
             "cancelPurchaseTooltip": "إلغاء الشراء بالكامل",
-            "previewAndSendPurchaseTooltip": "حدد المستندات (مثل المشتريات وقوائم الدفع وما إلى ذلك) التي تريد تنزيلها لمعاينتها أو إرسالها إلى المزود."
+            "previewAndSendPurchaseTooltip": "حدد المستندات (مثل المشتريات وقوائم الدفع وما إلى ذلك) التي تريد تنزيلها لمعاينتها أو إرسالها إلى المزود.",
+            "previewAndSend": "معاينة وإرسال"
         },
         "columnHeader": {
             "supplier": "مزود",
@@ -4212,6 +4343,41 @@
                 },
                 "title": "قص الصوره"
             }
+        }
+    },
+    "paymentService": {
+        "select": {
+            "option": {
+                "aliPay": "Ali pay",
+                "applePay": "Apple pay",
+                "googlePay": "Google Pay",
+                "paypal": "Paypal",
+                "wepay": "WePay",
+                "wise": "Wise",
+                "other": "طريقة دفع أخرى",
+                "stripe": "Stripe"
+            }
+        }
+    },
+    "footer": {
+        "text": "مدعوم من Accountia v1.0.0"
+    },
+    "paymentAccount": {
+        "text": {
+            "fromAccount": "من",
+            "toAccount": "إلى",
+            "transferDate": "تاريخ",
+            "transferAmount": "مبلغ",
+            "createTransfer": "إنشاء تحويل",
+            "transferDetail": "تفاصيل التحويل",
+            "regretTransferMessage": "سيتم عكس المعاملة المحددة. لن يكون هناك حذف لمعلومات تفاصيل التحويل الأصلية ، ولكن ستتم إضافة معاملة معكوسة جديدة إلى تاريخ التحويل.",
+            "regretTransferTitle": "تأكيد إلغاء التحويل",
+            "entryNumber": "رقم القيد",
+            "regretTransferSuccess": "تم إلغاء التحويل.",
+            "regretTransferText": "تم عكس هذا التحويل ولا يمكن تعديله.",
+            "regretTransferFail": "فشل في إلغاء الدفع.",
+            "noNote": "لم تتم إضافة أي ملاحظة.",
+            "cancelBtnTooltip": "إلغاء والعودة إلى قائمة التحويلات"
         }
     }
 }

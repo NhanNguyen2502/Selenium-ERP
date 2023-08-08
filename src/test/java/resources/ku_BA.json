@@ -193,7 +193,15 @@
                 "signUpSuccessHeader": "ب سەرکەفتیانە هاتە تومارکرن",
                 "signUpSuccessMsg": "ناڤ تۆمارکرن یا سەرکەفتی بوو. چ نەمایە ئەکاونتێ تە دێ ئامادەبیت. نامەک بۆ ئیمێلی {{email}} هاتە هنارتن. هیڤیە دناڤ ئیمێلی دا کلیکێ لەسەر 'چاڵاک کرنا ئەکاونتی' بکە بۆ پەسەند کرنا ئیمێلێ خو. ئیمێل دێ ل ماوێ چەند خولەکا بوتە هێتە هنارتن و تنێ دێ بۆ ماوەی ئێک دەمژمێر یێ کارا بیت.",
                 "byClickingHere": "دەمێ تو ڤێ کلیک دکەی، تو یێ رازی ل سەر",
-                "customerAgreement": "رێککەفتنا کڕیاری"
+                "customerAgreement": "رێککەفتنا کڕیاری",
+                "enableAccountEmailInvalidBlank": "نابیت ئیمێڵ یێ بەتاڵ بیت.",
+                "enableAccountEmailInvalidPattern": "ئیمێڵ یێ دروست نیە",
+                "enableAccountUserNotFound": "نە هاتە دیتن.",
+                "enableAccountUserEnabled": "ئەڤ بکارهێنەرە یێ  هاتیە چالاک کرن.",
+                "enableAccountDisabledBySystem": "ئەڤ بکارهێنەرە ژلایێ سیستەمی ڤە هاتیە ژکارئێخستن.",
+                "enableAccountSuccess": "ئەکاونتێ تە هاتە چالاک کرن.",
+                "enableAccountVerificationEmailSent": "پشتڕاستکرن بۆ ئیمیلێ تە هاتە هنارتن.",
+                "forgotPasswordEmailVerify": "ئەرێ هەتا نوکە چ ئیمێل  نەگەهشتینە تە؟"
             },
             "link": {
                 "signIn": "چوونەژۆر",
@@ -346,7 +354,8 @@
                 "disabledCompanyNameTooltip": "ناڤێ کۆمپانیێ ب شێوەیەکێ ئوتوماتیکی بو کۆمپانیێن کاتی دهێتە دانان و ناهێتە گورین.",
                 "companyPhoneNumbers": "ژمارا تەلەفونێ",
                 "timezone": "دەمێ ناڤچەی",
-                "timezoneTooltip": "دەمێ ناڤچا خۆ هەلبژێرە"
+                "timezoneTooltip": "دەمێ ناڤچا خۆ هەلبژێرە",
+                "addressPlaceholder": "ناڤ و نیشانێ جادێ، فلاتێ، شوقێ، یەکێ، ئاڤاهیێ، قاتێ، هتد داخل بکە"
             },
             "error": {
                 "organisationNumberRequired": "ژمارا رێکخراوێ یا داخازکریە",
@@ -403,6 +412,10 @@
                 "enableCompany": {
                     "title": "چاڵاک کرنا کۆمپانیێ پشتراست بکە",
                     "message": "ئەرێ تویێ پشتراستی ژ چاڵاک کرنا کۆمپانیا {{name}}؟"
+                },
+                "info": {
+                    "internationalPaymentInformationTitle": "زانیاریێت پارەدانا نێڤ دەولەتی",
+                    "internationalPaymentInformationContent": "IBAN کۆدەکە کۆ بشێوەیەکێ ناوازە ئەکاونتێ تەیێ بانکی بۆ مامەلەیێن نێڤ دەوڵەتی ددەتە نیاسین. ل دەمەکی دا کودا BIC\/SWIFT وێ بانکێ دیاردکەت ئەوا ئەکاونتێ تە لێ بەردەست. هەردوو کۆد گەرەنتیا ڤەگوهاستنا سەلامەت و دروست یا پارەی دناڤبەرا بانکێن جیهانێ دا ددەت.\n\nئەگەر ئەڤ کۆدە ل بانکا تەدا بەردەست بوون، ل وی دەمی دێ شێی وی ئەکاونتی بکاربینی بۆ ڤەگوهاستنا نێڤ دەوڵەتی. هەروەسا دێ شێی زانیاریا تومار بکەی ب رێیا هەلبژاردنا خانێ و پڕکرنا فورمێ. هەمی زانیاری ل سەر فاتورا و فرۆتنێت گرێدای ب ئەکاونتی ڤە دێ هێنە چاپکرن."
                 }
             },
             "tabGeneral": {
@@ -468,7 +481,9 @@
                     "numberTooltip": "رێزکرن ل دیڤ ژمارا ئەکاونتی",
                     "status": "رەوش",
                     "statusTooltip": "رێزکرن ل دیڤ رەوشێ",
-                    "moreOptionsTooltip": "بژاردەیێن زێدەتر"
+                    "moreOptionsTooltip": "بژاردەیێن زێدەتر",
+                    "currentBalance": "بالانسێ نوکە",
+                    "type": "جۆر"
                 },
                 "noBankAccount": "چ ئەکاونتێن پارەدانێ نەهاتینە تومار کرن",
                 "inputField": {
@@ -481,11 +496,27 @@
                     "openingBalance": "باڵانسێ ڤەکرنێ",
                     "balanceDate": "باڵانس ل بەروارەکی دا",
                     "balanceDateTooltip": "وی بەرواری هەلبژێرە ئەوێ باڵانسێ ڤەکرنێ لێ هاتیە پشکنین",
-                    "openingBalanceTooltip": "باڵانسێ ڤەکرنێ یێ ئەکاونتی زێدە بکە"
+                    "openingBalanceTooltip": "باڵانسێ ڤەکرنێ یێ ئەکاونتی زێدە بکە",
+                    "accountHolderName": "ناڤێ خودانێ ئەکاونتی",
+                    "addBalance": "زێدەکرنا بالانسی",
+                    "internationalPaymentInformation": "زانیاریێت پارەدانا نێڤ دەوڵەتی",
+                    "ibanNumber": "ژمارا IBAN",
+                    "swiftNumber": "بی ئای سی\/ سویفت",
+                    "paymentService": "خزمەتگوزاریا پارەدانێ",
+                    "paymentServiceTooltip": "خزمەتگوزاریا پارەدانێ هەلبژێرە",
+                    "fromAccount": "ژ ئەکاونتێ",
+                    "transferAmount": "بڕێ ڤەگوهاستنێ",
+                    "transferDate": "بەروارێ ڤەگوهاستنێ",
+                    "originalOpeningBalance": "باڵانسێ ئەسڵی یێ ڤەکرنێ",
+                    "originalBalanceOnDate": "بەروارێ باڵانسێ سەرەکی",
+                    "paymentAccountHistory": "مێژووژیا ئەکاونتا پارەدانێ",
+                    "addAmount": "بڕی زێدە بکە"
                 },
                 "placeholder": {
                     "accountName": "ئەکاونتیا",
-                    "accountNumber": "١٢٣٤٥٦٧٨٩"
+                    "accountNumber": "١٢٣٤٥٦٧٨٩",
+                    "ibanNumber": "ژمارا IBAN بنڤیسە",
+                    "swiftNumber": "ژمارا بی ئای سی\/ سویفت بنڤیسە"
                 },
                 "text": {
                     "enabled": "چاڵاکە",
@@ -511,7 +542,21 @@
                     "accountNumberInvalid": "ژمارا ئەکاونتێ یا خەلەتە",
                     "accountNameExists": "ناڤێ ئەکاونتی پێشتر یێ هاتیە تومارکرن",
                     "accountNumberExists": "ژمارا ئەکاونتێ پێشتر یا هاتیە توماکرن",
-                    "accountNumberNegative": "نابیت ژمارا ئەکاونتی یا نێگەتیڤ بیت"
+                    "accountNumberNegative": "نابیت ژمارا ئەکاونتی یا نێگەتیڤ بیت",
+                    "accountHolderRequired": "ناڤێ خودانێ ئەکاونتی یێ داخازکریە",
+                    "balanceDateRequired": "ڕێکەفتا باڵانسی یا داخازکریە",
+                    "ibanNumberInvalid": "شێوازێ IBAN یێ خەلەتە. هیڤیە ژمارەیەکا دروست بنڤیسە",
+                    "swiftNumberInvalid": "کودا بی ئای سی\/ سویفت یا خەلەتە. هیڤیە کودا دروست یا IBAN یان بی ئای سی\/ سویفت بنڤیسە",
+                    "ibanNumberRequired": "ژمارا IBAN یا داخاز کریە",
+                    "swiftNumberRequired": "BIC \/ Swift یا داخازکریە",
+                    "paymentServiceRequired": "خزمەتگوزاریا پارەدانێ یا داخازکریە",
+                    "toAccountRequired": "بۆ ئەکاونتی یا داخازکریە",
+                    "fromAccountRequired": "ژ ئەکاونتی یا داخازکریە",
+                    "transferDateRequired": "بەروارێ ڤەگوهاستنێ یێ داخازکریە",
+                    "transferAmountRequired": "بڕێ ڤەگوهاستنێ یێ داخازکریە",
+                    "openingBalanceInvalid": "باڵانسێ ڤەکرنێ یێ دروست نیە",
+                    "transferAmountInvalid": "بڕێ ڤەگوهاستنێ یێ دروست نیە",
+                    "openingBalanceRequired": "باڵانسێ ڤەکرنێ یێ داخازکریە"
                 },
                 "toggleButton": {
                     "enableToggle": "ئەکاونتێ پارەدانێ یێ چاڵاکە و یێ ئامادەیە بو مەرەمێن ژمێریاریێ",
@@ -540,7 +585,9 @@
                     "balanceTooltip": "باڵانسێ نوکە"
                 },
                 "openingBalanceInfoTitle": "زانیاری دەربارەی باڵانسێ ڤەکرنێ",
-                "openingBalanceInfoContent": "باڵانسێ ڤەکرنێ ل دیماهیکا ماوێ ژمێریاریا پێشتر ل دەستپێکا ماوێ ژمێریاریا نوی دا دێ هێتە پێش.\n\nبەروارێ پشتڕاست کرنا باڵانسێ ڤەکرنێ دهێتە تومار کرن دەمێ باڵانسی ڤەکرنێ ل سیستەمی دا دهێتە تومار کرن.\n\nتو دشێی هەلوەشاندنا حیسابا پارەدانێ بکاربینی بۆ تۆمارکرنا فرۆشتن و کڕینێ. ئەو مامەڵێت بۆ بەروارەکی پێشی بەروارێ باڵانسی ڤەکرنێ دانای کاریگەریێ ل سەر باڵانسی ڤەکرنێ ناکەت و ل نڤیسنێت ئەکاونتێت پارەدانێ یان هاتووی دا دەرناکەڤن."
+                "openingBalanceInfoContent": "باڵانسێ ڤەکرنێ ل دیماهیکا ماوێ ژمێریاریا پێشتر ل دەستپێکا ماوێ ژمێریاریا نوی دا دێ هێتە پێش.\n\nبەروارێ پشتڕاست کرنا باڵانسێ ڤەکرنێ دهێتە تومار کرن دەمێ باڵانسی ڤەکرنێ ل سیستەمی دا دهێتە تومار کرن.\n\nتو دشێی هەلوەشاندنا حیسابا پارەدانێ بکاربینی بۆ تۆمارکرنا فرۆشتن و کڕینێ. ئەو مامەڵێت بۆ بەروارەکی پێشی بەروارێ باڵانسی ڤەکرنێ دانای کاریگەریێ ل سەر باڵانسی ڤەکرنێ ناکەت و ل نڤیسنێت ئەکاونتێت پارەدانێ یان هاتووی دا دەرناکەڤن.",
+                "defaultAccount": "بنەڕەتی",
+                "setAsDefault": "بکە بنەڕەت"
             },
             "tabInvoiceTemplate": {
                 "text": {
@@ -552,6 +599,9 @@
                     "prevTooltip": "کەلیشەیا پشتر",
                     "nextTooltip": "کەلیشا بهێت"
                 }
+            },
+            "tabTransfer": {
+                "createTransfer": "ڤەگوهاستن"
             }
         },
         "notification": {
@@ -619,7 +669,7 @@
             "columnHeader": {
                 "checkAllTooltip": "هەمی کڕیارا هەلبژێرە",
                 "checkTooltip": "کڕیاری هەلبژێرە",
-                "contactNumber": "ژمارا پەیوەندیکاری",
+                "contactNumber": "ژمارا پەیوەندی کرنێ",
                 "contactNumberTooltip": "رێزکرن ل دیڤ ژمارا پەیوەندی کرنێ",
                 "phoneNumbers": "ژمارا تەلەفونێ",
                 "phoneNumbersTooltip": "رێزکرن ل دیف ژمارا تەلەفونێ",
@@ -708,7 +758,7 @@
                 "contactPersonNameTooltip": "ناڤێ کەسێ پەیوەندیکار بنڤیسە"
             },
             "button": {
-                "addPhoneNumber": "ژمارا تەلەفونێ زێدە بکە",
+                "addPhoneNumber": "ژمارا تەلەفونێ",
                 "emailInvalid": "ئیمێل یێ خەلەتە. هیڤیە ئیمێلەکێ دروست بنڤیسە",
                 "remove": "لێبرن",
                 "addPhoneNumberTooltip": "ژمارا نوی یا تەلەفونێ بنڤیسە",
@@ -837,7 +887,13 @@
             "contactUsHeader": "پەیوەندیێ بمە بکە",
             "sendContactSupportSuccessMessage": "داخازیا تە هاتە هنارتن بو بەشێ خزمەتگوزاریا، دێ ب زیترین دەم سەرەدەری دگەل هێتە کرن. سوپاس بو پەیوەندی کرنێ.",
             "contactUsMessage": "بێ دوو دلی پەیوەندیێ بمە بکە ل دەمێ هەبوونا هەر پرسیار یان نیگەرانیەکێ. ئەم یێ ل چاڤەرێ پەیوەندیا تە",
-            "fullName": "ناڤێ تەواو"
+            "fullName": "ناڤێ تەواو",
+            "contactUsSubjectGeneralSupportValue": "ئەکاونتیا. هاریکاریا گشتی.",
+            "contactUsSubjectGeneralLoginIssuesValue": "ئەکاونتیا. ئاریشێن چوونەژوورێ.",
+            "contactUsNameInvalidBlank": "نابیت جهێ ناڤی بەتاڵ بیت.",
+            "contactUsSubjectInvalidBlank": "نابیت بابەت یێ بەتاڵ بیت.",
+            "contactUsDescriptionInvalidBlank": "نابیت وەسف کرن یا بەتاڵ بیت.",
+            "contactUsSuccessTitle": "داخازا تە ب سەرکەفتیانە هاتە هنارتن"
         },
         "dialog": {
             "leavePage": {
@@ -867,7 +923,9 @@
             "bankAccount": "ئەکاونتا بانکی",
             "user": "بکارهێنەر",
             "salaryType": "جورێ موچەی",
-            "sale": "فرۆتن"
+            "sale": "فرۆتن",
+            "transfer": "ڤەگوهاستن",
+            "draftPurchase": "ڕەشنڤیسا کڕینێ"
         },
         "action": {
             "enable": "چاڵاک کرن",
@@ -884,12 +942,15 @@
             "successfulEnableNotification": "هاتە چاڵاک کرن",
             "successfulEnableManyItemsNotification": "هاتە چاڵاک کرن",
             "successfulDisableManyItemsNotification": "هاتە نەچاڵاک کرن",
-            "successfulDeleteManyItemsNotification": "هاتە لێبرن"
+            "successfulDeleteManyItemsNotification": "هاتە لێبرن",
+            "successfulSetAsDefaultNotification": "ب بنەڕەتی هاتیە دانان"
         },
         "dialog": {
             "actionTitle": "{{action}} {{type}}  پشتراست بکە",
             "actionConfirmMessage": "ئەرێ تویێ پشتراستی ژ {{action}} {{type}}",
-            "actionConfirmMessageMany": "ئەرێ تویێ پشتراستی تە دڤێت {{action}} دیارکری ل {{type}}؟"
+            "actionConfirmMessageMany": "ئەرێ تویێ پشتراستی تە دڤێت {{action}} دیارکری ل {{type}}؟",
+            "changeOpeningBalanceTitle": "گورینا باڵانسێ ڤەکرنێ پشتراست بکە",
+            "changeOpeningBalanceConfirmMessage": "ئەرێ تویێ پشتراستی ژ گوڕینا زانیاریێت باڵانسێ ڤەکرنێ؟"
         },
         "notification": {
             "actionSuccess": "{{action}} {{type}}",
@@ -913,7 +974,9 @@
             "action": "کردار",
             "actionTooltip": "رێزکردن ل دیف کرداری",
             "description": "وەسفکرن",
-            "descriptionTooltip": "رێزکرن ل دیف وەسفکرنێ"
+            "descriptionTooltip": "رێزکرن ل دیف وەسفکرنێ",
+            "amount": "بڕ",
+            "type": "جۆر"
         },
         "text": {
             "userTitle": "تومارا چاڵاکیێن بکارهێنەری",
@@ -960,7 +1023,18 @@
             "updateDueDate": "ئەپدێت کرنا بەروارێ پارەدانێ",
             "createCashSale": "دروستکرنا فرۆتنێ",
             "sendMailCashSale": "هنارتنا پسۆلا فڕوتنێ",
-            "cancelCashSale": "هەڵوەشاندنا پسۆلا فرۆتنێ"
+            "cancelCashSale": "هەڵوەشاندنا پسۆلا فرۆتنێ",
+            "uploadInvoiceAttachments": "هەڤپێچا ئەپلود بکە",
+            "updateAccount": "ئەکاونتێ پارەدانێ ئەپدێت بکە",
+            "changeAccountStatus": "رەوشا ئەکاونتێ پارەدانێ بگوڕە",
+            "changeAccountDefault": "ئەکاونتێ پارەدانێ بگوڕە بۆ ئەکاونتێ بنەرەتی",
+            "transferAccountingAccount": "ئەکاونتێ ژمێریاری یێ ڤەگوهاستنێ",
+            "regretTransferAccountingAccount": "هەڵوەشاندنا ڤەگوهاستنێ",
+            "uploadPaymentTransferAttachment": "ئەپلود کرنا هەڤپێجا ڤەگوهاستنێ",
+            "deletePaymentTransferAttachment": "لێبرنا هەڤپێچا ڤەگوهاستنێ",
+            "addPaymentTransferNoteAttachment": "زێدە کرنا تێبینیا ڤەگوهاستنێ",
+            "uploadPaymentTransferNoteAttachment": "ئەپلود کرنا هەڤپێچا تێبینا ڤەگوهاستنێ",
+            "deletePaymentTransferNoteAttachment": "لێبرنا هەڤپێچا تێبینیا ڤەگوهاستنێ"
         },
         "description": {
             "createInvoice": "فاتورە هاتە دروستکرن ل رێکەفتێ {{createdDate}}",
@@ -971,7 +1045,7 @@
             "createEmployee": "کارمەند هاتە دروستکرن ل رێکەفتی {{createdDate}}",
             "createFee": "خەرجی هاتە دروستکرن ل رێکەفتی {{createdDate}}",
             "createProduct": "بەرهەم هاتە دروستکرن ل رێکەفتی {{createdDate}}",
-            "createAccount": "ئەکاونتێ پارەدانێ هاتە دروستکرن ل رێکەفتی {{createdDate}}",
+            "createAccount": "ئەکاونتێ پارەدانێ هاتە دروستکرن ل  بەروارێ {{createdDate}}",
             "addPayment": "پارەدان هاتە دروستکرن ل رێکەفتی {{createdDate}}",
             "addCreditNote": "پسۆلەی پارە هاتە دروستکرن ل رێکەفتێ {{createdDate}}",
             "deleteCompany": "کۆمپانیا هاتە لێبرن ل رێکەفتی {{createdDate}}",
@@ -1004,7 +1078,18 @@
             "sendMailCashSale": "پسۆلا فرۆتنێ هاتە هنارتن ل رێکەفتی{{createdDate}}",
             "cancelCashSale": "پسۆلەیا فرۆتنێ هاتیە هەڵوەشاندن ل رێکەفتی{{createdDate}}",
             "updateMailingStatusNotSent": "دۆخێ پۆستکرنێ هاتە گوهرین بو نەهاتە هنارتن ل{{date}}",
-            "updateMailingStatusSentOutsideSystem": "دۆخێ پۆستکرنێ هاتە گوهرین بو دەرڤەی سیستەمی هاتە هنارتن ل{{date}}"
+            "updateMailingStatusSentOutsideSystem": "دۆخێ پۆستکرنێ هاتە گوهرین بو دەرڤەی سیستەمی هاتە هنارتن ل{{date}}",
+            "uploadInvoiceAttachments": "ئەپلودکرنا هەڤپێچا هاتە گوڕین ل رێکەفتی {{createdDate}}",
+            "updateAccount": "ئەکاونتێ پارەدانێ هاتە ئەپدێت کرن ل بەروارێ {{createdDate}}",
+            "changeAccountStatus": "ڕەوشا ئەکاونتێ پارەدانێ هاتە گوڕین ل بەروارێ {{createdDate}}",
+            "changeAccountDefault": "ئەکاونتێ پارەدانێ ب ئەکاونتێ بنەرەتی هاتە دانان ل بەروارێ {{createdDate}}",
+            "transferAccountingAccount": "ئەکاونتێ ژمێریاری یێ ڤەگوهاستنێ هاتیە دروستکرن ل بەروارێ {{createdDate}}",
+            "regretTransferAccountingAccount": "هەڵوەشاندنا ڤەگوهاستنێ هاتە ئەپدێت کرن ل بەروارێ {{createdDate}}",
+            "uploadPaymentTransferAttachment": "ئەپلود کرنا هەڤپێچا ڤەگوهاستنێ هاتە ئەپدێت کرن ل بەروارێ {{createdDate}}",
+            "deletePaymentTransferAttachment": "لێبرنا هەڤپێچا ڤەگوهاستنێ هاتە ئەپدێت کرن ل بەرواری {{createdDate}}",
+            "addPaymentTransferNoteAttachment": "تێبینیا ڤەگوهاستنێ هاتە ئەپدێت کرن ل بەرواری {{createdDate}}",
+            "uploadPaymentTransferNoteAttachment": "ئەپلود کرنا هەڤپێچا تێبینا ڤەگوهاستنێ هاتە ئەپدێت کرن ل بەرواری {{createdDate}}",
+            "deletePaymentTransferNoteAttachment": "لێبرنا هەڤپێچا تێبینیا ڤەگوهاستنێ هاتە ئەپدێت کرن ل بەروارێ {{createdDate}}"
         },
         "notification": {
             "deleteCompany": "کۆمپانیا هاتە لێبرن ل رێکەفتی {{date}}",
@@ -1082,7 +1167,18 @@
                 "sendInvoice": "فاتورێ هاتە هنارتن",
                 "updateSettledStatus": "ئێکلا کرنا رەوشا فاتورێ هاتە گوڕین",
                 "sendMailCashSale": "پسۆلەیا فرۆتنێ هاتە هنارتن",
-                "cancelCashSale": "پسۆلا فرۆتنێ یا هەڵوەشاندی"
+                "cancelCashSale": "پسۆلا فرۆتنێ یا هەڵوەشاندی",
+                "uploadInvoiceAttachments": "ئەپلودکرنا هەڤپێچا هاتە گوڕین",
+                "updateAccount": "ئەپدێت کرنا ئەکاونتی",
+                "transferAccountingAccount": "ئەکاونتا ژمێریاری یا ڤەگوهاستنێ",
+                "changeAccountStatus": "رەوشا ئەکاونتی بگوڕە",
+                "changeAccountDefault": "ئەکاونتێ بنەرەتی بگوڕە",
+                "regretTransferAccountingAccount": "هەڵوەشاندنا ڤەگوهاستنێ هاتە گوڕین",
+                "uploadPaymentTransferAttachment": "ئەپلود کرنا هەڤپێچا ڤەگوهاستنێ هاتە گوڕین",
+                "deletePaymentTransferAttachment": "لێبرنا هەڤپێچا ڤەگوهاستنێ هاتە گوڕین",
+                "addPaymentTransferNoteAttachment": "زێدە کرنا تێبینیا ڤەگوهاستنێ هاتە گوڕین",
+                "uploadPaymentTransferNoteAttachment": "ئەپلود کرنا هەڤپێجا تێبینا ڤەگوهاستنێ هاتە گوڕین",
+                "deletePaymentTransferNoteAttachment": "لێبرنا هەڤپێچا تێبینیا ڤەگوهاستنێ هاتە گوڕین"
             }
         },
         "document": {
@@ -1272,7 +1368,7 @@
         },
         "createEditViewPage": {
             "button": {
-                "addPhoneNumber": "ژمارا تەلەفونێ زێدە بکە",
+                "addPhoneNumber": "ژمارا تەلەفونێ",
                 "remove": "لێبرن",
                 "addPhoneNumberTooltip": "ژمارەیەکا نوی یا تەلەفونێ زێدە بکە",
                 "deleteTooltip": "لێبرنا کارمەندی",
@@ -1468,7 +1564,8 @@
             "browse": "گەڕیان",
             "createCopy": "کۆپیەکێ دروست بکە",
             "delete": "لێبرن",
-            "removeBtn": "لێبرن"
+            "removeBtn": "لێبرن",
+            "addTransfer": "زێدەکرنا ڤەگوهاستنێ"
         },
         "error": {
             "maxLength": "پێدڤیە نڤیسینا تە کێمتر بیت ژ ٢٥٦ پیتا",
@@ -1539,7 +1636,12 @@
             "contactPersonDetail": "وردەکاریێن کەسێ پەیوەندیکار",
             "customerDetail": "وردەکاریێن کڕیاری",
             "purchases": "کڕین",
-            "newPurchase": "کڕینا نوی"
+            "newPurchase": "کڕینا نوی",
+            "paymentAccounts": "ئەکاونتێن پارەدانێ",
+            "paymentAccountDetails": "وردەکاریێن ئەکاونتێ پارەدانێ",
+            "transfer": "ڤەگوهاستن",
+            "createTransfer": "ڤەگوهاستنێ دروست بکە",
+            "draftPurchase": "ڕەشنڤیسا کڕینێ"
         },
         "select": {
             "text": {
@@ -1580,7 +1682,7 @@
             "employee": "کارمەند",
             "fee": "خەرجی",
             "invoice": "فاتورە",
-            "instantSale": "فرۆتنا ئێکسەر",
+            "instantSale": "فرۆتنا کاش",
             "product": "بەرهەم",
             "real": "راستەقینە",
             "demo": "کاتی",
@@ -1819,8 +1921,8 @@
         }
     },
     "instantSale": {
-        "instantSaleTitle": "فروتنا ئێکسەر",
-        "newInstantSaleTitle": "فرۆتنا نوی یا ئێکسەر",
+        "instantSaleTitle": "فروتنا کاش",
+        "newInstantSaleTitle": "فرۆتنا نوی یا کاش",
         "text": {
             "sale": "فرۆتن",
             "date": "رێکەفت",
@@ -1959,7 +2061,7 @@
             "company": "کۆمپانیا"
         },
         "button": {
-            "addProduct": "زێدەکرنا بەرهەمی",
+            "addProduct": "بەرهەم",
             "addProductTooltip": "زێدەکرنا بەرهەمەکێ نوی",
             "cancelInvoice": "فاتورێ هەڵوەشینە",
             "cancelInvoiceTooltip": "هەمی فاتورێ هەڵوەشینە",
@@ -2032,7 +2134,14 @@
             "cashPurchase": "کڕین ب کاش",
             "createPurchase": "دروستکرنا کڕینێ",
             "sendMailCashSale": "هنارتنا بەڵگەنامەیێ",
-            "cancelCashSale": "هەڵوەشاندنا پسۆلا فرۆتنێ"
+            "cancelCashSale": "هەڵوەشاندنا پسۆلا فرۆتنێ",
+            "uploadInvoiceAttachments": "بەڵگەناما هەڤپێچ بکە",
+            "regretTransferAccountingAccount": "ڤەگوهاستنێ هەڵوەشینە",
+            "uploadPaymentTransferAttachment": "ئەپلود کرنا هەڤپێچا ڤەگوهاستنێ",
+            "deletePaymentTransferAttachment": "لێبرنا هەڤپێچا ڤەگوهاستنێ",
+            "addPaymentTransferNoteAttachment": "زێدە کرنا تێبینیا ڤەگوهاستنێ",
+            "uploadPaymentTransferNoteAttachment": "هەڤپێچا تێبینیا ڤەگوهاستنێ زێدە بکە",
+            "deletePaymentTransferNoteAttachment": "لێبرنا هەڤپێچا تێبینیا ڤەگوهاستنێ"
         },
         "dialog": {
             "createEditEmployee": {
@@ -2079,7 +2188,7 @@
                     "employeeEmailExist": "کارمەندەک ب ڤی ئیمێلی یێ هاتیە تومارکرن. هیڤیە ئیمێلەکێ دی کاربینە."
                 },
                 "button": {
-                    "addPhoneNumber": "ژمارا تەلەفونێ زێدە بکە"
+                    "addPhoneNumber": "ژمارا تەلەفونێ"
                 }
             },
             "createEditContact": {
@@ -2110,7 +2219,7 @@
                     "zipcode": "زیپ \/ پوست کود",
                     "zipcodeTooltip": "زیپ \/ پوست کودا خو لێرە بنڤیسە",
                     "discount": "داشکاندن",
-                    "discountTooltip": "ئەڤ داشکاندنە یا تایبەتە ژ لایێ کومپانیێ بو ڤی کڕیاری و دێ هەموو فاتورێت وی بخوڤە گریت. تو دشێی ڤێ داشکاندنێ لا ببەی یان هەلسەنگاندنێ بو بکەی ل دەمێ دروستکرنا فاتورێ دا.",
+                    "discountTooltip": "ئەڤ داشکاندنە یا تایبەتە ژ لایێ کومپانیێ ڤە بو ڤی کڕیاری و دێ هەموو فاتورێت وی بخوڤە گریت. تو دشێی ڤێ داشکاندنێ لا ببەی یان هەلسەنگاندنێ بو بکەی ل دەمێ دروستکرنا فاتورێ دا.",
                     "group": "گرۆپ",
                     "role": "رۆل",
                     "roleTooltip": "رۆلێ پەیوەندیکاری هەلبژێرە",
@@ -2122,7 +2231,7 @@
                     "contactPersonNameTooltip": "ناڤێ وی کەسی بنڤیسە کو دبیتە خالا پەیوەندیێ دناڤبەرا تە و پەیوەندیکاری دا"
                 },
                 "button": {
-                    "addPhoneNumber": "ژمارا تەلەفونێ زێدە بکە"
+                    "addPhoneNumber": "ژمارا تەلەفونێ"
                 },
                 "placeholder": {
                     "contactName": "ناڤێ پەیوەندیکاری",
@@ -2177,7 +2286,7 @@
                     "contactPersonEmail": "example@gmail.com"
                 },
                 "button": {
-                    "addPhoneNumber": "ژمارا تەلەفونێ زێدە بکە",
+                    "addPhoneNumber": "ژمارا تەلەفونێ",
                     "addPhoneNumberTooltip": "ژمارەکا نوی یا تەلەفونێ زێدە بکە"
                 },
                 "error": {
@@ -2352,7 +2461,7 @@
                     "total": "کۆیا گشتی"
                 },
                 "button": {
-                    "addProduct": "زێدەکرنا بەرهەمی",
+                    "addProduct": "بەرهەمی",
                     "updateProduct": "بەرهەمی ئەپدێت بکە"
                 }
             },
@@ -2468,7 +2577,7 @@
                     "cancelInvoiceMessage": "چ نەمایە تو دێ هەموو فاتورێ هەڵوەشینی. هەموو پارەدانێن تومارکری دناڤ ڤێ فاتورێ دا دێ هێنە لێبرن و پسۆلا پارەی دێ ب شێوەیەکێ ئوتوماتیکی هێتە دروستکرن. پارە زڤراندن بو کریاری دێ ب رێکا دەستی بیت. ئەگەر تە بڤێت بەشەکێ فاتورێ هەڵوەشینی، هیڤیە ڤێ کریارێ رابگرە و پسۆلا پارەی دروست بکە. ئەرێ تە دڤێت ڤێ فاتورێ هەڵبوەشینی؟ هەر چەوا بیت تو دشێی گورانکاریێ دڤێ کریارێ دا بکەی."
                 },
                 "button": {
-                    "cancelInvoice": "فاتورێ هەڵوەشینە",
+                    "cancelInvoice": "هەڵوەشاندنا فاتورێ",
                     "confirm": "پشتراست کرن",
                     "continue": "بەردەوام بە"
                 }
@@ -2493,7 +2602,7 @@
             },
             "deleteNote": {
                 "title": "لێبرنا تێبینیا ناڤخۆیی",
-                "message": "تویێ پشتراستی ژ لێبرنا تێبینیا ناڤخۆیی؟"
+                "message": "ئەرێ تویێ پشتراستی ژ لێبرنا تێبینیا ناڤخۆیی؟"
             }
         },
         "notification": {
@@ -2698,7 +2807,8 @@
             "feeId": "ناسناما خەرجیێ",
             "contactInformation": "زانیاریێت پەیوەندی کرنی",
             "feeNameTitle": "ناڤێ خەرجیێ",
-            "tel": "تەلەفون"
+            "tel": "تەلەفون",
+            "accountHolder": "خودان ئەکاونت"
         },
         "error": {
             "dateIsInvalid": "بەروار یێ خەلەتە. هیڤیە بەروارەکێ دروست بنڤیسە"
@@ -2947,7 +3057,7 @@
         },
         "tabGeneral": {
             "button": {
-                "addPhoneNumber": "ژمارا تەلەفونێ زێدە بکە",
+                "addPhoneNumber": "ژمارا تەلەفونێ",
                 "addPhoneNumberTooltip": "ژمارەکا نوی یا تەلەفونێ زێدە بکە",
                 "collapseTooltip": "ڤەشارتن",
                 "disableProfile": "نەچاڵاک کرن",
@@ -2979,7 +3089,8 @@
                 "nameRequired": "ناڤ یێ داخازکریە",
                 "is": "ل",
                 "are": "ل",
-                "invalid": "خەلەتە"
+                "invalid": "خەلەتە",
+                "emailExist": "ئەڤ ئیمێلە یێ بەردەستە. هیڤیە ئیمێلەکێ دی بکاربینە."
             },
             "inputField": {
                 "address": "ناڤ و نیشان",
@@ -3144,7 +3255,7 @@
             "saleCurrency": "دراڤێ فرۆتنێ",
             "changeDate": "گوڕینا بەرواری",
             "note": "تێبینی بۆ مەرەمێن ناڤخویی",
-            "noteTooltip": "زیادکرنا نوی یان دەستکاری کرنا تێبینیەکا فاتورێ. ئەڤ یاداشتە تنێ دناڤ کۆمپانیێ دا دهێتە بکارئینان و بۆ کڕیارێ کۆمپانیێ یا بەدەردەست نینە.",
+            "noteTooltip": "زیێدەکرنا نوی یان دەستکاری کرنا تێبینیەکا فاتورێ. ئەڤ یاداشتە تنێ دناڤ کۆمپانیێ دا دهێتە بکارئینان و بۆ کڕیارێ کۆمپانیێ یا بەردەست نینە.",
             "notePlaceholder": "تێبینیا ناڤخۆیی لێرە بنڤیسە",
             "attachment": "هەڤپێچ",
             "newInvoice": "فاتورەیەکا نوی",
@@ -3152,16 +3263,17 @@
             "mailingStatusSentFromTheSystemTooltip": "{{date}} {{documentType}} هاتە هنارتن بۆ ئیمێلێ {{email}}",
             "mailingStatusSentOutsideTheSystemTooltip": "فاتورە هاتیە دیار کرن کۆ ل دەرڤەی سیستەمی یا هاتیە هنارتن ل رێکەفتی {{date}}",
             "noteTitle": "تێبینی بۆ بکارئینانا ناڤخۆیی",
-            "edited": "دەستکاری کر"
+            "edited": "دەستکاری کر",
+            "internalAttachmentsTooltip": "بەڵگەنامێن پەیوەندی هەی بفرۆتنێ هەڤێچ بکە.ئەڤ هەڤپێچانە بتنێ بو بکارهێنانا ناڤخوییە و هنارتن بو کڕیارێ تە بەردەست نینە."
         },
         "button": {
             "createEmployeeTooltip": "دروستکرنا کارمەندێ نوی",
             "editEmployeeTooltip": "دەستکاریێ ل کارمەندی بکە",
             "createBankAccount": "دروستکرنا ئەکاونتەکا نوی یا بانکی",
             "editBankAccount": "دەستکاری کرن ل ئەکاونتا بانکی",
-            "addFee": "زێدەکرنا خەرجیێ",
+            "addFee": "خەرجی",
             "closeDraft": "گرتنا رەشنڤیسێ",
-            "createInvoice": "دروستکرنا فاتورێ",
+            "createInvoice": "دروستکرن",
             "preview": "نیشان دانا رەشنڤیسێ",
             "delete": "لێبرن",
             "saveDraft": "هەلگرتنا رەشنڤیسێ",
@@ -3250,7 +3362,10 @@
             },
             "createEditBankAccount": {
                 "editTitle": "وردەکاریێن ئەکاونتا بانکێ",
-                "createTitle": "دروستکرنا ئەکاونتا بانکی"
+                "createTitle": "دروستکرنا ئەکاونتا بانکی",
+                "transferFromAccount": "ڤەگوهاستن ژ ئەکاونتێ",
+                "transferToAccount": "بۆ ئەکاونتی",
+                "enterYourDescription": "وەسفا خۆ بنڤیسە"
             },
             "deleteDraftInvoice": {
                 "title": "لێبرنا رەشنڤیسا فاتورێ پشتراست بکە",
@@ -3291,7 +3406,7 @@
                 "subject": "بابەت",
                 "subjectContent": "فاتورا ژمارە # {{invoiceNumber}} ژ لایێ کۆمپانیا {{companyName}}",
                 "invoiceDocument": "فاتورە",
-                "paymentsDocument": "بەڵگەناما پارەدانێ",
+                "paymentsDocument": "پسۆلا پارەدانێ",
                 "creditnotesDocument": "بەڵگەناما پسۆلا پارەی",
                 "selectAtLeastOneDocumentWarning": "هیڤیە ب کێمی جورەکێ بەڵگەنامێ هەلبژێرە",
                 "saleDocument": "پسۆلا فرۆتنێ"
@@ -3369,7 +3484,7 @@
             }
         },
         "button": {
-            "newSale": "فرۆتنا نوی",
+            "newSale": "فرۆتن",
             "newSaleTooltip": "تومارکرنا فرۆتنا نوی یا ئێکسەر",
             "newInstantSale": "فرۆتنا نوی یا فرۆشتنا کاش",
             "newInstantSaleTooltip": "تومارکرنا فرۆتنا نوی یا فرۆشتنا کاش"
@@ -3395,7 +3510,11 @@
             "resetDataTooltip": "ریسێت کرنا داتایێن سەرەکی بو بهایێن بنەرەتی",
             "installmentOverdueDays": "گیرووبونا قستی ب {{days}} رۆژا",
             "copyToNewSale": "کۆپی کرن بۆ فرۆتنەکا نوی",
-            "due": "دەمێ دیارکری"
+            "due": "دەمێ دیارکری",
+            "cancelWholeInvoice": "هەمی فاتورێ هەڵوەشینە",
+            "addNewAttachment": "هەڤپێچەکا نوی زێدە بکە",
+            "cancelWholeSale": "هەڵوەشاندنا هەمی فرۆتنێ",
+            "addAttachment": "زێدەکرنا هەڤپێچێ"
         },
         "chip": {
             "finalized": "دوماهیک هات",
@@ -3488,7 +3607,10 @@
             "customers": "کڕیار",
             "suppliers": "دابینکار",
             "purchases": "کڕین",
-            "purchasesTooltip": "چوون بۆ لیستا کڕینا"
+            "purchasesTooltip": "چوون بۆ لیستا کڕینا",
+            "paymentAccountsTooltip": "چوون بۆ بەشێ ئەکاونتێن پارەدانێ",
+            "paymentAccounts": "ئەکاونتێن پارەدانێ",
+            "transfers": "ڤەگوهاستن"
         },
         "button": {
             "collapse": "ڤەشارتن",
@@ -3627,7 +3749,12 @@
             "draftPurchases": "رەشنڤیسا کڕینێ",
             "newPurchase": "کڕینا نوی",
             "purchaseDetail": "وردەکاریێت کڕینێ",
-            "newInvoice": "فاتورەیەکا نوی"
+            "newInvoice": "فاتورەیەکا نوی",
+            "paymentAccounts": "ئەکاونتێن پارەدانێ",
+            "paymentAccountDetails": "وردەکاریێن ئەکاونتێ پارەدانێ",
+            "transfer": "ڤەگوهاستن",
+            "createTransfer": "ڤەگوهاستنێ دروست بکە",
+            "draftPurchase": "رەشنڤیسا فرۆتنێ"
         },
         "notifications": "ئاگادارکرن",
         "userProfile": "رێکخستنا پرۆفایلێ بکارهێنەری",
@@ -3768,7 +3895,7 @@
             "selectItems": "تشتا هەلبژێرە"
         },
         "button": {
-            "disable": "نەچاڵاک کرنا",
+            "disable": "نەچاڵاک کرن",
             "enable": "چاڵاک کرنا"
         }
     },
@@ -4039,7 +4166,9 @@
         "select": {
             "option": {
                 "bank": "بانک",
-                "cash": "کاش"
+                "cash": "کاش",
+                "payment-service": "خزمەتگوزاریا پارەدانێ",
+                "payment_service": "خزمەتگوزاریا پارەدانێ"
             }
         }
     },
@@ -4134,7 +4263,8 @@
             "calculatedPurchaseAmount": "بڕێ کڕینێ یا حیساب کری",
             "purchaseHistory": "مێژوویا کڕینێ",
             "purchaseStatus": "بارێ کڕینێ",
-            "purchaseExchangeRate": "بهایێ ئالۆگۆڕیا کڕینێ"
+            "purchaseExchangeRate": "بهایێ ئالۆگۆڕیا کڕینێ",
+            "noPurchase": "کڕین نەهاتە دیتن"
         },
         "inputField": {
             "type": "جۆر",
@@ -4183,7 +4313,8 @@
             "registerPurchase": "تومار کرن",
             "cancelPurchase": "کڕینێ هەڵوەشینە",
             "cancelPurchaseTooltip": "هەمی کڕینێ هەڵوەشینە",
-            "previewAndSendPurchaseTooltip": "وان بەڵگەناما هەڵبژێرە وەک  (کڕین، لیستێن پارەدانێ و هتد)، ئەوێن تە دڤێت داونلود بکەی بۆ نیشان دانێ یان بنێری بۆ دابینکاری."
+            "previewAndSendPurchaseTooltip": "وان بەڵگەناما هەڵبژێرە وەک  (کڕین، لیستێن پارەدانێ و هتد)، ئەوێن تە دڤێت داونلود بکەی بۆ نیشان دانێ یان بنێری بۆ دابینکاری.",
+            "previewAndSend": "نیشان دان و هنارتن"
         },
         "columnHeader": {
             "supplier": "دابینکەر",
@@ -4208,6 +4339,41 @@
                 },
                 "title": "بڕینا وێنەی"
             }
+        }
+    },
+    "paymentService": {
+        "select": {
+            "option": {
+                "aliPay": "Ali pay",
+                "applePay": "Apple pay",
+                "googlePay": "Google Pay",
+                "paypal": "Paypal",
+                "wepay": "WePay",
+                "wise": "Wise",
+                "other": "دیتر",
+                "stripe": "Stripe"
+            }
+        }
+    },
+    "footer": {
+        "text": "کاردکەت ب ئەکەونتیا v1.0.0"
+    },
+    "paymentAccount": {
+        "text": {
+            "fromAccount": "ژ",
+            "toAccount": "بۆ",
+            "transferDate": "بەروار",
+            "transferAmount": "بڕ",
+            "createTransfer": "ڤەگوهاستنێ دروست بکە",
+            "transferDetail": "وردەکاریێت ڤەگوهاستنێ",
+            "regretTransferMessage": "مامەلەیێت پێشکێش کری دێ هێنە پێجەوانەکرن. پێزانین و وردەکاریێت ڤەگوهاستنا ڕەسەن ناهێنە لێبرن، بەلێ مامەلەیەکا پێچەوانەکری بۆ مێژوویا ڤەگوهاستنێ دێ هێتە زێدەکرن.",
+            "regretTransferTitle": "هەڵوەشاندنا ڤەگوهاستنێ پشتراست بکە",
+            "entryNumber": "ژمارا چوونەژوورەڤە",
+            "regretTransferSuccess": "ڤەگوهاستنەکە پەشیمان بووڤە",
+            "regretTransferText": "ئەڤ ڤەگوهاستنە پێچەوانە بووڤە و دشیاندانیە دەستکاریێ  تێدابکەی.",
+            "regretTransferFail": "پەشیمانبوونا پارەدانێ شکاستن هینا.",
+            "noNote": "چ تێبینی نەهاتینە زێدەکرن",
+            "cancelBtnTooltip": "هەڵوەشینە و بزڤڕە بۆ لیستا ڤەگوهاستنێ"
         }
     }
 }
