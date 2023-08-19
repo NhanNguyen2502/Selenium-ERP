@@ -3537,7 +3537,7 @@
         "accountHasNotBeenActivated": "This account is awaiting verification. Please read the email sent to you in this regard and follow the instructions listed there. Click on the resend button to get a new verification email.",
         "userNotFound": "User is not found.",
         "userEmailExist": "This email address already exists.  Please enter another email.",
-        "usernameOrPasswordIncorrect": "Username or password is incorrect.",
+        "usernameOrPasswordIncorrect": "Invalid username or password.",
         "UnknownError": "Unknown Error",
         "404": "Not found",
         "403": "Forbidden",

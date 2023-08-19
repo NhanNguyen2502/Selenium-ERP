@@ -28,8 +28,8 @@ public class BaseSetup {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         return driver;
     }
 
@@ -50,10 +50,10 @@ public class BaseSetup {
         String browser = PropertiesHelper.getValue("browser");
         switch (browser) {
             case "Chrome":
-                driver = innitChrome(PropertiesHelper.getValue("url_preprod"));
+                driver = innitChrome(PropertiesHelper.getValue("url_dev"));
                 break;
             case "Firefox":
-                driver = initFirefoxDriver(PropertiesHelper.getValue("url_preprod"));
+                driver = initFirefoxDriver(PropertiesHelper.getValue("url_dev"));
                 break;
             default:
                 System.out.println("default");
