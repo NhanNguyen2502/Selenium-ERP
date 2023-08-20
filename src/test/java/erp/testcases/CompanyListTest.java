@@ -35,7 +35,6 @@ public class CompanyListTest extends BaseSetup {
 
     @Test(priority = 1)
     public void verifyElements() throws Exception {
-        signInPage.waitForPageLoaded();
         signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
