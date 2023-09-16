@@ -1,10 +1,8 @@
 package erp.common.helpers;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+
 import com.jayway.jsonpath.JsonPath;
-import org.jsoup.Jsoup;
-import org.python.antlr.ast.Str;
+
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

@@ -35,10 +35,12 @@ public class CompanyListTest extends BaseSetup {
 
     @Test(priority = 1)
     public void verifyElements() throws Exception {
+        validateHelpers.waitForLoadJs();
         signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
-        companyListPage.waitForPageLoaded();
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.waitForLoadJs();
         companyListPage.gotoCompnyList();
         companyListPage.verifyHeader();
         companyListPage.verifyBodyOfPage(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.general.pageTitle.companies"),
