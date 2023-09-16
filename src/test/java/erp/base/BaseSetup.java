@@ -23,6 +23,8 @@ public class BaseSetup {
     private WebDriver innitChrome(String url) {
         System.out.println("Launching Chrome browser...");
         WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().clearDriverCache().setup();
+        WebDriverManager.chromedriver().clearResolutionCache().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         WebDriver driver = new ChromeDriver(options);
@@ -50,10 +52,10 @@ public class BaseSetup {
         String browser = PropertiesHelper.getValue("browser");
         switch (browser) {
             case "Chrome":
-                driver = innitChrome(PropertiesHelper.getValue("url_dev"));
+                driver = innitChrome(PropertiesHelper.getValue("url_preprod"));
                 break;
             case "Firefox":
-                driver = initFirefoxDriver(PropertiesHelper.getValue("url_dev"));
+                driver = initFirefoxDriver(PropertiesHelper.getValue("url_preprod"));
                 break;
             default:
                 System.out.println("default");

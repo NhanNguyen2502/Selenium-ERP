@@ -41,8 +41,8 @@ public class SignInPage {
     private By cancleButtonResendDialog = By.xpath("//button[@data-cy='dialog-cancel-button']");
     private By closeResendDialog = By.xpath("//button[@data-cy='dialog-close-button']");
     private By resnedEmailButton = By.xpath("//button[@data-cy='dialog-resend-button']");
-    private By languageButton = By.xpath("//div[@id='kc-locale-wrapper']");
-    private By languageOptions = By.xpath("//li[@id='kc-language-option']/div");
+    private By languageButton = By.xpath("//button[@id='kc-chevron-btn']");
+    private By languageOptions = By.xpath("//li//div//a[@id='kc-locale-option']");
 
     public ValidateHelpers validateHelpers;
 
