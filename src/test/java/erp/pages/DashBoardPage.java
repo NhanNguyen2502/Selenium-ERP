@@ -31,9 +31,9 @@ public class DashBoardPage {
     private By employees = By.xpath("//a[@data-cy='sidebar-employee-link']");
     private By companySettingLink = By.xpath("//a[@data-cy='sidebar-company-setting-link']");
     //body Chart
-    private By charttable = By.xpath("//div[@class='invoice-chart-container']");
-    private By chartTitle = By.xpath("//app-year-picker//mat-card-title");
-    private By chartYearPicker = By.xpath("//app-year-picker//mat-button-toggle");
+    private By charttable = By.xpath("//div[@id='invoice-chart-container']//app-invoice-chart");
+    private By chartTitle = By.xpath("//app-year-picker");
+    private By chartYearPicker = By.xpath("//button[@data-cy='drop-down-button']");
     private By keyData = By.xpath("//app-key-data");
     private By chart = By.xpath("//app-invoice-chart");
     private By poppularProducts = By.xpath("//app-most-popular-product");
