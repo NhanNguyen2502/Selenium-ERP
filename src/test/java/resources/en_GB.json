@@ -1,5 +1,10 @@
 {
     "auth": {
+        "emailVerification": {
+            "text": "Email verification",
+            "warningText": "You need to verify your email address to activate your account.",
+            "explainText": "An email with instructions to verify your email address has been sent to your address{{email}}."
+        },
         "accessDenied": {
             "title": "Access denied",
             "description1": "Go back to the",
@@ -179,11 +184,18 @@
                 "phoneNumber": "Phone number",
                 "phoneTooltip": "Enter your phone number here, example: 7501234567",
                 "username": "Email",
-                "phoneNumbers": "Phone number"
+                "phoneNumbers": "Phone number",
+                "emailVerification": "Email verification",
+                "notiEmailVerification": "You need to verify your email address to activate your account.",
+                "instructionEmailVerification": "An email with instructions to verify your email address has been sent to your address",
+                "questionEmailVerification": "Haven't received a verification code in your email?",
+                "resendEmailVerification": "to re-send the email.",
+                "notiAfterForgotPassword": "You should receive an email shortly with further instructions.",
+                "backToApplication": "Back to application"
             },
             "placeholder": {
                 "email": "example@gmail.com",
-                "phoneNumber": "07507486161",
+                "phoneNumber": "7507486161",
                 "name": "Enter full name"
             },
             "text": {
@@ -201,7 +213,8 @@
                 "enableAccountDisabledBySystem": "This user is disabled by system.",
                 "enableAccountSuccess": "Your account has been enabled.",
                 "enableAccountVerificationEmailSent": "Verification has been sent to your email.",
-                "forgotPasswordEmailVerify": "Haven't received an email yet?"
+                "forgotPasswordEmailVerify": "Haven't received an email yet?",
+                "invalidRecaptcha": "Invalid Recaptcha"
             },
             "link": {
                 "signIn": "Sign in",
@@ -233,10 +246,10 @@
                 "confirmMessage": "Deleting companies will remove all data related to the companies in the system and the data cannot be retrieved later. Are you sure you want to delete them?"
             },
             "deleteDemoCompany": {
-                "confirmMessage": "<p>You have requested deleting your demo company <strong>{{name}}<\/strong>. Deleting a demo company will remove all data related to the company in the system and the data cannot be retrieved later. This is a demo company and you can confirm your request easily by confirming here. <\/p>\n\n<p>When you choose to delete your  REAL company we send you a verification e-mail to confirm the deletion for security purposes. <\/p>\n\n<p>Are you sure you want to delete the demo company?<\/p>"
+                "confirmMessage": "<p>You have requested deleting your demo company <strong>{{name}}<\/strong>. Deleting a demo company will remove all data related to the company in the system and the data cannot be retrieved later. This is a demo company and you can confirm your request easily by confirming here.<\/p><p>When you choose to delete your REAL company we send you a verification e-mail to confirm the deletion for security purposes. <\/p><p>Are you sure you want to delete the demo company?<\/p>"
             },
             "deleteRealCompany": {
-                "confirmMessage": "<p>You have requested deleting your company <strong>{{name}}<\/strong>. Deleting a company will remove all data related to the company in the system and the data cannot be retrieved later.<\/p>\n<p>You need to confirm the request. We sent you an e-mail with a link to verify your request. Please open your e-mail and follow the instructions to confirm deleting the company.<\/p>\n<p>Are you sure you want to continue?<\/p>"
+                "confirmMessage": "<p>You have requested deleting your company <strong>{{name}}<\/strong>. Deleting a company will remove all data related to the company in the system and the data cannot be retrieved later.<\/p><p>You need to confirm the request. We sent you an e-mail with a link to verify your request. Please open your e-mail and follow the instructions to confirm deleting the company.<\/p><p>Are you sure you want to continue?<\/p>"
             }
         },
         "listPage": {
@@ -268,7 +281,8 @@
                 "type": "Type",
                 "typeTooltip": "Company type",
                 "moreOptionsForSelectedTooltip": "Actions on multiple companies. Select one or more companies in the table to perform an action on.",
-                "moreOptionsTooltip": "More options"
+                "moreOptionsTooltip": "More options",
+                "status": "Status"
             },
             "select": {
                 "filterTooltip": "Filter options to narrow the listed companies",
@@ -300,7 +314,7 @@
                 "createABusiness": "Company is created",
                 "legalCompanyTitle": "Register a real company",
                 "testCompanyTitle": "Register a demo company",
-                "description": "Please fill out the below form to set up your company profile.",
+                "description": "Please fill out the below form to set up your company profile. ",
                 "generateText": "Name and organization number will be auto-generated.",
                 "contactInfo": "Contact info",
                 "createCompanySuccess": "Company has been created.",
@@ -355,7 +369,9 @@
                 "companyPhoneNumbers": "Phone No.",
                 "timezone": "Timezone",
                 "timezoneTooltip": "Select your timezone",
-                "addressPlaceholder": "Enter Address Street, Flat, suit, unit, building, floor, etc."
+                "addressPlaceholder": "Enter Address Street, Flat, suit, unit, building, floor, etc.",
+                "organisationNumberWarning": "If you have an organization number please add it here. Make sure that the organization number is correct. Once you create the company, you will NOT be able to change this field.",
+                "selectDate": "Select date"
             },
             "error": {
                 "organisationNumberRequired": "Organization number is required",
@@ -364,7 +380,9 @@
                 "establishDateInvalid": "The selected company establishment date is invalid",
                 "emailInvalid": "Invalid email address. Please enter a valid email address.",
                 "websitePatternInvalid": "The given website address is invalid. Please add a valid one.",
-                "organisationNumberExistErrorMessage": "A company or organization with the given organization number is already registered. Please enter another number. Please contact us if you may document that this number belongs to your company."
+                "organisationNumberExistErrorMessage": "A company or organization with the given organization number is already registered. Please enter another number. Please contact us if you may document that this number belongs to your company.",
+                "establishDateRequired": "Establish date is required",
+                "mainCurrencyInvalid": "Main currency is invalid"
             },
             "placeholder": {
                 "organisationNumber": "0101784819",
@@ -415,7 +433,7 @@
                 },
                 "info": {
                     "internationalPaymentInformationTitle": "International payment information",
-                    "internationalPaymentInformationContent": "IBAN is a code that uniquely identifies your bank account for international transactions, while BIC\/SWIFT code identifies the specific bank where your account is held. Both codes ensure secure and accurate transfer of money between banks around the world.\n\nIf these are available in your Bank you may use the account to accept international transfers, you can register the information by selecting the checkbox and filling out the form. The information will be printed on all invoices and sales associated with the account."
+                    "internationalPaymentInformationContent": "<p>IBAN is a code that uniquely identifies your bank account for international transactions, while BIC\/SWIFT code identifies the specific bank where your account is held. Both codes ensure secure and accurate transfer of money between banks around the world.<\/p><p>If these are available in your Bank you may use the account to accept international transfers, you can register the information by selecting the checkbox and filling out the form. The information will be printed on all invoices and sales associated with the account.<\/p>"
                 }
             },
             "tabGeneral": {
@@ -509,8 +527,8 @@
                     "transferDate": "Transfer Date",
                     "originalOpeningBalance": "Original opening balance",
                     "originalBalanceOnDate": "Original balance on date",
-                    "paymentAccountHistory": "Payment Account History",
-                    "addAmount": "Add amount"
+                    "addAmount": "Add amount",
+                    "accountInformationHistory": "Account information history"
                 },
                 "placeholder": {
                     "accountName": "Accountia",
@@ -556,7 +574,9 @@
                     "transferAmountRequired": "Transfer amount is required",
                     "openingBalanceInvalid": "Opening balance is invalid",
                     "transferAmountInvalid": "Transfer amount is invalid",
-                    "openingBalanceRequired": "Opening balance is required"
+                    "openingBalanceRequired": "Opening balance is required",
+                    "transferAmountNegative": "Amount should be greater than 0",
+                    "balanceDateInvalid": "Balance on a Date is invalid"
                 },
                 "toggleButton": {
                     "enableToggle": "The payment account is enabled and can be used for accounting purposes",
@@ -582,10 +602,11 @@
                     "outGoing": "Outgoing",
                     "outGoingTooltip": "Amount registered as paid after opening balance date",
                     "balance": "Balance",
-                    "balanceTooltip": "Current balance"
+                    "balanceTooltip": "Current balance",
+                    "openingNotRegisteredTooltip": "Opening balance has not been registered"
                 },
                 "openingBalanceInfoTitle": "Information about opening balance",
-                "openingBalanceInfoContent": "Opening balance is brought forward from the end of the previous accounting period at the beginning of a new accounting period. \r\n\r\nThe date on which the opening balance was checked may be entered when registering the opening balance in the system. \r\n\r\nThe payment account can be used retrospectively to record sales and purchases.  Transactions assigned to a date earlier than the opening balance date won't affect the opening balance and won't appear in the account's paid or received entries.",
+                "openingBalanceInfoContent": "<p>Opening balance is brought forward from the end of the previous accounting period at the beginning of a new accounting period.<\/p><p>The date on which the opening balance was checked may be entered when registering the opening balance in the system.<\/p><p>The payment account can be used retrospectively to record sales and purchases.  Transactions assigned to a date earlier than the opening balance date won't affect the opening balance and won't appear in the account's paid or received entries.<\/p>",
                 "defaultAccount": "Default",
                 "setAsDefault": "Set as default"
             },
@@ -629,7 +650,8 @@
             "confirmDeleteCompany": "Company has been deleted.",
             "goBackToAccount": "Go back to your account.",
             "deleteCompany": "Please open your e-mail and follow the instructions to confirm deleting the company.",
-            "confirmDeleteCompanyFail": "Confirm deleting the company has failed"
+            "confirmDeleteCompanyFail": "Confirm deleting the company has failed",
+            "deleteCompanySuccess": "Verification e-mail has been sent"
         }
     },
     "contact": {
@@ -1030,11 +1052,7 @@
             "changeAccountDefault": "Payment account was set as default",
             "transferAccountingAccount": "Transfer between own accounts",
             "regretTransferAccountingAccount": "Regret transfer",
-            "uploadPaymentTransferAttachment": "Upload transfer attachment",
-            "deletePaymentTransferAttachment": "Delete transfer attachment",
-            "addPaymentTransferNoteAttachment": "Add transfer note",
-            "uploadPaymentTransferNoteAttachment": "Upload transfer note attachment",
-            "deletePaymentTransferNoteAttachment": "Delete transfer note attachment"
+            "deleteInvoiceAttachment": "Delete attachment"
         },
         "description": {
             "createInvoice": "Invoice was created on {{createdDate}}",
@@ -1084,12 +1102,9 @@
             "changeAccountStatus": "Payment account status was changed on {{createdDate}}",
             "changeAccountDefault": "Payment account was set as default on {{createdDate}}",
             "transferAccountingAccount": "Transfer between own accounts was registered on {{createdDate}}",
-            "regretTransferAccountingAccount": "Regret transfer was updated on {{createdDate}}",
-            "uploadPaymentTransferAttachment": "Upload transfer attachment was updated on {{createdDate}}",
-            "deletePaymentTransferAttachment": "Delete transfer attachment was updated on {{createdDate}}",
-            "addPaymentTransferNoteAttachment": "Add transfer note was updated on {{createdDate}}",
-            "uploadPaymentTransferNoteAttachment": "Upload transfer note attachment was updated on {{createdDate}}",
-            "deletePaymentTransferNoteAttachment": "Delete transfer note attachment was updated on {{createdDate}}"
+            "regretTransferAccountingAccount": "Transfer between own accounts was regretted on {{createdDate}}",
+            "updatePayment": "Payment was updated on {{createdDate}}",
+            "deleteInvoiceAttachment": "Deleting attachment was changed on {{createdDate}}"
         },
         "notification": {
             "deleteCompany": "Company was deleted on {{date}}",
@@ -1173,12 +1188,8 @@
                 "transferAccountingAccount": "Transfer between own accounts",
                 "changeAccountStatus": "Changed account status",
                 "changeAccountDefault": "Changed default account",
-                "regretTransferAccountingAccount": "Regret transfer changed",
-                "uploadPaymentTransferAttachment": "Upload transfer attachment changed",
-                "deletePaymentTransferAttachment": "Delete transfer attachment changed",
-                "addPaymentTransferNoteAttachment": "Add transfer note changed",
-                "uploadPaymentTransferNoteAttachment": "Upload transfer note attachment changed",
-                "deletePaymentTransferNoteAttachment": "Delete transfer note attachment changed"
+                "deleteInvoiceAttachment": "Deleting attachment changed",
+                "regretTransferAccountingAccount": "Regret transfer"
             }
         },
         "document": {
@@ -1217,7 +1228,8 @@
     },
     "confirmLeavePage": {
         "title": "Confirm leaving the page",
-        "message": "You are about to leave the page without saving your changes. Do you want to continue?"
+        "message": "You are about to leave the page without saving your changes. Do you want to continue?",
+        "messageWithoutCreateGeneralInfo": "You are about leaving the page without creating the general record. If you leave the page all other information will be lost. Are you sure you want to continue?"
     },
     "dashboard": {
         "text": {
@@ -1271,7 +1283,8 @@
             "topThreeCustomersTooltip": "Top 3 customers",
             "topThreeCustomersValueTooltip": "{{amount}}",
             "productIsDeleted": "The product is deleted",
-            "customerIsDeleted": "The customer is deleted"
+            "customerIsDeleted": "The customer is deleted",
+            "datePeriod": "Date period"
         },
         "button": {
             "createSale": "Create sale"
@@ -1499,7 +1512,7 @@
                 "automaticallyRound": "Automatically round"
             },
             "inputField": {
-                "name": "Name",
+                "name": "Fee name",
                 "nameTooltip": "Enter name here",
                 "amount": "Amount",
                 "amountTooltip": "Enter fee amount",
@@ -1565,7 +1578,8 @@
             "createCopy": "Create copy",
             "delete": "Delete",
             "removeBtn": "Remove",
-            "addTransfer": "Transfer"
+            "addTransfer": "Transfer",
+            "copyBtn": "Copy"
         },
         "error": {
             "maxLength": "Input length must be less than 256 characters",
@@ -1661,7 +1675,11 @@
         },
         "text": {
             "thisRecordDeleted": "This record was deleted, and can't be edited",
-            "none": "None"
+            "none": "None",
+            "copiedToClipboard": "Copied to clipboard!",
+            "maintenanceTitle": "Coming Soon",
+            "maintenanceContent": "<p>Our website is currently undergoing scheduled maintenance to improve your experience.<\/p><p>Sorry for any inconvenience and thanks for your understanding. The site will be available shortly. <\/p>",
+            "maintenanceFooter": "If you have any urgent inquiries, please don't hesitate to reach out to our support team at"
         },
         "dialog": {
             "confirmLeavePage": {
@@ -1711,7 +1729,13 @@
             "regretPayment": "Regret payment",
             "prePayment": "Pre-payment",
             "deleted": "Deleted",
-            "clear": "Clear"
+            "clear": "Clear",
+            "transfer": "Transfer",
+            "regretTransfer": "Regret transfer",
+            "fromPaymentAccount": "From payment account",
+            "toPaymentAccount": "To payment account",
+            "regretTransferAmount": "Regret Transfer",
+            "paymentAccount": "Payment accounts"
         },
         "label": {
             "productName": "Product name",
@@ -1793,7 +1817,10 @@
             "outstanding": "Outstanding",
             "credited": "Credited",
             "totalCreditNote": "Total credit note",
-            "noInstalmentPlan": "Invoice has no Instalment plan yet"
+            "noInstalmentPlan": "Invoice has no Instalment plan yet",
+            "createPlanBtnWarning": "Changes are added to the instalment plan configuration. To apply these changes, create a new plan by clicking on the “Create plan” button.",
+            "createInvoiceConfirmTitle": "Confirm creating invoice",
+            "createInvoiceConfirmContent": "<p>Changes have been added to the instalment plan configuration. However, these changes have not been applied to the plan.<\/p><p>Are you sure you want to discard the changes and create the invoice?<\/p>"
         },
         "inputField": {
             "installmentPeriod": "Instalment period",
@@ -1815,7 +1842,8 @@
             "creditNoteDateTooltip": "The date when the credit note is registered",
             "createNoteAmount": "Amount",
             "creditNoteAmountTooltip": "Enter credit note amount",
-            "creditNoteCommentTooltip": "Enter description for the credit note"
+            "creditNoteCommentTooltip": "Enter description for the credit note",
+            "dueDateTooltip": "The due date will be automatically calculated based on the instalment plan"
         },
         "button": {
             "createPlan": "Create plan",
@@ -1838,7 +1866,7 @@
                 "infoTooltipCreditNotes": "A credit note is a legal term used to indicate the cancellation of an entire or parts of an invoice. This means that you as an owner of a financial claim are remitting the entire or parts of a claim toward the customer.\n\nBy adding a credit note, you can cancel the entire or parts of the outstanding amount to be paid on an invoice. If you want to cancel the invoice entirely, you need to delete the registered payments if any first, or you can choose ‘cancel invoice’ to delete the payments and cancel the entire invoice automatically. Any refund of payments to the customer has to be handled manually.",
                 "creditNoteInformation": "Credit note information",
                 "instalmentInformationTitle": "Instalment plan information",
-                "instalmentInformationContent": "To set up the terms for your instalments, select the frequency of instalments from the ‘instalment period’ dropdown. Enter the due date and the amount of the first instalment. Click ‘Create Plan’ to automatically set up an instalment plan. You may customize the instalment plan manually by adding or removing instalments and changing dates and amounts or due dates.\n\nAny changes to the draft invoice that leads to a change in invoice amount will affect your existing instalment plan. A new plan needs to be created, or the existing one needs to be adjusted manually."
+                "instalmentInformationContent": "To set up the terms for your instalments, select the frequency of instalments from the ‘instalment period’ dropdown. Enter the due date and the amount of the first instalment. Click ‘Create Plan’ to automatically set up an instalment plan. You may customize the instalment plan manually by adding or removing instalments and changing dates and amounts or due dates.<br><br>Any changes to the draft invoice that leads to a change in invoice amount will affect your existing instalment plan. A new plan needs to be created, or the existing one needs to be adjusted manually."
             },
             "addPrepayment": {
                 "addPaymentTitle": "Add new payment",
@@ -1910,7 +1938,7 @@
             "paymentMaxAmount": "The amount exceeds the outstanding amount to be paid: {{leftTobePaid}}.",
             "negativePayment": "Payment amount must be greater than 0.",
             "amountRequired": "Payment amount is required.",
-            "noInstallmentPaymentPlan": "No instalment plan has been created for this invoice. Please create an instalment plan. \n\nNote: Once you create an instalment plan, you can modify it manually to suit your needs.",
+            "noInstallmentPaymentPlan": "No instalment plan has been created for this invoice. Please create an instalment plan. Note: Once you create an instalment plan, you can modify it manually to suit your needs.",
             "planHasAmountLeft": "There is still an amount of {{amount}} {{currency}} which needs to be distributed into instalments. The instalments balance must be zero. To proceed, please insert the correct amount.",
             "isPlanAmountNegative": "The instalment payment is negative because the inserted instalment amount is more than the outstanding amount balance. To proceed, insert the correct amount.",
             "setUpInstallationPlanChange": "The instalment plan setup has changed. To proceed, please create a plan again.",
@@ -2137,11 +2165,8 @@
             "cancelCashSale": "Cancel sale receipt",
             "uploadInvoiceAttachments": "Upload Attachments",
             "regretTransferAccountingAccount": "Regret transfer",
-            "uploadPaymentTransferAttachment": "Upload transfer attachment",
-            "deletePaymentTransferAttachment": "Delete transfer attachment",
-            "addPaymentTransferNoteAttachment": "Add transfer note",
-            "uploadPaymentTransferNoteAttachment": "Upload transfer note attachment",
-            "deletePaymentTransferNoteAttachment": "Delete transfer note attachment"
+            "updatePayment": "Update payment",
+            "deleteInvoiceAttachment": "Delete attachment"
         },
         "dialog": {
             "createEditEmployee": {
@@ -2366,7 +2391,8 @@
                 "title": "Regret payment",
                 "text": {
                     "paymentDate": "Payment date",
-                    "mainMessage": "The given payment will be reversed and the payment will be deleted from the presented invoice payment list. However, you may find the payment and the reversal transactions in the invoice history. Any refund to the customer needs to be handled manually."
+                    "mainMessage": "The given payment will be reversed and the payment will be deleted from the presented invoice payment list. However, you may find the payment and the reversal transactions in the invoice history. Any refund to the customer needs to be handled manually.",
+                    "informMessage": "The payment and its transaction will be removed from the records. However, you will find an audit log entry in the invoice history outlining the details of the action."
                 },
                 "inputField": {
                     "descriptionPlaceholder": "Description..."
@@ -2899,7 +2925,7 @@
                 "typeDescription": "An item you buy and resell without change. For example, a bicycle, coffee or a computer."
             },
             "inputField": {
-                "productName": "Name",
+                "productName": "Product name",
                 "productNameTooltip": "Enter product name",
                 "productType": "Type",
                 "productTypeTooltip": "Select product type",
@@ -3046,7 +3072,7 @@
                 },
                 "dontRecognize": {
                     "title": "Let's secure your account",
-                    "message": "If you do not recognize this device, someone else may have accessed your account. Please change your password to protect your account. \nBy changing your password, you will be logged out from all devices except for what you are currently using.",
+                    "message": "If you do not recognize this device, someone else may have accessed your account. Please change your password to protect your account. By changing your password, you will be logged out from all devices.",
                     "changePassword": "Change password"
                 }
             },
@@ -3221,7 +3247,8 @@
             "comment": "Comment",
             "commentTooltip": "Add a comment to the invoice.",
             "commentPlaceholder": "Add a comment to the sale",
-            "attachments": "Attachments"
+            "attachments": "Attachments",
+            "paymentDateTooltip": "Select payment date"
         },
         "text": {
             "draft": "Draft",
@@ -3365,7 +3392,8 @@
                 "createTitle": "Create payment account",
                 "transferFromAccount": "Transfer From Account",
                 "transferToAccount": "To Account",
-                "enterYourDescription": "Enter your description"
+                "enterYourDescription": "Enter your description",
+                "addAmount": "Add amount"
             },
             "deleteDraftInvoice": {
                 "title": "Confirm removing the draft invoice",
@@ -3492,7 +3520,8 @@
         "tab": {
             "draftSales": "Draft sales",
             "sales": "Sales",
-            "instantSales": "Cash sales"
+            "instantSales": "Cash sales",
+            "drafts": "Drafts"
         },
         "text": {
             "registerPayment": "Register payment",
@@ -3537,7 +3566,7 @@
         "accountHasNotBeenActivated": "This account is awaiting verification. Please read the email sent to you in this regard and follow the instructions listed there. Click on the resend button to get a new verification email.",
         "userNotFound": "User is not found.",
         "userEmailExist": "This email address already exists.  Please enter another email.",
-        "usernameOrPasswordIncorrect": "Invalid username or password.",
+        "usernameOrPasswordIncorrect": "Username or password is incorrect.",
         "UnknownError": "Unknown Error",
         "404": "Not found",
         "403": "Forbidden",
@@ -3754,7 +3783,10 @@
             "paymentAccountDetails": "Payment account details",
             "transfer": "Transfers",
             "createTransfer": "Register Transfer",
-            "draftPurchase": "Draft purchase"
+            "draftPurchase": "Draft purchase",
+            "contactPersons": "Contact persons",
+            "documents": "Documents",
+            "newPaymentAccount": "New payment account"
         },
         "notifications": "Notifications",
         "userProfile": "User profile and settings",
@@ -4371,9 +4403,35 @@
             "entryNumber": "Entry number",
             "regretTransferSuccess": "The transfer has been regretted.",
             "regretTransferText": "This transfer was reversed and can't be edited.",
-            "regretTransferFail": "Regret payment has failed.",
+            "regretTransferFail": "Regretting payment registration has failed.",
             "noNote": "No note is added.",
-            "cancelBtnTooltip": "Cancel and go back to the transfer list"
+            "cancelBtnTooltip": "Cancel and go back to the transfer list",
+            "createPaymentAccountFail": "Creating payment account has failed",
+            "updatePaymentAccountFail": "Updating payment account information has failed",
+            "paymentTransferNumber": "Entry number",
+            "description": "Description",
+            "attachment": "Attachment",
+            "status": "Status",
+            "openingBalance": "Opening balance",
+            "incomingInvoices": "Cash Inflow",
+            "outgoingSales": "Cash outflow",
+            "currentBalance": "Current balance",
+            "regretTransfer": {
+                "informMessage": "The transfer and its transaction will be removed from the records. However, you will find an audit log entry in the company event logs outlining the details of the action."
+            },
+            "fromToAccount": "From \/ To"
+        },
+        "listPage": {
+            "select": {
+                "option": {
+                    "all": "Show all",
+                    "enabled": "Show enabled",
+                    "disabled": "Show disabled"
+                },
+                "inputField": {
+                    "filterTooltip": "Filter payment account list"
+                }
+            }
         }
     }
 }

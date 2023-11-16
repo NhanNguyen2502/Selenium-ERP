@@ -25,18 +25,22 @@ public class DashboardTest extends BaseSetup {
         this.driver = getDriver();
         validateHelpers = new ValidateHelpers(driver);
         signInPage = new SignInPage(driver);
+
     }
 
     @Test
     public void verifyDemocompany() {
-        signInPage.waitForPageLoaded();
+        validateHelpers.waitForLoadJs();
         signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("password"));
+        validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.waitForLoadJs();
         dashBoardPage = companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.listPage.text.demo"));
+        validateHelpers.waitForLoadJs();
         dashBoardPage.verifyLeftMenu(
                 TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.sidebar.sidebarItem.dashboard"),
                 TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.sidebar.sidebarItem.sales"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.sidebar.sidebarItem.contacts"),
+                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.contact.listPage.text.customers"),
                 TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.sidebar.sidebarItem.products"),
                 TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.sidebar.sidebarItem.fees"),
                 TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.sidebar.sidebarItem.employees"),
@@ -45,14 +49,14 @@ public class DashboardTest extends BaseSetup {
         validateHelpers.logout();
     }
     @Test
-    public void verifyRealcompany() throws InterruptedException {
+    public void verifyRealcompany()  {
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("password"));
-        companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
-        Thread.sleep(1000);
+        validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.waitForLoadJs();
         dashBoardPage = companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.listPage.text.real"));
-        dashBoardPage.waiForLoadingPage();
+        validateHelpers.waitForLoadJs();
         dashBoardPage.verifyLeftMenu(
                 TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.sidebar.sidebarItem.dashboard"),
                 TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.sidebar.sidebarItem.sales"),

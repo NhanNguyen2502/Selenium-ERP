@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class ValidateHelpers {
 
     public ValidateHelpers(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         actions = new Actions(driver);
     }
 
@@ -64,23 +65,22 @@ public class ValidateHelpers {
     public void logout() {
         clickElement(logoutButton);
     }
+
     public String removeHtmlTags(String content) {
         return Jsoup.parse(content).text();
     }
 
-    public void  waitForLoadJs()
-    {
+    public void waitForLoadJs() {
         ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
             @Override
-            public  Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor)driver).executeScript("return document.readyState").toString().equals("complete");
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
             }
         };
         try {
             Thread.sleep(10000);
             wait.until(jsLoad);
-        }catch (Throwable error)
-        {
+        } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
 
         }

@@ -97,7 +97,7 @@ public class CompanyListPage {
     public DashBoardPage goToCompany(String type) {
         var companyTypes = driver.findElements(companyType);
         var com = driver.findElements(companies);
-        for (int i = 0; i <= companyTypes.size(); i++) {
+        for (int i = 0; i < companyTypes.size(); i++) {
             if (companyTypes.get(i).getText().equals(type)) {
                 com.get(i).click();
                 break;

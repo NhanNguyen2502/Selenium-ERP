@@ -24,6 +24,7 @@ public class CompanyListTest extends BaseSetup {
         signInPage = new SignInPage(driver);
         excelHelper = new ExcelHelper();
         validateHelpers = new ValidateHelpers(driver);
+        PropertiesHelper.loadAllFile();
     }
 
 //    @Test(priority = 1)
@@ -53,9 +54,10 @@ public class CompanyListTest extends BaseSetup {
     public void verifyCompanyListNull() {
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.waitForLoadJs();
         companyListPage = signInPage.login(PropertiesHelper.getValue("notCompanyEmail"), PropertiesHelper.getValue("password"));
         companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
-        companyListPage.waitForPageLoaded();
+        validateHelpers.waitForLoadJs();
         companyListPage.gotoCompnyList();
         companyListPage.checkCompaniesList();
         validateHelpers.logout();
