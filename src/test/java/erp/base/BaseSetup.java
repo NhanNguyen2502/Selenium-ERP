@@ -1,22 +1,44 @@
 package erp.base;
 
+import erp.common.helpers.CaptureHelper;
 import erp.common.helpers.PropertiesHelper;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
+import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import ulitilities.Log;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
+import java.io.ByteArrayInputStream;
+import java.lang.reflect.Method;
 import java.time.Duration;
 
 public class BaseSetup {
-    private WebDriver driver;
+    private static WebDriver driver;
 
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
 
         return driver;
+    }
+
+    public String browserVersion()
+    {
+        Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
+        System.out.println(caps.getBrowserVersion());
+        return caps.getBrowserVersion();
     }
 
 
@@ -30,29 +52,52 @@ public class BaseSetup {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         return driver;
     }
 
     private static WebDriver initFirefoxDriver(String url) {
         System.out.println("Launching Firefox browser...");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
+        System.setProperty("webdriver.gecko.driver", "D:\\ERP\\Selenium-ERP\\src\\test\\java\\erp\\base\\geckodriver-v0.33.0-win64");
+        FirefoxOptions options = new FirefoxOptions();
+        options.setBinary("D:\\ERP\\Selenium-ERP\\src\\test\\java\\erp\\base\\geckodriver-v0.33.0-win64");
+        FirefoxDriver driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         return driver;
     }
+    public void  statusTest(ITestResult result)
+    {
+        if (ITestResult.SUCCESS == result.getStatus()) {
+            System.out.println("Passed case: " + result.getName());
+            Log.info("Passed: "+ result.getName());
+
+        } else if (ITestResult.FAILURE == result.getStatus()) {
+            Log.error("Failed: " + result.getName());
+            System.out.println("Failed: " + result.getName());
+            CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver);
+            Allure.addAttachment("_Failed_Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+            //captureHelper.takeScreenshot(result.getName(),result.getName(),driver);
+
+        } else {
+            System.out.println("Passed Skiped: " + result.getName());
+        }
+        // CaptureHelper.stopRecord();
+    }
+
 
     @BeforeClass
     public void Setup() {
+        PropertyConfigurator.configure("D:\\ERP\\Selenium-ERP\\src\\main\\java\\resources\\log4j.properties");
         PropertiesHelper.loadAllFile();
         String browser = PropertiesHelper.getValue("browser");
         switch (browser) {
             case "Chrome":
                 driver = innitChrome(PropertiesHelper.getValue("url_dev"));
+                browserVersion();
                 break;
             case "Firefox":
                 driver = initFirefoxDriver(PropertiesHelper.getValue("url_dev"));
@@ -70,6 +115,21 @@ public class BaseSetup {
 //        driver.get("https://preprod.accountia.no");
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+    }
+
+    @BeforeMethod
+    public void beforMethod(Method method) {
+        System.out.println("\n");
+        System.out.println("<========================= RUN TEST CASE =========================>");
+        Log.info("Run test: " + method.getName());
+        //CaptureHelper.startRecord(method.getName());
+    }
+
+    @AfterMethod
+    public void afterMetod(ITestResult result) {
+        statusTest(result);
+        System.out.println("<========================= FINISH TEST CASE =========================> \n");
+
     }
 
     @AfterClass

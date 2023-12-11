@@ -78,7 +78,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(10000);
+            Thread.sleep(20000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
@@ -89,7 +89,7 @@ public class ValidateHelpers {
     public void verifylanguage(String language) {
         clickElement(languageButton);
         wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
-        List<WebElement> options = driver.findElements(languageOptions);
+        var options = driver.findElements(languageOptions);
         String key = "$.languageSelect.option.english";
         switch (language) {
             case "English" -> key = "$.languageSelect.option.english";
@@ -100,7 +100,6 @@ public class ValidateHelpers {
         }
         for (WebElement o : options) {
             if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), key))) {
-                System.out.println(o.getText());
                 o.click();
                 break;
             }

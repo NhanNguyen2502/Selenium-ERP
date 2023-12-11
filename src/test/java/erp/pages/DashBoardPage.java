@@ -45,11 +45,17 @@ public class DashBoardPage {
     private By accountSection = By.xpath("//app-accounts-section");
     private By accountList = By.xpath("//mat-card-content//div[contains(@class,'accounts-section-content')]");
     private By eachAccounts = By.xpath(accountList+"/div");
+    private By saleButton = By.xpath("//a[@data-cy='sidebar-invoice-link']");
 
     public DashBoardPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         validateHelpers = new ValidateHelpers(driver);
+    }
+    public SalePage goSaleTable()
+    {
+        validateHelpers.clickElement(saleButton);
+        return  new SalePage(driver);
     }
 
     public void verifyAccountSection() {

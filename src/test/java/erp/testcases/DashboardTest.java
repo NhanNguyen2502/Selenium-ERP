@@ -1,18 +1,32 @@
 package erp.testcases;
 
 import erp.base.BaseSetup;
+import erp.base.ReportListener;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
 import erp.common.helpers.ValidateHelpers;
 import erp.pages.CompanyListPage;
 import erp.pages.DashBoardPage;
 import erp.pages.SignInPage;
+import io.qameta.allure.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.io.ByteArrayInputStream;
 import java.util.concurrent.TransferQueue;
 
+@Listeners(ReportListener.class)
+//@Epic("Regression test ERP")
+//@Feature("ERP")
+@Epic("Sign In flow")
+@Feature("Login form")
+//@Story("User enters wrong password")
+@Owner("Nhan Nguyen")
+@Severity(SeverityLevel.CRITICAL)
 public class DashboardTest extends BaseSetup {
     private DashBoardPage dashBoardPage;
     private WebDriver driver;
@@ -21,6 +35,7 @@ public class DashboardTest extends BaseSetup {
     private CompanyListPage companyListPage;
 
     @BeforeClass
+    @Description("Khoi tao Browser va cac class lien quan")
     public void setUp() {
         this.driver = getDriver();
         validateHelpers = new ValidateHelpers(driver);
@@ -49,10 +64,11 @@ public class DashboardTest extends BaseSetup {
         validateHelpers.logout();
     }
     @Test
+    @Step("Login")
     public void verifyRealcompany()  {
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
-        companyListPage = signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("password"));
+        companyListPage = signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("passwordd"));
         validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
         validateHelpers.waitForLoadJs();
         dashBoardPage = companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.listPage.text.real"));

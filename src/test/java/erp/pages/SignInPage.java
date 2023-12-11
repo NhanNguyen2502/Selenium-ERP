@@ -3,6 +3,7 @@ package erp.pages;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
 import erp.common.helpers.ValidateHelpers;
+import io.qameta.allure.Step;
 import org.apache.commons.collections.map.HashedMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -56,10 +57,11 @@ public class SignInPage {
         PageFactory.initElements(driver, this);
     }
 
+
     public void verifylanguage(String language) {
         validateHelpers.clickElement(languageButton);
         wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
-        List<WebElement> options = driver.findElements(languageOptions);
+        var options = driver.findElements(languageOptions);
         String key = "$.languageSelect.option.english";
         switch (language) {
             case "English" -> key = "$.languageSelect.option.english";
@@ -70,7 +72,6 @@ public class SignInPage {
         }
         for (WebElement o : options) {
                 if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), key))) {
-                System.out.println(o.getText());
                 o.click();
                 break;
             }
@@ -116,12 +117,12 @@ public class SignInPage {
         return new CompanyListPage(driver);
     }
 
+    @Step("verify email null")
     public String verifyEmailnull() throws Exception {
 
         validateHelpers.setText(usernameTextBox, "");
         validateHelpers.clickElement(formtitle);
         Thread.sleep(1000);
-        System.out.println(driver.findElement(usernameRequied).getText());
         return driver.findElement(usernameRequied).getText();
 
     }
@@ -131,7 +132,6 @@ public class SignInPage {
         validateHelpers.setText(passwordTextBox, "");
         validateHelpers.clickElement(formtitle);
         Thread.sleep(1000);
-        System.out.println(driver.findElement(passwordRequied).getText());
         return driver.findElement(passwordRequied).getText();
     }
 
