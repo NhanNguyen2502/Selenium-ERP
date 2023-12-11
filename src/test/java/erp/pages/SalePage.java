@@ -24,7 +24,7 @@ public class SalePage {
     private By searchField = By.xpath("//input[@data-cy='search-input-field']");
     private By emtyList = By.xpath("//app-no-item");
     private By keyData = By.xpath("//app-invoice-key-data-item");
-    private By resetKeyData = By.xpath("");
+
 
 
     public  SalePage(WebDriver driver){
@@ -32,6 +32,5 @@ public class SalePage {
         validateHelpers =  new ValidateHelpers(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-
 
 }

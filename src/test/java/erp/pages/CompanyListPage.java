@@ -69,7 +69,7 @@ public class CompanyListPage {
     private By languageButton = By.xpath("//app-language-option");
     private By languageOptions = By.xpath("//div[@data-cy='language-option-item']");
     //Check company table
-    private By companies = By.xpath("//mat-row");
+    private By companies = By.xpath("//mat-row//mat-cell[2]");
     private By companyType = By.xpath("//mat-row//mat-cell//div[@data-cy='company-type']");
     //Go to company list
     private By selecteCompanyButton = By.xpath("//div[@data-cy='select-company-button']");
