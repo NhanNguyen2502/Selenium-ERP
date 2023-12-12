@@ -59,6 +59,7 @@ public class SignInPage {
 
 
     public void verifylanguage(String language) {
+        validateHelpers.waitForLoadJs();
         validateHelpers.clickElement(languageButton);
         wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
         var options = driver.findElements(languageOptions);
@@ -180,7 +181,7 @@ public class SignInPage {
         };
         try {
             Thread.sleep(10000);
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             wait.until(expectation);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");

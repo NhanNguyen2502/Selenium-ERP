@@ -76,7 +76,6 @@ public class BaseSetup {
             Log.info("Passed: "+ result.getName());
 
         } else if (ITestResult.FAILURE == result.getStatus()) {
-            Log.error("Failed: " + result.getName());
             System.out.println("Failed: " + result.getName());
             System.out.println(result.getThrowable().toString());
             CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver);
