@@ -155,6 +155,7 @@ public class CompanyListPage {
         if (optionButton.size() >= 1) {
             for (WebElement o : optionButton) {
                 o.click();
+                validateHelpers.waitForLoadJs();
                 Assert.assertEquals(validateHelpers.getMessage(editOption), editText, "checkMoreOptions wrong 1");
                 Assert.assertEquals(validateHelpers.getMessage(deleteOption), deleteText, "checkMoreOptions wrong 2");
                 validateHelpers.clickOutside();
