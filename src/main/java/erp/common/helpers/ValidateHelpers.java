@@ -100,6 +100,7 @@ public class ValidateHelpers {
         }
         for (WebElement o : options) {
             if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), key))) {
+                System.out.println("Test with language: "+ language);
                 o.click();
                 break;
             }
