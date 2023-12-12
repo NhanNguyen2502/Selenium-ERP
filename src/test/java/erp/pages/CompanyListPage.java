@@ -131,7 +131,6 @@ public class CompanyListPage {
                         validateHelpers.removeHtmlTags(validateHelpers.getMessage(contectDelete)),
                         validateHelpers.removeHtmlTags(TranslationHelpers.getContent(content, data)), "Wrong here");
                 validateHelpers.clickElement(cancleButton);
-                break;
             } else System.out.println("The company type does not exist");
         }
     }

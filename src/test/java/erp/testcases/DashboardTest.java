@@ -35,7 +35,6 @@ public class DashboardTest extends BaseSetup {
     private CompanyListPage companyListPage;
 
     @BeforeClass
-    @Description("Khoi tao Browser va cac class lien quan")
     public void setUp() {
         this.driver = getDriver();
         validateHelpers = new ValidateHelpers(driver);
@@ -64,11 +63,10 @@ public class DashboardTest extends BaseSetup {
         validateHelpers.logout();
     }
     @Test
-    @Step("Login")
     public void verifyRealcompany()  {
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
-        companyListPage = signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("passwordd"));
+        companyListPage = signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("password"));
         validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
         validateHelpers.waitForLoadJs();
         dashBoardPage = companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(),"$.company.listPage.text.real"));

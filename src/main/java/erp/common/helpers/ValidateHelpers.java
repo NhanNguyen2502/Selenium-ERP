@@ -19,7 +19,7 @@ import java.util.List;
 public class ValidateHelpers {
     private WebDriver driver;
     private WebDriverWait wait;
-    private By logoutButton = By.xpath("//button[@data-cy='log-out-button']//*[name()='svg']");
+    private By logoutButton = By.xpath("//button[@data-cy='log-out-button']");
     private By languageButton = By.xpath("//app-language-option");
     private By languageOptions = By.xpath("//div[@data-cy='language-option-item']");
     private Actions actions;
@@ -78,7 +78,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(20000);
+            Thread.sleep(5000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");

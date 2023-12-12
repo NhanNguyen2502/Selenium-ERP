@@ -179,7 +179,7 @@ public class SignInPage {
             }
         };
         try {
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(expectation);
         } catch (Throwable error) {
