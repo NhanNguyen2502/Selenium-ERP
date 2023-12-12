@@ -63,5 +63,20 @@ public class SalesTest extends BaseSetup {
         salePage = dashBoardPage.goSaleTable();
         validateHelpers.logout();
     }
+    @Test(priority = 2)
+    public void  verifyElements()
+    {
+        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.demo"));
+        validateHelpers.waitForLoadJs();
+        salePage = dashBoardPage.goSaleTable();
+        salePage.verifyElementsOnSaleTable();
+        validateHelpers.logout();
+    }
 
 }
