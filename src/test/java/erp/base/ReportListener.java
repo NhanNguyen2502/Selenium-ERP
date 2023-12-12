@@ -12,6 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import ulitilities.Log;
 
 import java.io.ByteArrayInputStream;
 
@@ -70,6 +71,7 @@ public class ReportListener implements ITestListener {
         ExtentTestManager.logMessage(Status.FAIL, arg0.getThrowable().toString());
         ExtentTestManager.logMessage(Status.FAIL, arg0.getName() + " is failed.");
         ExtentTestManager.addScreenShot(Status.FAIL, arg0.getName() + " is failed.");
+        Log.error(arg0.getThrowable().toString());
         //Allure Report
         saveTextLog(arg0.getName() + " is failed.");
         //saveScreenshotPNG();

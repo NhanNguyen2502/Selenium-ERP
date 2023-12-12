@@ -37,10 +37,8 @@ public class SalesTest extends BaseSetup {
         validateHelpers = new ValidateHelpers(driver);
     }
 
-    @Test
-    public void test() {
-        Log.info("Chay test case Test");
-
+    @Test(priority = 1)
+    public void goToCreateSalePageWithRealCompany() {
         signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
         validateHelpers.waitForLoadJs();
         signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
@@ -48,6 +46,18 @@ public class SalesTest extends BaseSetup {
         validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.real"));
+        validateHelpers.waitForLoadJs();
+        salePage = dashBoardPage.goSaleTable();
+    }
+    @Test(priority = 1)
+    public void goToCreateSalePageWithDemoCompany() {
+        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.demo"));
         validateHelpers.waitForLoadJs();
         salePage = dashBoardPage.goSaleTable();
     }

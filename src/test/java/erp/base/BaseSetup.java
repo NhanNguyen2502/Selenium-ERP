@@ -78,6 +78,7 @@ public class BaseSetup {
         } else if (ITestResult.FAILURE == result.getStatus()) {
             Log.error("Failed: " + result.getName());
             System.out.println("Failed: " + result.getName());
+            System.out.println(result.getThrowable().toString());
             CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver);
             Allure.addAttachment("_Failed_Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
             //captureHelper.takeScreenshot(result.getName(),result.getName(),driver);
