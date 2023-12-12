@@ -72,7 +72,7 @@ public class ReportListener implements ITestListener {
         ExtentTestManager.logMessage(Status.FAIL, arg0.getName() + " is failed.");
         ExtentTestManager.addScreenShot(Status.FAIL, arg0.getName() + " is failed.");
         Log.error("Failed: " + arg0.getName());
-        Log.error(arg0.getThrowable().toString());
+        Log.error(arg0.getThrowable().toString() +"\n");
         //Allure Report
         saveTextLog(arg0.getName() + " is failed.");
         //saveScreenshotPNG();

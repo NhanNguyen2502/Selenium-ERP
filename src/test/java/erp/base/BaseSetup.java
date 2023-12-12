@@ -74,7 +74,7 @@ public class BaseSetup {
     {
         if (ITestResult.SUCCESS == result.getStatus()) {
             System.out.println("Passed case: " + result.getName());
-            Log.info("Passed: "+ result.getName());
+            Log.info("Passed: "+ result.getName() +"\n");
 
         } else if (ITestResult.FAILURE == result.getStatus()) {
             System.out.println("Failed: " + result.getName());
