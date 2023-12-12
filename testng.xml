@@ -9,6 +9,7 @@
             <class name="erp.testcases.SignInTest"></class>
             <class name="erp.testcases.CompanyListTest"></class>
             <class name="erp.testcases.DashboardTest"></class>
+            <class name="erp.testcases.SalesTest"></class>
         </classes>
     </test>
 </suite>
