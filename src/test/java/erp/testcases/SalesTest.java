@@ -48,6 +48,7 @@ public class SalesTest extends BaseSetup {
         companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.real"));
         validateHelpers.waitForLoadJs();
         salePage = dashBoardPage.goSaleTable();
+        validateHelpers.logout();
     }
     @Test(priority = 1)
     public void goToCreateSalePageWithDemoCompany() {
@@ -60,6 +61,7 @@ public class SalesTest extends BaseSetup {
         companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.demo"));
         validateHelpers.waitForLoadJs();
         salePage = dashBoardPage.goSaleTable();
+        validateHelpers.logout();
     }
 
 }
