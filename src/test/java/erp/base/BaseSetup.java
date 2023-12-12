@@ -2,6 +2,7 @@ package erp.base;
 
 import erp.common.helpers.CaptureHelper;
 import erp.common.helpers.PropertiesHelper;
+import erp.common.helpers.ValidateHelpers;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.apache.log4j.PropertyConfigurator;
@@ -122,6 +123,7 @@ public class BaseSetup {
         System.out.println("\n");
         System.out.println("<========================= RUN TEST CASE =========================>");
         Log.info("Run test: " + method.getName());
+        Log.info("Test on Language:" + PropertiesHelper.getLanguageToTest());
         //CaptureHelper.startRecord(method.getName());
     }
 
