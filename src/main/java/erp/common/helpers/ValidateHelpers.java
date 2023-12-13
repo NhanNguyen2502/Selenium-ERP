@@ -63,9 +63,7 @@ public class ValidateHelpers {
     }
 
     public void logout() {
-        wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
-        WebElement logOutBt = driver.findElement(logoutButton);
-        logOutBt.click();
+       clickElement(logoutButton);
     }
 
     public String removeHtmlTags(String content) {
