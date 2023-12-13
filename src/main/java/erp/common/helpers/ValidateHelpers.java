@@ -63,6 +63,7 @@ public class ValidateHelpers {
     }
 
     public void logout() {
+        waitForLoadJs();
         clickElement(logoutButton);
     }
 
