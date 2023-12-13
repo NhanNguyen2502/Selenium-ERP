@@ -99,7 +99,7 @@ public class ValidateHelpers {
             default -> System.out.println("default");
         }
         for (WebElement o : options) {
-            if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), key))) {
+            if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(language, key))) {
                 System.out.println("Test with language: "+ language);
                 o.click();
                 break;

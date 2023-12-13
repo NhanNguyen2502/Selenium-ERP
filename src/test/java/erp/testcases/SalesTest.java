@@ -11,9 +11,7 @@ import erp.pages.SalePage;
 import erp.pages.SignInPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import ulitilities.Log;
 
 //@Listeners(TestListener.class)
@@ -38,41 +36,44 @@ public class SalesTest extends BaseSetup {
     }
 
     @Test(priority = 1)
-    public void goToCreateSalePageWithRealCompany() {
-        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+    @Parameters({"language"})
+    public void goToCreateSalePageWithRealCompany(@Optional("English") String language) {
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.verifylanguage(language);
         validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.real"));
+        companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.real"));
         validateHelpers.waitForLoadJs();
         salePage = dashBoardPage.goSaleTable();
         validateHelpers.logout();
     }
     @Test(priority = 1)
-    public void goToCreateSalePageWithDemoCompany() {
-        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+    @Parameters({"language"})
+    public void goToCreateSalePageWithDemoCompany(@Optional("English") String language) {
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.verifylanguage(language);
         validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.demo"));
+        companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.demo"));
         validateHelpers.waitForLoadJs();
         salePage = dashBoardPage.goSaleTable();
         validateHelpers.logout();
     }
     @Test(priority = 2)
-    public void  verifyElements()
+    @Parameters({"language"})
+    public void  verifyElements(@Optional("English") String language)
     {
-        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.verifylanguage(language);
         validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.demo"));
+        companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.demo"));
         validateHelpers.waitForLoadJs();
         salePage = dashBoardPage.goSaleTable();
         salePage.verifyElementsOnSaleTable();
