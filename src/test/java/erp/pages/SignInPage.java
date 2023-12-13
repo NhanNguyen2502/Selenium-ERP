@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
+
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
@@ -47,7 +49,7 @@ public class SignInPage {
     private By resnedEmailButton = By.xpath("//button[@data-cy='dialog-resend-button']");
     private By languageButton = By.xpath("//button[@id='kc-chevron-btn']");
     private By languageOptions = By.xpath("//li//div//a[@id='kc-locale-option']");
-    private By signinButton =  By.xpath("//div[@id='kc-back-to-sign-in']//span");
+    private By signinButton = By.xpath("//div[@id='kc-back-to-sign-in']//span");
     public ValidateHelpers validateHelpers;
 
     public SignInPage(WebDriver driver) {
@@ -56,7 +58,6 @@ public class SignInPage {
         validateHelpers = new ValidateHelpers(driver);
         PageFactory.initElements(driver, this);
     }
-
 
     public void verifylanguage(String language) {
         validateHelpers.waitForLoadJs();
@@ -72,7 +73,7 @@ public class SignInPage {
             default -> System.out.println("default");
         }
         for (WebElement o : options) {
-                if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), key))) {
+            if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(language, key))) {
                 o.click();
                 break;
             }
@@ -144,18 +145,18 @@ public class SignInPage {
         return validateHelpers.getMessage(wrongUsernameOrPass);
     }
 
-    public void verifyAccountInactive(String email, String Pass,String resendmailTitle ,String warContent,String explainContent) {
+    public void verifyAccountInactive(String email, String Pass, String resendmailTitle, String warContent, String explainContent) {
         validateHelpers.setText(usernameTextBox, email);
         validateHelpers.setText(passwordTextBox, Pass);
         validateHelpers.clickElement(loginButton);
         waitForPageLoaded();
-        Assert.assertEquals(validateHelpers.getMessage(resendTitle),resendmailTitle);
+        Assert.assertEquals(validateHelpers.getMessage(resendTitle), resendmailTitle);
         Assert.assertEquals(validateHelpers.getMessage(warningContent), warContent);
-        Map<String,String> data = new HashMap <>();
-        data.put("email",email);
+        Map<String, String> data = new HashMap<>();
+        data.put("email", email);
         Assert.assertEquals(
                 validateHelpers.removeHtmlTags(validateHelpers.getMessage(resendEmailContent)),
-                validateHelpers.removeHtmlTags(TranslationHelpers.getContent(explainContent,data)+email+"."),"Wrong here"
+                validateHelpers.removeHtmlTags(TranslationHelpers.getContent(explainContent, data) + email + "."), "Wrong here"
         );
         validateHelpers.clickElement(signinButton);
         //Assert.assertTrue(validateHelpers.checkDisplayed(cancleButtonResendDialog), "The cancel button doesn't display!");
@@ -164,11 +165,11 @@ public class SignInPage {
         //validateHelpers.clickElement(logoAccountia);
     }
 
-    public CreateCompanyPage signinWithCreateCompany(String email, String password){
+    public CreateCompanyPage signinWithCreateCompany(String email, String password) {
         validateHelpers.setText(usernameTextBox, email);
         validateHelpers.setText(passwordTextBox, password);
         validateHelpers.clickElement(loginButton);
-        return  new CreateCompanyPage(driver);
+        return new CreateCompanyPage(driver);
     }
 
 
