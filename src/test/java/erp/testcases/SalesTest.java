@@ -52,6 +52,7 @@ public class SalesTest extends BaseSetup {
     @Test(priority = 1)
     @Parameters({"language"})
     public void goToCreateSalePageWithDemoCompany(@Optional("English") String language) {
+        validateHelpers.waitForLoadJs();
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
