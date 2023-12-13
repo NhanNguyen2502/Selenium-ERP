@@ -10,6 +10,7 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.*;
 import ulitilities.Log;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -18,10 +19,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 import java.io.ByteArrayInputStream;
 import java.lang.reflect.Method;
@@ -119,11 +116,12 @@ public class BaseSetup {
     }
 
     @BeforeMethod
-    public void beforMethod(Method method) {
+    @Parameters({"language"})
+    public void beforMethod(Method method, @Optional("English") String language) {
         System.out.println("\n");
         System.out.println("<========================= RUN TEST CASE =========================>");
         Log.info("Run test: " + method.getName());
-        Log.info("Test on Language:" + PropertiesHelper.getLanguageToTest());
+        Log.info("Test on Language:" +language);
         //CaptureHelper.startRecord(method.getName());
     }
 
