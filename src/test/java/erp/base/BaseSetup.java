@@ -32,8 +32,7 @@ public class BaseSetup {
         return driver;
     }
 
-    public String browserVersion()
-    {
+    public String browserVersion() {
         Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
         System.out.println(caps.getBrowserVersion());
         return caps.getBrowserVersion();
@@ -47,7 +46,7 @@ public class BaseSetup {
         WebDriverManager.chromedriver().clearResolutionCache().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--window-size=1920,1080");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
@@ -69,11 +68,11 @@ public class BaseSetup {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         return driver;
     }
-    public void  statusTest(ITestResult result)
-    {
+
+    public void statusTest(ITestResult result) {
         if (ITestResult.SUCCESS == result.getStatus()) {
             System.out.println("Passed case: " + result.getName());
-            Log.info("Passed: "+ result.getName() +"\n");
+            Log.info("Passed: " + result.getName() + "\n");
 
         } else if (ITestResult.FAILURE == result.getStatus()) {
             System.out.println("Failed: " + result.getName());
@@ -123,7 +122,7 @@ public class BaseSetup {
         System.out.println("\n");
         System.out.println("<========================= RUN TEST CASE =========================>");
         Log.info("Run test: " + method.getName());
-        Log.info("Test on Language:" +language);
+        Log.info("Test on Language:" + language);
         //CaptureHelper.startRecord(method.getName());
     }
 
