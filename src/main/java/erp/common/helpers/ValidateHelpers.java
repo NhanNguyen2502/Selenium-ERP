@@ -27,7 +27,7 @@ public class ValidateHelpers {
 
     public ValidateHelpers(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         actions = new Actions(driver);
     }
 
@@ -78,7 +78,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(20000);
+            Thread.sleep(5000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
