@@ -68,16 +68,16 @@ public class BaseSetup {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         return driver;
     }
-
-    public void statusTest(ITestResult result) {
+    @Parameters({"language"})
+    public void statusTest(ITestResult result, @Optional("English") String language) {
         if (ITestResult.SUCCESS == result.getStatus()) {
             System.out.println("Passed case: " + result.getName());
             Log.info("Passed: " + result.getName() + "\n");
-
+            CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver,language);
         } else if (ITestResult.FAILURE == result.getStatus()) {
             System.out.println("Failed: " + result.getName());
             System.out.println(result.getThrowable().toString());
-            CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver);
+            CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver,language);
             Allure.addAttachment("_Failed_Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
             //captureHelper.takeScreenshot(result.getName(),result.getName(),driver);
 

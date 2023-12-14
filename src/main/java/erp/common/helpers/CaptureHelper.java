@@ -76,7 +76,7 @@ public class CaptureHelper extends ScreenRecorder {
     }
 
 
-    public static void takeScreenshot(String url, String name, WebDriver driver) {
+    public static void takeScreenshot(String url, String name, WebDriver driver, String language) {
         try {
             TakesScreenshot ts = (TakesScreenshot) driver;
             File source = ts.getScreenshotAs(OutputType.FILE);
@@ -84,7 +84,7 @@ public class CaptureHelper extends ScreenRecorder {
             if (!theDir.exists()) {
                 theDir.mkdirs();
             }
-            FileHandler.copy(source, new File("./Screenshot/" + url + "/"+ dateFormat.format(new Date())+"-"+ name + ".png"));
+            FileHandler.copy(source, new File("./Screenshot/" + url + "/"+"["+language+"]" +dateFormat.format(new Date())+"-"+ name + ".png"));
             System.out.println("Screenshot success: " + name);
         } catch (Exception e) {
             System.out.println(e.getMessage());
