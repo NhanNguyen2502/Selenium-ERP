@@ -68,8 +68,8 @@ public class BaseSetup {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         return driver;
     }
-    @Parameters({"language"})
-    public void statusTest(ITestResult result, @Optional("English") String language) {
+
+    public void statusTest(ITestResult result,String language) {
         if (ITestResult.SUCCESS == result.getStatus()) {
             System.out.println("Passed case: " + result.getName());
             Log.info("Passed: " + result.getName() + "\n");
@@ -127,8 +127,9 @@ public class BaseSetup {
     }
 
     @AfterMethod
-    public void afterMetod(ITestResult result) {
-        statusTest(result);
+    @Parameters({"language"})
+    public void afterMetod(ITestResult result,@Optional("English") String language) {
+        statusTest(result,language);
         System.out.println("<========================= FINISH TEST CASE =========================> \n");
 
     }
