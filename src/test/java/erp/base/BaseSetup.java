@@ -72,8 +72,8 @@ public class BaseSetup {
     public void statusTest(ITestResult result,String language) {
         if (ITestResult.SUCCESS == result.getStatus()) {
             System.out.println("Passed case: " + result.getName());
-            Log.info("Passed: " + result.getName() + "\n");
-            CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver,language);
+            Log.info("Passed: " + result.getName());
+            //CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver,language);
         } else if (ITestResult.FAILURE == result.getStatus()) {
             System.out.println("Failed: " + result.getName());
             System.out.println(result.getThrowable().toString());
