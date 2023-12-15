@@ -156,7 +156,7 @@ public class SignInPage {
         data.put("email", email);
         Assert.assertEquals(
                 validateHelpers.removeHtmlTags(validateHelpers.getMessage(resendEmailContent)),
-                validateHelpers.removeHtmlTags(TranslationHelpers.getContent(explainContent, data) + email + "."), "Wrong here"
+                validateHelpers.removeHtmlTags(TranslationHelpers.getContent(explainContent, data)), "Wrong here"
         );
         validateHelpers.clickElement(signinButton);
         //Assert.assertTrue(validateHelpers.checkDisplayed(cancleButtonResendDialog), "The cancel button doesn't display!");
