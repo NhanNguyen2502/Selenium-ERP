@@ -61,7 +61,6 @@ public class TranslationHelpers {
         return result;
     }
 
-
 }
 
 
