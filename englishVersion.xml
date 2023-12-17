@@ -8,6 +8,7 @@
         <parameter name="language" value="English"></parameter>
         <classes>
             <class name="erp.testcases.SignInTest"></class>
+            <class name="erp.testcases.DashboardTest"></class>
             <class name="erp.testcases.SalesTest"></class>
         </classes>
     </test>
