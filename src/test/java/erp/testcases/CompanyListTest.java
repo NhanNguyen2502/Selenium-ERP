@@ -9,6 +9,8 @@ import erp.pages.CompanyListPage;
 import erp.pages.SignInPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class CompanyListTest extends BaseSetup {
@@ -35,29 +37,31 @@ public class CompanyListTest extends BaseSetup {
 //    }
 
     @Test(priority = 1)
-    public void verifyElements() throws Exception {
+    @Parameters({"language"})
+    public void verifyElements(@Optional("English") String language) throws Exception {
         validateHelpers.waitForLoadJs();
-        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        signInPage.verifylanguage(language);
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage.gotoCompnyList();
         companyListPage.verifyHeader();
-        companyListPage.verifyBodyOfPage(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.general.pageTitle.companies"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.title"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.pagination.inputField.rowsPerPage"));
+        companyListPage.verifyBodyOfPage(TranslationHelpers.setFile(language, "$.general.pageTitle.companies"),
+                TranslationHelpers.setFile(language, "$.company.listPage.title"),
+                TranslationHelpers.setFile(language, "$.pagination.inputField.rowsPerPage"));
         validateHelpers.logout();
     }
 
     @Test(priority = 2)
-    public void verifyCompanyListNull() {
+    @Parameters({"language"})
+    public void verifyCompanyListNull(@Optional("English") String language) {
         signInPage.waitForPageLoaded();
-        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage = signInPage.login(PropertiesHelper.getValue("notCompanyEmail"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
-        companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage.gotoCompnyList();
         companyListPage.checkCompaniesList();
@@ -65,84 +69,89 @@ public class CompanyListTest extends BaseSetup {
     }
 
     @Test(priority = 2)
-    public void verifyCompanyListNotNull() {
+    @Parameters({"language"})
+    public void verifyCompanyListNotNull(@Optional("English") String language) {
         signInPage.waitForPageLoaded();
-        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
-        companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage.gotoCompnyList();
         companyListPage.checkCompaniesList();
         companyListPage.checkTypeOfCompany(
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.real"));
+                TranslationHelpers.setFile(language, "$.company.listPage.text.real"));
         companyListPage.checkMoreOptions(
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.button.edit"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.button.delete")
+                TranslationHelpers.setFile(language, "$.company.listPage.button.edit"),
+                TranslationHelpers.setFile(language, "$.company.listPage.button.delete")
         );
         validateHelpers.logout();
 
     }
 
     @Test(priority = 3)
-    public void verifyGoToEditRealCompanyPage() {
+    @Parameters({"language"})
+    public void verifyGoToEditRealCompanyPage(@Optional("English") String language) {
         signInPage.waitForPageLoaded();
-        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
-        companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage.gotoCompnyList();
-        companyListPage.goToEditPage(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.real"));
+        companyListPage.goToEditPage(TranslationHelpers.setFile(language, "$.company.listPage.text.real"));
         validateHelpers.waitForLoadJs();
         validateHelpers.logout();
     }
 
     @Test(priority = 3)
-    public void verifyGoToEditDemoCompanyPage() {
+    @Parameters({"language"})
+    public void verifyGoToEditDemoCompanyPage(@Optional("English") String language) {
         signInPage.waitForPageLoaded();
-        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
-        companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage.gotoCompnyList();
-        companyListPage.goToEditPage(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.demo"));
+        companyListPage.goToEditPage(TranslationHelpers.setFile(language, "$.company.listPage.text.demo"));
         validateHelpers.waitForLoadJs();
         validateHelpers.logout();
     }
 
     @Test(priority = 4)
-    public void verifyDeleteDemoCompany() {
+    @Parameters({"language"})
+    public void verifyDeleteDemoCompany(@Optional("English") String language) {
         signInPage.waitForPageLoaded();
-        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
-        companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage.gotoCompnyList();
-        companyListPage.deleteCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.demo"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.dialog.deleteCompany.title"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.dialog.deleteDemoCompany.confirmMessage"));
+        companyListPage.deleteCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.demo"),
+                TranslationHelpers.setFile(language, "$.company.dialog.deleteCompany.title"),
+                TranslationHelpers.setFile(language, "$.company.dialog.deleteDemoCompany.confirmMessage"));
         validateHelpers.waitForLoadJs();
         validateHelpers.logout();
     }
     @Test(priority = 4)
-    public void verifyDeleteRealCompany() {
+    @Parameters({"language"})
+    public void verifyDeleteRealCompany(@Optional("English") String language) {
         signInPage.waitForPageLoaded();
-        signInPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        companyListPage.verifylanguage(PropertiesHelper.getLanguageToTest());
+        validateHelpers.verifylanguage(language);
         validateHelpers.waitForLoadJs();
         companyListPage.gotoCompnyList();
-        companyListPage.deleteCompany(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.listPage.text.real"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.dialog.deleteCompany.title"),
-                TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), "$.company.dialog.deleteRealCompany.confirmMessage"));
+        companyListPage.deleteCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.real"),
+                TranslationHelpers.setFile(language, "$.company.dialog.deleteCompany.title"),
+                TranslationHelpers.setFile(language, "$.company.dialog.deleteRealCompany.confirmMessage"));
         validateHelpers.waitForLoadJs();
         validateHelpers.logout();
     }
