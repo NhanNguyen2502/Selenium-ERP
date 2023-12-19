@@ -109,6 +109,7 @@ public class CompanyListTest extends BaseSetup {
     @Test(priority = 3)
     @Parameters({"language"})
     public void verifyGoToEditDemoCompanyPage(@Optional("English") String language) {
+        driver.navigate().refresh();
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
@@ -125,6 +126,7 @@ public class CompanyListTest extends BaseSetup {
     @Test(priority = 4)
     @Parameters({"language"})
     public void verifyDeleteDemoCompany(@Optional("English") String language) {
+        driver.navigate().refresh();
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
@@ -142,6 +144,7 @@ public class CompanyListTest extends BaseSetup {
     @Test(priority = 4)
     @Parameters({"language"})
     public void verifyDeleteRealCompany(@Optional("English") String language) {
+        driver.navigate().refresh();
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();

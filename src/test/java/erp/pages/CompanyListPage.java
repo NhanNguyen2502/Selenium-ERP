@@ -38,8 +38,8 @@ public class CompanyListPage {
 //    WebElement currentPageTitle;
     private By contactUsLink = By.xpath("//a[@data-cy='contact-us-link']");
     //private By languageOption = By.xpath("//app-language-option//button[@data-cy='language-option-btn']");
-    @FindBy(xpath = "//app-language-option//button[@data-cy='language-option-btn']")
-    WebElement languageOption;
+//    @FindBy(xpath = "//app-language-option//button[@data-cy='language-option-btn']")
+//    WebElement languageOption;
     private By nameOfAccount = By.xpath("//button//span//span[@class='user-name text-truncate text-initial']");
     private By logoutButton = By.xpath("//button[@data-cy='log-out-button']");
     //private By createButton = By.xpath("//button[@data-cy='create-company-btn']");
@@ -146,7 +146,7 @@ public class CompanyListPage {
                 break;
             }
             else{
-                System.out.println("The company type does not exist");
+                System.out.println("Company "+ i+ "is not" +Ctype);
             }
 
         }
