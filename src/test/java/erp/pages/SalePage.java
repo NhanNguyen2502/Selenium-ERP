@@ -60,4 +60,5 @@ public class SalePage {
         return  new CreateSalePage(driver);
     }
 
+
 }

@@ -64,9 +64,43 @@ public class SalesTest extends BaseSetup {
         salePage = dashBoardPage.goSaleTable();
         validateHelpers.logout();
     }
+    @Test(priority = 1)
+    @Parameters({"language"})
+    public void gotoCreateInvoicePageViaShortCutwithDmoCompany(@Optional("English") String language){
+        validateHelpers.waitForLoadJs();
+        signInPage.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(TranslationHelpers.setFile(language,"$.company.listPage.text.demo"));
+        validateHelpers.waitForLoadJs();
+        salePage = dashBoardPage.goSaleTable();
+        salePage.gtoSaleViaShortCut();
+        validateHelpers.logout();
+    }
+
+    @Test(priority = 1)
+    @Parameters({"language"})
+    public void gotoCreateInvoicePageViaShortCutwithRealCompany(@Optional("English") String language){
+        validateHelpers.waitForLoadJs();
+        signInPage.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(TranslationHelpers.setFile(language,"$.company.listPage.text.real"));
+        validateHelpers.waitForLoadJs();
+        salePage = dashBoardPage.goSaleTable();
+        salePage.gtoSaleViaShortCut();
+        validateHelpers.logout();
+    }
+
     @Test(priority = 2)
     @Parameters({"language"})
-    public void  verifyElements(@Optional("English") String language)
+    public void  verifyElementsOnSaleTable(@Optional("English") String language)
     {
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();

@@ -22,6 +22,7 @@ public class ValidateHelpers {
     private By logoutButton = By.xpath("//button[@data-cy='log-out-button']");
     private By languageButton = By.xpath("//app-language-option");
     private By languageOptions = By.xpath("//div[@data-cy='language-option-item']");
+
     private Actions actions;
 
 
@@ -30,6 +31,7 @@ public class ValidateHelpers {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         actions = new Actions(driver);
     }
+
 
     public void setText(By element, String text) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -84,6 +86,16 @@ public class ValidateHelpers {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
 
         }
+    }
+
+    public boolean checkElementDisabled(By element)
+    {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        if(driver.findElement(element).isEnabled())
+        {
+            return false;
+        }
+        return  true;
     }
 
     public void verifylanguage(String language) {
