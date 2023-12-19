@@ -145,8 +145,12 @@ public class CompanyListPage {
                 validateHelpers.clickElement(editOption);
                 break;
             }
+            else{
+                System.out.println("The company type does not exist");
+            }
+
         }
-        System.out.println("The company type does not exist");
+
     }
 
     public void checkMoreOptions(String editText, String deleteText) {
