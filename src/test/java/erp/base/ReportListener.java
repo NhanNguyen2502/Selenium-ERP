@@ -102,7 +102,7 @@ public class ReportListener implements ITestListener {
         // TODO Auto-generated method stub
         System.out.println("End test name: " + arg0.getName());
         ExtentTestManager.logMessage(Status.PASS, arg0.getName() + " is passed.");
-        saveTextLog(arg0.getName()+"is passed.");
+        saveTextLog(arg0.getName()+" is passed.");
 
 
     }

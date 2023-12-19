@@ -77,6 +77,7 @@ public class SalesTest extends BaseSetup {
         companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.demo"));
         validateHelpers.waitForLoadJs();
         salePage = dashBoardPage.goSaleTable();
+        validateHelpers.waitForLoadJs();
         salePage.verifyElementsOnSaleTable();
         validateHelpers.logout();
     }
