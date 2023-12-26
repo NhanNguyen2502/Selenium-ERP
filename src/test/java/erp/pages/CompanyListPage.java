@@ -146,7 +146,7 @@ public class CompanyListPage {
                 break;
             }
             else{
-                System.out.println("Company "+ i+ "is not" +Ctype);
+                System.out.println("Company "+ i+1 + " is not " +Ctype);
             }
 
         }

@@ -90,7 +90,7 @@ public class ValidateHelpers {
 
     public boolean checkElementDisabled(By element)
     {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+        //wait.until(ExpectedConditions.elementToBeClickable(element));
         if(driver.findElement(element).isEnabled())
         {
             return false;

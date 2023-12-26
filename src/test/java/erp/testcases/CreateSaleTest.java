@@ -28,9 +28,11 @@ public class CreateSaleTest extends BaseSetup {
         dashBoardPage = new DashBoardPage(driver);
     }
 
+
     @Test(priority = 1)
     @Parameters({"language"})
-    public void  checkinformationpage(@Optional("English") String language){
+    public void  verifyTypeAndDateSectionStandard(@Optional("English") String language){
+        signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         companyListPage =  signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("password"));
         validateHelpers.verifylanguage(language);
@@ -41,10 +43,53 @@ public class CreateSaleTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         salePage.gtoSaleViaShortCut();
         validateHelpers.waitForLoadJs();
-        createSalePage.checkDateandtypeSection(TranslationHelpers.setFile(language,"$.invoicesCommon.chip.standard")
-                ,TranslationHelpers.setFile(language,"$.invoicesCommon.chip.installment"));
+        createSalePage.checkDateAndTypeSection(TranslationHelpers.setFile(language,"$.regularInvoice.select.option.standard")
+                ,TranslationHelpers.setFile(language,"$.regularInvoice.select.option.standard")
+                ,TranslationHelpers.setFile(language,"$.regularInvoice.select.option.installment"));
+        createSalePage.checkAccountSection();
         validateHelpers.logout();
 
+    }
+
+    @Test(priority = 1)
+    @Parameters({"language"})
+    public void  verifyTypeAndDateSectionInstallment(@Optional("English") String language){
+        signInPage.waitForPageLoaded();
+        signInPage.verifylanguage(language);
+        companyListPage =  signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("password"));
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(TranslationHelpers.setFile(language,"$.company.listPage.text.demo"));
+        validateHelpers.waitForLoadJs();
+        salePage = dashBoardPage.goSaleTable();
+        validateHelpers.waitForLoadJs();
+        salePage.gtoSaleViaShortCut();
+        validateHelpers.waitForLoadJs();
+        createSalePage.checkDateAndTypeSection(TranslationHelpers.setFile(language,"$.regularInvoice.select.option.installment")
+                ,TranslationHelpers.setFile(language,"$.regularInvoice.select.option.standard")
+                ,TranslationHelpers.setFile(language,"$.regularInvoice.select.option.installment"));
+        createSalePage.checkAccountSection();
+        validateHelpers.logout();
+    }
+    @Test(priority = 1)
+    @Parameters({"language"})
+    public void  verifyTypeAndDateSectionCashSale(@Optional("English") String language){
+        signInPage.waitForPageLoaded();
+        signInPage.verifylanguage(language);
+        companyListPage =  signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("password"));
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(TranslationHelpers.setFile(language,"$.company.listPage.text.demo"));
+        validateHelpers.waitForLoadJs();
+        salePage = dashBoardPage.goSaleTable();
+        validateHelpers.waitForLoadJs();
+        salePage.gtoSaleViaShortCut();
+        validateHelpers.waitForLoadJs();
+        createSalePage.checkDateAndTypeSection(TranslationHelpers.setFile(language,"$.regularInvoice.select.option.cashSale")
+                ,TranslationHelpers.setFile(language,"$.regularInvoice.select.option.standard")
+                ,TranslationHelpers.setFile(language,"$.regularInvoice.select.option.installment"));
+        createSalePage.checkAccountSection();
+        validateHelpers.logout();
     }
 
 }
