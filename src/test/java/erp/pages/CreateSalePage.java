@@ -18,7 +18,8 @@ public class CreateSalePage {
     private By dateAndTye = By.xpath("(//mat-accordion//mat-panel-title)[1]");
     private By expandableonDateAndType = By.xpath("(//button[@data-cy='expandable-buton'])[1]");
     private By saleTypeField = By.xpath("(//mat-form-field)[2]");
-    private By saleTypeDropdow = By.xpath("//button[@data-cy='drop-down-button']");
+    private By saleTypeDropdownButton = By.xpath("//button[@data-cy='drop-down-button']");
+    private By typeList = By.xpath("//mat-option");
     private By invoiceDateFiled = By.xpath("(//input[@data-cy='remaining-days'])[2]");
     private By invoiceDatebt = By.xpath("(//mat-datepicker-toggle//button)[1]");
     private By remainingDayfield = By.xpath("(//input[@data-cy='remaining-days'])[1]");
@@ -26,6 +27,13 @@ public class CreateSalePage {
     private By dueDateBt = By.xpath("(//mat-datepicker-toggle//button)[2]");
     private By changeSaleDateBt = By.xpath("(//mat-expansion-panel//button)[4]");
     private By setSaleTypeDefault = By.xpath("(//mat-expansion-panel//button)[3]");
+    private By accountSection = By.xpath("//app-sale-draft-account");
+    private By logoCompany = By.xpath("//app-sale-draft-account//app-company-logo");
+    private By accountField = By.xpath("//app-select-object-control[@id='select-account-number']");
+    private By accountDropDownListButton = By.xpath("(//button[@data-cy='drop-down-button'])[2]");
+    private By editBankAccountButton = By.xpath("//button[@apptooltip='regularInvoice.button.editBankAccount']");
+    private By createBankAccountButton = By.xpath("//button[@apptooltip='regularInvoice.button.createBankAccount']");
+    private By ourReference = By.xpath("//app-select-object-control[@id='select-our-reference']");
 
     public CreateSalePage(WebDriver driver) {
         this.driver = driver;
@@ -33,44 +41,101 @@ public class CreateSalePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-    public String checkSaleType() {
-        wait.until(ExpectedConditions.elementToBeClickable(saleTypeFiled));
-        return validateHelpers.getMessage(saleTypeFiled);
+    public String selectSaleType(String type) {
+        validateHelpers.clickElement(saleTypeDropdownButton);
+        var listType = driver.findElements(typeList);
+        for (var x : listType) {
+            if (x.getText().equals(type)) {
+                x.click();
+                break;
+            } else {
+                System.out.println("Invoice type does not exist");
+            }
+
+        }
+        return type;
     }
 
-    public void checkDateandtypeSection(String standard, String instalment) {
-        String saleType = checkSaleType();
-        if (saleType.equals(standard)) {
-            validateHelpers.checkDisplayed(dateAndTye);
-            validateHelpers.checkDisplayed(expandableonDateAndType);
-            validateHelpers.checkDisplayed(saleTypeField);
-            validateHelpers.checkDisplayed(saleTypeDropdow);
-            validateHelpers.checkDisplayed(invoiceDateFiled);
-            validateHelpers.checkDisplayed(invoiceDatebt);
-            validateHelpers.checkDisplayed(remainingDayfield);
-            validateHelpers.checkDisplayed(dueDateField);
-            validateHelpers.checkDisplayed(dueDateBt);
-            validateHelpers.checkDisplayed(setSaleTypeDefault);
+    public void checkAccountSection() {
+        validateHelpers.checkDisplayed(logoCompany);
+        validateHelpers.checkDisplayed(accountField);
+        validateHelpers.checkDisplayed(accountDropDownListButton);
+        validateHelpers.checkDisplayed(editBankAccountButton);
+        validateHelpers.checkDisplayed(createBankAccountButton);
+        validateHelpers.checkDisplayed(ourReference);
+    }
 
-        } else if (saleType.equals(instalment)) {
-            validateHelpers.checkDisplayed(dateAndTye);
-            validateHelpers.checkDisplayed(expandableonDateAndType);
-            validateHelpers.checkDisplayed(saleTypeField);
-            validateHelpers.checkDisplayed(saleTypeDropdow);
-            validateHelpers.checkDisplayed(invoiceDateFiled);
-            validateHelpers.checkDisplayed(invoiceDatebt);
-            validateHelpers.checkDisplayed(remainingDayfield);
-            validateHelpers.checkDisplayed(dueDateField);
-            validateHelpers.checkDisplayed(dueDateBt);
-            validateHelpers.checkDisplayed(setSaleTypeDefault);
-            Assert.assertTrue(validateHelpers.checkElementDisabled(remainingDayfield));
-            Assert.assertTrue(validateHelpers.checkElementDisabled(dueDateField));
+    public void checkDateAndTypeSection(String saleType, String standard, String instalment) {
+        String type = selectSaleType(saleType);
+        if (type.equals(standard)) {
+            if (!validateHelpers.checkElementDisabled(setSaleTypeDefault)) {
+                Assert.assertTrue(validateHelpers.checkDisplayed(dateAndTye));
+                Assert.assertTrue(validateHelpers.checkDisplayed(expandableonDateAndType));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeField));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeDropdownButton));
+                Assert.assertTrue(validateHelpers.checkDisplayed(invoiceDateFiled));
+                Assert.assertTrue(validateHelpers.checkDisplayed(invoiceDatebt));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(remainingDayfield));
+                Assert.assertTrue(validateHelpers.checkDisplayed(dueDateField));
+                Assert.assertTrue(validateHelpers.checkDisplayed(dueDateBt));
+                Assert.assertTrue(validateHelpers.checkDisplayed(setSaleTypeDefault));
+            } else {
+                Assert.assertTrue(validateHelpers.checkDisplayed(dateAndTye));
+                Assert.assertTrue(validateHelpers.checkDisplayed(expandableonDateAndType));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeField));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeDropdownButton));
+                Assert.assertTrue(validateHelpers.checkDisplayed(invoiceDateFiled));
+                Assert.assertTrue(validateHelpers.checkDisplayed(invoiceDatebt));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(remainingDayfield));
+                Assert.assertTrue(validateHelpers.checkDisplayed(dueDateField));
+                Assert.assertTrue(validateHelpers.checkDisplayed(dueDateBt));
+            }
+
+        } else if (type.equals(instalment)) {
+            if (!validateHelpers.checkElementDisabled(setSaleTypeDefault)) {
+                Assert.assertTrue(validateHelpers.checkDisplayed(dateAndTye));
+                Assert.assertTrue(validateHelpers.checkDisplayed(expandableonDateAndType));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeField));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeDropdownButton));
+                Assert.assertTrue(validateHelpers.checkDisplayed(invoiceDateFiled));
+                Assert.assertTrue(validateHelpers.checkDisplayed(invoiceDatebt));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(remainingDayfield));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(dueDateField));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(dueDateBt));
+                Assert.assertTrue(validateHelpers.checkDisplayed(setSaleTypeDefault));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(remainingDayfield));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(dueDateField));
+            } else {
+                Assert.assertTrue(validateHelpers.checkDisplayed(dateAndTye));
+                Assert.assertTrue(validateHelpers.checkDisplayed(expandableonDateAndType));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeField));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeDropdownButton));
+                Assert.assertTrue(validateHelpers.checkDisplayed(invoiceDateFiled));
+                Assert.assertTrue(validateHelpers.checkDisplayed(invoiceDatebt));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(remainingDayfield));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(dueDateField));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(dueDateBt));
+                Assert.assertTrue(validateHelpers.checkDisplayed(setSaleTypeDefault));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(remainingDayfield));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(dueDateField));
+            }
+
         } else {
-            validateHelpers.checkDisplayed(dateAndTye);
-            validateHelpers.checkDisplayed(expandableonDateAndType);
-            validateHelpers.checkDisplayed(saleTypeField);
-            validateHelpers.checkDisplayed(saleTypeDropdow);
-            validateHelpers.checkDisplayed(changeSaleDateBt);
+            if (!validateHelpers.checkElementDisabled(setSaleTypeDefault)) {
+                Assert.assertTrue(validateHelpers.checkDisplayed(dateAndTye));
+                Assert.assertTrue(validateHelpers.checkDisplayed(expandableonDateAndType));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeField));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeDropdownButton));
+                Assert.assertTrue(validateHelpers.checkDisplayed(changeSaleDateBt));
+                Assert.assertTrue(validateHelpers.checkDisplayed(setSaleTypeDefault));
+            } else {
+                Assert.assertTrue(validateHelpers.checkDisplayed(dateAndTye));
+                Assert.assertTrue(validateHelpers.checkDisplayed(expandableonDateAndType));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeField));
+                Assert.assertTrue(validateHelpers.checkDisplayed(saleTypeDropdownButton));
+                Assert.assertTrue(validateHelpers.checkDisplayed(changeSaleDateBt));
+                Assert.assertTrue(validateHelpers.checkElementDisabled(setSaleTypeDefault));
+            }
         }
     }
 }

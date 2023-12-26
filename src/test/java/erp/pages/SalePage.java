@@ -25,7 +25,7 @@ public class SalePage {
     private By searchField = By.xpath("//input[@data-cy='search-input-field']");
     private By emtyList = By.xpath("//app-no-item");
     private By keyData = By.xpath("//app-invoice-key-data-item");
-    private By crSaleShortcut = By.xpath("//a[@data-cy='contact-us-link'][1]");
+    private By crSaleShortcut = By.xpath("//div[@apptooltip='salesList.button.newSaleTooltip']");
 
 
     public SalePage(WebDriver driver) {
