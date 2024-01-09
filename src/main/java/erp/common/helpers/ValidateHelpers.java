@@ -11,9 +11,12 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import py4j.ClientServer;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Random;
 
 
 public class ValidateHelpers {
@@ -32,6 +35,30 @@ public class ValidateHelpers {
         actions = new Actions(driver);
     }
 
+    public boolean selectRandom(By dropdownButton, By elements){
+        try{
+            clickElement(dropdownButton);
+            var list = driver.findElements(elements);
+            if(!list.isEmpty())
+            {
+                Random ran = new Random();
+                var randomNumber = ran.nextInt(list.size());
+                System.out.println(randomNumber);
+                list.get(randomNumber).click();
+//            for (int  i=0; i<list.size();i++)
+//            {
+//                list.get(randomNumber).click();
+//            }
+                return true;
+            }else
+                return false;
+
+        }catch (NoSuchElementException a)
+        {
+            return false;
+        }
+
+    }
 
     public void setText(By element, String text) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
