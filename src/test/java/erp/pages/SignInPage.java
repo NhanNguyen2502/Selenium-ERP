@@ -60,7 +60,7 @@ public class SignInPage {
     }
 
     public void verifylanguage(String language) {
-        waitForPageLoaded();
+        validateHelpers.waitForLoadJs();
         validateHelpers.clickElement(languageButton);
         wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
         var options = driver.findElements(languageOptions);
@@ -121,11 +121,11 @@ public class SignInPage {
     }
 
     @Step("verify email null")
-    public String verifyEmailnull() throws Exception {
+    public String verifyEmailnull()  {
 
         validateHelpers.setText(usernameTextBox, "");
-        validateHelpers.clickElement(formtitle);
-        Thread.sleep(1000);
+        validateHelpers.clickOutside();
+        validateHelpers.waitForLoadJs();
         return driver.findElement(usernameRequied).getText();
 
     }
