@@ -105,11 +105,13 @@ public class CreateCompanyTest extends BaseSetup {
     @Test(priority = 3)
     @Parameters({"language"})
     public void verifyTextCreateDmoCompanyForm(@Optional("English") String language) {
-        signInPage.waitForPageLoaded();
+        validateHelpers.waitForLoadJs();
         signInPage.verifylanguage(language);
         createCompanyPage = signInPage.signinWithCreateCompany(PropertiesHelper.getValue("notCompanyEmail"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
         validateHelpers.verifylanguage(language);
         createCompanyPage.goToCreateCompany();
+        validateHelpers.waitForLoadJs();
         createDemoCompanyPage = createCompanyPage.goToCreateDemoCompanyForm();
         createDemoCompanyPage.waitForPageLoaded();
         createDemoCompanyPage.verifyTextofheaderPage(
@@ -134,6 +136,7 @@ public class CreateCompanyTest extends BaseSetup {
                 TranslationHelpers.setFile(language, "$.company.createPage.inputField.timezone")
         );
         createCompanyPage.leaveFormcreate();
+        validateHelpers.logout();
     }
 
 }
