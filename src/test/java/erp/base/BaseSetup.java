@@ -131,7 +131,10 @@ public class BaseSetup {
     public void afterMetod(ITestResult result,@Optional("English") String language) {
         statusTest(result,language);
         System.out.println("<========================= FINISH TEST CASE =========================> \n");
-
+        if(!result.isSuccess())
+        {
+            driver.get(PropertiesHelper.getValue("url_dev"));
+        }
     }
 
     @AfterClass

@@ -107,7 +107,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(5000);
+            Thread.sleep(30000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
