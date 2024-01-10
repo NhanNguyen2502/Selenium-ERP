@@ -203,7 +203,6 @@ public class CreateSaleTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         createSalePage.selectProduct();
         validateHelpers.waitForLoadJs();
-        createSalePage.selectFee();
         validateHelpers.waitForLoadJs();
         createSalePage.clickCreateButton();
         validateHelpers.waitForLoadJs();
@@ -238,7 +237,6 @@ public class CreateSaleTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         createSalePage.selectProduct();
         validateHelpers.waitForLoadJs();
-        createSalePage.selectFee();
         validateHelpers.waitForLoadJs();
         createSalePage.clickCreateButton();
         validateHelpers.waitForLoadJs();
