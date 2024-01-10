@@ -126,6 +126,7 @@ public class ValidateHelpers {
     }
 
     public void verifylanguage(String language) {
+        waitForLoadJs();
         clickElement(languageButton);
         wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
         var options = driver.findElements(languageOptions);

@@ -62,7 +62,7 @@ public class SignInPage {
     public void verifylanguage(String language) {
         validateHelpers.waitForLoadJs();
         validateHelpers.clickElement(languageButton);
-        wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
+        validateHelpers.waitForLoadJs();
         var options = driver.findElements(languageOptions);
         String key = "$.languageSelect.option.english";
         switch (language) {
