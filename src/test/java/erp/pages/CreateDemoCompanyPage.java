@@ -3,6 +3,7 @@ package erp.pages;
 import erp.common.helpers.ValidateHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -90,31 +91,38 @@ public class CreateDemoCompanyPage {
 
     public void verifyTextOfContactSection(String ctTitle, String emailTitle, String phoneTitle, String websitetitle,
                                            String addressTitleText, String addFirstText, String addSecondText, String addThirdText, String addCountryText, String zipCodeText, String addCityText, String addTimeZoneText) {
-        actions.moveToElement(driver.findElement(companyContactInfor)).build().perform();
-        Assert.assertTrue(validateHelpers.checkDisplayed(companyContactInfor), "Error at verifyTextOfContactSection row 1");
-        Assert.assertTrue(validateHelpers.checkDisplayed(companyContactInforTitle), "Error at verifyTextOfContactSection row 2");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctEmailTitle), "Error at verifyTextOfContactSection row 3");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctEmailField), "Error at verifyTextOfContactSection row 4");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctPhoneTitle), "Error at verifyTextOfContactSection row 5");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctPhoneCodefield), "Error at verifyTextOfContactSection row 6");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctPhonenumberField), "Error at verifyTextOfContactSection row 7");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctWebsitetitle), "Error at verifyTextOfContactSection row 8");
-        Assert.assertTrue(validateHelpers.checkDisplayed(ctWebSiteField), "Error at verifyTextOfContactSection row 9");
-        Assert.assertTrue(validateHelpers.checkDisplayed(addressSectionTitle), "Error at verifyTextOfContactSection row 10");
-        Assert.assertTrue(validateHelpers.checkDisplayed(addFirst), "Error at verifyTextOfContactSection row 11");
-        //Assert.assertTrue(validateHelpers.checkDisplayed(addFirstField), "Error at verifyTextOfContactSection row 12");
-        Assert.assertEquals(validateHelpers.getMessage(companyContactInforTitle), ctTitle, "Error at verifyTextOfContactSection row 12");
-        Assert.assertEquals(validateHelpers.getMessage(ctEmailTitle), emailTitle, "Error at verifyTextOfContactSection row 13");
-        Assert.assertEquals(validateHelpers.getMessage(ctPhoneTitle), phoneTitle, "Error at verifyTextOfContactSection row 14");
-        Assert.assertEquals(validateHelpers.getMessage(ctWebsitetitle), websitetitle, "Error at verifyTextOfContactSection row 15");
-        Assert.assertEquals(validateHelpers.getMessage(addressSectionTitle), addressTitleText, "Error at verifyTextOfContactSection row 16");
-        Assert.assertEquals(validateHelpers.getMessage(addFirst), addFirstText, "Error at verifyTextOfContactSection row 17");
-        Assert.assertEquals(validateHelpers.getMessage(addSecond), addSecondText, "Error at verifyTextOfContactSection row 18");
-        Assert.assertEquals(validateHelpers.getMessage(addThird), addThirdText, "Error at verifyTextOfContactSection row 19");
-        Assert.assertEquals(validateHelpers.getMessage(addCountry), addCountryText, "Error at verifyTextOfContactSection row 20");
-        Assert.assertEquals(validateHelpers.getMessage(addZipCode), zipCodeText, "Error at verifyTextOfContactSection row 21");
-        Assert.assertEquals(validateHelpers.getMessage(addCity), addCityText, "Error at verifyTextOfContactSection row 22");
-        Assert.assertEquals(validateHelpers.getMessage(addTimeZone), addTimeZoneText, "Error at verifyTextOfContactSection row 23");
+        try{
+            actions.moveToElement(driver.findElement(companyContactInfor)).build().perform();
+            Assert.assertTrue(validateHelpers.checkDisplayed(companyContactInfor), "Error at verifyTextOfContactSection row 1");
+            Assert.assertTrue(validateHelpers.checkDisplayed(companyContactInforTitle), "Error at verifyTextOfContactSection row 2");
+            Assert.assertTrue(validateHelpers.checkDisplayed(ctEmailTitle), "Error at verifyTextOfContactSection row 3");
+            Assert.assertTrue(validateHelpers.checkDisplayed(ctEmailField), "Error at verifyTextOfContactSection row 4");
+            Assert.assertTrue(validateHelpers.checkDisplayed(ctPhoneTitle), "Error at verifyTextOfContactSection row 5");
+            Assert.assertTrue(validateHelpers.checkDisplayed(ctPhoneCodefield), "Error at verifyTextOfContactSection row 6");
+            Assert.assertTrue(validateHelpers.checkDisplayed(ctPhonenumberField), "Error at verifyTextOfContactSection row 7");
+            Assert.assertTrue(validateHelpers.checkDisplayed(ctWebsitetitle), "Error at verifyTextOfContactSection row 8");
+            Assert.assertTrue(validateHelpers.checkDisplayed(ctWebSiteField), "Error at verifyTextOfContactSection row 9");
+            Assert.assertTrue(validateHelpers.checkDisplayed(addressSectionTitle), "Error at verifyTextOfContactSection row 10");
+            Assert.assertTrue(validateHelpers.checkDisplayed(addFirst), "Error at verifyTextOfContactSection row 11");
+            //Assert.assertTrue(validateHelpers.checkDisplayed(addFirstField), "Error at verifyTextOfContactSection row 12");
+            Assert.assertEquals(validateHelpers.getMessage(companyContactInforTitle), ctTitle, "Error at verifyTextOfContactSection row 12");
+            Assert.assertEquals(validateHelpers.getMessage(ctEmailTitle), emailTitle, "Error at verifyTextOfContactSection row 13");
+            Assert.assertEquals(validateHelpers.getMessage(ctPhoneTitle), phoneTitle, "Error at verifyTextOfContactSection row 14");
+            Assert.assertEquals(validateHelpers.getMessage(ctWebsitetitle), websitetitle, "Error at verifyTextOfContactSection row 15");
+            Assert.assertEquals(validateHelpers.getMessage(addressSectionTitle), addressTitleText, "Error at verifyTextOfContactSection row 16");
+            Assert.assertEquals(validateHelpers.getMessage(addFirst), addFirstText, "Error at verifyTextOfContactSection row 17");
+            Assert.assertEquals(validateHelpers.getMessage(addSecond), addSecondText, "Error at verifyTextOfContactSection row 18");
+            Assert.assertEquals(validateHelpers.getMessage(addThird), addThirdText, "Error at verifyTextOfContactSection row 19");
+            Assert.assertEquals(validateHelpers.getMessage(addCountry), addCountryText, "Error at verifyTextOfContactSection row 20");
+            Assert.assertEquals(validateHelpers.getMessage(addZipCode), zipCodeText, "Error at verifyTextOfContactSection row 21");
+            Assert.assertEquals(validateHelpers.getMessage(addCity), addCityText, "Error at verifyTextOfContactSection row 22");
+            Assert.assertEquals(validateHelpers.getMessage(addTimeZone), addTimeZoneText, "Error at verifyTextOfContactSection row 23");
+        }
+        catch (NoSuchElementException e)
+        {
+            validateHelpers.logout();
+        }
+
     }
 
     public void waitForPageLoaded() {

@@ -11,12 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import py4j.ClientServer;
+
 
 import java.time.Duration;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Random;
+import java.util.*;
 
 
 public class ValidateHelpers {
@@ -35,6 +33,11 @@ public class ValidateHelpers {
         actions = new Actions(driver);
     }
 
+    public List<WebElement> getList (By element)
+    {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        return driver.findElements(element);
+    }
     public boolean selectRandom(By dropdownButton, By elements){
         try{
             clickElement(dropdownButton);
@@ -66,6 +69,7 @@ public class ValidateHelpers {
     }
 
     public void clickElement(By element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         driver.findElement(element).click();
         // ((JavascriptExecutor) Js).executeScript("arguments[0].click()", driver.findElement(element));
     }
@@ -91,7 +95,13 @@ public class ValidateHelpers {
     }
 
     public void logout() {
-       clickElement(logoutButton);
+        try {
+            clickElement(logoutButton);
+        }catch(NoSuchElementException e)
+        {
+            driver.get(PropertiesHelper.getValue("url_dev"));
+        }
+
     }
 
     public String removeHtmlTags(String content) {
@@ -128,7 +138,7 @@ public class ValidateHelpers {
         waitForLoadJs();
         clickElement(languageButton);
         wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
-        var options = driver.findElements(languageOptions);
+        var options = getList(languageOptions);
         String key = "$.languageSelect.option.english";
         switch (language) {
             case "English" -> key = "$.languageSelect.option.english";

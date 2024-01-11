@@ -18,13 +18,7 @@ import java.io.ByteArrayInputStream;
 import java.util.concurrent.TransferQueue;
 
 @Listeners(ReportListener.class)
-//@Epic("Regression test ERP")
-//@Feature("ERP")
-@Epic("Sign In flow")
-@Feature("Login form")
-//@Story("User enters wrong password")
-@Owner("Nhan Nguyen")
-@Severity(SeverityLevel.CRITICAL)
+
 public class DashboardTest extends BaseSetup {
     private DashBoardPage dashBoardPage;
     private WebDriver driver;

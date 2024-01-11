@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
+        <suiteFile>CompanyList_Suite.xml</suiteFile>
     </properties>
     <dependencies>
 
@@ -177,7 +178,7 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>
-                            testng.xml
+                            ${suiteFile}
                         </suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>

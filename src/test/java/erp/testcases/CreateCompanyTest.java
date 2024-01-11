@@ -1,6 +1,7 @@
 package erp.testcases;
 
 import erp.base.BaseSetup;
+import erp.base.ReportListener;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
 import erp.common.helpers.ValidateHelpers;
@@ -9,11 +10,9 @@ import erp.pages.CreateDemoCompanyPage;
 import erp.pages.CreateRealCompanyPage;
 import erp.pages.SignInPage;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
+@Listeners(ReportListener.class)
 public class CreateCompanyTest extends BaseSetup {
     private WebDriver driver;
     private SignInPage signInPage;
@@ -30,7 +29,7 @@ public class CreateCompanyTest extends BaseSetup {
 
     }
 
-    @Test(priority = 1, description = "Check a create company page")
+    @Test(priority = 1)
     @Parameters({"language"})
     public void verifyWithAccountNotCompany(@Optional("English") String language) throws Exception {
         validateHelpers.waitForLoadJs();
@@ -100,6 +99,7 @@ public class CreateCompanyTest extends BaseSetup {
                 TranslationHelpers.setFile(language, "$.company.createPage.inputField.timezone")
         );
         createCompanyPage.leaveFormcreate();
+        validateHelpers.waitForLoadJs();
         validateHelpers.logout();
     }
 
@@ -137,6 +137,7 @@ public class CreateCompanyTest extends BaseSetup {
                 TranslationHelpers.setFile(language, "$.company.createPage.inputField.timezone")
         );
         createCompanyPage.leaveFormcreate();
+        validateHelpers.waitForLoadJs();
         validateHelpers.logout();
     }
 

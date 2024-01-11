@@ -1,6 +1,7 @@
-package erp.testcases;
+package erp.testcases.CompanyList;
 
 import erp.base.BaseSetup;
+import erp.base.ReportListener;
 import erp.common.helpers.ExcelHelper;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
@@ -8,11 +9,9 @@ import erp.common.helpers.ValidateHelpers;
 import erp.pages.CompanyListPage;
 import erp.pages.SignInPage;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
+@Listeners(ReportListener.class)
 public class CompanyListTest extends BaseSetup {
     private WebDriver driver;
     public SignInPage signInPage;

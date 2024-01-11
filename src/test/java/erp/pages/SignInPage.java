@@ -47,7 +47,7 @@ public class SignInPage {
     private By cancleButtonResendDialog = By.xpath("//button[@data-cy='dialog-cancel-button']");
     private By closeResendDialog = By.xpath("//button[@data-cy='dialog-close-button']");
     private By resnedEmailButton = By.xpath("//button[@data-cy='dialog-resend-button']");
-    private By languageButton = By.xpath("//button[@id='kc-chevron-btn']");
+    private By languageButton = By.xpath("(//div[@id='kc-locale-dropdown']//a//span)[1]");
     private By languageOptions = By.xpath("//li//div//a[@id='kc-locale-option']");
     private By signinButton = By.xpath("//div[@id='kc-back-to-sign-in']//span");
     public ValidateHelpers validateHelpers;
@@ -62,8 +62,7 @@ public class SignInPage {
     public void verifylanguage(String language) {
         validateHelpers.waitForLoadJs();
         validateHelpers.clickElement(languageButton);
-        validateHelpers.waitForLoadJs();
-        var options = driver.findElements(languageOptions);
+        var options = validateHelpers.getList(languageOptions);
         String key = "$.languageSelect.option.english";
         switch (language) {
             case "English" -> key = "$.languageSelect.option.english";
