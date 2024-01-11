@@ -66,7 +66,6 @@ public class ValidateHelpers {
     }
 
     public void clickElement(By element) {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
         driver.findElement(element).click();
         // ((JavascriptExecutor) Js).executeScript("arguments[0].click()", driver.findElement(element));
     }

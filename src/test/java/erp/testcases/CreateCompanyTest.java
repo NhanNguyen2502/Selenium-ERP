@@ -33,6 +33,7 @@ public class CreateCompanyTest extends BaseSetup {
     @Test(priority = 1, description = "Check a create company page")
     @Parameters({"language"})
     public void verifyWithAccountNotCompany(@Optional("English") String language) throws Exception {
+        validateHelpers.waitForLoadJs();
         signInPage.verifylanguage(language);
         createCompanyPage = signInPage.signinWithCreateCompany(PropertiesHelper.getValue("notCompanyEmail"), PropertiesHelper.getValue("password"));
         validateHelpers.verifylanguage(language);
@@ -57,7 +58,7 @@ public class CreateCompanyTest extends BaseSetup {
     @Test(priority = 2)
     @Parameters({"language"})
     public void verifyTextCreateRealcompany(@Optional("English") String language) throws Exception {
-        signInPage.waitForPageLoaded();
+        validateHelpers.waitForLoadJs();
         signInPage.verifylanguage(language);
         createCompanyPage = signInPage.signinWithCreateCompany(PropertiesHelper.getValue("notCompanyEmail"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
