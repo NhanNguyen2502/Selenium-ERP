@@ -50,7 +50,7 @@ public class SignInPage {
     private By languageButton = By.xpath("(//div[@id='kc-locale-dropdown']//a//span)[1]");
     private By languageOptions = By.xpath("//li//div//a[@id='kc-locale-option']");
     private By signinButton = By.xpath("//div[@id='kc-back-to-sign-in']//span");
-    private By signinButton1 = By.xpath("//div[@id='kc-back-to-sign-in']//span");
+    private By signinButton2 = By.xpath("//div[@id='kc-back-to-sign-in']//span");
     public ValidateHelpers validateHelpers;
 
     public SignInPage(WebDriver driver) {
