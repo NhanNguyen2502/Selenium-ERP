@@ -13,7 +13,6 @@
     <!--        </classes>-->
     <!--    </test>-->
     <suite-files>
-        <suite-file path="CompanyListng.xml">CompanyListng.xml</suite-file>
-
+        <suite-file path="src/test/java/erp/testcases/CompanyList/CompanyListng.xml">CompanyListng.xml</suite-file>
     </suite-files>
 </suite>
