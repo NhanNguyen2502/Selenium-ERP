@@ -184,7 +184,7 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>
-                            testng.xml
+                            CompanyList_Suite.xml
 <!--                            ${suiteFile}-->
                         </suiteXmlFile>
                     </suiteXmlFiles>
