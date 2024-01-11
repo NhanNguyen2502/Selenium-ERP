@@ -5,14 +5,9 @@
         <listener class-name="erp.base.ReportListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true" name="ERP_Selenium">
-        <parameter name="language" value="Kurdish - Sorani"></parameter>
+        <parameter name="language" value="English"></parameter>
         <classes>
-            <class name="erp.testcases.SignInTest"></class>
             <class name="erp.testcases.CompanyList.CompanyListTest"></class>
-            <class name="erp.testcases.CreateCompanyTest"></class>
-            <class name="erp.testcases.DashboardTest"></class>
-            <class name="erp.testcases.SalesTest"></class>
-            <class name="erp.testcases.CreateSaleTest"></class>
         </classes>
     </test>
 </suite>

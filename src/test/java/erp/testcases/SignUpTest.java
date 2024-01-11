@@ -1,13 +1,15 @@
 package erp.testcases;
 
 import erp.base.BaseSetup;
+import erp.base.ReportListener;
 import erp.common.helpers.PropertiesHelper;
 import erp.pages.SignInPage;
 import erp.pages.SignUpPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
+@Listeners(ReportListener.class)
 public class SignUpTest extends BaseSetup {
     private WebDriver driver;
     public SignUpPage signUpPage;

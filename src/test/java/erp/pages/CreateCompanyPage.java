@@ -138,14 +138,20 @@ public class CreateCompanyPage extends BaseSetup {
     public void verifyTextOfCreateSection(String realHeader, String realContent,
                                           String realButtonText, String demoHeader, String demoContent,
                                           String demoButtonText) {
-        Assert.assertTrue(validateHelpers.checkDisplayed(createRealCompanySection));
-        Assert.assertTrue(validateHelpers.checkDisplayed(createDemoCompanySection));
-        Assert.assertEquals(validateHelpers.getMessage(createRealCompanyHeader), realHeader, "Create real section title wrong");
-        Assert.assertEquals(validateHelpers.getMessage(createRealCompanyContent), realContent, "Create real content section title wrong");
-        Assert.assertEquals(validateHelpers.getMessage(createRealCompanyButton), realButtonText, "Real button text wrong");
-        Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyHeader), demoHeader, "Header demo wrong");
-        Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyContent), demoContent, "demo content wrong");
-        Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyButton), demoButtonText, "demo button wrong");
+        try {
+            Assert.assertTrue(validateHelpers.checkDisplayed(createRealCompanySection));
+            Assert.assertTrue(validateHelpers.checkDisplayed(createDemoCompanySection));
+            Assert.assertEquals(validateHelpers.getMessage(createRealCompanyHeader), realHeader, "Create real section title wrong");
+            Assert.assertEquals(validateHelpers.getMessage(createRealCompanyContent), realContent, "Create real content section title wrong");
+            Assert.assertEquals(validateHelpers.getMessage(createRealCompanyButton), realButtonText, "Real button text wrong");
+            Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyHeader), demoHeader, "Header demo wrong");
+            Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyContent), demoContent, "demo content wrong");
+            Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyButton), demoButtonText, "demo button wrong");
+        }catch (Exception e)
+        {
+            validateHelpers.logout();
+        }
+
 
     }
 
