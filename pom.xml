@@ -9,9 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
-        <suiteFile>CompanyList_Suite.xml</suiteFile>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <dependencies>
 
@@ -167,6 +166,13 @@
             <version>1.9.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.ow2.asm/asm-commons -->
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>5.0.3</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -178,7 +184,8 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>
-                            ${suiteFile}
+                            CompanyList_Suite.xml
+<!--                            ${suiteFile}-->
                         </suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
