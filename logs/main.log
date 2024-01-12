@@ -5558,3 +5558,7 @@ Session ID: 2bd074001ade8582970d21dabddafd61
 2024-01-12 14:43:22,759 +0700 [main] DEBUG (_Log4jLoggerFactory.java:45) - TemplateLoader.findTemplateSource("commons/commons-inject-js_en.ftl"): Not found
 2024-01-12 14:43:22,760 +0700 [main] DEBUG (_Log4jLoggerFactory.java:45) - TemplateLoader.findTemplateSource("commons/commons-inject-js.ftl"): Found
 2024-01-12 14:43:22,760 +0700 [main] DEBUG (_Log4jLoggerFactory.java:45) - Loading template for "commons/commons-inject-js.ftl"("en_US", UTF-8, parsed) from "jar:file:/C:/Users/Nhan/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar!/com/aventstack/extentreports/templates/commons/commons-inject-js.ftl"
+2024-01-12 15:02:09,043 +0700 [main] INFO  (Log.java:13) - Run test: verifyElements
+2024-01-12 15:02:09,047 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-12 15:04:45,811 +0700 [main] INFO  (Log.java:13) - Run test: verifyElements
+2024-01-12 15:04:45,816 +0700 [main] INFO  (Log.java:13) - Test on Language:
