@@ -1,4 +1,4 @@
-package erp.testcases;
+package erp.testcases.SignUp;
 
 import erp.base.BaseSetup;
 import erp.base.ReportListener;

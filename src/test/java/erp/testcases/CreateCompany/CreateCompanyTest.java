@@ -1,4 +1,4 @@
-package erp.testcases;
+package erp.testcases.CreateCompany;
 
 import erp.base.BaseSetup;
 import erp.base.ReportListener;

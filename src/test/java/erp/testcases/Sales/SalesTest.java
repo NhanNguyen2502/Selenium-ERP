@@ -1,4 +1,4 @@
-package erp.testcases;
+package erp.testcases.Sales;
 
 import erp.base.BaseSetup;
 import erp.base.ReportListener;
@@ -12,7 +12,6 @@ import erp.pages.SignInPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import ulitilities.Log;
 
 //@Listeners(TestListener.class)
 @Listeners(ReportListener.class)
