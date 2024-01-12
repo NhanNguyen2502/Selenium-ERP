@@ -1,4 +1,4 @@
-package erp.testcases;
+package erp.testcases.Dashboard;
 
 import erp.base.BaseSetup;
 import erp.base.ReportListener;

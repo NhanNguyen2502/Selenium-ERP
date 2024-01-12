@@ -5562,3 +5562,5 @@ Session ID: 2bd074001ade8582970d21dabddafd61
 2024-01-12 15:02:09,047 +0700 [main] INFO  (Log.java:13) - Test on Language:English
 2024-01-12 15:04:45,811 +0700 [main] INFO  (Log.java:13) - Run test: verifyElements
 2024-01-12 15:04:45,816 +0700 [main] INFO  (Log.java:13) - Test on Language:
+2024-01-12 16:32:33,725 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-12 16:32:33,727 +0700 [main] INFO  (Log.java:13) - Test on Language:${language.name}
