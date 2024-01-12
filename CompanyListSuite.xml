@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="erp.base.ReportListener"></listener>
+    </listeners>
+    <!--    <test verbose="2" preserve-order="true" name="D:/Nhan/AutoTest/ERPTest">-->
+    <!--        <classes>-->
+    <!--            <class name="erp.testcases.SignInTest"></class>-->
+    <!--            <class name="erp.testcases.CompanyList.CompanyListTest"></class>-->
+    <!--            <class name="erp.testcases.DashboardTest"></class>-->
+    <!--            <class name="erp.testcases.SalesTest"></class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <suite-files>
+        <suite-file path="src/test/java/erp/testcases/CompanyList/CompanyListng.xml">CompanyListng.xml</suite-file>
+    </suite-files>
+</suite>

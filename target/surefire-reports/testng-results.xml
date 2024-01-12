@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-01-12T14:18:56 ICT" name="CompanyList_Suite" finished-at="2024-01-12T14:43:22 ICT" duration-ms="1465026">
+    <groups>
+    </groups>
+    <test started-at="2024-01-12T14:18:56 ICT" name="CompanyList_Suite" finished-at="2024-01-12T14:43:22 ICT" duration-ms="1465026">
+      <class name="erp.testcases.CompanyList.CompanyListTest">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:18:57 ICT" name="Setup" finished-at="2024-01-12T14:19:12 ICT" duration-ms="15984" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:19:12 ICT" name="setUp" finished-at="2024-01-12T14:19:13 ICT" duration-ms="43" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:19:13 ICT" name="beforMethod" finished-at="2024-01-12T14:19:13 ICT" duration-ms="17" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.CompanyList.CompanyListTest.verifyElements(java.lang.String) throws java.lang.Exception]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="verifyElements(java.lang.String)[pri:1, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:19:13 ICT" name="verifyElements" finished-at="2024-01-12T14:22:00 ICT" duration-ms="167467" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyElements -->
+        <test-method is-config="true" signature="afterMetod(org.testng.ITestResult,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:22:00 ICT" name="afterMetod" finished-at="2024-01-12T14:22:00 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyElements status=SUCCESS method=CompanyListTest.verifyElements(java.lang.String)[pri:1, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:22:00 ICT" name="beforMethod" finished-at="2024-01-12T14:22:00 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.CompanyList.CompanyListTest.verifyCompanyListNotNull(java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="verifyCompanyListNotNull(java.lang.String)[pri:2, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:22:00 ICT" name="verifyCompanyListNotNull" finished-at="2024-01-12T14:26:03 ICT" duration-ms="243109" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCompanyListNotNull -->
+        <test-method is-config="true" signature="afterMetod(org.testng.ITestResult,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:26:03 ICT" name="afterMetod" finished-at="2024-01-12T14:26:03 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCompanyListNotNull status=SUCCESS method=CompanyListTest.verifyCompanyListNotNull(java.lang.String)[pri:2, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:26:03 ICT" name="beforMethod" finished-at="2024-01-12T14:26:03 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.CompanyList.CompanyListTest.verifyCompanyListNull(java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="verifyCompanyListNull(java.lang.String)[pri:2, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:26:03 ICT" name="verifyCompanyListNull" finished-at="2024-01-12T14:29:32 ICT" duration-ms="208604" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCompanyListNull -->
+        <test-method is-config="true" signature="afterMetod(org.testng.ITestResult,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:29:32 ICT" name="afterMetod" finished-at="2024-01-12T14:29:32 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCompanyListNull status=SUCCESS method=CompanyListTest.verifyCompanyListNull(java.lang.String)[pri:2, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:29:32 ICT" name="beforMethod" finished-at="2024-01-12T14:29:32 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.CompanyList.CompanyListTest.verifyGoToEditDemoCompanyPage(java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="verifyGoToEditDemoCompanyPage(java.lang.String)[pri:3, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:29:32 ICT" name="verifyGoToEditDemoCompanyPage" finished-at="2024-01-12T14:33:06 ICT" duration-ms="214020" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyGoToEditDemoCompanyPage -->
+        <test-method is-config="true" signature="afterMetod(org.testng.ITestResult,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:33:06 ICT" name="afterMetod" finished-at="2024-01-12T14:33:06 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyGoToEditDemoCompanyPage status=SUCCESS method=CompanyListTest.verifyGoToEditDemoCompanyPage(java.lang.String)[pri:3, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:33:06 ICT" name="beforMethod" finished-at="2024-01-12T14:33:06 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.CompanyList.CompanyListTest.verifyGoToEditRealCompanyPage(java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="verifyGoToEditRealCompanyPage(java.lang.String)[pri:3, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:33:06 ICT" name="verifyGoToEditRealCompanyPage" finished-at="2024-01-12T14:36:41 ICT" duration-ms="214953" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyGoToEditRealCompanyPage -->
+        <test-method is-config="true" signature="afterMetod(org.testng.ITestResult,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:36:41 ICT" name="afterMetod" finished-at="2024-01-12T14:36:41 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyGoToEditRealCompanyPage status=SUCCESS method=CompanyListTest.verifyGoToEditRealCompanyPage(java.lang.String)[pri:3, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:36:41 ICT" name="beforMethod" finished-at="2024-01-12T14:36:41 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.CompanyList.CompanyListTest.verifyDeleteDemoCompany(java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="verifyDeleteDemoCompany(java.lang.String)[pri:4, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:36:41 ICT" name="verifyDeleteDemoCompany" finished-at="2024-01-12T14:40:17 ICT" duration-ms="216114" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDeleteDemoCompany -->
+        <test-method is-config="true" signature="afterMetod(org.testng.ITestResult,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:40:17 ICT" name="afterMetod" finished-at="2024-01-12T14:40:17 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDeleteDemoCompany status=SUCCESS method=CompanyListTest.verifyDeleteDemoCompany(java.lang.String)[pri:4, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:40:17 ICT" name="beforMethod" finished-at="2024-01-12T14:40:17 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.CompanyList.CompanyListTest.verifyDeleteRealCompany(java.lang.String)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="verifyDeleteRealCompany(java.lang.String)[pri:4, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:40:17 ICT" name="verifyDeleteRealCompany" finished-at="2024-01-12T14:43:19 ICT" duration-ms="182326" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDeleteRealCompany -->
+        <test-method is-config="true" signature="afterMetod(org.testng.ITestResult,java.lang.String)[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:43:19 ICT" name="afterMetod" finished-at="2024-01-12T14:43:19 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyDeleteRealCompany status=SUCCESS method=CompanyListTest.verifyDeleteRealCompany(java.lang.String)[pri:4, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kurdish - Sorani]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:erp.testcases.CompanyList.CompanyListTest@69504ae9]" started-at="2024-01-12T14:43:19 ICT" name="TearDown" finished-at="2024-01-12T14:43:22 ICT" duration-ms="2143" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- erp.testcases.CompanyList.CompanyListTest -->
+    </test> <!-- CompanyList_Suite -->
+  </suite> <!-- CompanyList_Suite -->
+</testng-results>

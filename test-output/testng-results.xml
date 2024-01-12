@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-11T14:31:45 ICT" name="All Test Suite" finished-at="2023-12-11T14:34:11 ICT" duration-ms="145373">
+    <groups>
+    </groups>
+    <test started-at="2023-12-11T14:31:45 ICT" name="D:/Nhan/AutoTest/ERPTest" finished-at="2023-12-11T14:34:11 ICT" duration-ms="145373">
+      <class name="erp.testcases.SignInTest">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:31:45 ICT" name="Setup" finished-at="2023-12-11T14:31:51 ICT" duration-ms="5869" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:31:51 ICT" name="setUp" finished-at="2023-12-11T14:31:51 ICT" duration-ms="18" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method)[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:31:51 ICT" name="beforMethod" finished-at="2023-12-11T14:31:51 ICT" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.SignInTest.sigInWithPasswordNull() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="sigInWithPasswordNull()[pri:1, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:31:51 ICT" name="sigInWithPasswordNull" finished-at="2023-12-11T14:32:36 ICT" duration-ms="45240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sigInWithPasswordNull -->
+        <test-method is-config="true" signature="testStatus(org.testng.ITestResult)[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:32:36 ICT" name="testStatus" finished-at="2023-12-11T14:32:36 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=sigInWithPasswordNull status=SUCCESS method=SignInTest.sigInWithPasswordNull()[pri:1, instance:erp.testcases.SignInTest@1caa0244] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatus -->
+        <test-method signature="signInWithEmailNull()[pri:1, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:32:36 ICT" name="signInWithEmailNull" finished-at="2023-12-11T14:33:01 ICT" duration-ms="24548" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInWithEmailNull -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method)[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:32:36 ICT" name="beforMethod" finished-at="2023-12-11T14:32:36 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.SignInTest.signInWithEmailNull() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="siginWrongPassOrEmail()[pri:2, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:33:01 ICT" name="siginWrongPassOrEmail" finished-at="2023-12-11T14:33:35 ICT" duration-ms="33898" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- siginWrongPassOrEmail -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method)[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:33:01 ICT" name="beforMethod" finished-at="2023-12-11T14:33:01 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.SignInTest.siginWrongPassOrEmail() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method is-config="true" signature="testStatus(org.testng.ITestResult)[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:33:01 ICT" name="testStatus" finished-at="2023-12-11T14:33:01 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signInWithEmailNull status=SUCCESS method=SignInTest.signInWithEmailNull()[pri:1, instance:erp.testcases.SignInTest@1caa0244] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatus -->
+        <test-method is-config="true" signature="testStatus(org.testng.ITestResult)[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:33:35 ICT" name="testStatus" finished-at="2023-12-11T14:33:35 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=siginWrongPassOrEmail status=SUCCESS method=SignInTest.siginWrongPassOrEmail()[pri:2, instance:erp.testcases.SignInTest@1caa0244] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatus -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method)[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:33:35 ICT" name="beforMethod" finished-at="2023-12-11T14:33:35 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.SignInTest.signInTest() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="signInTest()[pri:2, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:33:35 ICT" name="signInTest" finished-at="2023-12-11T14:33:36 ICT" duration-ms="1228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInTest -->
+        <test-method is-config="true" signature="testStatus(org.testng.ITestResult)[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:33:36 ICT" name="testStatus" finished-at="2023-12-11T14:33:36 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signInTest status=SUCCESS method=SignInTest.signInTest()[pri:2, instance:erp.testcases.SignInTest@1caa0244] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatus -->
+        <test-method is-config="true" signature="beforMethod(java.lang.reflect.Method)[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:33:36 ICT" name="beforMethod" finished-at="2023-12-11T14:33:36 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void erp.testcases.SignInTest.signInWithInactiveAccount()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="signInWithInactiveAccount()[pri:4, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:33:36 ICT" name="signInWithInactiveAccount" finished-at="2023-12-11T14:34:08 ICT" duration-ms="32238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInWithInactiveAccount -->
+        <test-method is-config="true" signature="testStatus(org.testng.ITestResult)[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:34:08 ICT" name="testStatus" finished-at="2023-12-11T14:34:08 ICT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signInWithInactiveAccount status=SUCCESS method=SignInTest.signInWithInactiveAccount()[pri:4, instance:erp.testcases.SignInTest@1caa0244] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testStatus -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:erp.testcases.SignInTest@1caa0244]" started-at="2023-12-11T14:34:08 ICT" name="TearDown" finished-at="2023-12-11T14:34:11 ICT" duration-ms="2206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- erp.testcases.SignInTest -->
+    </test> <!-- D:/Nhan/AutoTest/ERPTest -->
+  </suite> <!-- All Test Suite -->
+</testng-results>
