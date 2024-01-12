@@ -3,7 +3,7 @@
         "emailVerification": {
             "text": "پشتڕاستکردنەوەی ئیمێل",
             "warningText": "پێویستە ناونیشانی ئیمەیڵەکەت پشتڕاست بکەیتەوە بۆ چالاککردنی ئەکاونتەکەت",
-            "explainText": "ئیمێلێک کە ڕێنمایی پشتڕاستکردنەوەی ناونیشانی ئیمەیڵەکەت تێدایە بۆت نێردراوە"
+            "explainText": "ئیمێلێک کە ڕێنمایی پشتڕاستکردنەوەی ناونیشانی ئیمەیڵەکەت تێدایە بۆت نێردراوە{{email}}."
         },
         "accessDenied": {
             "title": "چوونەژورەوە رەتکرا",
@@ -351,16 +351,16 @@
                 "email": "ئیمێل",
                 "emailTooltip": "ئیمێلی پەیوەندی کردن بە کۆمپانیاوە بنووسە",
                 "address": "ناو نیشان",
-                "firstStreetAddress": "ناو نیشانی شەقامی یەکەم",
+                "firstStreetAddress": "شار",
                 "firstStreetAddressTooltip": "ناو نیشانی شەقامی یەکەم لێرە بنووسە",
-                "secondStreetAddress": "ناو نیشانی شەقامی دووەم",
+                "secondStreetAddress": "وڵات",
                 "secondStreetAddressTooltip": "ناو نیشانی شەقامی دووەم لێرە بنووسە",
-                "thirdStreetAddress": "ناو نیشانی شەقامی سێیەم",
+                "thirdStreetAddress": "زیپ/ پوست کود",
                 "thirdStreetAddressTooltip": "ناو نیشانی شەقامی سێیەم لێرە بنووسە",
                 "zipcode": "زیپ\/ پوست کود",
                 "zipcodeTooltip": "زیپ\/ پوست کود لێرە بنووسە",
                 "city": "شار",
-                "country": "وڵات",
+                "country": "کاتی ناوچە",
                 "countryCode": "کۆدی وڵات",
                 "website": "ماڵپەر",
                 "websiteTooltip": "ماڵپەڕی کۆمپانیا بنووسە",
@@ -593,7 +593,7 @@
                     "saveTooltip": "هەڵگرتنی گوڕانکاری لە زانیاری ئەکاونتی پارەدان",
                     "deleteTooltip": "سڕینەوەی ئەکاونتی پارەدان"
                 },
-                "title": "وردەکاری هەژماری بانکی",
+                "title": "کۆمپانیا",
                 "keyData": {
                     "openingTooltip": "باڵانسی ئەکاونت لە {{date}}",
                     "opening": "کردنەوە",
@@ -1705,7 +1705,7 @@
             "real": "راستەقینە",
             "demo": "کاتی",
             "standard": "ئاسایی",
-            "installment": "قيست",
+            "installment": "قیست",
             "customer": "كريار",
             "supplier": "دابینکار",
             "finalized": "کۆتایی هات",
@@ -2112,7 +2112,7 @@
             "prepayment": "پێشەکی",
             "canceled": "هەڵوەشێنرا",
             "standard": "ئاسایی",
-            "installment": "قیست دان",
+            "installment": "قیست",
             "create": "دروستکردن",
             "invoiced": "فاتورە کراو",
             "regretPrePayment": "هەڵوەشاندنی پارەدانی پێشەکی",

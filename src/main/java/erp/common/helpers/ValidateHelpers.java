@@ -12,23 +12,55 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+
 import java.time.Duration;
-import java.util.List;
+import java.util.*;
 
 
 public class ValidateHelpers {
     private WebDriver driver;
     private WebDriverWait wait;
-    private By logoutButton = By.xpath("//button[@data-cy='log-out-button']//*[name()='svg']");
+    private By logoutButton = By.xpath("//button[@data-cy='log-out-button']");
     private By languageButton = By.xpath("//app-language-option");
     private By languageOptions = By.xpath("//div[@data-cy='language-option-item']");
+
     private Actions actions;
 
 
     public ValidateHelpers(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         actions = new Actions(driver);
+    }
+
+    public List<WebElement> getList (By element)
+    {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        return driver.findElements(element);
+    }
+    public boolean selectRandom(By dropdownButton, By elements){
+        try{
+            clickElement(dropdownButton);
+            var list = driver.findElements(elements);
+            if(!list.isEmpty())
+            {
+                Random ran = new Random();
+                var randomNumber = ran.nextInt(list.size());
+                System.out.println(randomNumber);
+                list.get(randomNumber).click();
+//            for (int  i=0; i<list.size();i++)
+//            {
+//                list.get(randomNumber).click();
+//            }
+                return true;
+            }else
+                return false;
+
+        }catch (NoSuchElementException a)
+        {
+            return false;
+        }
+
     }
 
     public void setText(By element, String text) {
@@ -63,7 +95,13 @@ public class ValidateHelpers {
     }
 
     public void logout() {
-        clickElement(logoutButton);
+        try {
+            clickElement(logoutButton);
+        }catch(NoSuchElementException e)
+        {
+            driver.get(PropertiesHelper.getValue("url_dev"));
+        }
+
     }
 
     public String removeHtmlTags(String content) {
@@ -78,7 +116,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(20000);
+            Thread.sleep(30000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
@@ -86,10 +124,21 @@ public class ValidateHelpers {
         }
     }
 
+    public boolean checkElementDisabled(By element)
+    {
+        //wait.until(ExpectedConditions.elementToBeClickable(element));
+        if(driver.findElement(element).isEnabled())
+        {
+            return false;
+        }
+        return  true;
+    }
+
     public void verifylanguage(String language) {
+        waitForLoadJs();
         clickElement(languageButton);
         wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
-        var options = driver.findElements(languageOptions);
+        var options = getList(languageOptions);
         String key = "$.languageSelect.option.english";
         switch (language) {
             case "English" -> key = "$.languageSelect.option.english";
@@ -99,7 +148,8 @@ public class ValidateHelpers {
             default -> System.out.println("default");
         }
         for (WebElement o : options) {
-            if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), key))) {
+            if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(language, key))) {
+                System.out.println("Test with language: "+ language);
                 o.click();
                 break;
             }

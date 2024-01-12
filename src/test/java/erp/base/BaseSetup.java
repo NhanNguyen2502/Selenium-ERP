@@ -2,6 +2,7 @@ package erp.base;
 
 import erp.common.helpers.CaptureHelper;
 import erp.common.helpers.PropertiesHelper;
+import erp.common.helpers.ValidateHelpers;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.apache.log4j.PropertyConfigurator;
@@ -9,6 +10,7 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.*;
 import ulitilities.Log;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -17,10 +19,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 import java.io.ByteArrayInputStream;
 import java.lang.reflect.Method;
@@ -34,8 +32,7 @@ public class BaseSetup {
         return driver;
     }
 
-    public String browserVersion()
-    {
+    public String browserVersion() {
         Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
         System.out.println(caps.getBrowserVersion());
         return caps.getBrowserVersion();
@@ -49,6 +46,8 @@ public class BaseSetup {
         WebDriverManager.chromedriver().clearResolutionCache().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
+        //options.addArguments("--headless");
+        options.addArguments("--window-size=1920,1080");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get(url);
@@ -69,16 +68,16 @@ public class BaseSetup {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         return driver;
     }
-    public void  statusTest(ITestResult result)
-    {
+
+    public void statusTest(ITestResult result,String language) {
         if (ITestResult.SUCCESS == result.getStatus()) {
             System.out.println("Passed case: " + result.getName());
-            Log.info("Passed: "+ result.getName());
-
+            Log.info("Passed: " + result.getName());
+            //CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver,language);
         } else if (ITestResult.FAILURE == result.getStatus()) {
-            Log.error("Failed: " + result.getName());
             System.out.println("Failed: " + result.getName());
-            CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver);
+            System.out.println(result.getThrowable().toString());
+            CaptureHelper.takeScreenshot(result.getName(), result.getName(), driver,language);
             Allure.addAttachment("_Failed_Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
             //captureHelper.takeScreenshot(result.getName(),result.getName(),driver);
 
@@ -91,7 +90,7 @@ public class BaseSetup {
 
     @BeforeClass
     public void Setup() {
-        PropertyConfigurator.configure("D:\\ERP\\Selenium-ERP\\src\\main\\java\\resources\\log4j.properties");
+        PropertyConfigurator.configure("./src/main/java/resources/log4j.properties");
         PropertiesHelper.loadAllFile();
         String browser = PropertiesHelper.getValue("browser");
         switch (browser) {
@@ -118,18 +117,24 @@ public class BaseSetup {
     }
 
     @BeforeMethod
-    public void beforMethod(Method method) {
+    @Parameters({"language"})
+    public void beforMethod(Method method, @Optional("English") String language) {
         System.out.println("\n");
         System.out.println("<========================= RUN TEST CASE =========================>");
         Log.info("Run test: " + method.getName());
+        Log.info("Test on Language:" + language);
         //CaptureHelper.startRecord(method.getName());
     }
 
     @AfterMethod
-    public void afterMetod(ITestResult result) {
-        statusTest(result);
+    @Parameters({"language"})
+    public void afterMetod(ITestResult result,@Optional("English") String language) {
+        statusTest(result,language);
         System.out.println("<========================= FINISH TEST CASE =========================> \n");
-
+        if(!result.isSuccess() || ITestResult.FAILURE == result.getStatus())
+        {
+            driver.get(PropertiesHelper.getValue("url_dev"));
+        }
     }
 
     @AfterClass

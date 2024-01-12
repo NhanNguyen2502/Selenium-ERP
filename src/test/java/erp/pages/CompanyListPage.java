@@ -38,8 +38,8 @@ public class CompanyListPage {
 //    WebElement currentPageTitle;
     private By contactUsLink = By.xpath("//a[@data-cy='contact-us-link']");
     //private By languageOption = By.xpath("//app-language-option//button[@data-cy='language-option-btn']");
-    @FindBy(xpath = "//app-language-option//button[@data-cy='language-option-btn']")
-    WebElement languageOption;
+//    @FindBy(xpath = "//app-language-option//button[@data-cy='language-option-btn']")
+//    WebElement languageOption;
     private By nameOfAccount = By.xpath("//button//span//span[@class='user-name text-truncate text-initial']");
     private By logoutButton = By.xpath("//button[@data-cy='log-out-button']");
     //private By createButton = By.xpath("//button[@data-cy='create-company-btn']");
@@ -131,7 +131,6 @@ public class CompanyListPage {
                         validateHelpers.removeHtmlTags(validateHelpers.getMessage(contectDelete)),
                         validateHelpers.removeHtmlTags(TranslationHelpers.getContent(content, data)), "Wrong here");
                 validateHelpers.clickElement(cancleButton);
-                break;
             } else System.out.println("The company type does not exist");
         }
     }
@@ -146,8 +145,12 @@ public class CompanyListPage {
                 validateHelpers.clickElement(editOption);
                 break;
             }
+            else{
+                System.out.println("Company "+ i+1 + " is not " +Ctype);
+            }
+
         }
-        System.out.println("The company type does not exist");
+
     }
 
     public void checkMoreOptions(String editText, String deleteText) {
@@ -156,6 +159,7 @@ public class CompanyListPage {
         if (optionButton.size() >= 1) {
             for (WebElement o : optionButton) {
                 o.click();
+                validateHelpers.waitForLoadJs();
                 Assert.assertEquals(validateHelpers.getMessage(editOption), editText, "checkMoreOptions wrong 1");
                 Assert.assertEquals(validateHelpers.getMessage(deleteOption), deleteText, "checkMoreOptions wrong 2");
                 validateHelpers.clickOutside();

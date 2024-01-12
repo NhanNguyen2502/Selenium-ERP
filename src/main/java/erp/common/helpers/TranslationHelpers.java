@@ -21,7 +21,7 @@ public class TranslationHelpers {
         String text = null;
         String fileUrl = Helper.getcurrentDir() + "src/test/java/resources/en_GB.json";
         switch (language) {
-            case "english" -> {
+            case "English" -> {
                 fileUrl = Helper.getcurrentDir() + "src/test/java/resources/en_GB.json";
             }
             case "Arabic" -> {
@@ -60,7 +60,6 @@ public class TranslationHelpers {
         }
         return result;
     }
-
 
 }
 

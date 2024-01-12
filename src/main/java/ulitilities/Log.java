@@ -7,41 +7,41 @@ import org.apache.log4j.PropertyConfigurator;
 
 
 public class Log {
-    private  static  final Logger Log= LogManager.getLogger(Log.class);
+    private  static  final Logger _Log= LogManager.getLogger(Log.class);
     //Info Level Logs
     public static void info (String message) {
-        Log.info(message);
+        _Log.info(message);
     }
     public static void info (Object object) {
-        Log.info(object);
+        _Log.info(object);
     }
 
     //Warn Level Logs
     public static void warn (String message) {
-        Log.warn(message);
+        _Log.warn(message);
     }
     public static void warn (Object object) {
-        Log.warn(object);
+        _Log.warn(object);
     }
 
     //Error Level Logs
     public static void error (String message) {
-        Log.error(message);
+        _Log.error(message);
     }
     public static void error (Object object) {
-        Log.error(object);
+        _Log.error(object);
     }
 
     //Fatal Level Logs
     public static void fatal (String message) {
-        Log.fatal(message);
+        _Log.fatal(message);
     }
 
     //Debug Level Logs
     public static void debug (String message) {
-        Log.debug(message);
+        _Log.debug(message);
     }
     public static void debug (Object object) {
-        Log.debug(object);
+        _Log.debug(object);
     }
 }

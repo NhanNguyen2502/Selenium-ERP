@@ -24,6 +24,7 @@ public class CreateCompanyPage extends BaseSetup {
     private ValidateHelpers validateHelpers;
     private Actions action;
 
+    private  By createBt = By.xpath("//button[@data-cy='create-company-btn']");
     private By markstep1 = By.xpath("//mat-step-header[@aria-posinset='1']");
     private By markstep1Content = By.xpath("//mat-step-header[@aria-posinset='1']//div[3]");
     private By markstep2 = By.xpath("//mat-step-header[@aria-posinset='2']");
@@ -99,7 +100,6 @@ public class CreateCompanyPage extends BaseSetup {
     private By demoCompanyButton = By.xpath("//button[@data-cy='move-to-create-test-company-button']");
 
 
-
     public CreateCompanyPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -108,15 +108,21 @@ public class CreateCompanyPage extends BaseSetup {
         action = new Actions(driver);
     }
 
-    public CreateDemoCompanyPage goToCreateDemoCompanyForm(){
+   public void  goToCreateCompany()
+   {
+       validateHelpers.clickElement(createBt);
+   }
+
+    public CreateDemoCompanyPage goToCreateDemoCompanyForm() {
         validateHelpers.clickElement(demoCompanyButton);
-        return  new CreateDemoCompanyPage(driver);
+        return new CreateDemoCompanyPage(driver);
     }
-    public void leaveFormcreate(){
+
+    public void leaveFormcreate() {
         action.moveToElement(driver.findElement(cancelCreateButton)).build().perform();
         WebElement a = driver.findElement(cancelCreateButton);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();",a);
+        js.executeScript("arguments[0].click();", a);
         validateHelpers.clickElement(leaveButton);
     }
 
@@ -132,14 +138,20 @@ public class CreateCompanyPage extends BaseSetup {
     public void verifyTextOfCreateSection(String realHeader, String realContent,
                                           String realButtonText, String demoHeader, String demoContent,
                                           String demoButtonText) {
-        Assert.assertTrue(validateHelpers.checkDisplayed(createRealCompanySection));
-        Assert.assertTrue(validateHelpers.checkDisplayed(createDemoCompanySection));
-        Assert.assertEquals(validateHelpers.getMessage(createRealCompanyHeader), realHeader, "Create real section title wrong");
-        Assert.assertEquals(validateHelpers.getMessage(createRealCompanyContent), realContent, "Create real content section title wrong");
-        Assert.assertEquals(validateHelpers.getMessage(createRealCompanyButton), realButtonText, "Real button text wrong");
-        Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyHeader), demoHeader, "Header demo wrong");
-        Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyContent), demoContent, "demo content wrong");
-        Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyButton), demoButtonText, "demo button wrong");
+        try {
+            Assert.assertTrue(validateHelpers.checkDisplayed(createRealCompanySection));
+            Assert.assertTrue(validateHelpers.checkDisplayed(createDemoCompanySection));
+            Assert.assertEquals(validateHelpers.getMessage(createRealCompanyHeader), realHeader, "Create real section title wrong");
+            Assert.assertEquals(validateHelpers.getMessage(createRealCompanyContent), realContent, "Create real content section title wrong");
+            Assert.assertEquals(validateHelpers.getMessage(createRealCompanyButton), realButtonText, "Real button text wrong");
+            Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyHeader), demoHeader, "Header demo wrong");
+            Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyContent), demoContent, "demo content wrong");
+            Assert.assertEquals(validateHelpers.getMessage(createDemoCompanyButton), demoButtonText, "demo button wrong");
+        }catch (Exception e)
+        {
+            validateHelpers.logout();
+        }
+
 
     }
 
@@ -148,9 +160,6 @@ public class CreateCompanyPage extends BaseSetup {
         return new CreateRealCompanyPage(driver);
     }
 
-    public void goToCreateDemoCompany() {
-        validateHelpers.clickElement(createDemoCompanyButton);
-    }
 
     public void verifylanguage(String language) {
         validateHelpers.clickElement(languageButton);

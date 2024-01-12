@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
+
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
@@ -45,9 +47,10 @@ public class SignInPage {
     private By cancleButtonResendDialog = By.xpath("//button[@data-cy='dialog-cancel-button']");
     private By closeResendDialog = By.xpath("//button[@data-cy='dialog-close-button']");
     private By resnedEmailButton = By.xpath("//button[@data-cy='dialog-resend-button']");
-    private By languageButton = By.xpath("//button[@id='kc-chevron-btn']");
+    private By languageButton = By.xpath("(//div[@id='kc-locale-dropdown']//a//span)[1]");
     private By languageOptions = By.xpath("//li//div//a[@id='kc-locale-option']");
-    private By signinButton =  By.xpath("//div[@id='kc-back-to-sign-in']//span");
+    private By signinButton = By.xpath("//div[@id='kc-back-to-sign-in']//span");
+    private By signinButton2 = By.xpath("//div[@id='kc-back-to-sign-in']//span");
     public ValidateHelpers validateHelpers;
 
     public SignInPage(WebDriver driver) {
@@ -57,11 +60,10 @@ public class SignInPage {
         PageFactory.initElements(driver, this);
     }
 
-
     public void verifylanguage(String language) {
+        validateHelpers.waitForLoadJs();
         validateHelpers.clickElement(languageButton);
-        wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
-        var options = driver.findElements(languageOptions);
+        var options = validateHelpers.getList(languageOptions);
         String key = "$.languageSelect.option.english";
         switch (language) {
             case "English" -> key = "$.languageSelect.option.english";
@@ -71,7 +73,8 @@ public class SignInPage {
             default -> System.out.println("default");
         }
         for (WebElement o : options) {
-                if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(PropertiesHelper.getLanguageToTest(), key))) {
+            if (o.getText().contains(language) || o.getText().contains(TranslationHelpers.setFile(language, key))) {
+                System.out.println("Test with language: "+ language);
                 o.click();
                 break;
             }
@@ -118,11 +121,11 @@ public class SignInPage {
     }
 
     @Step("verify email null")
-    public String verifyEmailnull() throws Exception {
+    public String verifyEmailnull()  {
 
         validateHelpers.setText(usernameTextBox, "");
-        validateHelpers.clickElement(formtitle);
-        Thread.sleep(1000);
+        validateHelpers.clickOutside();
+        validateHelpers.waitForLoadJs();
         return driver.findElement(usernameRequied).getText();
 
     }
@@ -143,18 +146,18 @@ public class SignInPage {
         return validateHelpers.getMessage(wrongUsernameOrPass);
     }
 
-    public void verifyAccountInactive(String email, String Pass,String resendmailTitle ,String warContent,String explainContent) {
+    public void verifyAccountInactive(String email, String Pass, String resendmailTitle, String warContent, String explainContent) {
         validateHelpers.setText(usernameTextBox, email);
         validateHelpers.setText(passwordTextBox, Pass);
         validateHelpers.clickElement(loginButton);
         waitForPageLoaded();
-        Assert.assertEquals(validateHelpers.getMessage(resendTitle),resendmailTitle);
+        Assert.assertEquals(validateHelpers.getMessage(resendTitle), resendmailTitle);
         Assert.assertEquals(validateHelpers.getMessage(warningContent), warContent);
-        Map<String,String> data = new HashMap <>();
-        data.put("email",email);
+        Map<String, String> data = new HashMap<>();
+        data.put("email", email);
         Assert.assertEquals(
                 validateHelpers.removeHtmlTags(validateHelpers.getMessage(resendEmailContent)),
-                validateHelpers.removeHtmlTags(TranslationHelpers.getContent(explainContent,data)+email+"."),"Wrong here"
+                validateHelpers.removeHtmlTags(TranslationHelpers.getContent(explainContent, data)), "Wrong here"
         );
         validateHelpers.clickElement(signinButton);
         //Assert.assertTrue(validateHelpers.checkDisplayed(cancleButtonResendDialog), "The cancel button doesn't display!");
@@ -163,11 +166,11 @@ public class SignInPage {
         //validateHelpers.clickElement(logoAccountia);
     }
 
-    public CreateCompanyPage signinWithCreateCompany(String email, String password){
+    public CreateCompanyPage signinWithCreateCompany(String email, String password) {
         validateHelpers.setText(usernameTextBox, email);
         validateHelpers.setText(passwordTextBox, password);
         validateHelpers.clickElement(loginButton);
-        return  new CreateCompanyPage(driver);
+        return new CreateCompanyPage(driver);
     }
 
 
@@ -179,8 +182,8 @@ public class SignInPage {
             }
         };
         try {
-            Thread.sleep(1000);
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            Thread.sleep(10000);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             wait.until(expectation);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
