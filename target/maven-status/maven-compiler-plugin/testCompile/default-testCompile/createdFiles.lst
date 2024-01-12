@@ -7,7 +7,6 @@ erp\base\BaseSetup.class
 erp\testcases\SignUpTest.class
 erp\pages\CompanyListPage$1.class
 erp\pages\CompanyListPage.class
-erp\testcases\CompanyListTest.class
 erp\testcases\SalesTest.class
 erp\pages\SignInPage.class
 erp\base\TestListener.class

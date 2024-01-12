@@ -166,14 +166,6 @@
             <version>1.9.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.1</version>
-        </dependency>
-
-
     </dependencies>
     <build>
         <plugins>
@@ -182,6 +174,14 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
+                    <systemPropertyVariables>
+                        <language.name>${language}</language.name>
+                        <browser.name>${browser.name}</browser.name>
+                        <browser.version>${browser.version}</browser.version>
+                        <environment>${environment}</environment>
+                        <platform.name>${platform.name}</platform.name>
+                        <base.url>${base.url}</base.url>
+                    </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>
 <!--                            CompanyListSuite.xml-->
