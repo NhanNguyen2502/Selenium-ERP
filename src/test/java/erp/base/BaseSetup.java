@@ -39,7 +39,7 @@ public class BaseSetup {
     }
 
 
-    private WebDriver innitChrome(String url) {
+    private WebDriver innitChrome(String environment, String url) {
         System.out.println("Launching Chrome browser...");
         WebDriverManager.chromedriver().setup();
         WebDriverManager.chromedriver().clearDriverCache().setup();
@@ -89,13 +89,14 @@ public class BaseSetup {
 
 
     @BeforeClass
-    public void Setup() {
+    @Parameters({"environment"})
+    public void Setup(@Optional("dev") String environment) {
         PropertyConfigurator.configure("./src/main/java/resources/log4j.properties");
         PropertiesHelper.loadAllFile();
         String browser = PropertiesHelper.getValue("browser");
         switch (browser) {
             case "Chrome":
-                driver = innitChrome(PropertiesHelper.getValue("url_dev"));
+                driver = innitChrome(environment,PropertiesHelper.getValue("url_dev"));
                 browserVersion();
                 break;
             case "Firefox":
