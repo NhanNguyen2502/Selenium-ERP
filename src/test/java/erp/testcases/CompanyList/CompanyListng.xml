@@ -6,6 +6,7 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="CompanyList_Suite">
         <parameter name="language" value="${language.name}"></parameter>
+        <parameter name="environment" value="${environment}"></parameter>
         <classes>
             <class name="erp.testcases.CompanyList.CompanyListTest"></class>
         </classes>
