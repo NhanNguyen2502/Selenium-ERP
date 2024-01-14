@@ -5,10 +5,12 @@ import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.ValidateHelpers;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
+import mx4j.tools.config.DefaultConfigurationBuilder;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.html5.WebStorage;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 import ulitilities.Log;
@@ -46,7 +48,7 @@ public class BaseSetup {
         WebDriverManager.chromedriver().clearResolutionCache().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         options.addArguments("--window-size=1920,1080");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
@@ -135,6 +137,8 @@ public class BaseSetup {
         if(!result.isSuccess() || ITestResult.FAILURE == result.getStatus())
         {
             driver.get(PropertiesHelper.getValue("url_dev"));
+            ValidateHelpers validateHelpers = new ValidateHelpers(driver);
+            validateHelpers.logout();
         }
     }
 

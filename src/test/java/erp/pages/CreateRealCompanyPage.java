@@ -102,6 +102,8 @@ public class CreateRealCompanyPage {
 
     public void verifyTextOfContactSection(String ctTitle, String emailTitle, String phoneTitle, String websitetitle,
                                            String addressTitleText, String addFirstText, String addSecondText, String addThirdText, String addCountryText, String zipCodeText, String addCityText, String addTimeZoneText) {
+
+
         actions.moveToElement(driver.findElement(companyContactInfor)).build().perform();
         Assert.assertTrue(validateHelpers.checkDisplayed(companyContactInfor), "Error at verifyTextOfContactSection row 1");
         Assert.assertTrue(validateHelpers.checkDisplayed(companyContactInforTitle), "Error at verifyTextOfContactSection row 2");

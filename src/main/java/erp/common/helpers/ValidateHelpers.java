@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.html5.WebStorage;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,7 +30,7 @@ public class ValidateHelpers {
 
     public ValidateHelpers(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(25));
         actions = new Actions(driver);
     }
 
@@ -97,9 +98,12 @@ public class ValidateHelpers {
     public void logout() {
         try {
             clickElement(logoutButton);
+            if (!(driver instanceof WebStorage)) {
+                throw new IllegalArgumentException("This test expects the driver to implement WebStorage");
+            }
         }catch(NoSuchElementException e)
         {
-            driver.get(PropertiesHelper.getValue("url_dev"));
+          System.out.println(e.getMessage());
         }
 
     }

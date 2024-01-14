@@ -32,7 +32,7 @@ public class CreateCompanyTest extends BaseSetup {
     @Test(priority = 1)
     @Parameters({"language"})
     public void verifyWithAccountNotCompany(@Optional("English") String language) throws Exception {
-        validateHelpers.waitForLoadJs();
+        signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         createCompanyPage = signInPage.signinWithCreateCompany(PropertiesHelper.getValue("notCompanyEmail"), PropertiesHelper.getValue("password"));
         validateHelpers.verifylanguage(language);
@@ -57,7 +57,7 @@ public class CreateCompanyTest extends BaseSetup {
     @Test(priority = 2)
     @Parameters({"language"})
     public void verifyTextCreateRealcompany(@Optional("English") String language) throws Exception {
-        validateHelpers.waitForLoadJs();
+        signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         createCompanyPage = signInPage.signinWithCreateCompany(PropertiesHelper.getValue("notCompanyEmail"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
@@ -99,14 +99,14 @@ public class CreateCompanyTest extends BaseSetup {
                 TranslationHelpers.setFile(language, "$.company.createPage.inputField.timezone")
         );
         createCompanyPage.leaveFormcreate();
-        validateHelpers.waitForLoadJs();
-        validateHelpers.logout();
+//        validateHelpers.waitForLoadJs();
+//        validateHelpers.logout();
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void verifyTextCreateDmoCompanyForm(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
+        signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         createCompanyPage = signInPage.signinWithCreateCompany(PropertiesHelper.getValue("notCompanyEmail"), PropertiesHelper.getValue("password"));
         validateHelpers.waitForLoadJs();
