@@ -5567,3 +5567,157 @@ Session ID: 2bd074001ade8582970d21dabddafd61
 2024-01-14 00:36:16,563 +0700 [main] INFO  (Log.java:13) - Run test: when_signInWithEmailNull_then_canNotLogin
 2024-01-14 00:36:16,565 +0700 [main] INFO  (Log.java:13) - Test on Language:English
 2024-01-14 00:37:57,106 +0700 [main] INFO  (Log.java:13) - Passed: when_signInWithEmailNull_then_canNotLogin
+2024-01-14 19:07:24,360 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 19:07:24,364 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:09:41,561 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 19:09:41,568 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateRealcompany
+2024-01-14 19:09:41,568 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:12:28,817 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateRealcompany
+2024-01-14 19:12:28,817 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Error at verifyTextOfContactSection row 12 expected [Contact info] but found [Tax registration]
+
+2024-01-14 19:12:30,607 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateDmoCompanyForm
+2024-01-14 19:12:30,607 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:14:41,135 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateDmoCompanyForm
+2024-01-14 19:14:41,135 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@id='kc-locale-dropdown']//a//span)[1] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55412}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55412/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aa8e2416362559c8aba9e6d18e5f269a
+
+2024-01-14 19:18:18,337 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 19:18:18,339 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:20:33,222 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 19:20:33,222 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateRealcompany
+2024-01-14 19:20:33,227 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:23:16,567 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateRealcompany
+2024-01-14 19:23:16,582 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Error at verifyTextOfContactSection row 12 expected [Contact info] but found [Tax registration]
+
+2024-01-14 19:23:17,981 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateDmoCompanyForm
+2024-01-14 19:23:17,981 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:24:48,228 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateDmoCompanyForm
+2024-01-14 19:24:48,228 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@id='kc-locale-dropdown']//a//span)[1] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56375}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56375/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 553b77e7766c4788463d7243cdaa2fdf
+
+2024-01-14 19:27:00,518 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 19:27:00,520 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:29:20,194 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 19:29:20,199 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateRealcompany
+2024-01-14 19:29:20,200 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:30:50,538 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateRealcompany
+2024-01-14 19:30:50,540 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 30.000
+  (Session info: chrome=120.0.6099.217)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7bebbd0fa3b5b5559ebc13ccd1e69bd4, clickElement {id=88C17F1735721DE4D2C90D24BB51CA9F_element_1273}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57000}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57000/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7bebbd0fa3b5b5559ebc13ccd1e69bd4)] -> xpath: //li//div//a[@id='kc-locale-option']]
+Session ID: 7bebbd0fa3b5b5559ebc13ccd1e69bd4
+
+2024-01-14 19:31:03,047 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateDmoCompanyForm
+2024-01-14 19:31:03,047 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:33:47,767 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateDmoCompanyForm
+2024-01-14 19:33:47,767 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Error at verifyTextOfContactSection row 12 expected [Contact info] but found [Tax registration]
+
+2024-01-14 19:37:19,527 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 19:37:19,527 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:39:43,922 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 19:39:43,928 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateRealcompany
+2024-01-14 19:39:43,929 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:42:27,793 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateRealcompany
+2024-01-14 19:42:27,793 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Error at verifyTextOfContactSection row 12 expected [Contact info] but found [Tax registration]
+
+2024-01-14 19:42:29,171 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateDmoCompanyForm
+2024-01-14 19:42:29,171 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:43:59,342 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateDmoCompanyForm
+2024-01-14 19:43:59,343 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@id='kc-locale-dropdown']//a//span)[1] (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57879}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57879/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96f20bcde7f1fd21b63f3eb12dd5bbb3
+
+2024-01-14 19:50:29,723 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 19:50:29,728 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:52:42,601 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 19:52:42,605 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateRealcompany
+2024-01-14 19:52:42,608 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:55:51,233 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateRealcompany
+2024-01-14 19:55:51,233 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Error at verifyTextOfContactSection row 12 expected [Contact info] but found [Tax registration]
+
+2024-01-14 19:56:10,200 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateDmoCompanyForm
+2024-01-14 19:56:10,201 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 19:57:44,332 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateDmoCompanyForm
+2024-01-14 19:57:44,332 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//div[@id='kc-locale-dropdown']//a//span)[1] (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58372}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58372/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a36c2b1359bc8a1d407f7a01991345d1
+
+2024-01-14 19:58:44,402 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 19:58:44,404 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 20:01:03,992 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 20:01:03,996 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateRealcompany
+2024-01-14 20:01:03,996 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 20:04:22,316 +0700 [main] INFO  (Log.java:13) - Passed: verifyTextCreateRealcompany
+2024-01-14 20:04:22,318 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateDmoCompanyForm
+2024-01-14 20:04:22,320 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 20:07:48,869 +0700 [main] INFO  (Log.java:13) - Passed: verifyTextCreateDmoCompanyForm
+2024-01-14 21:14:33,818 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 21:14:33,820 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:16:50,501 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 21:16:50,505 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateRealcompany
+2024-01-14 21:16:50,505 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:19:36,022 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateRealcompany
+2024-01-14 21:19:36,022 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Error at verifyTextOfContactSection row 12 expected [Contact info] but found [Tax registration]
+
+2024-01-14 21:19:45,906 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateDmoCompanyForm
+2024-01-14 21:19:45,906 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:20:16,009 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateDmoCompanyForm
+2024-01-14 21:20:16,009 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Timeout waiting for Page Load Request to complete.
+
+2024-01-14 21:23:15,105 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 21:23:15,107 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:25:13,713 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 21:25:13,717 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateRealcompany
+2024-01-14 21:25:13,718 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:27:43,760 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateRealcompany
+2024-01-14 21:27:43,760 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Error at verifyTextOfContactSection row 12 expected [Contact info] but found [Tax registration]
+
+2024-01-14 21:27:52,924 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateDmoCompanyForm
+2024-01-14 21:27:52,924 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:28:06,060 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateDmoCompanyForm
+2024-01-14 21:28:06,060 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Timeout waiting for Page Load Request to complete.
+
+2024-01-14 21:29:11,844 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 21:29:11,847 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:31:09,963 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 21:31:09,971 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateRealcompany
+2024-01-14 21:31:09,971 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:33:38,412 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateRealcompany
+2024-01-14 21:33:38,412 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Error at verifyTextOfContactSection row 12 expected [Contact info] but found [Tax registration]
+
+2024-01-14 21:33:38,841 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateDmoCompanyForm
+2024-01-14 21:33:38,841 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:48:40,857 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 21:48:40,860 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:50:41,286 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 21:51:52,585 +0700 [main] INFO  (Log.java:13) - Run test: verifyWithAccountNotCompany
+2024-01-14 21:51:52,587 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:54:18,802 +0700 [main] INFO  (Log.java:13) - Passed: verifyWithAccountNotCompany
+2024-01-14 21:54:18,803 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateRealcompany
+2024-01-14 21:54:18,803 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:56:46,577 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateRealcompany
+2024-01-14 21:56:46,578 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Error at verifyTextOfContactSection row 12 expected [Contact info] but found [Tax registration]
+
+2024-01-14 21:56:59,694 +0700 [main] INFO  (Log.java:13) - Run test: verifyTextCreateDmoCompanyForm
+2024-01-14 21:56:59,694 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-14 21:59:33,757 +0700 [main] ERROR (Log.java:29) - Failed: verifyTextCreateDmoCompanyForm
+2024-01-14 21:59:33,757 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Error at verifyTextOfContactSection row 12 expected [Contact info] but found [Tax registration]
+
