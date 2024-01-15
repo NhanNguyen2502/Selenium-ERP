@@ -2,11 +2,13 @@ package erp.testcases.CreateSale;
 
 import erp.base.BaseSetup;
 import erp.base.ReportListener;
+import erp.common.helpers.GetKeyOfSaleTypeByLanguageHelpers;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
 import erp.common.helpers.ValidateHelpers;
 import erp.pages.*;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 @Listeners(ReportListener.class)
@@ -27,6 +29,8 @@ public class CreateSaleTest extends BaseSetup {
         signInPage = new SignInPage(driver);
         createSalePage = new CreateSalePage(driver);
         dashBoardPage = new DashBoardPage(driver);
+        companyListPage = new CompanyListPage(driver);
+        salePage = new SalePage(driver);
     }
 
 
@@ -103,9 +107,9 @@ public class CreateSaleTest extends BaseSetup {
         validateHelpers.logout();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 1)
     @Parameters({"language"})
-    public void verifyInstallmentInvoiceDemo(@Optional("English") String language) {
+    public void verifyInstallmentInvoiceDemo_createSuccess(@Optional("English") String language) {
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
@@ -139,9 +143,9 @@ public class CreateSaleTest extends BaseSetup {
         validateHelpers.logout();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 1)
     @Parameters({"language"})
-    public void verifyInstallmentInvoiceReal(@Optional("English") String language) {
+    public void verifyInstallmentInvoiceReal_createSuccess(@Optional("English") String language) {
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
@@ -175,9 +179,9 @@ public class CreateSaleTest extends BaseSetup {
         validateHelpers.logout();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 1)
     @Parameters({"language"})
-    public void verifyCashSaleInvoiceDemo(@Optional("English") String language) {
+    public void verifyCashSaleInvoiceDemo_createSuccess(@Optional("English") String language) {
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
@@ -209,9 +213,9 @@ public class CreateSaleTest extends BaseSetup {
         validateHelpers.logout();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 1)
     @Parameters({"language"})
-    public void verifyCashSaleInvoiceReal(@Optional("English") String language) {
+    public void verifyCashSaleInvoiceReal_createSuccess(@Optional("English") String language) {
         signInPage.waitForPageLoaded();
         signInPage.verifylanguage(language);
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
@@ -241,6 +245,30 @@ public class CreateSaleTest extends BaseSetup {
         createSalePage.clickCreateButton();
         validateHelpers.waitForLoadJs();
         validateHelpers.logout();
+    }
+
+    @Test(priority = 2)
+    @Parameters({"language"})
+    public void when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail(@Optional("English") String language)
+    {
+        validateHelpers.waitForLoadJs();
+        signInPage.verifylanguage(language);
+        signInPage.login(PropertiesHelper.getValue("email"),PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.real"));
+        salePage.gtoSaleViaShortCut();
+        validateHelpers.waitForLoadJs();
+        createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
+        validateHelpers.waitForLoadJs();
+        createSalePage.selectProduct();
+        createSalePage.selectFee();
+        createSalePage.clickCreateButton();
+        validateHelpers.waitForLoadJs();
+        createSalePage.getCustomerError();
+        validateHelpers.logout();
+
     }
 
 }
