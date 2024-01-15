@@ -74,6 +74,7 @@ public class CreateSalePage {
     private By invoiceInstalmentPlanAmount = By.xpath("//app-sale-draft-installment-payments//app-amount-display//span[@data-cy='number-before']");
     private By invoiceInstalamoutField = By.xpath("//input[@data-cy='installment-amount-input']");
     private By invoiceCreatePlanButton = By.xpath("//button[@data-cy='create-plan-button']");
+    private By invoiceCustomerError = By.xpath("//app-select-object-control//mat-error");
 
     public CreateSalePage(WebDriver driver) {
         this.driver = driver;
@@ -83,6 +84,11 @@ public class CreateSalePage {
         createCustomerPage = new CreateCustomerPage(driver);
         createProductPage = new CreateProductPage(driver);
         createFeePage = new CreateFeePage(driver);
+    }
+
+    public void getCustomerError()
+    {
+        System.out.println(validateHelpers.getMessage(invoiceCustomerError));
     }
 
     public void clickCreateButton() {
@@ -97,6 +103,8 @@ public class CreateSalePage {
                 validateHelpers.clickElement(invoiceCreateInvoiceButton);
             }
 
+        }else {
+            validateHelpers.clickElement(invoiceCreateInvoiceButton);
         }
 
     }

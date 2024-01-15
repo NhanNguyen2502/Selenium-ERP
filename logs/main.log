@@ -5742,3 +5742,82 @@ Session ID: a36c2b1359bc8a1d407f7a01991345d1
 2024-01-15 11:33:32,951 +0700 [main] INFO  (Log.java:13) - Run test: verifyDeleteRealCompany
 2024-01-15 11:33:32,951 +0700 [main] INFO  (Log.java:13) - Test on Language:English
 2024-01-15 11:36:37,583 +0700 [main] INFO  (Log.java:13) - Passed: verifyDeleteRealCompany
+2024-01-15 14:08:17,239 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 14:08:17,239 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 14:10:31,303 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 14:10:31,303 +0700 [main] ERROR (Log.java:29) - java.lang.NullPointerException: Cannot invoke "erp.pages.CompanyListPage.goToCompany(String)" because "this.companyListPage" is null
+
+2024-01-15 14:12:00,110 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 14:12:00,110 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 14:13:30,797 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 14:13:30,798 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 30.000
+  (Session info: chrome=120.0.6099.217)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2f7a11262ea153a1fa1f0e54f31354fb, clickElement {id=8339B122E772A03F32B6FC8128BFAAB4_element_100}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54772}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54772/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (2f7a11262ea153a1fa1f0e54f31354fb)] -> xpath: //li//div//a[@id='kc-locale-option']]
+Session ID: 2f7a11262ea153a1fa1f0e54f31354fb
+
+2024-01-15 14:15:57,190 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 14:15:57,192 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 14:18:42,934 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 14:18:42,935 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //app-language-option (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55388}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55388/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 26b27ca6a5a888437a1359335c63de2b
+
+2024-01-15 15:28:26,596 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 15:28:26,598 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 15:31:17,933 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 15:37:36,563 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 15:37:36,566 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 15:40:20,811 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 15:45:25,806 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 15:45:25,809 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 15:48:09,910 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 15:49:07,422 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 15:49:07,424 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 15:52:30,551 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 16:19:25,587 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 16:19:25,588 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 16:23:09,397 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 16:56:29,381 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 16:56:29,382 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 17:01:13,845 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 17:01:13,846 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //app-select-object-control//mat-error (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61861}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61861/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 112bed80d13628a256fbd8ddfff42b00
+
+2024-01-15 17:03:11,387 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 17:03:11,388 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 17:08:00,537 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 17:08:00,538 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //app-select-object-control//mat-error (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63043}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63043/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ed8f3e8421f1954e13a067dd987f2ab2
+
+2024-01-15 17:09:02,200 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 17:09:02,202 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 17:13:48,949 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 17:13:48,949 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//app-select-object-control//mat-error"}
+  (Session info: chrome=120.0.6099.217)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1b345ef3716e6d5908535e5220075eed, findElement {using=xpath, value=//app-select-object-control//mat-error}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64081}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64081/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1b345ef3716e6d5908535e5220075eed
+
+2024-01-15 17:18:40,404 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 17:18:40,405 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 17:23:01,809 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
