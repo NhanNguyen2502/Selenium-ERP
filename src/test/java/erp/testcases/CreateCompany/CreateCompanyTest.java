@@ -120,8 +120,10 @@ public class CreateCompanyTest extends BaseSetup {
                 TranslationHelpers.setFile(language, "$.company.createPage.text.testCompanyTitle"),
                 TranslationHelpers.setFile(language, "$.company.createPage.text.description") +" "+
                         TranslationHelpers.setFile(language, "$.company.createPage.text.generateText"));
+        validateHelpers.waitForLoadJs();
         createDemoCompanyPage.verifyFieldIsRequiredAndErrorMessage(TranslationHelpers.setFile(language,
                 "$.company.createPage.error.mainCurrencyRequired"));
+        validateHelpers.waitForLoadJs();
         createDemoCompanyPage.verifyTextOfContactSection(
                 TranslationHelpers.setFile(language, "$.company.createPage.text.contactInfo"),
                 TranslationHelpers.setFile(language, "$.company.createPage.inputField.email"),
