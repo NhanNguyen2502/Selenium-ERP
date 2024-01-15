@@ -97,10 +97,8 @@ public class ValidateHelpers {
 
     public void logout() {
         try {
+            wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
             clickElement(logoutButton);
-            if (!(driver instanceof WebStorage)) {
-                throw new IllegalArgumentException("This test expects the driver to implement WebStorage");
-            }
         }catch(NoSuchElementException e)
         {
           System.out.println(e.getMessage());
