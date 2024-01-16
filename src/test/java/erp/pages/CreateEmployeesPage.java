@@ -49,7 +49,7 @@ public class CreateEmployeesPage {
                         .replace("(", "").replace(")", "").replace("-", "").replace(".", ""));
                 System.out.println("0" + FakeDataHelper.createFakeByLocate(PropertiesHelper.getValue("LOCATE1")).phoneNumber().cellPhone()
                         .replace("(", "").replace(")", "").replace("-", "").replace(".", ""));
-                validateHelpers.waitForLoadJs();
+                validateHelpers.waitAfterChoseOrClickElement();
                 try {
                     warning = driver.findElement(invoicePhoneNumberWarning).getText();
                 } catch (NoSuchElementException a) {

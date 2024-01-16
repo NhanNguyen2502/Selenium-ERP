@@ -117,7 +117,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(12000);
+            Thread.sleep(9000);
             wait.until(jsWait);
         }catch (Throwable error)
         {

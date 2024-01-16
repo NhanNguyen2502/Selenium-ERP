@@ -38,13 +38,13 @@ public class CreateSaleTest extends BaseSetup {
         signInPage.verifylanguage(language);
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.demo"));
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         salePage = dashBoardPage.goSaleTable();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.checkDateAndTypeSection(TranslationHelpers.setFile(language, "$.regularInvoice.select.option.standard")
                 , TranslationHelpers.setFile(language, "$.regularInvoice.select.option.standard")
                 , TranslationHelpers.setFile(language, "$.regularInvoice.select.option.installment"));
@@ -53,17 +53,17 @@ public class CreateSaleTest extends BaseSetup {
         createSalePage.checkProductionSection(language);
         createSalePage.checkFeeSection();
         createSalePage.selectAccountNumber();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.selectProduct();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.selectFee();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.clickCreateButton();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
 
     }
@@ -183,13 +183,13 @@ public class CreateSaleTest extends BaseSetup {
         signInPage.verifylanguage(language);
         companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
         validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.demo"));
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         salePage = dashBoardPage.goSaleTable();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.checkDateAndTypeSection(TranslationHelpers.setFile(language, "$.regularInvoice.select.option.cashSale")
                 , TranslationHelpers.setFile(language, "$.regularInvoice.select.option.standard")
                 , TranslationHelpers.setFile(language, "$.regularInvoice.select.option.installment"));
@@ -197,16 +197,16 @@ public class CreateSaleTest extends BaseSetup {
         createSalePage.checkCustomerSection();
         createSalePage.checkProductionSection(language);
         createSalePage.selectAccountNumber();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.selectProduct();
-        validateHelpers.waitForLoadJs();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.clickCreateButton();
-        validateHelpers.waitForLoadJs();
+        validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
 
