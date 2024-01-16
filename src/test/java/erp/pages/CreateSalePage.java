@@ -75,6 +75,7 @@ public class CreateSalePage {
     private By invoiceInstalamoutField = By.xpath("//input[@data-cy='installment-amount-input']");
     private By invoiceCreatePlanButton = By.xpath("//button[@data-cy='create-plan-button']");
     private By invoiceCustomerError = By.xpath("//app-select-object-control//mat-error");
+    private By invoiceProductError = By.xpath("//form//app-select-object-control//mat-error");
 
     public CreateSalePage(WebDriver driver) {
         this.driver = driver;
@@ -86,24 +87,28 @@ public class CreateSalePage {
         createFeePage = new CreateFeePage(driver);
     }
 
-    public void getCustomerError()
-    {
+    public void getProductError() {
+        System.out.println(validateHelpers.getMessage(invoiceProductError));
+    }
+
+    public void getCustomerError() {
         System.out.println(validateHelpers.getMessage(invoiceCustomerError));
     }
 
     public void clickCreateButton() {
-        if(_typeOfSale.equals(_instalment))
-        {
-            _invoiceInstalmentAmount =  validateHelpers.getMessage(invoiceInstalmentPlanAmount);
-            validateHelpers.clearElement(invoiceInstalamoutField);
-            validateHelpers.setText(invoiceInstalamoutField,String.valueOf(FakeDataHelper.getFakedata().number().numberBetween(1, Integer.valueOf(_invoiceInstalmentAmount))));
-            validateHelpers.clickElement(invoiceCreatePlanButton);
-            if(validateHelpers.getMessage(invoiceInstalmentPlanAmount).equals(String.valueOf(0)))
+        if (_typeOfSale.equals(_instalment)) {
+            _invoiceInstalmentAmount = validateHelpers.getMessage(invoiceInstalmentPlanAmount);
+            if(Integer.valueOf(_invoiceInstalmentAmount) > 0)
             {
-                validateHelpers.clickElement(invoiceCreateInvoiceButton);
+                validateHelpers.clearElement(invoiceInstalamoutField);
+                validateHelpers.setText(invoiceInstalamoutField, String.valueOf(FakeDataHelper.getFakedata().number().numberBetween(1, Integer.valueOf(_invoiceInstalmentAmount))));
+                validateHelpers.clickElement(invoiceCreatePlanButton);
+                if (validateHelpers.getMessage(invoiceInstalmentPlanAmount).equals(String.valueOf(0))) {
+                    validateHelpers.clickElement(invoiceCreateInvoiceButton);
+                }
             }
 
-        }else {
+        } else {
             validateHelpers.clickElement(invoiceCreateInvoiceButton);
         }
 
@@ -171,10 +176,11 @@ public class CreateSalePage {
         var listType = driver.findElements(typeList);
         for (var x : listType) {
             if (x.getText().equals(type)) {
+                System.out.println(x.getText()+" match with " + type);
                 x.click();
                 break;
             } else {
-                System.out.println("Invoice type does not exist");
+                System.out.println(x.getText()+" not match with " + type);
             }
 
         }

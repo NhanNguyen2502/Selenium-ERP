@@ -47,7 +47,6 @@ public class ValidateHelpers {
             {
                 Random ran = new Random();
                 var randomNumber = ran.nextInt(list.size());
-                System.out.println(randomNumber);
                 list.get(randomNumber).click();
 //            for (int  i=0; i<list.size();i++)
 //            {
@@ -110,6 +109,22 @@ public class ValidateHelpers {
         return Jsoup.parse(content).text();
     }
 
+    public void waitAfterChoseOrClickElement(){
+        ExpectedCondition<Boolean> jsWait = new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor)driver).executeScript("return document.readyState").toString().equals("complete");
+            }
+        };
+        try {
+            Thread.sleep(12000);
+            wait.until(jsWait);
+        }catch (Throwable error)
+        {
+            Assert.fail("Timeout waiting for Page Load Request to complete after click or chose element");
+        }
+    }
+
     public void waitForLoadJs() {
         ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
             @Override
@@ -157,4 +172,5 @@ public class ValidateHelpers {
             }
         }
     }
+
 }

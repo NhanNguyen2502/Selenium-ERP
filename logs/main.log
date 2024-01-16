@@ -5821,3 +5821,116 @@ Session ID: 1b345ef3716e6d5908535e5220075eed
 2024-01-15 17:18:40,404 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
 2024-01-15 17:18:40,405 +0700 [main] INFO  (Log.java:13) - Test on Language:English
 2024-01-15 17:23:01,809 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-01-15 22:27:07,857 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInDemoCompany_then_createFail
+2024-01-15 22:27:07,859 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 22:28:38,498 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnStandardInvoiceInDemoCompany_then_createFail
+2024-01-15 22:28:38,498 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 30.000
+  (Session info: chrome-headless-shell=120.0.6099.217)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [389a7ead2b2e75440c605bd96dab47fc, clickElement {id=137A806B2E79852BF1E6A938808B6D7A_element_26}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome-headless-shell, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63312}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63312/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome-headless-shell on windows (389a7ead2b2e75440c605bd96dab47fc)] -> xpath: //li//div//a[@id='kc-locale-option']]
+Session ID: 389a7ead2b2e75440c605bd96dab47fc
+
+2024-01-15 22:33:51,044 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInDemoCompany_then_createFail
+2024-01-15 22:33:51,045 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 22:35:39,077 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnStandardInvoiceInDemoCompany_then_createFail
+2024-01-15 22:35:39,077 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 30.000
+  (Session info: chrome=120.0.6099.217)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [44c043aad009a2ac5174b4e19f97cf98, clickElement {id=7935D0224B1DD3A8002475300F96F58B_element_114}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63656}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63656/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (44c043aad009a2ac5174b4e19f97cf98)] -> xpath: //li//div//a[@id='kc-locale-option']]
+Session ID: 44c043aad009a2ac5174b4e19f97cf98
+
+2024-01-15 22:37:01,733 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInDemoCompany_then_createFail
+2024-01-15 22:37:01,734 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-15 22:41:21,726 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnStandardInvoiceInDemoCompany_then_createFail
+2024-01-16 13:55:22,901 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInRealCompany_then_createFail
+2024-01-16 13:55:22,903 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 13:59:48,459 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInRealCompany_then_createFail
+2024-01-16 14:02:34,048 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:02:34,050 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 14:05:48,541 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:05:48,541 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@apptooltip='salesList.button.newSaleTooltip'] (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51543}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51543/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3151f7c85ff6122e6f8b22c9ad6990f8
+
+2024-01-16 14:13:56,654 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:13:56,656 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 14:17:14,949 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:17:14,949 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@apptooltip='salesList.button.newSaleTooltip'] (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53514}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53514/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5827a77600fccb8be60148540e84c2a7
+
+2024-01-16 14:18:45,620 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:18:45,622 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 14:21:57,376 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:21:57,376 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@apptooltip='salesList.button.newSaleTooltip'] (tried for 25 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54392}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54392/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 680120380b56627c174b5d4be3a62a64
+
+2024-01-16 14:25:52,374 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:25:52,374 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 14:30:08,195 +0700 [main] ERROR (Log.java:29) - Failed: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:30:08,196 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button _ngcontent-ilp-c460="" apptooltip="invoicesCommon.button.addFeeTooltip" color="accent" data-cy="new-fee-row-button" mat-stroked-button="" type="button" class="mat-focus-indicator mat-tooltip-trigger pill-button mat-stroked-button mat-button-base mat-accent touch-action-auto" aria-describedby="cdk-describedby-message-ilp-1-89" cdk-describedby-host="ilp-1">...</button> is not clickable at point (418, 850). Other element would receive the click: <div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing"></div>
+  (Session info: chrome=120.0.6099.217)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [51e430121e8bf6109b283bf4d54ec9ec, clickElement {id=6509047F6D729F2F32361C1657C8F9BA_element_2026}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55693}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55693/devtoo..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (51e430121e8bf6109b283bf4d54ec9ec)] -> xpath: //button[@data-cy='new-fee-row-button']]
+Session ID: 51e430121e8bf6109b283bf4d54ec9ec
+
+2024-01-16 14:46:17,243 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:46:17,246 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 14:50:16,804 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:51:06,005 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:51:06,007 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 14:52:12,496 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:52:12,497 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 14:55:42,436 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:57:09,304 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 14:57:09,306 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 15:00:42,393 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 15:01:49,221 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInRealCompany_then_createFail
+2024-01-16 15:01:49,223 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 15:06:07,092 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInRealCompany_then_createFail
+2024-01-16 15:09:18,795 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 15:09:18,796 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 15:12:48,884 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 15:18:53,371 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnCashSaleInRealCompany_then_createSuccess
+2024-01-16 15:18:53,373 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 15:21:51,853 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnCashSaleInRealCompany_then_createSuccess
+2024-01-16 15:24:22,239 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnCashSaleInDemoCompany_then_createSuccess
+2024-01-16 15:24:22,242 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 15:27:39,109 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnCashSaleInDemoCompany_then_createSuccess
+2024-01-16 16:33:57,982 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutProductOnStandardInvoiceInRealCompany_then_createFail
+2024-01-16 16:33:57,985 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 16:38:17,392 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutProductOnStandardInvoiceInRealCompany_then_createFail
+2024-01-16 16:40:16,290 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutProductOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 16:40:16,292 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 16:46:08,792 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutProductOnInstallmentInvoiceInDemoCompany_then_createFail
+2024-01-16 16:58:02,696 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutProductOnInstallmentInvoiceInRealCompany_then_createFail
+2024-01-16 16:58:02,698 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 17:02:20,578 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutProductOnInstallmentInvoiceInRealCompany_then_createFail
+2024-01-16 17:05:50,342 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutProductOnCashSaleInDemoCompany_then_createFail
+2024-01-16 17:05:50,345 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 17:10:18,368 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutProductOnCashSaleInDemoCompany_then_createFail
+2024-01-16 17:10:49,303 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutProductOnCashSaleInRealCompany_then_createFail
+2024-01-16 17:10:49,305 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-01-16 17:15:18,609 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutProductOnCashSaleInRealCompany_then_createFail
