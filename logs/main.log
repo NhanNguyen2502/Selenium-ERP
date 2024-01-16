@@ -5934,3 +5934,5 @@ Session ID: 51e430121e8bf6109b283bf4d54ec9ec
 2024-01-16 17:10:49,303 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutProductOnCashSaleInRealCompany_then_createFail
 2024-01-16 17:10:49,305 +0700 [main] INFO  (Log.java:13) - Test on Language:English
 2024-01-16 17:15:18,609 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutProductOnCashSaleInRealCompany_then_createFail
+2024-01-16 17:38:52,505 +0700 [main] INFO  (Log.java:13) - Run test: verifyCashSaleInvoiceDemo_createSuccess
+2024-01-16 17:38:52,507 +0700 [main] INFO  (Log.java:13) - Test on Language:English
