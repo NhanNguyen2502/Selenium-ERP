@@ -99,8 +99,12 @@ public class CompanyListPage {
         var com = driver.findElements(companies);
         for (int i = 0; i < companyTypes.size(); i++) {
             if (companyTypes.get(i).getText().equals(type)) {
+                System.out.println("The company "+(i+1)+ ": " +companyTypes.get(i).getText() + " match with type " +type);
                 com.get(i).click();
                 break;
+            }
+            else {
+                System.out.println("The company "+(i+1)+ ": " +companyTypes.get(i).getText() + " Not match with type " +type);
             }
         }
         return new DashBoardPage(driver);
