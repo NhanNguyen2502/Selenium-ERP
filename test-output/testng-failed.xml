@@ -6,7 +6,7 @@
   </listeners>
   <test thread-count="5" name="D:/Nhan/AutoTest/ERPTest(failed)">
     <classes>
-      <class name="erp.testcases.DashboardTest">
+      <class name="erp.testcases.Dashboard.DashboardTest">
         <methods>
           <include name="setUp"/>
           <include name="Setup"/>
@@ -15,8 +15,8 @@
           <include name="testStatus"/>
           <include name="TearDown"/>
         </methods>
-      </class> <!-- erp.testcases.DashboardTest -->
-      <class name="erp.testcases.SignInTest">
+      </class> <!-- erp.testcases.Dashboard.DashboardTest -->
+      <class name="erp.testcases.SignIn.SignInTest">
         <methods>
           <include name="setUp"/>
           <include name="Setup"/>
@@ -25,7 +25,7 @@
           <include name="testStatus"/>
           <include name="TearDown"/>
         </methods>
-      </class> <!-- erp.testcases.SignInTest -->
+      </class> <!-- erp.testcases.SignIn.SignInTest -->
       <class name="erp.testcases.CompanyList.CompanyListTest">
         <methods>
           <include name="Setup"/>
