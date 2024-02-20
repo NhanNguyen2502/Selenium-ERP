@@ -105,7 +105,7 @@ public class CreateCompanyPage extends BaseSetup {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
         validateHelpers = new ValidateHelpers(driver);
-        action = new Actions(driver);
+        //action = new Actions(driver);
     }
 
    public void  goToCreateCompany()
