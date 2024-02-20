@@ -68,41 +68,6 @@ public class CreateSaleTest extends BaseSetup {
 
     }
 
-    @Test(priority = 1)
-    @Parameters({"language"})
-    public void verifyStandardInvoiceReal(@Optional("English") String language) {
-        signInPage.waitForPageLoaded();
-        signInPage.verifylanguage(language);
-        companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.real"));
-        validateHelpers.waitForLoadJs();
-        salePage = dashBoardPage.goSaleTable();
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkDateAndTypeSection(TranslationHelpers.setFile(language, "$.regularInvoice.select.option.standard")
-                , TranslationHelpers.setFile(language, "$.regularInvoice.select.option.standard")
-                , TranslationHelpers.setFile(language, "$.regularInvoice.select.option.installment"));
-        createSalePage.checkAccountSection();
-        createSalePage.checkCustomerSection();
-        createSalePage.checkProductionSection(language);
-        createSalePage.checkFeeSection();
-        createSalePage.selectAccountNumber();
-        validateHelpers.waitForLoadJs();
-        createSalePage.selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
-        validateHelpers.waitForLoadJs();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitForLoadJs();
-        createSalePage.selectProduct();
-        validateHelpers.waitForLoadJs();
-        createSalePage.selectFee();
-        validateHelpers.waitForLoadJs();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitForLoadJs();
-        validateHelpers.logout();
-    }
 
     @Test(priority = 1)
     @Parameters({"language"})
@@ -244,28 +209,6 @@ public class CreateSaleTest extends BaseSetup {
         validateHelpers.logout();
     }
 
-    @Test(priority = 2)
-    @Parameters({"language"})
-    public void when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.verifylanguage(language);
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
-        createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitForLoadJs();
-        createSalePage.selectProduct();
-        createSalePage.selectFee();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitForLoadJs();
-        createSalePage.getCustomerError();
-        validateHelpers.logout();
-
-    }
 
     @Test(priority = 2)
     @Parameters({"language"})
@@ -407,29 +350,6 @@ public class CreateSaleTest extends BaseSetup {
 
     @Test(priority = 3)
     @Parameters({"language"})
-    public void when_createInvoiceWithoutProductOnStandardInvoiceInRealCompany_then_createFail(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.verifylanguage(language);
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
-        createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitForLoadJs();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        createSalePage.selectFee();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitForLoadJs();
-        createSalePage.getProductError();
-        validateHelpers.logout();
-
-    }
-
-    @Test(priority = 3)
-    @Parameters({"language"})
     public void when_createInvoiceWithoutProductOnInstallmentInvoiceInDemoCompany_then_createFail(@Optional("English") String language) {
         validateHelpers.waitForLoadJs();
         signInPage.verifylanguage(language);
@@ -518,6 +438,25 @@ public class CreateSaleTest extends BaseSetup {
         createSalePage.getProductError();
         validateHelpers.logout();
 
+    }
+
+    @Test(priority = 4)
+    @Parameters({"language"})
+    public void changeLanguageWhenCreateInvoiceOnDemoCompany_CreateSuccess(@Optional("English") String language) {
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfDemoCompany(language));
+        validateHelpers.waitForLoadJs();
+        salePage.gtoSaleViaShortCut();
+        validateHelpers.waitForLoadJs();
+        createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getRandomSaleType(language));
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
+        createSalePage.changeLanguageOfCustomerOnInvoiceCreatePage();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectProduct();
+        validateHelpers.waitForLoadJs();
     }
 
 }

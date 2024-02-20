@@ -26,24 +26,6 @@ public class ReportListener implements ITestListener {
         return result.getMethod().getDescription() != null ? result.getMethod().getDescription() : getTestName(result);
     }
 
-    //save log for Allure
-    @Attachment(value = "{0}", type = "text/plain")
-    public static String saveTextLog(String message) {
-        return message;
-    }
-
-    //Screenshot attachments for Allure
-    @Attachment(value = "Screenshot", type = "image/png")
-    public byte[] saveScreenshotPNG() {
-        return ((TakesScreenshot) BaseSetup.getDriver()).getScreenshotAs(OutputType.BYTES);
-    }
-
-    //
-    @Attachment(value = "{0}", type = "text/html")
-    public static  String attachmentHtml(String html){
-        return html;
-    }
-
     @Override
     public void onFinish(ITestContext arg0) {
         // TODO Auto-generated method stub
@@ -73,12 +55,7 @@ public class ReportListener implements ITestListener {
         ExtentTestManager.addScreenShot(Status.FAIL, arg0.getName() + " is failed.");
         Log.error("Failed: " + arg0.getName());
         Log.error(arg0.getThrowable().toString() +"\n");
-        //Allure Report
-        saveTextLog(arg0.getName() + " is failed.");
-        //saveScreenshotPNG();
-        //Allure.addAttachment("_Failed_Screenshot", new ByteArrayInputStream(((TakesScreenshot) BaseSetup.getDriver()).getScreenshotAs(OutputType.BYTES)));
-
-
+        ExtentTestManager.addScreenShot(Status.FAIL,arg0.getName() +" Failed");
 
     }
 
@@ -86,7 +63,6 @@ public class ReportListener implements ITestListener {
     public void onTestSkipped(ITestResult arg0) {
         // TODO Auto-generated method stub
         ExtentTestManager.logMessage(Status.SKIP, arg0.getThrowable().toString());
-        saveTextLog(arg0.getThrowable().toString());
     }
 
     @Override
@@ -102,9 +78,6 @@ public class ReportListener implements ITestListener {
         // TODO Auto-generated method stub
         System.out.println("End test name: " + arg0.getName());
         ExtentTestManager.logMessage(Status.PASS, arg0.getName() + " is passed.");
-        saveTextLog(arg0.getName()+" is passed.");
-
-
     }
 
 }
