@@ -6,6 +6,7 @@ import erp.common.helpers.ValidateHelpers;
 import io.qameta.allure.Allure;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -47,7 +48,8 @@ public class BaseSetup {
         options.addArguments("--remote-allow-origins=*");
 //        //options.addArguments("--headless");
         options.addArguments("--window-size=1920,1080");
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/java/resources/chromedriver.exe");
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/java/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get(url);

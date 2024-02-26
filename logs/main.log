@@ -7803,3 +7803,213 @@ Session ID: c51f030e7e41ec0c0341fa93e7dc32de
 2024-02-20 20:56:23,380 +0700 [main] INFO  (Log.java:13) - Test on Language:English
 2024-02-20 21:00:56,175 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAttachmentImageAndAddComment_then_createSuccess
 2024-02-20 21:00:56,178 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-20 22:54:35,984 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-20 22:54:35,998 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-20 23:00:06,546 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-20 23:12:58,904 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-20 23:12:58,906 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-20 23:25:44,315 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-20 23:25:44,318 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-20 23:26:22,432 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-20 23:26:22,434 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-21 09:52:08,331 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-21 09:52:08,334 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-21 09:57:33,935 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-21 15:07:23,661 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-21 15:07:23,663 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-21 15:09:33,664 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-21 15:15:37,972 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-21 15:15:37,974 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-21 15:18:16,691 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-21 22:04:03,770 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-21 22:04:03,773 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-21 22:06:42,363 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-21 22:10:57,920 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-21 22:10:57,923 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-21 22:11:58,663 +0700 [main] ERROR (Log.java:29) - Failed: createInvoiceWithManyFees_then_createSuccess
+2024-02-21 22:11:58,663 +0700 [main] ERROR (Log.java:29) - java.lang.AssertionError: Timeout waiting for Page Load Request to complete.
+
+2024-02-21 22:25:50,234 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-21 22:25:50,236 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-21 22:28:28,829 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 12:23:20,865 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 12:23:20,868 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 12:26:08,014 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 12:26:32,515 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 12:26:32,518 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 12:28:48,923 +0700 [main] ERROR (Log.java:29) - Failed: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 12:28:48,924 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input _ngcontent-ilq-c448="" type="text" matinput="" class="mat-autocomplete-trigger mat-input-element mat-form-field-autofill-control mat-tooltip-trigger ng-tns-c90-80 ng-untouched ng-pristine ng-invalid touch-action-auto cdk-text-field-autofill-monitored" data-cy="select-fee" placeholder="Select fee" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-haspopup="listbox" id="mat-input-34" data-placeholder="Select fee" aria-invalid="false" aria-required="false" aria-describedby="cdk-describedby-message-ilq-1-115" cdk-describedby-host="ilq-1" style="color: inherit;"> is not clickable at point (571, 709). Other element would receive the click: <div _ngcontent-ilq-c461="" data-cy="comment-input" fxlayout="row" class="comment-section w-100 mb-2" style="flex-direction: row; box-sizing: border-box; display: flex; flex: 1 1 calc(50% - 72px); min-width: calc(50% - 72px);">...</div>
+  (Session info: chrome=121.0.6167.185)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [66c50a26256e5e03d95b67dcb60f6405, clickElement {id=1CAF53BD19D2E8871FD1F7AA77E183CE_element_5732}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.185, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54850}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54850/devtoo..., se:cdpVersion: 121.0.6167.185, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (66c50a26256e5e03d95b67dcb60f6405)] -> xpath: //input[@data-cy='select-fee']]
+Session ID: 66c50a26256e5e03d95b67dcb60f6405
+
+2024-02-22 12:30:44,673 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 12:30:44,675 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 12:34:26,921 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 12:37:06,345 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 12:37:06,348 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 12:40:48,430 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 13:56:23,752 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 13:56:23,756 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 13:59:16,269 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 14:02:24,317 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 14:02:24,320 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 14:07:19,886 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 14:08:46,033 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 14:08:46,035 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 14:14:45,633 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 14:26:51,493 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAmoutFeeHasBeenUpdate_then_createSuccess
+2024-02-22 14:26:51,496 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 14:32:16,868 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceAmoutFeeHasBeenUpdate_then_createSuccess
+2024-02-22 15:03:26,806 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFeeAndManyProduct_then_createSuccess
+2024-02-22 15:03:26,808 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 15:09:03,590 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFeeAndManyProduct_then_createSuccess
+2024-02-22 15:09:15,973 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFeeAndManyProduct_then_createSuccess
+2024-02-22 15:09:15,974 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 15:14:57,760 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFeeAndManyProduct_then_createSuccess
+2024-02-22 15:52:29,864 +0700 [main] INFO  (Log.java:13) - Run test: when_createWithAllInformationCorrect_then_createSuccess
+2024-02-22 15:52:29,867 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 15:58:45,269 +0700 [main] INFO  (Log.java:13) - Passed: when_createWithAllInformationCorrect_then_createSuccess
+2024-02-22 15:58:45,274 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerFirst_then_createSuccess
+2024-02-22 15:58:45,275 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:03:05,596 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerFirst_then_createSuccess
+2024-02-22 16:03:05,598 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerLast_then_createSuccess
+2024-02-22 16:03:05,598 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:07:52,014 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerLast_then_createSuccess
+2024-02-22 16:07:52,016 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-02-22 16:07:52,016 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:12:29,981 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-02-22 16:12:29,982 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutProductOnStandardInvoiceInRealCompany_then_createFail
+2024-02-22 16:12:29,982 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:17:24,957 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutProductOnStandardInvoiceInRealCompany_then_createFail
+2024-02-22 16:17:24,960 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnProductLineNullWithOutClickOnIt_then_createSuccess
+2024-02-22 16:17:24,960 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:22:44,477 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithAnProductLineNullWithOutClickOnIt_then_createSuccess
+2024-02-22 16:22:44,479 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnotherReceiptLanguageChoseCustomerFirst_then_createSuccess
+2024-02-22 16:22:44,479 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:28:11,672 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithAnotherReceiptLanguageChoseCustomerFirst_then_createSuccess
+2024-02-22 16:28:11,674 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnotherReceiptLanguage_then_createSuccess
+2024-02-22 16:28:11,674 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:31:29,675 +0700 [main] ERROR (Log.java:29) - Failed: createInvoiceWithAnotherReceiptLanguage_then_createSuccess
+2024-02-22 16:31:29,676 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input _ngcontent-pcs-c396="" data-cy="language-select-input" id="language-select-input" matinput="" type="text" class="mat-input-element mat-form-field-autofill-control mat-autocomplete-trigger mat-tooltip-trigger ng-tns-c90-43 ng-untouched ng-pristine ng-valid touch-action-auto cdk-text-field-autofill-monitored" placeholder="Language" data-placeholder="Language" aria-invalid="false" aria-required="false" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-haspopup="listbox" cdk-describedby-host="pcs-1"> is not clickable at point (1333, 765). Other element would receive the click: <div class="mat-tooltip app-tooltip mat-tooltip-show" style="transform-origin: center top;">...</div>
+  (Session info: chrome=121.0.6167.185)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bf6d44918c0443ad448076916cc2c975, clickElement {id=93A97F5730E52F27E14B16D8CF608E5D_element_51311}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.185, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64941}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64941/devtoo..., se:cdpVersion: 121.0.6167.185, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bf6d44918c0443ad448076916cc2c975)] -> xpath: //input[@data-cy='language-select-input']]
+Session ID: bf6d44918c0443ad448076916cc2c975
+
+2024-02-22 16:31:36,557 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithChangePriceOfProduct_then_createSuccess
+2024-02-22 16:31:36,557 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:36:56,377 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithChangePriceOfProduct_then_createSuccess
+2024-02-22 16:36:56,380 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyProduct_then_createSuccess
+2024-02-22 16:36:56,380 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:41:17,654 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyProduct_then_createSuccess
+2024-02-22 16:41:17,658 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyProductsAndChangeAnyProductPrice_then_createSuccess
+2024-02-22 16:41:17,658 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:46:43,036 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyProductsAndChangeAnyProductPrice_then_createSuccess
+2024-02-22 16:46:43,038 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithProductOnPopularProductSection_then_createSuccess
+2024-02-22 16:46:43,039 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:51:00,246 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithProductOnPopularProductSection_then_createSuccess
+2024-02-22 16:51:00,252 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithUpdateDiscountOfAllProducts_then_createSuccess
+2024-02-22 16:51:00,252 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 16:56:27,815 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithUpdateDiscountOfAllProducts_then_createSuccess
+2024-02-22 16:56:27,817 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithUpdateDiscountOfAnyProduct_then_createSuccess
+2024-02-22 16:56:27,817 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:00:51,634 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithUpdateDiscountOfAnyProduct_then_createSuccess
+2024-02-22 17:00:51,636 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithUpdateDiscountOfProduct_then_createSuccess
+2024-02-22 17:00:51,637 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:05:40,679 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithUpdateDiscountOfProduct_then_createSuccess
+2024-02-22 17:05:40,680 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithUpdateQuantityOfAnyProducts_then_createSuccess
+2024-02-22 17:05:40,680 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:11:07,511 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithUpdateQuantityOfAnyProducts_then_createSuccess
+2024-02-22 17:11:07,512 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithUpdateQuantityOfManyProducts_then_createSuccess
+2024-02-22 17:11:07,513 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:16:13,338 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithUpdateQuantityOfManyProducts_then_createSuccess
+2024-02-22 17:16:13,341 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithUpdateQuantityOfProduct_then_createSuccess
+2024-02-22 17:16:13,341 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:21:32,825 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithUpdateQuantityOfProduct_then_createSuccess
+2024-02-22 17:21:32,827 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-22 17:21:32,827 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:25:58,270 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-22 17:25:58,272 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAttachmentImage_then_createSuccess
+2024-02-22 17:25:58,272 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:31:17,514 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceAttachmentImage_then_createSuccess
+2024-02-22 17:31:17,516 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithComment_then_createSuccess
+2024-02-22 17:31:17,516 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:36:37,997 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithComment_then_createSuccess
+2024-02-22 17:36:37,999 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAmoutFeeHasBeenUpdate_then_createSuccess
+2024-02-22 17:36:37,999 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:42:03,993 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceAmoutFeeHasBeenUpdate_then_createSuccess
+2024-02-22 17:42:03,995 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFeeAndManyProduct_then_createSuccess
+2024-02-22 17:42:03,995 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:47:50,348 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFeeAndManyProduct_then_createSuccess
+2024-02-22 17:47:50,350 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyFees_then_createSuccess
+2024-02-22 17:47:50,350 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-22 17:54:05,410 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyFees_then_createSuccess
+2024-02-26 10:52:25,945 +0700 [main] INFO  (Log.java:13) - Run test: when_createWithAllInformationCorrect_then_createSuccess
+2024-02-26 10:52:25,952 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 10:54:11,399 +0700 [main] ERROR (Log.java:29) - Failed: when_createWithAllInformationCorrect_then_createSuccess
+2024-02-26 10:54:11,399 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //app-language-option (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.189, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58203/devtoo..., se:cdpVersion: 121.0.6167.189, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: af57053e6ced0a98457b75134b4e4c67
+
+2024-02-26 10:54:16,427 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerFirst_then_createSuccess
+2024-02-26 10:54:16,427 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 10:56:43,625 +0700 [main] INFO  (Log.java:13) - Run test: when_createWithAllInformationCorrect_then_createSuccess
+2024-02-26 10:56:43,628 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:02:58,848 +0700 [main] INFO  (Log.java:13) - Passed: when_createWithAllInformationCorrect_then_createSuccess
+2024-02-26 11:02:58,854 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerFirst_then_createSuccess
+2024-02-26 11:02:58,854 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:07:19,120 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerFirst_then_createSuccess
+2024-02-26 11:07:19,120 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerLast_then_createSuccess
+2024-02-26 11:07:19,126 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:12:05,524 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerLast_then_createSuccess
+2024-02-26 11:12:05,531 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-02-26 11:12:05,531 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:16:50,277 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail
+2024-02-26 11:16:50,280 +0700 [main] INFO  (Log.java:13) - Run test: when_createInvoiceWithoutProductOnStandardInvoiceInRealCompany_then_createFail
+2024-02-26 11:16:50,280 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:21:45,797 +0700 [main] INFO  (Log.java:13) - Passed: when_createInvoiceWithoutProductOnStandardInvoiceInRealCompany_then_createFail
+2024-02-26 11:21:45,803 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnProductLineNullWithOutClickOnIt_then_createSuccess
+2024-02-26 11:21:45,803 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:26:35,020 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithAnProductLineNullWithOutClickOnIt_then_createSuccess
+2024-02-26 11:26:35,023 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnotherReceiptLanguageChoseCustomerFirst_then_createSuccess
+2024-02-26 11:26:35,023 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:32:01,151 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithAnotherReceiptLanguageChoseCustomerFirst_then_createSuccess
+2024-02-26 11:32:01,151 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithAnotherReceiptLanguage_then_createSuccess
+2024-02-26 11:32:01,151 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:37:19,783 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithAnotherReceiptLanguage_then_createSuccess
+2024-02-26 11:37:19,785 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithChangePriceOfProduct_then_createSuccess
+2024-02-26 11:37:19,785 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:42:40,327 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithChangePriceOfProduct_then_createSuccess
+2024-02-26 11:42:40,328 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyProduct_then_createSuccess
+2024-02-26 11:42:40,328 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:47:59,882 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyProduct_then_createSuccess
+2024-02-26 11:47:59,884 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithManyProductsAndChangeAnyProductPrice_then_createSuccess
+2024-02-26 11:47:59,884 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:53:26,070 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithManyProductsAndChangeAnyProductPrice_then_createSuccess
+2024-02-26 11:53:26,072 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithProductOnPopularProductSection_then_createSuccess
+2024-02-26 11:53:26,072 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 11:59:10,133 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithProductOnPopularProductSection_then_createSuccess
+2024-02-26 11:59:10,135 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithUpdateDiscountOfAllProducts_then_createSuccess
+2024-02-26 11:59:10,135 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 12:04:35,745 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithUpdateDiscountOfAllProducts_then_createSuccess
+2024-02-26 12:04:35,746 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithUpdateDiscountOfAnyProduct_then_createSuccess
+2024-02-26 12:04:35,746 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 12:10:04,907 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithUpdateDiscountOfAnyProduct_then_createSuccess
+2024-02-26 12:10:04,912 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithUpdateDiscountOfProduct_then_createSuccess
+2024-02-26 12:10:04,912 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 12:14:55,140 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceWithUpdateDiscountOfProduct_then_createSuccess
+2024-02-26 12:14:55,143 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceWithUpdateQuantityOfAnyProducts_then_createSuccess
+2024-02-26 12:14:55,143 +0700 [main] INFO  (Log.java:13) - Test on Language:English
