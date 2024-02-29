@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 public class AttachmentDocumentHelper {
     private WebDriver _driver;
     private String _srcImage = "D://ERP//Selenium-ERP//src//test//java//resources//image//image.png";
+    private String _avatarImage = "D://ERP//Selenium-ERP//src//test//java//resources//image//avatar.png";
 
     public AttachmentDocumentHelper(WebDriver driver)
     {
@@ -21,6 +22,11 @@ public class AttachmentDocumentHelper {
             WebElement fileInput = _driver.findElement(element);
             fileInput.sendKeys(_srcImage);
 
+    }
 
+    public void addAvatar (By element)
+    {
+        WebElement fileInput = _driver.findElement(element);
+        fileInput.sendKeys(_avatarImage);
     }
 }

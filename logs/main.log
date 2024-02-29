@@ -7803,3 +7803,177 @@ Session ID: c51f030e7e41ec0c0341fa93e7dc32de
 2024-02-20 20:56:23,380 +0700 [main] INFO  (Log.java:13) - Test on Language:English
 2024-02-20 21:00:56,175 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAttachmentImageAndAddComment_then_createSuccess
 2024-02-20 21:00:56,178 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 13:35:19,662 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 13:35:19,663 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 13:35:51,405 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 13:37:01,081 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 13:37:01,082 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 13:38:06,236 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 13:40:26,696 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 13:40:26,698 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 13:43:02,494 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 13:49:55,867 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 13:49:55,869 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 13:53:01,987 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 13:56:11,951 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 13:56:11,953 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 13:59:48,166 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 14:16:08,362 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 14:16:08,362 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 16:07:05,138 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 16:07:05,140 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 16:11:11,992 +0700 [main] ERROR (Log.java:29) - Failed: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 16:11:11,992 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-cy='name-exist-error-message']"}
+  (Session info: chrome=121.0.6167.189)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [142079b3e8f6d1772b21549de0b8fce2, findElement {using=xpath, value=//div[@data-cy='name-exist-error-message']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.189, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52430}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52430/devtoo..., se:cdpVersion: 121.0.6167.189, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 142079b3e8f6d1772b21549de0b8fce2
+
+2024-02-26 16:16:00,612 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 16:16:00,614 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 16:20:08,630 +0700 [main] ERROR (Log.java:29) - Failed: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 16:20:08,631 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-cy='name-exist-error-message']"}
+  (Session info: chrome=121.0.6167.189)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [72c69be53122bfc75a1db2c32021cde1, findElement {using=xpath, value=//div[@data-cy='name-exist-error-message']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.189, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52856}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52856/devtoo..., se:cdpVersion: 121.0.6167.189, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 72c69be53122bfc75a1db2c32021cde1
+
+2024-02-26 16:29:36,304 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 16:29:36,306 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 16:33:53,180 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 16:53:24,850 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 16:53:24,852 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 16:58:07,005 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 17:00:55,113 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-26 17:00:55,114 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-26 17:05:45,468 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 10:42:59,993 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 10:42:59,995 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 10:47:46,899 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 10:50:20,253 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 10:50:20,255 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 10:55:07,256 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 10:58:07,614 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 10:58:07,616 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 11:02:54,535 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 11:03:54,245 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 11:03:54,248 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 11:08:41,392 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 11:19:33,751 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 11:19:33,752 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 11:25:01,686 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 11:29:29,573 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 11:29:29,574 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 11:34:53,364 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 11:36:17,489 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 11:36:17,490 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 11:43:40,319 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 11:52:50,865 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 11:52:50,868 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 11:59:01,911 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-27 12:14:45,775 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithGroup_then_createSuccess
+2024-02-27 12:14:45,777 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 12:22:38,569 +0700 [main] ERROR (Log.java:29) - Failed: createCustomerWithGroup_then_createSuccess
+2024-02-27 12:22:38,570 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button _ngcontent-vgx-c392="" color="primary" data-cy="create-contact-button" id="create-contact-button" ngclass.xs="w-100" l10ntranslate="" mat-flat-button="" type="button" class="mat-focus-indicator mat-tooltip-trigger mat-flat-button mat-button-base mat-primary text-uppercase touch-action-auto" aria-describedby="cdk-describedby-message-vgx-1-97" cdk-describedby-host="vgx-1">...</button> is not clickable at point (1695, 852). Other element would receive the click: <mat-tooltip-component aria-hidden="true" class="ng-star-inserted" style="zoom: 1;">...</mat-tooltip-component>
+  (Session info: chrome=121.0.6167.189)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a79f9b87fb434c998e13926a6c9d2246, clickElement {id=A18891ABB6A42B88538AE2D28DD14510_element_4397}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.189, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63377}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63377/devtoo..., se:cdpVersion: 121.0.6167.189, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (a79f9b87fb434c998e13926a6c9d2246)] -> xpath: //button[@data-cy='create-contact-button']]
+Session ID: a79f9b87fb434c998e13926a6c9d2246
+
+2024-02-27 12:23:32,561 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithGroup_then_createSuccess
+2024-02-27 12:23:32,565 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 12:30:17,711 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithGroup_then_createSuccess
+2024-02-27 13:48:34,211 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithDiscount_then_createSuccess
+2024-02-27 13:48:34,215 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 13:52:57,919 +0700 [main] ERROR (Log.java:29) - Failed: createCustomerWithDiscount_then_createSuccess
+2024-02-27 13:52:57,919 +0700 [main] ERROR (Log.java:29) - java.lang.NullPointerException: Cannot invoke "java.util.Random.nextDouble(double, double)" because "this.ran" is null
+
+2024-02-27 13:58:17,342 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithDiscount_then_createSuccess
+2024-02-27 13:58:17,344 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 14:01:54,994 +0700 [main] ERROR (Log.java:29) - Failed: createCustomerWithDiscount_then_createSuccess
+2024-02-27 14:01:54,994 +0700 [main] ERROR (Log.java:29) - java.lang.NullPointerException: Cannot invoke "java.util.Random.nextDouble(double, double)" because "this.ran" is null
+
+2024-02-27 14:05:03,393 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithDiscount_then_createSuccess
+2024-02-27 14:05:03,398 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 14:12:28,583 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithDiscount_then_createSuccess
+2024-02-27 14:48:41,466 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithAnotherCurrency_then_createSuccess
+2024-02-27 14:48:41,468 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 14:56:10,369 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithAnotherCurrency_then_createSuccess
+2024-02-27 15:38:01,212 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithAnotherLanguage_then_createSuccess
+2024-02-27 15:38:01,215 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 15:48:10,932 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithAnotherLanguage_then_createSuccess
+2024-02-27 16:21:07,210 +0700 [main] INFO  (Log.java:13) - Run test: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-27 16:21:07,212 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-27 16:26:32,312 +0700 [main] INFO  (Log.java:13) - Passed: createInvoiceAttachmentImageAndAddComment_then_createSuccess
+2024-02-28 10:56:46,210 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithCustomerNameNull_then_createSuccess
+2024-02-28 10:56:46,214 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-28 11:01:12,801 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithCustomerNameNull_then_createSuccess
+2024-02-29 11:52:01,487 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithAnotherCurrency_then_createSuccess
+2024-02-29 11:52:01,492 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 12:01:54,512 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithAnotherCurrency_then_createSuccess
+2024-02-29 12:01:54,514 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithAnotherLanguage_then_createSuccess
+2024-02-29 12:01:54,515 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 12:05:08,847 +0700 [main] ERROR (Log.java:29) - Failed: createCustomerWithAnotherLanguage_then_createSuccess
+2024-02-29 12:05:08,848 +0700 [main] ERROR (Log.java:29) - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //app-client-sidebar//a[4] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.189, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\Nhan\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59102}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59102/devtoo..., se:cdpVersion: 121.0.6167.189, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b3f77888f9d73d9cb0ad3a7aa493d46b
+
+2024-02-29 12:05:17,781 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithCustomerNameNull_then_createFailed
+2024-02-29 12:05:17,781 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 12:08:28,286 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithAnotherCurrency_then_createSuccess
+2024-02-29 12:08:28,287 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 12:12:16,129 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithAnotherCurrency_then_createSuccess
+2024-02-29 12:12:16,133 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithAnotherLanguage_then_createSuccess
+2024-02-29 12:12:16,134 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 12:15:52,280 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithAnotherLanguage_then_createSuccess
+2024-02-29 12:15:52,284 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithCustomerNameNull_then_createFailed
+2024-02-29 12:15:52,284 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 12:17:56,018 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithCustomerNameNull_then_createFailed
+2024-02-29 12:17:56,020 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithDiscount_then_createSuccess
+2024-02-29 12:17:56,020 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 12:21:15,964 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithDiscount_then_createSuccess
+2024-02-29 12:21:15,966 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithGroup_then_createSuccess
+2024-02-29 12:21:15,966 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 12:27:27,823 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithGroup_then_createSuccess
+2024-02-29 12:27:27,827 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithValidInformation_then_createSuccess
+2024-02-29 12:27:27,827 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 12:31:02,917 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithValidInformation_then_createSuccess
+2024-02-29 13:21:59,184 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithSelectGroupInList_then_createFailed
+2024-02-29 13:21:59,187 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 13:24:34,273 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithSelectGroupInList_then_createFailed
+2024-02-29 14:22:04,418 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithUploadAvatar_then_createFailed
+2024-02-29 14:22:04,421 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 14:23:33,901 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithUploadAvatar_then_createFailed
+2024-02-29 14:37:08,837 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithUploadAvatar_then_createFailed
+2024-02-29 14:37:08,838 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 14:38:38,683 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithUploadAvatar_then_createFailed
+2024-02-29 14:39:36,817 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithUploadAvatar_then_createFailed
+2024-02-29 14:39:36,819 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 14:41:09,403 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithUploadAvatar_then_createFailed
+2024-02-29 14:42:45,993 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithUploadAvatar_then_createFailed
+2024-02-29 14:42:45,995 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 14:44:51,921 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithUploadAvatar_then_createFailed
+2024-02-29 14:57:46,887 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithCancelUploadAvatar_then_createFailed
+2024-02-29 14:57:46,889 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 14:59:52,901 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithCancelUploadAvatar_then_createFailed
+2024-02-29 15:02:10,019 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithCancelUploadAvatar_then_createSuccess
+2024-02-29 15:02:10,026 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 15:04:16,798 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithCancelUploadAvatar_then_createSuccess
+2024-02-29 15:27:38,979 +0700 [main] INFO  (Log.java:13) - Run test: createCustomerWithSameName_then_createFailed
+2024-02-29 15:27:38,980 +0700 [main] INFO  (Log.java:13) - Test on Language:English
+2024-02-29 15:29:49,090 +0700 [main] INFO  (Log.java:13) - Passed: createCustomerWithSameName_then_createFailed

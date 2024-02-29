@@ -98,7 +98,7 @@ public class CompanyListPage {
         var companyTypes = driver.findElements(companyType);
         var com = driver.findElements(companies);
         for (int i = 0; i < companyTypes.size(); i++) {
-            if (companyTypes.get(i).getText().equals(type)) {
+            if (companyTypes.get(i).getText().contains(type)) {
                 System.out.println("The company "+(i+1)+ ": " +companyTypes.get(i).getText() + " match with type " +type);
                 com.get(i).click();
                 break;
