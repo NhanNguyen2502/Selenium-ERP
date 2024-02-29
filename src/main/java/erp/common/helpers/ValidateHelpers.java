@@ -118,8 +118,6 @@ public class ValidateHelpers {
         } catch (NoSuchElementException e) {
             return false;
         }
-
-
     }
 
     public void clickOutside() {
@@ -151,7 +149,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             wait.until(jsWait);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete after click or chose element");
@@ -166,7 +164,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(30000);
+            Thread.sleep(10000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
