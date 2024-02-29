@@ -98,7 +98,7 @@ public class CreateSalePage {
     private By invoiceProductPriceInput = By.xpath("//input[@id='price-input']");
     private By invoiceHistorySection = By.xpath("//app-invoice-detail-histories");
     private By invoiceRateInput = By.xpath("//input[@data-cy='exchange-rate-input']");
-    private By invoiceReceiptLanguageInput = By.xpath("//input[@data-cy='language-select-input']");
+    private By invoiceReceiptLanguageInput = By.xpath("//app-language-select//input");
     private By invoiceIDNumber = By.xpath("//span[@data-cy='invoice-detail-number']");
     private By invoiceQuantityInput = By.xpath("//input[@data-cy='quantity']");
     private By invoiceDiscountInput = By.xpath("//input[@data-cy='discount']");
@@ -108,6 +108,7 @@ public class CreateSalePage {
     private By invoiceProductsOnPopularProductSection = By.xpath("//app-draft-invoice-most-popular-products//span[@class='product-name text-truncate']");
     private By invoiceCommentArea = By.xpath("//textarea");
     private By invoiceAttachmentInput = By.xpath("//app-upload-file//input");
+    private By invoiceFeeAmount = By.xpath("//input[@data-cy='invoice-currency-amount']");
 
 
     public CreateSalePage(WebDriver driver) {
@@ -121,45 +122,73 @@ public class CreateSalePage {
         ran = new Random();
         _attachmentDocumentHelper = new AttachmentDocumentHelper(driver);
     }
-    public void attachmentImage()
+
+    public void updateAmountOfFee()
     {
+        var _randomAmount = ran.nextDouble(1,1000);
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(3);
+        validateHelpers.clearElement(invoiceFeeAmount);
+        validateHelpers.setText(invoiceFeeAmount,String.valueOf(df.format(_randomAmount)));
+    }
+
+    public void fillAllFeesOnFeeSection() {
+        var _feeFields = validateHelpers.getList(invoiceFeeField);
+        if (!_feeFields.isEmpty()) {
+            for (WebElement _feeElement : _feeFields) {
+                _feeElement.click();
+                validateHelpers.waitAfterChoseOrClickElement();
+                var _feeList = validateHelpers.getList(invoiceFeeList);
+                if (!_feeList.isEmpty()) {
+                    var _ranDomFee = ran.nextInt(_feeList.size());
+                    _feeList.get(_ranDomFee).click();
+                } else {
+                    createFeePage.createFeeOnInvoice();
+                }
+            }
+        }
+    }
+
+    public void addManyFeeLineOnFeeSection() {
+        var _numberOfFee = ran.nextInt(1, 10);
+        for (int i = 0; i < _numberOfFee; i++) {
+            validateHelpers.clickElement(invoiceAddNewFeeOnFeeLineButton);
+        }
+
+    }
+
+    public void attachmentImage() {
         _attachmentDocumentHelper.attachmentImage(invoiceAttachmentInput);
     }
 
-    public  void addCommentOnInvoice()
-    {
+    public void addCommentOnInvoice() {
         validateHelpers.clickElement(invoiceCommentArea);
-        validateHelpers.setText(invoiceCommentArea,FakeDataHelper.getFakedata().text().text(1,255));
+        validateHelpers.setText(invoiceCommentArea, FakeDataHelper.getFakedata().text().text(1, 255));
     }
-    public void selectProductOnPopularProductSection()
-    {
-        var _productList =  validateHelpers.getList(invoiceProductsOnPopularProductSection);
-        if(!_productList.isEmpty())
-        {
+
+    public void selectProductOnPopularProductSection() {
+        var _productList = validateHelpers.getList(invoiceProductsOnPopularProductSection);
+        if (!_productList.isEmpty()) {
             var _selectRandom = ran.nextInt(_productList.size());
             _productList.get(_selectRandom).click();
-        }
-        else {
+        } else {
             System.out.println("Customer has not the popular product!. We will select a random product.");
             selectProduct();
         }
     }
-    public void updateDiscountOfAllProducts()
-    {
+
+    public void updateDiscountOfAllProducts() {
         var _discountInputList = validateHelpers.getList(invoiceDiscountInput);
-        if(_discountInputList.isEmpty())
-        {
-            for(WebElement a : _discountInputList)
-            {
-                var _discountRandomNumber = ran.nextInt(0,10);
+        if (_discountInputList.isEmpty()) {
+            for (WebElement a : _discountInputList) {
+                var _discountRandomNumber = ran.nextInt(0, 10);
                 a.clear();
                 a.sendKeys(String.valueOf(_discountRandomNumber));
             }
         }
     }
 
-    public void confirmCreateInvoiceAmout0()
-    {
+    public void confirmCreateInvoiceAmout0() {
         try {
             driver.findElement(invoiceConfirmCreateInvoiceAmount0Button).click();
             System.out.println("Confirm create invoice with amount 0 success.");
