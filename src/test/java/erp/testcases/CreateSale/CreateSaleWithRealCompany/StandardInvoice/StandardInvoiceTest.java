@@ -741,4 +741,111 @@ public class StandardInvoiceTest extends BaseSetup {
         validateHelpers.logout();
     }
 
+    @Test(priority = 5)
+    @Parameters({"language"})
+    public void createInvoiceWithManyFees_then_createSuccess(@Optional("English") String language) {
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        salePage.gtoSaleViaShortCut();
+        validateHelpers.waitForLoadJs();
+        createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.checkConfirmChangeCurrencyDialog();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.cancelChangeCurrency();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectProduct();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.addManyFeeLineOnFeeSection();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.fillAllFeesOnFeeSection();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.clickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.checkConfirmCreateInvoiceWith0Mount();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.confirmCreateInvoiceAmout0();
+        validateHelpers.waitForLoadJs();
+        createSalePage.checkInvoiceAfterClickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.logout();
+    }
+
+    @Test(priority = 5)
+    @Parameters({"language"})
+    public void createInvoiceAmoutFeeHasBeenUpdate_then_createSuccess(@Optional("English") String language) {
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        salePage.gtoSaleViaShortCut();
+        validateHelpers.waitForLoadJs();
+        createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.checkConfirmChangeCurrencyDialog();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.cancelChangeCurrency();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectProduct();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.updateAmountOfFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.clickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.checkConfirmCreateInvoiceWith0Mount();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.confirmCreateInvoiceAmout0();
+        validateHelpers.waitForLoadJs();
+        createSalePage.checkInvoiceAfterClickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.logout();
+    }
+
+    @Test(priority = 5)
+    @Parameters({"language"})
+    public void createInvoiceWithManyFeeAndManyProduct_then_createSuccess(@Optional("English") String language) {
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        salePage.gtoSaleViaShortCut();
+        validateHelpers.waitForLoadJs();
+        createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.checkConfirmChangeCurrencyDialog();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.cancelChangeCurrency();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.addAProductLineIntoProductSection();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.fillProductIntoProductlines();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.addManyFeeLineOnFeeSection();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.fillAllFeesOnFeeSection();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.clickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.checkConfirmCreateInvoiceWith0Mount();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.confirmCreateInvoiceAmout0();
+        validateHelpers.waitForLoadJs();
+        createSalePage.checkInvoiceAfterClickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.logout();
+    }
+
 }
