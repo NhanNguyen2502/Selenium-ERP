@@ -148,6 +148,7 @@ public class CreateCustomerTest extends BaseSetup {
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
+
     @Test(priority = 0)
     @Parameters({"language"})
     public void createCustomerWithAnotherLanguage_then_createSuccess(@Optional("English") String language) {
@@ -205,6 +206,7 @@ public class CreateCustomerTest extends BaseSetup {
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
+
     @Test(priority = 0)
     @Parameters({"language"})
     public void createCustomerWithSelectGroupInList_then_createFailed(@Optional("English") String language) {
