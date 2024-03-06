@@ -29,14 +29,14 @@ public class ValidateHelpers {
     public ValidateHelpers(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //actions = new Actions(driver);
+        actions = new Actions(driver);
     }
 
     public void  moveToElement(By element)
     {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-            //actions.moveToElement(driver.findElement(element));
+            actions.moveToElement(driver.findElement(element));
         }catch (NoSuchElementException e)
         {
             System.out.println(e.getMessage());
@@ -121,7 +121,7 @@ public class ValidateHelpers {
     }
 
     public void clickOutside() {
-        //actions.moveByOffset(0, 0).click().build().perform();
+        actions.moveByOffset(0, 0).click().build().perform();
     }
 
     public void logout() {
@@ -156,6 +156,38 @@ public class ValidateHelpers {
         }
     }
 
+    public void waitForLoadJsCreatePage() {
+        ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
+            }
+        };
+        try {
+            Thread.sleep(10000);
+            wait.until(jsLoad);
+        } catch (Throwable error) {
+            Assert.fail("Timeout waiting for Page Load Request to complete.");
+
+        }
+    }
+
+    public void waitForLoadJsLoginPage() {
+        ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
+            }
+        };
+        try {
+            Thread.sleep(30000);
+            wait.until(jsLoad);
+        } catch (Throwable error) {
+            Assert.fail("Timeout waiting for Page Load Request to complete.");
+
+        }
+    }
+
     public void waitForLoadJs() {
         ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
             @Override
@@ -181,7 +213,7 @@ public class ValidateHelpers {
     }
 
     public void verifylanguage(String language) {
-        waitForLoadJs();
+        waitForLoadJsCreatePage();
         clickElement(languageButton);
         wait.until(ExpectedConditions.elementToBeClickable(languageOptions));
         var options = getList(languageOptions);
