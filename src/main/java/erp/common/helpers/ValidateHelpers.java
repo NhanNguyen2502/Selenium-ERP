@@ -32,13 +32,25 @@ public class ValidateHelpers {
         actions = new Actions(driver);
     }
 
-    public void  moveToElement(By element)
-    {
+    public boolean checkElemenNull(By element) {
+
+        try {
+            var a = driver.findElements(element);
+            if (a.isEmpty())
+            {
+                return true;
+            }
+            return false;
+        } catch (NoSuchElementException e) {
+            return true;
+        }
+    }
+
+    public void moveToElement(By element) {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(element));
             actions.moveToElement(driver.findElement(element));
-        }catch (NoSuchElementException e)
-        {
+        } catch (NoSuchElementException e) {
             System.out.println(e.getMessage());
         }
 
@@ -56,8 +68,7 @@ public class ValidateHelpers {
         List<WebElement> list = null;
         try {
             list = driver.findElements(element);
-        }catch (NoSuchElementException e)
-        {
+        } catch (NoSuchElementException e) {
             System.out.println(e.toString());
         }
         return list;
@@ -138,9 +149,10 @@ public class ValidateHelpers {
         return Jsoup.parse(content).text();
     }
 
-    public void waitVisibility(By element){
+    public void waitVisibility(By element) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
+
     public void waitAfterChoseOrClickElement() {
         ExpectedCondition<Boolean> jsWait = new ExpectedCondition<Boolean>() {
             @Override
@@ -180,7 +192,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(30000);
+            Thread.sleep(50000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
