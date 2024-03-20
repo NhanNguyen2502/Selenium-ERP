@@ -12,20 +12,20 @@ import org.testng.Assert;
 import java.text.DecimalFormat;
 import java.util.Random;
 
-public class CreateCustomerPage {
+public class CreateSupplierPage {
     private WebDriver driver;
     private ValidateHelpers validateHelpers;
     private Random ran;
     private AttachmentDocumentHelper attachmentDocumentHelper;
-    private String _customerNameExist;
+    private String _supplierNameExist;
+    private String _supplierName;
 
-    //Create Customer on the create Invoice Page
-    private By invoiceAddCustomerButton = By.xpath("(//button[@apptooltip='regularInvoice.button.createContactTooltip'])[2]");
-    private By invoiceCustomerNamefield = By.xpath("//input[@apptooltip='invoicesCommon.dialog.createEditContact.inputField.contactNameTooltip']");
-    private By invoiceCreateCustomerButton = By.xpath("//app-create-edit-contact-dialog//button[@data-cy='dialog-confirm-button']");
-    private By invoiceCustomerNameError = By.xpath("//mat-error//div");
-    private By customerLeftMenu = By.xpath("//a[@data-cy='sidebar-customer-link']");
-    private By cusTometTableCreateCustomerButton = By.xpath("//button[@data-cy='create-contact-button']");
+    //Create Supplier on the create Invoice Page
+    private By invoiceAddSupplierButton = By.xpath("(//button[@apptooltip='regularInvoice.button.createContactTooltip'])[2]");
+    private By invoiceSupplierNamefield = By.xpath("//input[@apptooltip='invoicesCommon.dialog.createEditContact.inputField.contactNameTooltip']");
+    private By invoiceCreateSupplierButton = By.xpath("//app-create-edit-contact-dialog//button[@data-cy='dialog-confirm-button']");
+    private By invoiceSupplierNameError = By.xpath("//mat-error//div");
+    private By cusTometTableCreateSupplierButton = By.xpath("//button[@data-cy='create-contact-button']");
     private By customerNameField = By.xpath("//input[@data-cy='contact-name']");
     private By customerNameExist = By.xpath("//div[@data-cy='name-exist-error-message']");
     private By customerEmailField = By.xpath("//input[@data-cy='email']");
@@ -49,7 +49,7 @@ public class CreateCustomerPage {
     private By customerExistWarning = By.xpath("//div[@data-cy='name-exist-error-message']");
     private By supplierLeftMenu = By.xpath("//a[@data-cy='sidebar-supplier-link']");
 
-    public CreateCustomerPage(WebDriver driver) {
+    public CreateSupplierPage(WebDriver driver) {
         this.driver = driver;
         validateHelpers = new ValidateHelpers(driver);
         ran = new Random();
@@ -61,7 +61,7 @@ public class CreateCustomerPage {
         validateHelpers.clickElement(supplierLeftMenu);
     }
 
-    public void verifyCustomerNameExist()
+    public void verifySupplierNameExist()
     {
         try {
             if(driver.findElement(customerNameExist).isDisplayed())
@@ -75,12 +75,12 @@ public class CreateCustomerPage {
     }
 
     public void enterNameAlreadyExist(){
-        if(!_customerNameExist.isEmpty())
+        if(!_supplierNameExist.isEmpty())
         {
-            validateHelpers.setText(customerNameField,_customerNameExist);
+            validateHelpers.setText(customerNameField,_supplierNameExist);
         }
         else {
-            enterCustomerName();
+            enterSupplierName();
         }
     }
     public void getNameAlreadyExist() {
@@ -88,12 +88,12 @@ public class CreateCustomerPage {
         if(!_nameList.isEmpty())
         {
             var _selectRandom = ran.nextInt(_nameList.size());
-            _customerNameExist = _nameList.get(_selectRandom).getText();
+            _supplierNameExist = _nameList.get(_selectRandom).getText();
         }
         else
         {
             System.out.println("The list name is empty");
-            _customerNameExist = null;
+            _supplierNameExist = null;
         }
     }
 
@@ -128,14 +128,14 @@ public class CreateCustomerPage {
         if (!_groupList.isEmpty()) {
             _groupList.get(_groupRandom).click();
         } else {
-            enterGroupForCustomer();
+            enterGroupForSupplier();
         }
     }
 
-    public void checkCustomerNameNull() {
+    public void checkSupplierNameNull() {
         try {
             if (driver.findElement(customerNameRequiredTex).isDisplayed()) {
-                System.out.println("Customer name  is null");
+                System.out.println("Supplier name  is null");
             }
         } catch (NoSuchElementException e) {
             System.out.println("Text required does not exist!!!");
@@ -180,14 +180,14 @@ public class CreateCustomerPage {
         validateHelpers.setText(customerDiscount, String.valueOf(df.format(_discountRandom)));
     }
 
-    public void enterGroupForCustomer() {
+    public void enterGroupForSupplier() {
         validateHelpers.setText(customerGroup, FakeDataHelper.getFakedata().name().title());
     }
 
     public void verifyCreate() {
         try {
             if (driver.findElement(customerTitle).isDisplayed()) {
-                System.out.println("Create Customer successfully!!!");
+                System.out.println("Create Supplier success with supplier name: "+_supplierName);
             }
         } catch (NoSuchElementException e) {
             System.out.println("Create Failed.");
@@ -229,15 +229,17 @@ public class CreateCustomerPage {
         validateHelpers.setText(customerEmailField, FakeDataHelper.getFakedata().text().text(3) + "@mailinator.com");
     }
 
-    public void enterCustomerName() {
-        validateHelpers.setText(customerNameField, FakeDataHelper.getFakedata().name().name());
+    public String enterSupplierName() {
+        _supplierName = FakeDataHelper.getFakedata().name().name();
+        validateHelpers.setText(customerNameField, _supplierName);
         validateHelpers.clickOutside();
         try {
             if (driver.findElement(customerNameExist).isDisplayed()) {
                 for (int i = 0; ; i++) {
                     if (driver.findElement(customerNameExist).isDisplayed()) {
                         validateHelpers.clearElement(customerNameField);
-                        validateHelpers.setText(customerNameField, FakeDataHelper.getFakedata().name().name());
+                        _supplierName = FakeDataHelper.getFakedata().name().name();
+                        validateHelpers.setText(customerNameField, _supplierName);
                         validateHelpers.clickOutside();
                     } else {
                         break;
@@ -249,34 +251,31 @@ public class CreateCustomerPage {
         } catch (NoSuchElementException e) {
             System.out.println("Element does not exist! ");
         }
-
+        return _supplierName;
 
     }
 
-    public void goToCreateCustomerPage() {
-        validateHelpers.clickElement(cusTometTableCreateCustomerButton);
+    public void goToCreateSupplierPage() {
+        validateHelpers.clickElement(cusTometTableCreateSupplierButton);
     }
 
-    public void goToTheCustomerTable() {
-        validateHelpers.clickElement(customerLeftMenu);
-    }
 
-    public void createCustomerOnCreateInvoicePage(String customerNameError) {
+    public void createSupplierOnCreateInvoicePage(String customerNameError) {
         var message = "null";
-        Assert.assertTrue(validateHelpers.checkDisplayed(invoiceAddCustomerButton));
-        validateHelpers.clickElement(invoiceAddCustomerButton);
+        Assert.assertTrue(validateHelpers.checkDisplayed(invoiceAddSupplierButton));
+        validateHelpers.clickElement(invoiceAddSupplierButton);
         validateHelpers.waitForLoadJs();
-        Assert.assertTrue(validateHelpers.checkDisplayed(invoiceCustomerNamefield));
-        validateHelpers.setText(invoiceCustomerNamefield, FakeDataHelper.getFakedata().name().fullName());
-        validateHelpers.clickElement(invoiceCreateCustomerButton);
+        Assert.assertTrue(validateHelpers.checkDisplayed(invoiceSupplierNamefield));
+        validateHelpers.setText(invoiceSupplierNamefield, FakeDataHelper.getFakedata().name().fullName());
+        validateHelpers.clickElement(invoiceCreateSupplierButton);
         try {
-            message = driver.findElement(invoiceCustomerNameError).getText();
+            message = driver.findElement(invoiceSupplierNameError).getText();
             for (int i = 0; ; i++) {
                 if (message.contains(customerNameError)) {
-                    validateHelpers.clearElement(invoiceCustomerNamefield);
-                    validateHelpers.setText(invoiceCustomerNamefield, FakeDataHelper.getFakedata().name().fullName());
-                    message = driver.findElement(invoiceCustomerNameError).getText();
-                    validateHelpers.clickElement(invoiceCreateCustomerButton);
+                    validateHelpers.clearElement(invoiceSupplierNamefield);
+                    validateHelpers.setText(invoiceSupplierNamefield, FakeDataHelper.getFakedata().name().fullName());
+                    message = driver.findElement(invoiceSupplierNameError).getText();
+                    validateHelpers.clickElement(invoiceCreateSupplierButton);
                     break;
                 }
             }
