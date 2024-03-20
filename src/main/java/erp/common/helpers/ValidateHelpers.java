@@ -33,7 +33,6 @@ public class ValidateHelpers {
     }
 
     public boolean checkElemenNull(By element) {
-
         try {
             var a = driver.findElements(element);
             if (a.isEmpty())
