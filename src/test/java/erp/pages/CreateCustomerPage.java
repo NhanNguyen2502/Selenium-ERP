@@ -48,6 +48,7 @@ public class CreateCustomerPage {
     private By customerNameList = By.xpath("//div[@data-cy='contact-name']");
     private By customerExistWarning = By.xpath("//div[@data-cy='name-exist-error-message']");
     private By supplierLeftMenu = By.xpath("//a[@data-cy='sidebar-supplier-link']");
+    private By arabicDialCode = By.xpath("//mat-option[@data-cy='phone-dial-code-option']");
 
     public CreateCustomerPage(WebDriver driver) {
         this.driver = driver;
@@ -203,6 +204,7 @@ public class CreateCustomerPage {
         if (!_phoneDial.contains("+964")) {
             validateHelpers.clearElement(phoneDialCodeField);
             validateHelpers.setText(phoneDialCodeField, "+964");
+            validateHelpers.clickElement(arabicDialCode);
         }
         try {
             validateHelpers.setText(phonenumberField, "0" + FakeDataHelper.createFakeByLocate(PropertiesHelper.getValue("LOCATE1")).phoneNumber().cellPhone()

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CompanyList_Suite">
+    <listeners>
+        <listener class-name="erp.base.ReportListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="CreateSale_Suite">
+        <parameter name="language" value="${language.name}"></parameter>
+        <classes>
+            <class name="erp.testcases.CreateSale.RealCompany.StandardInvoice.StandardInvoiceTest">
+                <methods >
+                    <include name="createInvoiceWithChangePriceOfProduct_then_createSuccess"/>
+                    <include name="createInvoiceWithManyProduct_then_createSuccess"/>
+                    <include name="createInvoiceWithManyProductsAndChangeAnyProductPrice_then_createSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

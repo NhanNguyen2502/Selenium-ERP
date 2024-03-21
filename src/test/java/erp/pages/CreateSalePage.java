@@ -109,6 +109,10 @@ public class CreateSalePage {
     private By invoiceCommentArea = By.xpath("//textarea");
     private By invoiceAttachmentInput = By.xpath("//app-upload-file//input");
     private By invoiceFeeAmount = By.xpath("//input[@data-cy='invoice-currency-amount']");
+    private By warningFirstInvoiceNumber = By.xpath("//app-add-invoice-number-series-dialog");
+    private By fristInvoiceNumberField = By.xpath("//input[@data-cy='invoice-number-input']");
+    private By fristInvoiceNumberConfirmButton = By.xpath("//button[@data-cy='dialog-confirm-button']");
+    private By fristInvoiceNumberCancelButton = By.xpath("//button[@data-cy='dialog-cancel-button']");
 
 
     public CreateSalePage(WebDriver driver) {
@@ -123,13 +127,33 @@ public class CreateSalePage {
         _attachmentDocumentHelper = new AttachmentDocumentHelper(driver);
     }
 
-    public void updateAmountOfFee()
-    {
-        var _randomAmount = ran.nextDouble(1,1000);
+    public void confirmSetFirstInvoiceNumber() {
+        try {
+            if (driver.findElement(warningFirstInvoiceNumber).isDisplayed()) {
+                var _numberRandom = ran.nextInt(1000,9999);
+                validateHelpers.setText(fristInvoiceNumberField,String.valueOf( _numberRandom));
+                validateHelpers.clickElement(fristInvoiceNumberConfirmButton);
+            }
+        } catch (NoSuchElementException e) {
+            System.out.println("The warning First Invoice does not display!!!");
+        }
+    }
+    public void skipSetFirstInvoiceNumber() {
+        try {
+            if (driver.findElement(warningFirstInvoiceNumber).isDisplayed()) {
+                validateHelpers.clickElement(fristInvoiceNumberCancelButton);
+            }
+        } catch (NoSuchElementException e) {
+            System.out.println("The warning First Invoice does not display!!!");
+        }
+    }
+
+    public void updateAmountOfFee() {
+        var _randomAmount = ran.nextDouble(1, 1000);
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(3);
         validateHelpers.clearElement(invoiceFeeAmount);
-        validateHelpers.setText(invoiceFeeAmount,String.valueOf(df.format(_randomAmount)));
+        validateHelpers.setText(invoiceFeeAmount, String.valueOf(df.format(_randomAmount)));
     }
 
     public void fillAllFeesOnFeeSection() {
@@ -268,9 +292,8 @@ public class CreateSalePage {
             DecimalFormat df = new DecimalFormat();
             df.setMaximumFractionDigits(3);
             var randomPrice = ran.nextInt(0, priceList.size());
-            var oldPrice = Double.valueOf(priceList.get(randomPrice).getAttribute("value"));
             priceList.get(randomPrice).clear();
-            priceList.get(randomPrice).sendKeys(String.valueOf(df.format(ran.nextDouble(1, 1000))));
+            priceList.get(randomPrice).sendKeys(String.valueOf(df.format(ran.nextInt(1, 1000))));
         }
 
     }
@@ -333,10 +356,10 @@ public class CreateSalePage {
     }
 
     public void changeProductPriceOtherThan0() {
-        var a = Double.valueOf(validateHelpers.getValueByAttribute(invoiceProductPriceInput));
-        if (a == 0.00) {
+        var a = validateHelpers.getValueByAttribute(invoiceProductPriceInput);
+        if (a.contains("0.00") || a.contains("0")) {
             Random ran = new Random();
-            var random = ran.nextDouble(1000.00);
+            var random = ran.nextInt(1, 1000);
             DecimalFormat df = new DecimalFormat();
             df.setMaximumFractionDigits(3);
             System.out.println("Price of the product after change: " + df.format(random));
@@ -378,6 +401,7 @@ public class CreateSalePage {
     public void changeCurrencyOnInvoice() {
         _mainCurrencyOfCompany = validateHelpers.getValueByJSByID(invoiceMainCurrency);
         System.out.println("The main currency on the create invoice page: " + _mainCurrencyOfCompany);
+        validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.clickElement(invoiceCurrencyInputField);
         var currencyList = validateHelpers.getList(invoiceCurrencyList);
         if (!currencyList.isEmpty()) {

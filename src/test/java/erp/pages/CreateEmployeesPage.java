@@ -41,6 +41,7 @@ public class CreateEmployeesPage {
     private By employeeAddPhoneNumberButton = By.xpath("//button[@data-cy='add-phone-number-button']");
     private By employeeNameRequired = By.xpath("//div[@data-cy='duplicate-phone-number-and-name']");
     private By employeePhoneRequired = By.xpath("//div[@data-cy='phone-required-error-message']");
+    private By employeePhoneDial = By.xpath("//mat-option[@data-cy='phone-dial-code-option']");
 
 
     public CreateEmployeesPage(WebDriver driver) {
@@ -150,6 +151,7 @@ public class CreateEmployeesPage {
         if (!_phoneDial.contains("+964")) {
             validateHelpers.clearElement(phoneDialCodeField);
             validateHelpers.setText(phoneDialCodeField, "+964");
+            validateHelpers.clickElement(employeePhoneDial);
         }
         try {
             validateHelpers.setText(phonenumberField, "0" + FakeDataHelper.createFakeByLocate(PropertiesHelper.getValue("LOCATE1")).phoneNumber().cellPhone()
@@ -194,17 +196,20 @@ public class CreateEmployeesPage {
         Assert.assertTrue(validateHelpers.checkDisplayed(invoicePhoneNumberfield));
         Assert.assertTrue(validateHelpers.checkDisplayed(invoiceCreateEmployeeButton));
         validateHelpers.setText(invoiceEmployeeNameField, FakeDataHelper.getFakedata().name().fullName());
+        var _phoneDial = validateHelpers.getValueByAttribute(phoneDialCodeField);
+        if (!_phoneDial.contains("+964")) {
+            validateHelpers.clearElement(phoneDialCodeField);
+            validateHelpers.setText(phoneDialCodeField, "+964");
+            validateHelpers.clickElement(employeePhoneDial);
+        }
         validateHelpers.setText(invoicePhoneNumberfield, FakeDataHelper.createFakeByLocate(PropertiesHelper.getValue("LOCATE1")).phoneNumber().cellPhone()
                 .replace("(", "").replace(")", "").replace("-", "").replace(".", ""));
-        System.out.println(FakeDataHelper.createFakeByLocate(PropertiesHelper.getValue("LOCATE1")).phoneNumber().cellPhone());
         String warning = validateHelpers.getMessage(invoicePhoneNumberWarning);
         Assert.assertEquals(warning, phoneNUmberWarningText);
         for (int i = 0; ; i++) {
             if (warning.contains(phoneNUmberWarningText)) {
                 validateHelpers.clearElement(invoicePhoneNumberfield);
                 validateHelpers.setText(invoicePhoneNumberfield, "0" + FakeDataHelper.createFakeByLocate(PropertiesHelper.getValue("LOCATE1")).phoneNumber().cellPhone()
-                        .replace("(", "").replace(")", "").replace("-", "").replace(".", ""));
-                System.out.println("0" + FakeDataHelper.createFakeByLocate(PropertiesHelper.getValue("LOCATE1")).phoneNumber().cellPhone()
                         .replace("(", "").replace(")", "").replace("-", "").replace(".", ""));
                 validateHelpers.waitAfterChoseOrClickElement();
                 try {
