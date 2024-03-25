@@ -7,7 +7,7 @@ import erp.common.helpers.TranslationHelpers;
 import erp.common.helpers.ValidateHelpers;
 import erp.pages.CompanyListPage;
 import erp.pages.DashBoardPage;
-import erp.pages.SalePage;
+import erp.pages.SalePage.SalePage;
 import erp.pages.SignInPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;

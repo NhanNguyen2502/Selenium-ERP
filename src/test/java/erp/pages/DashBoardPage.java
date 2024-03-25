@@ -3,6 +3,7 @@ package erp.pages;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
 import erp.common.helpers.ValidateHelpers;
+import erp.pages.SalePage.SalePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

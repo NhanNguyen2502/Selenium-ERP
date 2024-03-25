@@ -4,6 +4,8 @@ import erp.base.BaseSetup;
 import erp.base.ReportListener;
 import erp.common.helpers.*;
 import erp.pages.*;
+import erp.pages.SalePage.CreateSalePage;
+import erp.pages.SalePage.SalePage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
