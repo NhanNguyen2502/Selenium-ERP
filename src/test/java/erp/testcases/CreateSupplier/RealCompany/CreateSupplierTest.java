@@ -5,7 +5,7 @@ import erp.common.helpers.GetTypeOfCompanyHelper;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.ValidateHelpers;
 import erp.pages.CompanyListPage;
-import erp.pages.CreateSupplierPage;
+import erp.pages.SupplierPage.CreateSupplierPage;
 import erp.pages.SignInPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;

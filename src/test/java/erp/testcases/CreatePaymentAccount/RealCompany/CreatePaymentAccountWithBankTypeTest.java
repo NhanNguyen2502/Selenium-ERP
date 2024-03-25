@@ -6,10 +6,9 @@ import erp.common.helpers.GetTypeOfCompanyHelper;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.ValidateHelpers;
 import erp.pages.CompanyListPage;
-import erp.pages.CreatePaymentAccount;
+import erp.pages.PaymentAccountPage.CreatePaymentAccount;
 import erp.pages.SignInPage;
 import org.openqa.selenium.WebDriver;
-import org.python.antlr.ast.Str;
 import org.testng.annotations.*;
 
 @Listeners(ReportListener.class)

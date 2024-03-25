@@ -6,9 +6,8 @@ import erp.common.helpers.GetTypeOfCompanyHelper;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.ValidateHelpers;
 import erp.pages.CompanyListPage;
-import erp.pages.CreateProductPage;
+import erp.pages.ProductPage.CreateProductPage;
 import erp.pages.SignInPage;
-import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
