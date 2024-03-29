@@ -18,7 +18,7 @@ public class UpdateCustomerPage {
     private Random ran;
     private AttachmentDocumentHelper attachmentDocumentHelper;
     private CreateCustomerPage createCustomerPage;
-    private String _customerNameExist;
+    private String _customerdeleted;
     private String _customerUpdated;
     private String _customerNameAfterUpdated;
 
@@ -50,6 +50,9 @@ public class UpdateCustomerPage {
     private By phonenumberField = By.xpath("//input[@data-cy='phone-number-input']");
     private By arabicDialCode = By.xpath("//mat-option[@data-cy='phone-dial-code-option']");
     private By customerNameRequiredTex = By.xpath("//div[@data-cy='name-required-error-message']");
+    private By customerDeleteButton = By.xpath("//button[@data-cy='contact-delete-button']");
+    private By customerConfirmDelete = By.xpath("//button[@data-cy='delete-button']");
+    private By customerCancelDelete = By.xpath("//button[@data-cy='cancel-button']");
 
 
     public UpdateCustomerPage(WebDriver driver) {
@@ -58,6 +61,37 @@ public class UpdateCustomerPage {
         ran = new Random();
         attachmentDocumentHelper = new AttachmentDocumentHelper(driver);
         createCustomerPage = new CreateCustomerPage(driver);
+    }
+
+
+    public void verifyDeleteFailed() {
+        try {
+            Assert.assertTrue(validateHelpers.checkElemenNull(customerTitle));
+            System.out.println("Deleted Failed: " + _customerdeleted);
+        } catch (NoSuchElementException e) {
+            Assert.fail("Verify Failed");
+        }
+    }
+    public void verifyDeleteSuccess() {
+        try {
+            Assert.assertTrue(driver.findElement(customerTitle).isDisplayed());
+            System.out.println("Deleted Success: " + _customerdeleted);
+        } catch (NoSuchElementException e) {
+            Assert.fail("Delete Failed");
+        }
+    }
+
+    public void cancelDelete() {
+        validateHelpers.clickElement(customerCancelDelete);
+    }
+
+    public void confirmDelete() {
+        validateHelpers.clickElement(customerConfirmDelete);
+    }
+
+    public void deleteCustomer() {
+        _customerdeleted = validateHelpers.getValueByAttribute(customerNameField);
+        validateHelpers.clickElement(customerDeleteButton);
     }
 
     public void checkCustomerNameNull() {

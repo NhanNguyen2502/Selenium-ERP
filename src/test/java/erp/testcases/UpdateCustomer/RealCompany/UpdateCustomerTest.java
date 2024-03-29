@@ -192,6 +192,7 @@ public class UpdateCustomerTest extends BaseSetup {
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
+
     @Test(priority = 0)
     @Parameters({"language"})
     public void updateCustomerGroup_then_updateSuccess(@Optional("English") String language) {
@@ -216,6 +217,7 @@ public class UpdateCustomerTest extends BaseSetup {
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
+
     @Test(priority = 0)
     @Parameters({"language"})
     public void updateCustomerUpdateDiscount_then_updateSuccess(@Optional("English") String language) {
@@ -240,6 +242,7 @@ public class UpdateCustomerTest extends BaseSetup {
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
+
     @Test(priority = 0)
     @Parameters({"language"})
     public void updateCustomerUpdateMail_then_updateSuccess(@Optional("English") String language) {
@@ -264,6 +267,7 @@ public class UpdateCustomerTest extends BaseSetup {
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
+
     @Test(priority = 0)
     @Parameters({"language"})
     public void updateCustomerUpdatePhone_then_updateSuccess(@Optional("English") String language) {
@@ -313,7 +317,8 @@ public class UpdateCustomerTest extends BaseSetup {
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
-//    @Test(priority = 0)
+
+    //    @Test(priority = 0)
 //    @Parameters({"language"})
 //    public void updateCustomerNameNull_then_updateFailed(@Optional("English") String language) {
 //        validateHelpers.waitForLoadJsLoginPage();
@@ -339,4 +344,52 @@ public class UpdateCustomerTest extends BaseSetup {
 //        validateHelpers.waitAfterChoseOrClickElement();
 //        validateHelpers.logout();
 //    }
+    @Test(priority = 0)
+    @Parameters({"language"})
+    public void updateCustomerConfirmDelete_then_deleteSuccess(@Optional("English") String language) {
+        validateHelpers.waitForLoadJsLoginPage();
+        signInPage.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        updateCustomerPage.goToTheCustomerTable();
+        validateHelpers.waitForLoadJs();
+        updateCustomerPage.selectCustomerToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateCustomerPage.deleteCustomer();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateCustomerPage.confirmDelete();
+        validateHelpers.waitForLoadJs();
+        updateCustomerPage.verifyDeleteSuccess();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.logout();
+    }
+    @Test(priority = 0)
+    @Parameters({"language"})
+    public void updateCustomerCancelDelete_then_deleteFailed(@Optional("English") String language) {
+        validateHelpers.waitForLoadJsLoginPage();
+        signInPage.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        updateCustomerPage.goToTheCustomerTable();
+        validateHelpers.waitForLoadJs();
+        updateCustomerPage.selectCustomerToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateCustomerPage.deleteCustomer();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateCustomerPage.cancelDelete();
+        validateHelpers.waitForLoadJs();
+        updateCustomerPage.verifyDeleteFailed();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.logout();
+    }
 }
