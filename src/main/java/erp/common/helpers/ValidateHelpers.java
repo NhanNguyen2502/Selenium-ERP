@@ -190,7 +190,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(50000);
+            Thread.sleep(10000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
@@ -206,7 +206,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
