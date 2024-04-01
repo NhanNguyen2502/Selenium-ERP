@@ -131,13 +131,12 @@ public class CreateProductPage {
             for (WebElement a : _typeList) {
                 if (!a.getText().contains(_oldType)) {
                     a.click();
+                    break;
                 }
             }
         } else {
             System.out.println("Type List is null");
         }
-
-
     }
 
     public void verifyAfterCreate_Failed() {
