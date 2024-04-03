@@ -159,7 +159,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             wait.until(jsWait);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete after click or chose element");

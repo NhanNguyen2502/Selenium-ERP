@@ -35,7 +35,6 @@ public class GetKeyOfSaleTypeByLanguageHelpers {
         var random = ran.nextInt(types.size());
         System.out.println("Type random selected: "+TranslationHelpers.setFile(language,types.get(random)));
         return TranslationHelpers.setFile(language,types.get(random));
-
     }
 
 }
