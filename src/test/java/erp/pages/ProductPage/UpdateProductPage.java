@@ -19,6 +19,7 @@ public class UpdateProductPage {
     private CreateProductPage createProductPage;
     private String _productUpdate;
     private Random random;
+    private String _productNameDelete;
     private DecimalFormat decimalFormat;
     private String _nameExist;
     private String _productName;
@@ -54,7 +55,41 @@ public class UpdateProductPage {
     private By taxList = By.xpath("//mat-option");
     private By anotherProductPrice = By.xpath("//input[@data-cy='product-currency-price']");
     private By addAnotherPriceButton = By.xpath("//app-product-other-currency-price//button[@data-cy='add-product-price-button']");
+    private By deleteProductButton = By.xpath("//button[@data-cy='product-delete-button']");
+    private By confirmDeleteProduct = By.xpath("//button[@data-cy='delete-button']");
+    private By cancelDeleteProduct = By.xpath("//button[@data-cy='cancel-button']");
 
+
+    public void verifyDeleteFailed() {
+        try {
+            Assert.assertTrue(validateHelpers.checkElemenNull(productTableTitle));
+            System.out.println("Deleted Failed: " + _productNameDelete);
+        } catch (NoSuchElementException e) {
+            Assert.fail("Verify Failed");
+        }
+    }
+
+    public void verifyDeleteSuccess() {
+        try {
+            Assert.assertTrue(driver.findElement(productTableTitle).isDisplayed());
+            System.out.println("Deleted Success: " + _productNameDelete);
+        } catch (NoSuchElementException e) {
+            Assert.fail("Delete Failed");
+        }
+    }
+
+    public void cancelDelete() {
+        validateHelpers.clickElement(cancelDeleteProduct);
+    }
+
+    public void confirmDelete() {
+        validateHelpers.clickElement(confirmDeleteProduct);
+    }
+
+    public void deleteProduct() {
+        _productNameDelete = validateHelpers.getValueByAttribute(productName);
+        validateHelpers.clickElement(deleteProductButton);
+    }
 
     public void updateProductNameExist() {
         if (!_nameExist.isEmpty()) {

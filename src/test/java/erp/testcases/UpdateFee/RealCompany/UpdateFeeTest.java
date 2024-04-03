@@ -1,4 +1,4 @@
-package erp.testcases.UpdateProduct.RealCompany;
+package erp.testcases.UpdateFee.RealCompany;
 
 import erp.base.BaseSetup;
 import erp.base.ReportListener;
@@ -6,34 +6,35 @@ import erp.common.helpers.GetTypeOfCompanyHelper;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.ValidateHelpers;
 import erp.pages.CompanyListPage;
-import erp.pages.ProductPage.ProductTable;
-import erp.pages.ProductPage.UpdateProductPage;
+import erp.pages.FeePage.FeeTable;
+import erp.pages.FeePage.UpdateFeePage;
 import erp.pages.SignInPage;
 import org.openqa.selenium.WebDriver;
+import org.python.antlr.ast.Str;
 import org.testng.annotations.*;
 
 @Listeners(ReportListener.class)
-public class UpdateProductTest extends BaseSetup {
+public class UpdateFeeTest extends BaseSetup {
     private WebDriver driver;
-    private UpdateProductPage updateProductPage;
     private ValidateHelpers validateHelpers;
     private SignInPage signInPage;
     private CompanyListPage companyListPage;
-    private ProductTable productTable;
+    private UpdateFeePage updateFeePage;
+    private FeeTable feeTable;
 
     @BeforeClass
     public void setup() {
         this.driver = getDriver();
         validateHelpers = new ValidateHelpers(driver);
-        updateProductPage = new UpdateProductPage(driver);
         signInPage = new SignInPage(driver);
         companyListPage = new CompanyListPage(driver);
-        productTable = new ProductTable(driver);
+        updateFeePage = new UpdateFeePage(driver);
+        feeTable = new FeeTable(driver);
     }
 
     @Test(priority = 0)
     @Parameters({"language"})
-    public void updateProductName_then_updateSuccess(@Optional("English") String language) {
+    public void updateFeeName_then_updateSuccess(@Optional("English") String language) {
         validateHelpers.waitForLoadJsLoginPage();
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
@@ -43,72 +44,22 @@ public class UpdateProductTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
         validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
+        updateFeePage.goToFeeTable();
         validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
-        validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.updateProductName();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.updateFeeName();
         validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.clickOnSaveButton();
+        updateFeePage.clickOnSaveButon();
         validateHelpers.waitForLoadJs();
-        updateProductPage.verifyAfterUpdate_success();
-        validateHelpers.waitForLoadJs();
-    }
-
-    @Test(priority = 0)
-    @Parameters({"language"})
-    public void updateMainProductPrice_then_updateSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJsLoginPage();
-        signInPage.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
-        validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.updateMainProductPrice();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.clickOnSaveButton();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.verifyAfterUpdate_success();
-        validateHelpers.waitForLoadJs();
-    }
-
-    @Test(priority = 0)
-    @Parameters({"language"})
-    public void updateImageOfProduct_then_updateSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJsLoginPage();
-        signInPage.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
-        validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.uploadProductImage();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.confirmUploadProductImage();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.clickOnSaveButton();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.verifyAfterUpdate_success();
+        updateFeePage.verifyUpdateSuccess();
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
 
     @Test(priority = 0)
     @Parameters({"language"})
-    public void updateConfirmDeleteImageOfProduct_then_updateSuccess(@Optional("English") String language) {
+    public void updateMainPriceOfFee_then_updateSuccess(@Optional("English") String language) {
         validateHelpers.waitForLoadJsLoginPage();
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
@@ -118,24 +69,22 @@ public class UpdateProductTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
         validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
+        updateFeePage.goToFeeTable();
         validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
-        validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.deleteProductImage();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.updateMainPriceOfFee();
         validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.confirmDeleteProductImage();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.clickOnSaveButton();
+        updateFeePage.clickOnSaveButon();
         validateHelpers.waitForLoadJs();
-        updateProductPage.verifyAfterUpdate_success();
+        updateFeePage.verifyUpdateSuccess();
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
 
     @Test(priority = 0)
     @Parameters({"language"})
-    public void updateDisableProduct_then_updateSuccess(@Optional("English") String language) {
+    public void updateMainPriceAndName_then_updateSuccess(@Optional("English") String language) {
         validateHelpers.waitForLoadJsLoginPage();
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
@@ -145,26 +94,134 @@ public class UpdateProductTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
         validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
+        updateFeePage.goToFeeTable();
         validateHelpers.waitForLoadJs();
-        productTable.filterEnable();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.updateFeeName();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.updateMainPriceOfFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.clickOnSaveButon();
         validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
+        updateFeePage.verifyUpdateSuccess();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.logout();
+    }
+
+    @Test(priority = 0)
+    @Parameters({"language"})
+    public void updateAddOtherPrice_then_updateSuccess(@Optional("English") String language) {
         validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.disableProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.confirmDisableProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.clickOnSaveButton();
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
-        updateProductPage.verifyAfterUpdate_success();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        updateFeePage.goToFeeTable();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.addOtherPrice();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.addPriceOfOtherPrice();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.clickOnSaveButon();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.verifyUpdateSuccess();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.logout();
+    }
+
+    @Test(priority = 0)
+    @Parameters({"language"})
+    public void updateAllPrice_then_updateSuccess(@Optional("English") String language) {
+        validateHelpers.waitForLoadJsLoginPage();
+        signInPage.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        updateFeePage.goToFeeTable();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.updateAllPrices();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.clickOnSaveButon();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.verifyUpdateSuccess();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.logout();
+    }
+
+    @Test(priority = 0)
+    @Parameters({"language"})
+    public void updateConfirmDisableFee_then_updateSuccess(@Optional("English") String language) {
+        validateHelpers.waitForLoadJsLoginPage();
+        signInPage.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        updateFeePage.goToFeeTable();
+        validateHelpers.waitForLoadJs();
+        feeTable.filterEnable();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.disableFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.confirmDisableFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.clickOnSaveButon();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.verifyUpdateSuccess();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.logout();
+    }
+
+    @Test(priority = 0)
+    @Parameters({"language"})
+    public void updateCancelDisableFee_then_updateSuccess(@Optional("English") String language) {
+        validateHelpers.waitForLoadJsLoginPage();
+        signInPage.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        updateFeePage.goToFeeTable();
+        validateHelpers.waitForLoadJs();
+        feeTable.filterEnable();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.disableFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.cancelDisableFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.clickOnSaveButon();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.verifyUpdateSuccess();
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
 
     @Test(priority = 2)
     @Parameters({"language"})
-    public void updateEnableProduct_then_updateSuccess(@Optional("English") String language) {
+    public void updateConfirmEnableFee_then_updateSuccess(@Optional("English") String language) {
         validateHelpers.waitForLoadJsLoginPage();
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
@@ -174,26 +231,55 @@ public class UpdateProductTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
         validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
+        updateFeePage.goToFeeTable();
         validateHelpers.waitForLoadJs();
-        productTable.filterDisabled();
+        feeTable.filterDisabled();
         validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.enableFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.confirmEnableFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.clickOnSaveButon();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.verifyUpdateSuccess();
+        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.logout();
+    }
+
+    @Test(priority = 2)
+    @Parameters({"language"})
+    public void updateCancelEnableFee_then_updateSuccess(@Optional("English") String language) {
         validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.enableProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.confirmEnableProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.clickOnSaveButton();
+        signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
-        updateProductPage.verifyAfterUpdate_success();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        updateFeePage.goToFeeTable();
+        validateHelpers.waitForLoadJs();
+        feeTable.filterDisabled();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.enableFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.cancelEnableFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.clickOnSaveButon();
+        validateHelpers.waitForLoadJs();
+        updateFeePage.verifyUpdateSuccess();
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
 
     @Test(priority = 0)
     @Parameters({"language"})
-    public void updateProductType_then_updateSuccess(@Optional("English") String language) {
+    public void updateConfirmDeleteFee_then_deleteSuccess(@Optional("English") String language) {
         validateHelpers.waitForLoadJsLoginPage();
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
@@ -203,22 +289,21 @@ public class UpdateProductTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
         validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
+        updateFeePage.goToFeeTable();
         validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
-        validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.updateProductType();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.deleteFee();
         validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.clickOnSaveButton();
+        updateFeePage.confirmDelete();
         validateHelpers.waitForLoadJs();
-        updateProductPage.verifyAfterUpdate_success();
+        updateFeePage.verifyDeleteSuccess();
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
-
     @Test(priority = 0)
     @Parameters({"language"})
-    public void updateTaxOfProduct_then_updateSuccess(@Optional("English") String language) {
+    public void updateCancelDeleteFee_then_deleteFail(@Optional("English") String language) {
         validateHelpers.waitForLoadJsLoginPage();
         signInPage.verifylanguage(language);
         validateHelpers.waitForLoadJs();
@@ -228,119 +313,15 @@ public class UpdateProductTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
         validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
+        updateFeePage.goToFeeTable();
         validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
-        validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.updateAnotherTax();
+        updateFeePage.selectFeeToUpdate();
+        validateHelpers.waitForLoadJsCreatePage();
+        updateFeePage.deleteFee();
         validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.clickOnSaveButton();
+        updateFeePage.cancelDelete();
         validateHelpers.waitForLoadJs();
-        updateProductPage.verifyAfterUpdate_success();
-        validateHelpers.waitAfterChoseOrClickElement();
-        validateHelpers.logout();
-    }
-
-    @Test(priority = 0)
-    @Parameters({"language"})
-    public void updateAddAnotherProduct_then_updateSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJsLoginPage();
-        signInPage.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
-        validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.addAnotherPrice();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.updatePriceOfAnotherPrice();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.clickOnSaveButton();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.verifyAfterUpdate_success();
-        validateHelpers.waitAfterChoseOrClickElement();
-        validateHelpers.logout();
-    }
-
-    @Test(priority = 0)
-    @Parameters({"language"})
-    public void updateUseProductNameAlreadyExist_then_updateFailed(@Optional("English") String language) {
-        validateHelpers.waitForLoadJsLoginPage();
-        signInPage.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.getProductNameExist();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.selectProductToUpdate();
-        validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.updateProductNameExist();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.clickOnSaveButton();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.verifyAfterUpdate_Failed();
-        validateHelpers.waitAfterChoseOrClickElement();
-        validateHelpers.logout();
-    }
-
-    @Test(priority = 0)
-    @Parameters({"language"})
-    public void updateConfirmDeleteProduct_then_updateFailed(@Optional("English") String language) {
-        validateHelpers.waitForLoadJsLoginPage();
-        signInPage.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
-        validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.deleteProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.confirmDelete();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.verifyDeleteSuccess();
-        validateHelpers.waitAfterChoseOrClickElement();
-        validateHelpers.logout();
-    }
-
-    @Test(priority = 0)
-    @Parameters({"language"})
-    public void updateCancelDeleteProduct_then_updateFailed(@Optional("English") String language) {
-        validateHelpers.waitForLoadJsLoginPage();
-        signInPage.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        updateProductPage.goToProductTable();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.selectProductToUpdate();
-        validateHelpers.waitForLoadJsLoginPage();
-        updateProductPage.deleteProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        updateProductPage.cancelDelete();
-        validateHelpers.waitForLoadJs();
-        updateProductPage.verifyDeleteFailed();
+        updateFeePage.verifyDeleteFailed();
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
