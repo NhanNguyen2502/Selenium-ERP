@@ -35,6 +35,8 @@ public class CreateSalePage {
     private String _mainCurrencyOfCompany;
     private Random ran;
     private AttachmentDocumentHelper _attachmentDocumentHelper;
+    private DecimalFormat decimalFormat;
+    private String _actualAmount;
 
     private By saleTypeFiled = By.xpath("//app-select//input");
     private By dateAndTye = By.xpath("(//mat-accordion//mat-panel-title)[1]");
@@ -115,6 +117,17 @@ public class CreateSalePage {
     private By fristInvoiceNumberField = By.xpath("//input[@data-cy='invoice-number-input']");
     private By fristInvoiceNumberConfirmButton = By.xpath("//button[@data-cy='dialog-confirm-button']");
     private By fristInvoiceNumberCancelButton = By.xpath("//button[@data-cy='dialog-cancel-button']");
+    private By warningText = By.xpath("//div[@data-cy='payment-amount-max-amount']");
+    private By priceField1 = By.xpath("//mat-form-field//input[@data-cy='price' and @id='price-input']");
+    private By priceFirst = By.xpath("//div[@data-cy='payment-amount-max-amount']");
+    private By instalmentPlanInput = By.xpath("//input[@data-cy='installment-amount-input']");
+    private By createPlanButton = By.xpath("//button[@data-cy='create-plan-button']");
+    private By addPrePaymentButton = By.xpath("//button[@data-cy='add-prepayment-button']");
+    private By prePaymentAmountField = By.xpath("//input[@data-cy='amount']");
+    private By prePaymentAmountRequired = By.xpath("//div[@data-cy='payment-amount-required']");
+    private By confirmAddPrePaymentButton = By.xpath("//button[@data-cy='dialog-confirm-button']");
+    private By instalmentPeriodField = By.xpath("(//app-select//mat-form-field//input)[2]");
+    private By periodOptions = By.xpath("//mat-option");
 
 
     public CreateSalePage(WebDriver driver) {
@@ -127,19 +140,109 @@ public class CreateSalePage {
         createFeePage = new CreateFeePage(driver);
         ran = new Random();
         _attachmentDocumentHelper = new AttachmentDocumentHelper(driver);
+        decimalFormat = new DecimalFormat();
+        decimalFormat.setMaximumFractionDigits(3);
+    }
+
+    
+
+    public void changeInstalmentPeriod(String option) {
+        validateHelpers.clickElement(instalmentPeriodField);
+        var _options = validateHelpers.getList(periodOptions);
+        for (WebElement a : _options) {
+            if (a.getText().equals(option)) {
+                a.click();
+                break;
+            }
+        }
+    }
+
+    public void addPrePayment() {
+        try {
+            validateHelpers.setText(instalmentPlanInput, "9999999999999999999999999999999999999999999");
+            validateHelpers.clickElement(createPlanButton);
+            validateHelpers.waitAfterChoseOrClickElement();
+            var _str = driver.findElement(priceFirst).getText();
+            String[] _amount = _str.split(":", 2);
+            _actualAmount = _amount[1].replace(" ", "");
+            if (_actualAmount.equals("0")) {
+                System.out.println("Total amount: 0, We can not add pre-payment!");
+                System.out.println("We will update amount of the product");
+                var _list = validateHelpers.getList(priceField1);
+                if (!_list.isEmpty()) {
+                    for (int i = 0; i < _list.size(); i++) {
+                        var _randomAmount = ran.nextInt(1, 1000);
+                        _list.get(i).clear();
+                        _list.get(i).sendKeys(decimalFormat.format(_randomAmount));
+                    }
+                }
+                validateHelpers.setText(instalmentPlanInput, "9999999999999999999999999999999999999999999");
+                validateHelpers.clickElement(createPlanButton);
+                validateHelpers.waitAfterChoseOrClickElement();
+                _str = driver.findElement(priceFirst).getText();
+                _amount = _str.split(":", 2);
+                System.out.println(_amount[1].replace(" ", ""));
+                _actualAmount = _amount[1].replace(" ", "");
+            }
+            validateHelpers.clickElement(addPrePaymentButton);
+            validateHelpers.clickElement(confirmAddPrePaymentButton);
+            Assert.assertTrue(driver.findElement(prePaymentAmountRequired).isDisplayed());
+            validateHelpers.setText(prePaymentAmountField, String.valueOf(Integer.valueOf(_actualAmount) / 5));
+            validateHelpers.clickElement(confirmAddPrePaymentButton);
+        } catch (NoSuchElementException e) {
+            Assert.fail("Add pre-payment failed!!");
+        }
+    }
+
+    public void addInstallmentPlan() {
+        try {
+            validateHelpers.setText(instalmentPlanInput, "9999999999999999999999999999999999999999999");
+            validateHelpers.clickElement(createPlanButton);
+            validateHelpers.waitAfterChoseOrClickElement();
+            var _str = driver.findElement(priceFirst).getText();
+            String[] _amount = _str.split(":", 2);
+            _actualAmount = _amount[1].replace(" ", "");
+            if (_actualAmount.equals("0")) {
+                System.out.println("Total amount: 0, We can not create instalment invoice!");
+                System.out.println("We will update amount of the product");
+                var _list = validateHelpers.getList(priceField1);
+                if (!_list.isEmpty()) {
+                    for (int i = 0; i < _list.size(); i++) {
+                        var _randomAmount = ran.nextInt(1, 1000);
+                        _list.get(i).clear();
+                        _list.get(i).sendKeys(String.valueOf(_randomAmount));
+                    }
+                }
+                validateHelpers.setText(instalmentPlanInput, "9999999999999999999999999999999999999999999");
+                validateHelpers.clickElement(createPlanButton);
+                validateHelpers.waitAfterChoseOrClickElement();
+                _str = driver.findElement(priceFirst).getText();
+                _amount = _str.split(":", 2);
+                System.out.println(_amount[1].replace(" ", ""));
+                _actualAmount = _amount[1].replace(" ", "");
+            }
+            validateHelpers.clearElement(instalmentPlanInput);
+            validateHelpers.setText(instalmentPlanInput, String.valueOf(Integer.valueOf(_actualAmount) / 2));
+            validateHelpers.clickElement(createPlanButton);
+
+        } catch (NoSuchElementException e) {
+            Assert.fail("Add Instalment Plan failed!");
+        }
+
     }
 
     public void confirmSetFirstInvoiceNumber() {
         try {
             if (driver.findElement(warningFirstInvoiceNumber).isDisplayed()) {
-                var _numberRandom = ran.nextInt(1000,9999);
-                validateHelpers.setText(fristInvoiceNumberField,String.valueOf( _numberRandom));
+                var _numberRandom = ran.nextInt(1000, 9999);
+                validateHelpers.setText(fristInvoiceNumberField, String.valueOf(_numberRandom));
                 validateHelpers.clickElement(fristInvoiceNumberConfirmButton);
             }
         } catch (NoSuchElementException e) {
             System.out.println("The warning First Invoice does not display!!!");
         }
     }
+
     public void skipSetFirstInvoiceNumber() {
         try {
             if (driver.findElement(warningFirstInvoiceNumber).isDisplayed()) {
@@ -328,14 +431,24 @@ public class CreateSalePage {
 
     }
 
+    public void checkInvoiceAfterClickCreateButton_Failed() {
+        try {
+            Assert.assertTrue(validateHelpers.checkElemenNull(invoiceIDNumber));
+            System.out.println("Invoice has been created failed!");
+
+        } catch (NoSuchElementException e) {
+            Assert.fail("Create invoice Failed!");
+        }
+    }
+
     public void checkInvoiceAfterClickCreateButton() {
         try {
-            if (driver.findElement(invoiceHistorySection).isDisplayed()) {
-                var IDNumber = validateHelpers.getMessage(invoiceIDNumber);
-                System.out.println("Invoice has been created with invoice number: " + IDNumber);
-            }
+            Assert.assertTrue(driver.findElement(invoiceHistorySection).isDisplayed());
+            var IDNumber = validateHelpers.getMessage(invoiceIDNumber);
+            System.out.println("Invoice has been created with invoice number: " + IDNumber);
+
         } catch (NoSuchElementException e) {
-            System.out.println("Create invoice Failed!");
+            Assert.fail("Create invoice Failed!");
         }
     }
 

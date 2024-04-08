@@ -48,6 +48,8 @@ public class CreateProductTest extends BaseSetup {
         validateHelpers.waitAfterChoseOrClickElement();
         createProductPage.enterProductName();
         validateHelpers.waitAfterChoseOrClickElement();
+        createProductPage.enterProductPrice();
+        validateHelpers.waitAfterChoseOrClickElement();
         createProductPage.clickOnCreateButton();
         validateHelpers.waitForLoadJs();
         createProductPage.verifyAfterCreate_success();
@@ -74,6 +76,8 @@ public class CreateProductTest extends BaseSetup {
         createProductPage.cancelUploadProductImage();
         validateHelpers.waitAfterChoseOrClickElement();
         createProductPage.enterProductName();
+        validateHelpers.waitAfterChoseOrClickElement();
+        createProductPage.enterProductPrice();
         validateHelpers.waitAfterChoseOrClickElement();
         createProductPage.clickOnCreateButton();
         validateHelpers.waitForLoadJs();
@@ -218,6 +222,7 @@ public class CreateProductTest extends BaseSetup {
         validateHelpers.waitAfterChoseOrClickElement();
         validateHelpers.logout();
     }
+
     @Test(priority = 0)
     @Parameters({"language"})
     public void createProductWithProductNameNull_then_CreateFail(@Optional("English") String language) {
