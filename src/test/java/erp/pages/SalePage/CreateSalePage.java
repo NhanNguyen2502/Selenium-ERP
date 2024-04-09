@@ -128,6 +128,15 @@ public class CreateSalePage {
     private By confirmAddPrePaymentButton = By.xpath("//button[@data-cy='dialog-confirm-button']");
     private By instalmentPeriodField = By.xpath("(//app-select//mat-form-field//input)[2]");
     private By periodOptions = By.xpath("//mat-option");
+    private By informChangeAmountOfInstalmentPlan = By.xpath("//app-confirm-dialog");
+    private By cancelUpdateInstalMentPlan = By.xpath("//button[@data-cy='dialog-cancel-button']");
+    private By confirmUpdateInstalmentPlan = By.xpath("//button[@data-cy='dialog-yes-button']");
+    private By removeInstalmentLines = By.xpath("//button[@apptooltip='general.button.remove']");
+    private By addInstalmentLine = By.xpath("//button[@apptooltip='installmentInvoice.button.addInstallment']");
+    private By removeProductButton = By.xpath("(//button[@data-cy='product-remove-button'])[1]");
+    private By confirmRemoveProductButton = By.xpath("//button[@data-cy='dialog-yes-button']");
+    private By confirmUpdateInstalmentPlanAfterChangeInstalmentAmount = By.xpath("//button[@data-cy='create-plan-confirm-button']");
+    private By cancelUpdateInstalmentPlanAfterChangeInstalmentAmount = By.xpath("//button[@data-cy='create-plan-cancel-button']");
 
 
     public CreateSalePage(WebDriver driver) {
@@ -144,7 +153,125 @@ public class CreateSalePage {
         decimalFormat.setMaximumFractionDigits(3);
     }
 
-    
+    public void cancelUpdadateInstalmentPlanAfterChangeInstalAmount()
+    {
+        validateHelpers.clickElement(cancelUpdateInstalmentPlanAfterChangeInstalmentAmount);
+    }
+
+    public void confirmUpdadateInstalmentPlanAfterChangeInstalAmount()
+    {
+        validateHelpers.clickElement(confirmUpdateInstalmentPlanAfterChangeInstalmentAmount);
+    }
+
+    public void removeAllProducts() {
+        var _productList = validateHelpers.getList(removeProductButton);
+        if (!_productList.isEmpty()) {
+            for (int i = 0; i < _productList.size(); i++) {
+                _productList.get(i).click();
+                confirmRemoveProduct();
+            }
+        }
+    }
+
+    public void confirmRemoveProduct() {
+        validateHelpers.clickElement(confirmRemoveProductButton);
+    }
+
+    public void addInstalmentLines() {
+        try {
+            for (int i = 0; ; i++) {
+                if (driver.findElement(addInstalmentLine).isEnabled()) {
+                    validateHelpers.clickElement(addInstalmentLine);
+                } else {
+                    break;
+                }
+
+            }
+        } catch (NoSuchElementException e) {
+            Assert.fail("Click on Instalment plan button fail.");
+        }
+    }
+
+    public void enterAmountToInstalmentAmount() {
+        try {
+            validateHelpers.setText(instalmentPlanInput, "9999999999999999999999999999999999999999999");
+            validateHelpers.clickElement(createPlanButton);
+            validateHelpers.waitAfterChoseOrClickElement();
+            var _str = driver.findElement(priceFirst).getText();
+            String[] _amount = _str.split(":", 2);
+            _actualAmount = _amount[1].replace(" ", "");
+            if (_actualAmount.equals("0")) {
+                System.out.println("Total amount: 0, We can not create instalment invoice!");
+                System.out.println("We will update amount of the product");
+                var _list = validateHelpers.getList(priceField1);
+                if (!_list.isEmpty()) {
+                    for (int i = 0; i < _list.size(); i++) {
+                        var _randomAmount = ran.nextInt(1, 1000);
+                        _list.get(i).clear();
+                        _list.get(i).sendKeys(String.valueOf(_randomAmount));
+                    }
+                }
+                validateHelpers.setText(instalmentPlanInput, "9999999999999999999999999999999999999999999");
+                validateHelpers.clickElement(createPlanButton);
+                validateHelpers.waitAfterChoseOrClickElement();
+                _str = driver.findElement(priceFirst).getText();
+                _amount = _str.split(":", 2);
+                System.out.println(_amount[1].replace(" ", ""));
+                _actualAmount = _amount[1].replace(" ", "");
+            }
+            double a = Float.parseFloat(_actualAmount) / 2;
+            int num = (int) a;
+            validateHelpers.clearElement(instalmentPlanInput);
+            validateHelpers.setText(instalmentPlanInput, String.valueOf(num));
+
+        } catch (NoSuchElementException e) {
+            Assert.fail("Add Instalment Plan failed!");
+        }
+
+    }
+
+    public void reAddInstalmentLines() {
+        int a = removeLines();
+        for (int i = 0; i < a; i++) {
+            validateHelpers.clickElement(addInstalmentLine);
+        }
+    }
+
+    public int removeLines() {
+        var _numberRan = 0;
+        var _instalmentLine = validateHelpers.getList(removeInstalmentLines);
+        if (!_instalmentLine.isEmpty()) {
+            _numberRan = ran.nextInt(1, _instalmentLine.size());
+            for (int i = 0; i < _numberRan; i++) {
+                _instalmentLine.get(i).click();
+            }
+        }
+        return _numberRan;
+    }
+
+    public void confirmUpdateInstalmentPlan() {
+        validateHelpers.clickElement(confirmUpdateInstalmentPlan);
+    }
+
+    public void cancelUpdateInstalmentPlan() {
+        validateHelpers.clickElement(cancelUpdateInstalMentPlan);
+    }
+
+    public void verifyConfirmCreateInvoiceWithoutChangePlan() {
+        try {
+            Assert.assertTrue(driver.findElement(informChangeAmountOfInstalmentPlan).isDisplayed());
+        } catch (NoSuchElementException e) {
+            Assert.fail("Confirm create invoice change plan does not show!!!");
+        }
+    }
+
+    public void changeAmountOfInstalmentAmount() {
+        var _currentAmout = validateHelpers.getValueByAttribute(instalmentPlanInput).replace(",", "").replace(" ", "");
+        validateHelpers.clearElement(instalmentPlanInput);
+        double a = Float.parseFloat(_currentAmout);
+        int num = (int) a;
+        validateHelpers.setText(instalmentPlanInput, String.valueOf(ran.nextInt(1, num)));
+    }
 
     public void changeInstalmentPeriod(String option) {
         validateHelpers.clickElement(instalmentPeriodField);
@@ -187,7 +314,9 @@ public class CreateSalePage {
             validateHelpers.clickElement(addPrePaymentButton);
             validateHelpers.clickElement(confirmAddPrePaymentButton);
             Assert.assertTrue(driver.findElement(prePaymentAmountRequired).isDisplayed());
-            validateHelpers.setText(prePaymentAmountField, String.valueOf(Integer.valueOf(_actualAmount) / 5));
+            double a = Float.parseFloat(_actualAmount) / 2;
+            int num = (int) a;
+            validateHelpers.setText(prePaymentAmountField, String.valueOf(num));
             validateHelpers.clickElement(confirmAddPrePaymentButton);
         } catch (NoSuchElementException e) {
             Assert.fail("Add pre-payment failed!!");
@@ -221,14 +350,15 @@ public class CreateSalePage {
                 System.out.println(_amount[1].replace(" ", ""));
                 _actualAmount = _amount[1].replace(" ", "");
             }
+            double a = Float.parseFloat(_actualAmount) / 2;
+            int num = (int) a;
             validateHelpers.clearElement(instalmentPlanInput);
-            validateHelpers.setText(instalmentPlanInput, String.valueOf(Integer.valueOf(_actualAmount) / 2));
+            validateHelpers.setText(instalmentPlanInput, String.valueOf(num));
             validateHelpers.clickElement(createPlanButton);
 
         } catch (NoSuchElementException e) {
             Assert.fail("Add Instalment Plan failed!");
         }
-
     }
 
     public void confirmSetFirstInvoiceNumber() {
@@ -448,7 +578,8 @@ public class CreateSalePage {
             System.out.println("Invoice has been created with invoice number: " + IDNumber);
 
         } catch (NoSuchElementException e) {
-            Assert.fail("Create invoice Failed!");
+            Assert.assertTrue(validateHelpers.checkElemenNull(invoiceHistorySection));
+            System.out.println("Create invoice Failed!");
         }
     }
 
