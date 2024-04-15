@@ -1,13 +1,16 @@
 package erp.pages.SalePage;
 
-import erp.common.helpers.AttachmentDocumentHelper;
-import erp.common.helpers.FakeDataHelper;
-import erp.common.helpers.TranslationHelpers;
-import erp.common.helpers.ValidateHelpers;
+import erp.common.helpers.*;
+import erp.pages.CompanyListPage;
 import erp.pages.Customer.CreateCustomerPage;
+import erp.pages.Customer.UpdateCustomerPage;
 import erp.pages.EmployeePage.CreateEmployeesPage;
+import erp.pages.EmployeePage.UpdateEmployeePage;
 import erp.pages.FeePage.CreateFeePage;
+import erp.pages.FeePage.UpdateFeePage;
 import erp.pages.ProductPage.CreateProductPage;
+import erp.pages.ProductPage.UpdateProductPage;
+import erp.pages.SignInPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -37,6 +40,37 @@ public class CreateSalePage {
     private AttachmentDocumentHelper _attachmentDocumentHelper;
     private DecimalFormat decimalFormat;
     private String _actualAmount;
+    private SignInPage signInPage;
+    private CompanyListPage companyListPage;
+    private SaleTable saleTable;
+    private UpdateEmployeePage updateEmployeePage;
+    private UpdateCustomerPage updateCustomerPage;
+    private UpdateProductPage updateProductPage;
+    private UpdateFeePage updateFeePage;
+    private BrowserManagerHelper browserManagerHelper;
+
+    public CreateSalePage(WebDriver driver) {
+        this.driver = driver;
+        validateHelpers = new ValidateHelpers(driver);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        createEmployeesPage = new CreateEmployeesPage(driver);
+        createCustomerPage = new CreateCustomerPage(driver);
+        createProductPage = new CreateProductPage(driver);
+        createFeePage = new CreateFeePage(driver);
+        ran = new Random();
+        _attachmentDocumentHelper = new AttachmentDocumentHelper(driver);
+        decimalFormat = new DecimalFormat();
+        decimalFormat.setMaximumFractionDigits(3);
+        updateEmployeePage = new UpdateEmployeePage(driver);
+        updateCustomerPage = new UpdateCustomerPage(driver);
+        signInPage = new SignInPage(driver);
+        companyListPage = new CompanyListPage(driver);
+        saleTable = new SaleTable(driver);
+        updateProductPage = new UpdateProductPage(driver);
+        updateFeePage = new UpdateFeePage(driver);
+        browserManagerHelper = new BrowserManagerHelper(driver);
+
+    }
 
     private By saleTypeFiled = By.xpath("//app-select//input");
     private By dateAndTye = By.xpath("(//mat-accordion//mat-panel-title)[1]");
@@ -77,7 +111,7 @@ public class CreateSalePage {
     private By discountField = By.xpath("//input[@data-cy='discount']");
     private By removeProductFromProductLine = By.xpath("(//button[@data-cy='product-remove-button'])[1]");
     private By addCommentForEachProductOnProductLine = By.xpath("//app-expanding-button//button");
-    private By addProductOnProductLinebutton = By.xpath("//button[@apptooltip='invoicesCommon.button.addProductTooltip']");
+    private By addProductOnProductLinebutton = By.xpath("//button[@data-cy='add-product-button' and @apptooltip='invoicesCommon.button.addProductTooltip']");
     private By addFeeOnFeeLinebutton = By.xpath("//button[@data-cy='new-fee-row-button']");
     private By invoiceProductDropdownButton = By.xpath("//input[@data-cy='select-product']");
     private By invoiceProductList = By.xpath("//mat-option");
@@ -137,30 +171,301 @@ public class CreateSalePage {
     private By confirmRemoveProductButton = By.xpath("//button[@data-cy='dialog-yes-button']");
     private By confirmUpdateInstalmentPlanAfterChangeInstalmentAmount = By.xpath("//button[@data-cy='create-plan-confirm-button']");
     private By cancelUpdateInstalmentPlanAfterChangeInstalmentAmount = By.xpath("//button[@data-cy='create-plan-cancel-button']");
+    private By customerNameField = By.xpath("(//app-select-object-control)[3]//input");
+    private By productName = By.xpath("//input[@data-cy='select-product']");
+    private By employeeName = By.xpath("//input[@data-cy='select-our-reference']");
 
+/////////////////////////Functionalities////////////////////////////
 
-    public CreateSalePage(WebDriver driver) {
-        this.driver = driver;
-        validateHelpers = new ValidateHelpers(driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        createEmployeesPage = new CreateEmployeesPage(driver);
-        createCustomerPage = new CreateCustomerPage(driver);
-        createProductPage = new CreateProductPage(driver);
-        createFeePage = new CreateFeePage(driver);
-        ran = new Random();
-        _attachmentDocumentHelper = new AttachmentDocumentHelper(driver);
-        decimalFormat = new DecimalFormat();
-        decimalFormat.setMaximumFractionDigits(3);
+    public void selectEmployeeCustomerAndCancelChangeCurrencyOfCustomer(String language) {
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectAccountNumber();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
+        validateHelpers.waitForLoadJs();
+        checkConfirmChangeCurrencyDialog();
+        validateHelpers.waitAfterChoseOrClickElement();
+        cancelChangeCurrency();
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
-    public void cancelUpdadateInstalmentPlanAfterChangeInstalAmount()
-    {
+    public void selectEmployeeProductAndCancelChangeCurrencyOfCustomer(String language) {
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectAccountNumber();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectProduct();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void selectInstalmentPeriodYearly(String language) {
+        changeInstalmentPeriod(GetPeriodForInstalmentInvoice.getYearly(language));
+        validateHelpers.waitAfterChoseOrClickElement();
+        addInstallmentPlan();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void selectInstalmentPeriodQuarterly(String language) {
+        changeInstalmentPeriod(GetPeriodForInstalmentInvoice.getQuarterly(language));
+        validateHelpers.waitAfterChoseOrClickElement();
+        addInstallmentPlan();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void selectInstalmentPeriodWekkly(String language) {
+        changeInstalmentPeriod(GetPeriodForInstalmentInvoice.getWekkly(language));
+        validateHelpers.waitAfterChoseOrClickElement();
+        addInstallmentPlan();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void cancelUpdateInstalmentPlanAfterEnterAnotherAmountToInstalmentAmount() {
+        changeAmountOfInstalmentAmount();
+        validateHelpers.waitAfterChoseOrClickElement();
+        clickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+        verifyConfirmCreateInvoiceWithoutChangePlan();
+        validateHelpers.waitAfterChoseOrClickElement();
+        cancelUpdateInstalmentPlan();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void confirmUpdateInstalmentPlanAfterEnterAnotherAmountToInstalmentAmount() {
+        changeAmountOfInstalmentAmount();
+        validateHelpers.waitAfterChoseOrClickElement();
+        clickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+        verifyConfirmCreateInvoiceWithoutChangePlan();
+        validateHelpers.waitAfterChoseOrClickElement();
+        confirmUpdateInstalmentPlan();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void reAddInstalmentLineViaPlusIcon() {
+        reAddInstalmentLines();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void addInstalmentPlanViaPlusIconOnInstalmentPlanSection() {
+        enterAmountToInstalmentAmount();
+        validateHelpers.waitAfterChoseOrClickElement();
+        addInstalmentLinesViaPlusIcon();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void selectPaymentAccountCustomerManyProductManyFee(String language) {
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectAccountNumber();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        checkConfirmChangeCurrencyDialog();
+        validateHelpers.waitAfterChoseOrClickElement();
+        cancelChangeCurrency();
+        validateHelpers.waitAfterChoseOrClickElement();
+        addManyProductInProductLine();
+        validateHelpers.waitAfterChoseOrClickElement();
+        fillProductIntoProductlines();
+        validateHelpers.waitAfterChoseOrClickElement();
+        addManyFeeLineOnFeeSection();
+        validateHelpers.waitAfterChoseOrClickElement();
+        fillAllFeesOnFeeSection();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void changeCurrencyOfCustomer() {
+        changeCurrencyOnInvoice();
+        validateHelpers.waitAfterChoseOrClickElement();
+        confirmChangeCurrency();
+        validateHelpers.waitAfterChoseOrClickElement();
+        fillRate();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void instalmentVerifyAfterCreate() {
+        validateHelpers.waitAfterChoseOrClickElement();
+        clickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+        confirmUpdateInstalmentPlan();
+        validateHelpers.waitAfterChoseOrClickElement();
+        skipSetFirstInvoiceNumber();
+        validateHelpers.waitForLoadJs();
+        checkInvoiceAfterClickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void selectPaymentAccountEmployeeCustomerProductFeeAndCancelChangeCurrencyOfCustomer(String language) {
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectAccountNumber();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
+        validateHelpers.waitForLoadJs();
+        checkConfirmChangeCurrencyDialog();
+        validateHelpers.waitAfterChoseOrClickElement();
+        cancelChangeCurrency();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectProduct();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectFee();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void selectEmployeeAnonymousCustomerProductAndCancelChangeCurrencyOfCustomer(String language) {
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectAccountNumber();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectProduct();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void selectEmployeeAnonymousCustomerManyProductAndCancelChangeCurrencyOfCustomer(String language) {
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectAccountNumber();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        addManyProductInProductLine();
+        validateHelpers.waitAfterChoseOrClickElement();
+        fillProductIntoProductlines();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void selectEmployeeCustomerManyProductAndCancelChangeCurrencyOfCustomer(String language) {
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectAccountNumber();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        checkConfirmChangeCurrencyDialog();
+        validateHelpers.waitAfterChoseOrClickElement();
+        cancelChangeCurrency();
+        validateHelpers.waitAfterChoseOrClickElement();
+        addManyProductInProductLine();
+        validateHelpers.waitAfterChoseOrClickElement();
+        fillProductIntoProductlines();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void selectPaymentAccountEmployeeCustomerProductManyFeeAndCancelChangeCurrencyOfCustomer(String language) {
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectAccountNumber();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
+        validateHelpers.waitForLoadJs();
+        checkConfirmChangeCurrencyDialog();
+        validateHelpers.waitAfterChoseOrClickElement();
+        cancelChangeCurrency();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectProduct();
+        validateHelpers.waitAfterChoseOrClickElement();
+        addManyFeeLineOnFeeSection();
+        validateHelpers.waitAfterChoseOrClickElement();
+        fillAllFeesOnFeeSection();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void selectEmployeeCustomerProductAndCancelChangeCurrencyOfCustomer(String language) {
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectAccountNumber();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
+        validateHelpers.waitForLoadJs();
+        checkConfirmChangeCurrencyDialog();
+        validateHelpers.waitForLoadJs();
+        cancelChangeCurrency();
+        validateHelpers.waitAfterChoseOrClickElement();
+        selectProduct();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void createInvoiceAndVerifyAfterCreate() {
+        clickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+        checkConfirmCreateInvoiceWith0Mount();
+        validateHelpers.waitAfterChoseOrClickElement();
+        confirmCreateInvoiceAmout0();
+        validateHelpers.waitAfterChoseOrClickElement();
+        skipSetFirstInvoiceNumber();
+        validateHelpers.waitAfterChoseOrClickElement();
+        checkInvoiceAfterClickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+         browserManagerHelper.closingTab1();
+    }
+
+    public void disableProduct(String productName) {
+        createProductPage.goToProductTable();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateProductPage.selectProductNameToUpdate(productName);
+        validateHelpers.waitForLoadJs();
+        updateProductPage.disableProduct();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateProductPage.confirmDisableProduct();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void disableCustomer(String customerName) {
+        createCustomerPage.goToTheCustomerTable();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateCustomerPage.selectCustomerToUpdateViaCustomerName(customerName);
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateCustomerPage.disableCustomer();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateCustomerPage.confirmDisableCustomer();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateCustomerPage.clickOnSaveButton();
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void disableEmployee(String employeeName) {
+        createEmployeesPage.gotoEmployeeTable();
+        validateHelpers.waitForLoadJs();
+        updateEmployeePage.selectEmployeeToUpdateDisableViaEmployeeName(employeeName);
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void disableFee(String feeName) {
+        createFeePage.goToCreateFeeTable();
+        validateHelpers.waitAfterChoseOrClickElement();
+        updateFeePage.selectFeeToDisableViaSearchFeeName(feeName);
+        validateHelpers.waitAfterChoseOrClickElement();
+    }
+
+    public void loginAndGoToTheCreateSalePage(String language) {
+        validateHelpers.waitForLoadJsLoginPage();
+        signInPage.verifylanguage(language);
+        validateHelpers.waitForLoadJs();
+        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
+        validateHelpers.waitForLoadJs();
+        validateHelpers.verifylanguage(language);
+        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
+        validateHelpers.waitForLoadJs();
+        saleTable.gtoSaleViaShortCut();
+        validateHelpers.waitForLoadJsCreatePage();
+    }
+
+    public void cancelUpdadateInstalmentPlanAfterChangeInstalAmount() {
         validateHelpers.clickElement(cancelUpdateInstalmentPlanAfterChangeInstalmentAmount);
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
-    public void confirmUpdadateInstalmentPlanAfterChangeInstalAmount()
-    {
+    public void confirmUpdadateInstalmentPlanAfterChangeInstalmentAmount() {
         validateHelpers.clickElement(confirmUpdateInstalmentPlanAfterChangeInstalmentAmount);
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void removeAllProducts() {
@@ -171,17 +476,19 @@ public class CreateSalePage {
                 confirmRemoveProduct();
             }
         }
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void confirmRemoveProduct() {
         validateHelpers.clickElement(confirmRemoveProductButton);
     }
 
-    public void addInstalmentLines() {
+    public void addInstalmentLinesViaPlusIcon() {
         try {
             for (int i = 0; ; i++) {
                 if (driver.findElement(addInstalmentLine).isEnabled()) {
                     validateHelpers.clickElement(addInstalmentLine);
+                    validateHelpers.waitAfterChoseOrClickElement();
                 } else {
                     break;
                 }
@@ -250,8 +557,13 @@ public class CreateSalePage {
     }
 
     public void confirmUpdateInstalmentPlan() {
-        validateHelpers.clickElement(confirmUpdateInstalmentPlan);
+        try {
+            driver.findElement(confirmUpdateInstalmentPlan).click();
+        } catch (NoSuchElementException e) {
+            System.out.println("Confirm change plan does not display.");
+        }
     }
+
 
     public void cancelUpdateInstalmentPlan() {
         validateHelpers.clickElement(cancelUpdateInstalMentPlan);
@@ -318,6 +630,7 @@ public class CreateSalePage {
             int num = (int) a;
             validateHelpers.setText(prePaymentAmountField, String.valueOf(num));
             validateHelpers.clickElement(confirmAddPrePaymentButton);
+            validateHelpers.waitAfterChoseOrClickElement();
         } catch (NoSuchElementException e) {
             Assert.fail("Add pre-payment failed!!");
         }
@@ -355,6 +668,7 @@ public class CreateSalePage {
             validateHelpers.clearElement(instalmentPlanInput);
             validateHelpers.setText(instalmentPlanInput, String.valueOf(num));
             validateHelpers.clickElement(createPlanButton);
+            validateHelpers.waitAfterChoseOrClickElement();
 
         } catch (NoSuchElementException e) {
             Assert.fail("Add Instalment Plan failed!");
@@ -384,11 +698,12 @@ public class CreateSalePage {
     }
 
     public void updateAmountOfFee() {
-        var _randomAmount = ran.nextDouble(1, 1000);
+        var _randomAmount = ran.nextInt(1, 1000);
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(3);
         validateHelpers.clearElement(invoiceFeeAmount);
         validateHelpers.setText(invoiceFeeAmount, String.valueOf(df.format(_randomAmount)));
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void fillAllFeesOnFeeSection() {
@@ -418,11 +733,13 @@ public class CreateSalePage {
 
     public void attachmentImage() {
         _attachmentDocumentHelper.attachmentImage(invoiceAttachmentInput);
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void addCommentOnInvoice() {
         validateHelpers.clickElement(invoiceCommentArea);
         validateHelpers.setText(invoiceCommentArea, FakeDataHelper.getFakedata().text().text(1, 255));
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void selectProductOnPopularProductSection() {
@@ -445,6 +762,7 @@ public class CreateSalePage {
                 a.sendKeys(String.valueOf(_discountRandomNumber));
             }
         }
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void confirmCreateInvoiceAmout0() {
@@ -498,7 +816,6 @@ public class CreateSalePage {
 
     public void updateQuantityAllProduct() {
         var _quantityList = validateHelpers.getList(invoiceQuantityInput);
-
         if (!_quantityList.isEmpty()) {
             for (WebElement a : _quantityList) {
                 var _quantityNumber = ran.nextInt(1, 10);
@@ -507,17 +824,26 @@ public class CreateSalePage {
                 a.sendKeys(String.valueOf(_quantityNumber));
             }
         }
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void updateQuantityOfProduct() {
-        var _quantity = ran.nextInt(1, 10);
-        //System.out.println(_quantity);
-        driver.findElement(invoiceQuantityInput).clear();
-        driver.findElement(invoiceQuantityInput).sendKeys(String.valueOf(_quantity));
+        try {
+            var _quantity = ran.nextInt(1, 10);
+            //System.out.println(_quantity);
+            driver.findElement(invoiceQuantityInput).clear();
+            driver.findElement(invoiceQuantityInput).sendKeys(String.valueOf(_quantity));
+            validateHelpers.waitAfterChoseOrClickElement();
+        } catch (NoSuchElementException e) {
+            Assert.fail("Can not update quantity of the product.");
+        }
+
+
     }
 
     public void addAProductLineIntoProductSection() {
         validateHelpers.clickElement(addProductOnProductLinebutton);
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void changePriceOfAnyProductInProductLines() {
@@ -530,14 +856,14 @@ public class CreateSalePage {
             priceList.get(randomPrice).clear();
             priceList.get(randomPrice).sendKeys(String.valueOf(df.format(ran.nextInt(1, 1000))));
         }
-
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void fillProductIntoProductlines() {
         var productLines = validateHelpers.getList(invoiceProductDropdownButton);
         if (!productLines.isEmpty()) {
-            for (WebElement p : productLines) {
-                p.click();
+            for (int i = 0; i < productLines.size(); i++) {
+                productLines.get(i).click();
                 var list = driver.findElements(invoiceProductList);
                 if (!list.isEmpty()) {
                     Random ran = new Random();
@@ -545,8 +871,9 @@ public class CreateSalePage {
                     list.get(randomNumber).click();
                 } else {
                     createProductPage.createProductOnInvoice();
+                    validateHelpers.waitForLoadJs();
+                    productLines = validateHelpers.getList(invoiceProductDropdownButton);
                 }
-
             }
         }
 
@@ -594,11 +921,12 @@ public class CreateSalePage {
     public void changeProductPriceRandomPrice() {
         var oldPrice = Double.valueOf(validateHelpers.getValueByAttribute(invoiceProductPriceInput));
         Random ran = new Random();
-        var random = ran.nextDouble(1, 1000);
+        var random = ran.nextInt(1, 1000);
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(3);
         validateHelpers.clearElement(invoiceProductPriceInput);
         validateHelpers.setText(invoiceProductPriceInput, String.valueOf(df.format(random)));
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void changeProductPriceOtherThan0() {
@@ -625,6 +953,7 @@ public class CreateSalePage {
 
     public void cancelChangeCurrency() {
         try {
+            validateHelpers.waitAfterChoseOrClickElement();
             driver.findElement(invoiceCancelChangeCurrencyButton).click();
             System.out.println("Cancel change currency");
         } catch (NoSuchElementException e) {
@@ -662,7 +991,6 @@ public class CreateSalePage {
                     System.out.println("Currency " + currencyList.get(randomNumber).getText() + " the same as the main currency " + _mainCurrencyOfCompany);
                 }
             }
-
         }
     }
 
@@ -685,6 +1013,7 @@ public class CreateSalePage {
             }
 
         }
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void getProductError() {
@@ -720,10 +1049,36 @@ public class CreateSalePage {
         }
     }
 
+    public String getFeeName() {
+        var _name = validateHelpers.getValueByAttribute(invoiceFeeField);
+        for (int i = 0; ; i++) {
+            if (_name.contains(".")) {
+                selectFee();
+                _name = validateHelpers.getValueByAttribute(invoiceFeeField);
+            } else {
+                break;
+            }
+        }
+        return _name;
+    }
+
     public void selectProduct() {
         if (!validateHelpers.selectRandom(invoiceProductDropdownButton, invoiceProductList)) {
             createProductPage.createProductOnInvoice();
         }
+    }
+
+    public String getProductName() {
+        var _name = validateHelpers.getValueByAttribute(productName);
+        for (int i = 0; ; i++) {
+            if (_name.contains(".")) {
+                selectProduct();
+                _name = validateHelpers.getValueByAttribute(productName);
+            } else {
+                break;
+            }
+        }
+        return _name;
     }
 
     public void selectCustomer(String warning) {
@@ -732,10 +1087,41 @@ public class CreateSalePage {
         }
     }
 
+    public String getCustomerName() {
+        var _name = validateHelpers.getValueByAttribute(customerNameField);
+        for (int i = 0; ; i++) {
+            if (_name.equals("Anonymous") || _name.contains(".")) {
+                validateHelpers.selectRandom(customerDropdownListButton, customerList);
+                validateHelpers.waitForLoadJs();
+                checkConfirmChangeCurrencyDialog();
+                validateHelpers.waitForLoadJs();
+                cancelChangeCurrency();
+                validateHelpers.waitAfterChoseOrClickElement();
+                _name = validateHelpers.getValueByAttribute(customerNameField);
+            } else {
+                break;
+            }
+        }
+        return _name;
+    }
+
     public void selectEmployee(String warning) {
         if (!validateHelpers.selectRandom(employeeDropdownButton, employeeOptionList)) {
             createEmployeesPage.createEmployeeOnCreateInvoicePage(warning);
         }
+    }
+
+    public String getEmployeeName() {
+        var _name = validateHelpers.getValueByAttribute(employeeName);
+        for (int i = 0; ; i++) {
+            if (_name.contains(".")) {
+                validateHelpers.selectRandom(employeeDropdownButton, employeeOptionList);
+                _name = validateHelpers.getValueByAttribute(employeeName);
+            } else {
+                break;
+            }
+        }
+        return _name;
     }
 
     public void selectAccountNumber() {
@@ -782,6 +1168,7 @@ public class CreateSalePage {
 
         }
         _typeOfSale = type;
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void checkCustomerSection() {

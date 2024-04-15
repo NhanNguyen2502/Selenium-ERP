@@ -9,6 +9,7 @@ import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.text.DecimalFormat;
@@ -25,6 +26,7 @@ public class UpdateFeePage {
     private String _nameExist;
     private String _feeName;
     private String _feeDeleted;
+    private FeeTable feeTable;
 
     public UpdateFeePage(WebDriver driver) {
         this.driver = driver;
@@ -32,6 +34,7 @@ public class UpdateFeePage {
         createFeePage = new CreateFeePage(driver);
         random = new Random();
         decimalFormat = new DecimalFormat();
+        feeTable = new FeeTable(driver);
     }
 
     private By productLinkOnLeftMenu = By.xpath("//a[@data-cy='sidebar-fee-link']");
@@ -50,6 +53,56 @@ public class UpdateFeePage {
     private By confirmDeleteFee = By.xpath("//button[@data-cy='delete-button']");
     private By cancelDeleteFee = By.xpath("//button[@data-cy='cancel-button']");
 
+
+    public void selectFeeToDisableViaSearchFeeName(String feeName) {
+        feeTable.searchFeeName(feeName);
+        validateHelpers.waitForLoadJs();
+        feeTable.filterEnable();
+        validateHelpers.waitForLoadJs();
+        int j =0;
+        var _feeList = validateHelpers.getList(feeNameList);
+        for (int i = 0;; i++) {
+            if(!_feeList.isEmpty())
+            {
+                if (_feeList.size() > 1) {
+                    _feeList.get(j).click();
+                    validateHelpers.waitForLoadJs();
+                    disableFee();
+                    validateHelpers.waitAfterChoseOrClickElement();
+                    confirmDisableFee();
+                    validateHelpers.waitAfterChoseOrClickElement();
+                    clickOnSaveButon();
+                    validateHelpers.waitForLoadJs();
+                    feeTable.searchFeeName(feeName);
+                    validateHelpers.waitForLoadJs();
+                    feeTable.filterEnable();
+                    validateHelpers.waitForLoadJs();
+                    _feeList = validateHelpers.getList(feeNameList);
+
+                } else {
+                    for ( WebElement a: _feeList)
+                    {
+                        a.click();
+                        validateHelpers.waitForLoadJs();
+                        disableFee();
+                        validateHelpers.waitAfterChoseOrClickElement();
+                        confirmDisableFee();
+                        validateHelpers.waitAfterChoseOrClickElement();
+                        clickOnSaveButon();
+                        validateHelpers.waitForLoadJs();
+                        _feeList = validateHelpers.getList(feeNameList);
+                        break;
+                    }
+
+                }
+            }
+            else {
+                break;
+            }
+
+        }
+
+    }
 
     public void verifyDeleteFailed() {
         try {

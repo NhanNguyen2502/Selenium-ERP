@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class SalePage {
+public class SaleTable {
     private WebDriver driver;
     private WebDriverWait wait;
     ValidateHelpers validateHelpers;
@@ -27,7 +27,7 @@ public class SalePage {
     private By crSaleShortcut = By.xpath("//div[@apptooltip='salesList.button.newSaleTooltip']");
 
 
-    public SalePage(WebDriver driver) {
+    public SaleTable(WebDriver driver) {
         this.driver = driver;
         validateHelpers = new ValidateHelpers(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));

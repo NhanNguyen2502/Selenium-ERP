@@ -22,7 +22,8 @@ import java.time.Duration;
 
 public class BaseSetup {
     private static WebDriver driver;
-    private String url = PropertiesHelper.getValue("url_dev");
+    public static String url = PropertiesHelper.getValue("url_dev");
+    public static String url_preprod = PropertiesHelper.getValue("url_preprod");
 
     public static WebDriver getDriver() {
 

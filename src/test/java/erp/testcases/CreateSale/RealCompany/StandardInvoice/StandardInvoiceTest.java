@@ -5,7 +5,7 @@ import erp.base.ReportListener;
 import erp.common.helpers.*;
 import erp.pages.*;
 import erp.pages.SalePage.CreateSalePage;
-import erp.pages.SalePage.SalePage;
+import erp.pages.SalePage.SaleTable;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
@@ -17,7 +17,7 @@ public class StandardInvoiceTest extends BaseSetup {
     private CreateSalePage createSalePage;
     private DashBoardPage dashBoardPage;
     private CompanyListPage companyListPage;
-    private SalePage salePage;
+    private SaleTable saleTable;
 
     @BeforeClass
     public void setUp() {
@@ -27,75 +27,26 @@ public class StandardInvoiceTest extends BaseSetup {
         createSalePage = new CreateSalePage(driver);
         dashBoardPage = new DashBoardPage(driver);
         companyListPage = new CompanyListPage(driver);
-        salePage = new SalePage(driver);
+        saleTable = new SaleTable(driver);
     }
 
     @Test(priority = 1)
     @Parameters({"language"})
     public void when_createWithAllInformationCorrect_then_createSuccess(@Optional("English") String language) {
-        signInPage.waitForPageLoaded();
-        signInPage.verifylanguage(language);
-        companyListPage = signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectAccountNumber();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectEmployee(TranslationHelpers.setFile(language, "$.phoneNumber.error.phoneInvalid"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectFee();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.skipSetFirstInvoiceNumber();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectPaymentAccountEmployeeCustomerProductFeeAndCancelChangeCurrencyOfCustomer(language);
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 2)
     @Parameters({"language"})
     public void when_createInvoiceWithoutCustomerOnStandardInvoiceInRealCompany_then_createFail(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.verifylanguage(language);
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectFee();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.getCustomerError();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeProductAndCancelChangeCurrencyOfCustomer(language);
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
 
     }
@@ -103,179 +54,43 @@ public class StandardInvoiceTest extends BaseSetup {
     @Test(priority = 2)
     @Parameters({"language"})
     public void when_createInvoiceWithoutProductOnStandardInvoiceInRealCompany_then_createFail(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.verifylanguage(language);
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        validateHelpers.verifylanguage(language);
-        validateHelpers.waitAfterChoseOrClickElement();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectFee();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.getProductError();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerAndCancelChangeCurrencyOfCustomer(language);
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 2)
     @Parameters({"language"})
     public void createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerFirst_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.changeCurrencyOnInvoice();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillRate();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        createSalePage.changeProductPriceOtherThan0();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmSetFirstInvoiceNumber();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
+        createSalePage.selectPaymentAccountEmployeeCustomerProductFeeAndCancelChangeCurrencyOfCustomer(language);
+        createSalePage.changeCurrencyOfCustomer();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 2)
     @Parameters({"language"})
     public void createInvoiceWithAnotherCurrencyOnStandardInvoiceChoseCustomerLast_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.changeCurrencyOnInvoice();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillRate();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        createSalePage.changeProductPriceOtherThan0();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmSetFirstInvoiceNumber();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitForLoadJs();
+        createSalePage.changeCurrencyOfCustomer();
+        createSalePage.selectPaymentAccountEmployeeCustomerProductFeeAndCancelChangeCurrencyOfCustomer(language);
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithAnotherReceiptLanguageChoseCustomerFirst_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectPaymentAccountEmployeeCustomerProductFeeAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.changeLanguageOfCustomerOnInvoiceCreatePage();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.changeProductPriceOtherThan0();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmSetFirstInvoiceNumber();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        validateHelpers.logout();
-
-    }
-
-    @Test(priority = 3)
-    @Parameters({"language"})
-    public void createInvoiceWithAnotherReceiptLanguage_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
-        createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        createSalePage.changeLanguageOfCustomerOnInvoiceCreatePage();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.changeProductPriceOtherThan0();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmSetFirstInvoiceNumber();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
 
     }
@@ -283,341 +98,109 @@ public class StandardInvoiceTest extends BaseSetup {
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithChangePriceOfProduct_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectPaymentAccountEmployeeCustomerProductFeeAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.changeProductPriceRandomPrice();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
-
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithManyProduct_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.addManyProductInProductLine();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillProductIntoProductlines();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerManyProductAndCancelChangeCurrencyOfCustomer(language);
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithManyProductsAndChangeAnyProductPrice_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.addManyProductInProductLine();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillProductIntoProductlines();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerManyProductAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.changePriceOfAnyProductInProductLines();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithAnProductLineNullWithOutClickOnIt_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerProductAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.addAProductLineIntoProductSection();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithUpdateQuantityOfProduct_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerProductAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.updateQuantityOfProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithUpdateQuantityOfManyProducts_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.addManyProductInProductLine();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillProductIntoProductlines();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerManyProductAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.updateQuantityAllProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithUpdateQuantityOfAnyProducts_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.addManyProductInProductLine();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillProductIntoProductlines();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerManyProductAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.updateQuantityOfAnyProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithUpdateDiscountOfProduct_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.updateDiscountOfProductOnProductLine();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerProductAndCancelChangeCurrencyOfCustomer(language);
+        createSalePage.updateQuantityOfAnyProduct();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithUpdateDiscountOfAnyProduct_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.addManyProductInProductLine();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillProductIntoProductlines();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerManyProductAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.updateDiscountOfProductOnProductLine();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 3)
     @Parameters({"language"})
     public void createInvoiceWithUpdateDiscountOfAllProducts_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.addManyProductInProductLine();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillProductIntoProductlines();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerManyProductAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.updateDiscountOfAllProducts();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
@@ -629,7 +212,7 @@ public class StandardInvoiceTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
         validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
+        saleTable.gtoSaleViaShortCut();
         validateHelpers.waitForLoadJs();
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
         validateHelpers.waitAfterChoseOrClickElement();
@@ -655,208 +238,65 @@ public class StandardInvoiceTest extends BaseSetup {
     @Test(priority = 4)
     @Parameters({"language"})
     public void createInvoiceWithComment_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerManyProductAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.addCommentOnInvoice();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 4)
     @Parameters({"language"})
     public void createInvoiceAttachmentImage_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerManyProductAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.attachmentImage();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 4)
     @Parameters({"language"})
     public void createInvoiceAttachmentImageAndAddComment_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectEmployeeCustomerManyProductAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.addCommentOnInvoice();
-        validateHelpers.waitAfterChoseOrClickElement();
         createSalePage.attachmentImage();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 5)
     @Parameters({"language"})
     public void createInvoiceWithManyFees_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.addManyFeeLineOnFeeSection();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillAllFeesOnFeeSection();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectPaymentAccountEmployeeCustomerProductManyFeeAndCancelChangeCurrencyOfCustomer(language);
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 5)
     @Parameters({"language"})
     public void createInvoiceAmoutFeeHasBeenUpdate_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectProduct();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectFee();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectPaymentAccountEmployeeCustomerProductFeeAndCancelChangeCurrencyOfCustomer(language);
         createSalePage.updateAmountOfFee();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 
     @Test(priority = 5)
     @Parameters({"language"})
     public void createInvoiceWithManyFeeAndManyProduct_then_createSuccess(@Optional("English") String language) {
-        validateHelpers.waitForLoadJs();
-        signInPage.login(PropertiesHelper.getValue("email"), PropertiesHelper.getValue("password"));
-        validateHelpers.waitForLoadJs();
-        companyListPage.goToCompany(GetTypeOfCompanyHelper.getTypeOfRealCompany(language));
-        validateHelpers.waitForLoadJs();
-        salePage.gtoSaleViaShortCut();
-        validateHelpers.waitForLoadJs();
+        createSalePage.loginAndGoToTheCreateSalePage(language);
         createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getStandard(language));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.addAProductLineIntoProductSection();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillProductIntoProductlines();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.addManyFeeLineOnFeeSection();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.fillAllFeesOnFeeSection();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.clickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.checkConfirmCreateInvoiceWith0Mount();
-        validateHelpers.waitAfterChoseOrClickElement();
-        createSalePage.confirmCreateInvoiceAmout0();
-        validateHelpers.waitForLoadJs();
-        createSalePage.checkInvoiceAfterClickCreateButton();
-        validateHelpers.waitAfterChoseOrClickElement();
+        createSalePage.selectPaymentAccountCustomerManyProductManyFee(language);
+        createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
 

@@ -23,6 +23,7 @@ public class UpdateProductPage {
     private DecimalFormat decimalFormat;
     private String _nameExist;
     private String _productName;
+    private ProductTable productTable;
 
     public UpdateProductPage(WebDriver driver) {
         this.driver = driver;
@@ -31,6 +32,7 @@ public class UpdateProductPage {
         random = new Random();
         decimalFormat = new DecimalFormat();
         createProductPage = new CreateProductPage(driver);
+        productTable = new ProductTable(driver);
     }
 
     private By productLinkOnLeftMenu = By.xpath("//a[@data-cy='sidebar-product-link']");
@@ -317,7 +319,7 @@ public class UpdateProductPage {
 
     public void selectProductToUpdate() {
         var _productList = validateHelpers.getList(productNameList);
-        var _ran = random.nextInt(_productList.size());
+        var _ran = random.nextInt(0,_productList.size());
         if (_productList.isEmpty()) {
             createProductPage.goToCreateProductPage();
             validateHelpers.waitForLoadJsCreatePage();
@@ -329,9 +331,29 @@ public class UpdateProductPage {
             validateHelpers.waitForLoadJs();
             createProductPage.verifyAfterCreate_success();
             _productList = validateHelpers.getList(productNameList);
+            _ran = random.nextInt(0,_productList.size());
         }
         _productUpdate = _productList.get(_ran).getText();
         _productList.get(_ran).click();
+        System.out.println("Product has been selected: " + _productUpdate);
+
+    }
+
+    public void selectProductNameToUpdate(String productName) {
+        productTable.searchProductName(productName);
+        validateHelpers.waitForLoadJs();
+        productTable.filterEnable();
+        validateHelpers.waitForLoadJs();
+        var _productList = validateHelpers.getList(productNameList);
+        for(WebElement a: _productList)
+        {
+            if(a.getText().equals(productName))
+            {
+                _productUpdate = a.getText();
+                a.click();
+                break;
+            }
+        }
         System.out.println("Product has been selected: " + _productUpdate);
 
     }

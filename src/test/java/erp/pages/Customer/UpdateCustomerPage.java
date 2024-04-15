@@ -7,6 +7,7 @@ import erp.common.helpers.ValidateHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.text.DecimalFormat;
@@ -21,6 +22,7 @@ public class UpdateCustomerPage {
     private String _customerdeleted;
     private String _customerUpdated;
     private String _customerNameAfterUpdated;
+    private CustomerTable customerTable;
 
     private By customerNameList = By.xpath("//div[@data-cy='contact-name']");
     private By customerLeftMenu = By.xpath("//a[@data-cy='sidebar-customer-link']");
@@ -61,6 +63,7 @@ public class UpdateCustomerPage {
         ran = new Random();
         attachmentDocumentHelper = new AttachmentDocumentHelper(driver);
         createCustomerPage = new CreateCustomerPage(driver);
+        customerTable = new CustomerTable(driver);
     }
 
 
@@ -329,6 +332,22 @@ public class UpdateCustomerPage {
         var _random = ran.nextInt(_customerList.size());
         _customerUpdated = _customerList.get(_random).getText();
         _customerList.get(_random).click();
+        System.out.println("The customer has been selected: " + _customerUpdated);
+    }
+
+    public void selectCustomerToUpdateViaCustomerName(String customerName) {
+        customerTable.searchCustomerName(customerName);
+        validateHelpers.waitForLoadJs();
+        var _customerList = validateHelpers.getList(customerNameList);
+        for(WebElement a: _customerList)
+        {
+            if(a.getText().equals(customerName))
+            {
+                _customerUpdated = a.getText();
+                a.click();
+                break;
+            }
+        }
         System.out.println("The customer has been selected: " + _customerUpdated);
     }
 
