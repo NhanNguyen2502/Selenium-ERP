@@ -1,21 +1,19 @@
-package erp.pages.ProductPage;
+package erp.pages.PaymentAccountPage;
 
-import com.ibm.icu.impl.UResource;
 import erp.common.helpers.AttachmentDocumentHelper;
 import erp.common.helpers.ValidateHelpers;
-import erp.pages.EmployeePage.CreateEmployeesPage;
 import org.openqa.selenium.*;
 import org.testng.Assert;
 
 import java.util.Random;
 
-public class ProductTable {
+public class PaymentTable {
     private WebDriver driver;
     private ValidateHelpers validateHelpers;
     private Random ran;
     private AttachmentDocumentHelper attachmentDocumentHelper;
 
-    public ProductTable(WebDriver driver) {
+    public PaymentTable(WebDriver driver) {
         this.driver = driver;
         ran = new Random();
         attachmentDocumentHelper = new AttachmentDocumentHelper(driver);
@@ -44,18 +42,18 @@ public class ProductTable {
         validateHelpers.clickElement(productDisable);
     }
 
-    public void searchProductName(String productName) {
+    public void searchPaymentAccountName(String paymentAccountName) {
         try {
             validateHelpers.clickElement(productSearch);
             //validateHelpers.clearElement(productSearch);
             //validateHelpers.setText(productSearch, productName);
             WebElement a = driver.findElement(productSearchField);
             a.click();
-            a.sendKeys(productName);
+            a.sendKeys(paymentAccountName);
             a.sendKeys(Keys.ENTER);
             //validateHelpers.clickElement(a);
         } catch (NoSuchElementException e) {
-            Assert.fail("Search Product Name Failed.");
+            Assert.fail("Search Payment Account Name Failed.");
         }
 
     }

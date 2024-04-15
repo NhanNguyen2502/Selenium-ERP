@@ -7,7 +7,7 @@ import erp.common.helpers.TranslationHelpers;
 import erp.common.helpers.ValidateHelpers;
 import erp.pages.CompanyListPage;
 import erp.pages.DashBoardPage;
-import erp.pages.SalePage.SalePage;
+import erp.pages.SalePage.SaleTable;
 import erp.pages.SignInPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +22,7 @@ public class SalesTest extends BaseSetup {
     private SignInPage signInPage;
     private CompanyListPage companyListPage;
     private ValidateHelpers validateHelpers;
-    private SalePage salePage;
+    private SaleTable saleTable;
 
 
     @BeforeClass
@@ -45,7 +45,7 @@ public class SalesTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.real"));
         validateHelpers.waitForLoadJs();
-        salePage = dashBoardPage.goSaleTable();
+        saleTable = dashBoardPage.goSaleTable();
         validateHelpers.logout();
     }
     @Test(priority = 1)
@@ -60,7 +60,7 @@ public class SalesTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.demo"));
         validateHelpers.waitForLoadJs();
-        salePage = dashBoardPage.goSaleTable();
+        saleTable = dashBoardPage.goSaleTable();
         validateHelpers.logout();
     }
     @Test(priority = 1)
@@ -75,8 +75,8 @@ public class SalesTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(TranslationHelpers.setFile(language,"$.company.listPage.text.demo"));
         validateHelpers.waitForLoadJs();
-        salePage = dashBoardPage.goSaleTable();
-        salePage.gtoSaleViaShortCut();
+        saleTable = dashBoardPage.goSaleTable();
+        saleTable.gtoSaleViaShortCut();
         validateHelpers.logout();
     }
 
@@ -92,8 +92,8 @@ public class SalesTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(TranslationHelpers.setFile(language,"$.company.listPage.text.real"));
         validateHelpers.waitForLoadJs();
-        salePage = dashBoardPage.goSaleTable();
-        salePage.gtoSaleViaShortCut();
+        saleTable = dashBoardPage.goSaleTable();
+        saleTable.gtoSaleViaShortCut();
         validateHelpers.logout();
     }
 
@@ -109,9 +109,9 @@ public class SalesTest extends BaseSetup {
         validateHelpers.waitForLoadJs();
         companyListPage.goToCompany(TranslationHelpers.setFile(language, "$.company.listPage.text.demo"));
         validateHelpers.waitForLoadJs();
-        salePage = dashBoardPage.goSaleTable();
+        saleTable = dashBoardPage.goSaleTable();
         validateHelpers.waitForLoadJs();
-        salePage.verifyElementsOnSaleTable();
+        saleTable.verifyElementsOnSaleTable();
         validateHelpers.logout();
     }
 

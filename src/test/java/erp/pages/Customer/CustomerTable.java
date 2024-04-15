@@ -2,9 +2,7 @@ package erp.pages.Customer;
 
 import erp.common.helpers.AttachmentDocumentHelper;
 import erp.common.helpers.ValidateHelpers;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 
 import java.util.Random;
@@ -29,6 +27,8 @@ public class CustomerTable {
     private By customerStatusEnable = By.xpath("//mat-option[@data-cy='option-1']");
     private By customerStatusDisable = By.xpath("//mat-option[@data-cy='option-2']");
     private By customerNameList = By.xpath("//div[@data-cy='contact-name']");
+    private By customerSearch = By.xpath("(//input[@data-cy='search-input-field'])[1]");
+    private By customerSearchField = By.xpath("(//input[@data-placeholder='Search'])[3]");
 
     public void filterAll() {
         validateHelpers.clickElement(customorStatusField);
@@ -43,5 +43,19 @@ public class CustomerTable {
     public void filterDisabled() {
         validateHelpers.clickElement(customorStatusField);
         validateHelpers.clickElement(customerStatusDisable);
+    }
+
+    public void searchCustomerName(String customerName)
+    {
+        try{
+            validateHelpers.clickElement(customerSearch);
+            WebElement a = driver.findElement(customerSearchField);
+            a.click();
+            a.sendKeys(customerName);
+            a.sendKeys(Keys.ENTER);
+        }catch (NoSuchElementException e)
+        {
+            Assert.fail("Search Customer Name Failed!");
+        }
     }
 }

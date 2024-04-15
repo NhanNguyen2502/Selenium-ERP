@@ -238,7 +238,7 @@ public class CreateCustomerPage {
                 for (int i = 0; ; i++) {
                     if (driver.findElement(customerNameExist).isDisplayed()) {
                         validateHelpers.clearElement(customerNameField);
-                        validateHelpers.setText(customerNameField, FakeDataHelper.getFakedata().name().name());
+                        validateHelpers.setText(customerNameField, FakeDataHelper.getFakedata().name().name().replace("."," "));
                         validateHelpers.clickOutside();
                     } else {
                         break;

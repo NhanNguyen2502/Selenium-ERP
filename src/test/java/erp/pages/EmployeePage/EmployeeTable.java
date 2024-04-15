@@ -3,8 +3,8 @@ package erp.pages.EmployeePage;
 import erp.common.helpers.AttachmentDocumentHelper;
 import erp.common.helpers.ValidateHelpers;
 import erp.pages.Customer.CreateCustomerPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.testng.Assert;
 
 import java.util.Random;
 
@@ -28,6 +28,8 @@ public class EmployeeTable {
     private By employeeEnable = By.xpath("//mat-option[@data-cy='option-1']");
     private By employeeDisable = By.xpath("//mat-option[@data-cy='option-2']");
     private By employeeStatusAll = By.xpath("//mat-option[@data-cy='option-0']");
+    private By employeeSearch = By.xpath("(//input[@data-cy='search-input-field'])[1]");
+    private By employeeSearchField = By.xpath("(//input[@data-placeholder='Search'])[3]");
 
     public void filterAll() {
         validateHelpers.clickElement(employeeStatusField);
@@ -42,6 +44,20 @@ public class EmployeeTable {
     public void filterDisabled() {
         validateHelpers.clickElement(employeeStatusField);
         validateHelpers.clickElement(employeeDisable);
+    }
+
+    public void searchEmployeeName(String employeeName)
+    {
+        try{
+            validateHelpers.clickElement(employeeSearch);
+            WebElement a = driver.findElement(employeeSearchField);
+            a.click();
+            a.sendKeys(employeeName);
+            a.sendKeys(Keys.ENTER);
+        }catch (NoSuchElementException e)
+        {
+            Assert.fail("Search Customer Name Failed!");
+        }
     }
 
 }

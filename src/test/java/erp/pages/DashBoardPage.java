@@ -3,7 +3,7 @@ package erp.pages;
 import erp.common.helpers.PropertiesHelper;
 import erp.common.helpers.TranslationHelpers;
 import erp.common.helpers.ValidateHelpers;
-import erp.pages.SalePage.SalePage;
+import erp.pages.SalePage.SaleTable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -53,10 +53,10 @@ public class DashBoardPage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         validateHelpers = new ValidateHelpers(driver);
     }
-    public SalePage goSaleTable()
+    public SaleTable goSaleTable()
     {
         validateHelpers.clickElement(saleButton);
-        return  new SalePage(driver);
+        return  new SaleTable(driver);
     }
 
     public void verifyAccountSection() {

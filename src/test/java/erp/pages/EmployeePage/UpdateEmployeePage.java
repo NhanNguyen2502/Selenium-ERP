@@ -7,6 +7,7 @@ import erp.common.helpers.ValidateHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.Random;
@@ -19,6 +20,7 @@ public class UpdateEmployeePage {
     private String _employeeUpdated;
     private String _employeeName;
     private CreateEmployeesPage createEmployeesPage;
+    private EmployeeTable employeeTable;
 
     public UpdateEmployeePage(WebDriver driver) {
         this.driver = driver;
@@ -26,6 +28,7 @@ public class UpdateEmployeePage {
         attachmentDocumentHelper = new AttachmentDocumentHelper(driver);
         random = new Random();
         createEmployeesPage = new CreateEmployeesPage(driver);
+        employeeTable = new EmployeeTable(driver);
     }
 
     private By employeeLeftMenu = By.xpath("//a[@data-cy='sidebar-employee-link']");
@@ -51,7 +54,59 @@ public class UpdateEmployeePage {
     private By deleteEmployeeButton = By.xpath("//button[@data-cy='employee-delete-button']");
     private By confirmDeleteButton = By.xpath("//button[@data-cy='delete-button']");
     private By cancelDeleteButton = By.xpath("//button[@data-cy='delete-button']");
+    private By employeeNameOnList = By.xpath("//span[@data-cy='employee-name-data']");
 
+
+    public void selectEmployeeToUpdateDisableViaEmployeeName(String employeeName) {
+        employeeTable.searchEmployeeName(employeeName);
+        employeeTable.filterEnable();
+        validateHelpers.waitForLoadJs();
+        var _employeeList = validateHelpers.getList(employeeNameOnList);
+        validateHelpers.waitForLoadJs();
+        for (int i = 0;; i++) {
+            if(!_employeeList.isEmpty())
+            {
+                if (_employeeList.size() > 1) {
+                    _employeeUpdated = _employeeList.get(i).getText();
+                    System.out.println("The employee has been selected: " + _employeeUpdated);
+                    _employeeList.get(i).click();
+                    validateHelpers.waitForLoadJs();
+                    disableEmployee();
+                    validateHelpers.waitAfterChoseOrClickElement();
+                    confirmDisableEmployee();
+                    validateHelpers.waitAfterChoseOrClickElement();
+                    clickOnSaveEmployeeButton();
+                    validateHelpers.waitForLoadJs();
+                    employeeTable.searchEmployeeName(employeeName);
+                    validateHelpers.waitForLoadJs();
+                    employeeTable.filterEnable();
+                    validateHelpers.waitForLoadJs();
+                    _employeeList = validateHelpers.getList(employeeNameOnList);
+                } else {
+                    for ( WebElement a: _employeeList)
+                    {
+                        _employeeUpdated = a.getText();
+                        System.out.println("The employee has been selected: " + _employeeUpdated);
+                        a.click();
+                        validateHelpers.waitForLoadJs();
+                        disableEmployee();
+                        validateHelpers.waitAfterChoseOrClickElement();
+                        confirmDisableEmployee();
+                        validateHelpers.waitAfterChoseOrClickElement();
+                        clickOnSaveEmployeeButton();
+                        validateHelpers.waitForLoadJs();
+                        _employeeList = validateHelpers.getList(employeeNameOnList);
+                        break;
+                    }
+
+                }
+            }
+            else {
+                break;
+            }
+
+        }
+    }
 
     public void cancelDeleteButton() {
         validateHelpers.clickElement(cancelDeleteButton);
