@@ -30,7 +30,7 @@ public class StandardInvoiceTest extends BaseSetup {
         saleTable = new SaleTable(driver);
     }
 
-    @Test(priority = 1)
+    @Test(priority = 0)
     @Parameters({"language"})
     public void when_createWithAllInformationCorrect_then_createSuccess(@Optional("English") String language) {
         createSalePage.loginAndGoToTheCreateSalePage(language);
@@ -106,7 +106,7 @@ public class StandardInvoiceTest extends BaseSetup {
         validateHelpers.logout();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 1)
     @Parameters({"language"})
     public void createInvoiceWithManyProduct_then_createSuccess(@Optional("English") String language) {
         createSalePage.loginAndGoToTheCreateSalePage(language);
@@ -299,5 +299,4 @@ public class StandardInvoiceTest extends BaseSetup {
         createSalePage.createInvoiceAndVerifyAfterCreate();
         validateHelpers.logout();
     }
-
 }

@@ -45,16 +45,13 @@ public class PaymentTable {
     public void searchPaymentAccountName(String paymentAccountName) {
         try {
             validateHelpers.clickElement(productSearch);
-            //validateHelpers.clearElement(productSearch);
-            //validateHelpers.setText(productSearch, productName);
             WebElement a = driver.findElement(productSearchField);
             a.click();
             a.sendKeys(paymentAccountName);
+            validateHelpers.waitAfterChoseOrClickElement();
             a.sendKeys(Keys.ENTER);
-            //validateHelpers.clickElement(a);
         } catch (NoSuchElementException e) {
             Assert.fail("Search Payment Account Name Failed.");
         }
-
     }
 }

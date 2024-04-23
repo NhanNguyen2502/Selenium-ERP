@@ -28,16 +28,16 @@ public class CreateFeePage {
     }
 
     //Create fee on the create invoice page
-    private By invoiceAddNewFeeOnFeeLineButton = By.xpath("//button[@data-cy='new-fee-row-button']");
+    private By invoiceAddNewFeeOnFeeLineButton = By.xpath("//act-button[@data-cy='new-fee-row-button']");
     private By invoiceFeeField = By.xpath("//input[@data-cy='select-fee']");
-    private By invoiceAddNewFeeButton = By.xpath("(//button[@apptooltip='regularInvoice.button.createFeeTooltip'])[2]");
+    private By invoiceAddNewFeeButton = By.xpath("(//act-button[@apptooltip='regularInvoice.button.createFeeTooltip'])[2]");
     private By invoiceFeeList = By.xpath("//mat-option");
     private By invoiceFeeError = By.xpath("//div[@data-cy='fee-name-required-error']");
     private By invoiceFeeNameField = By.xpath("//input[@data-cy='fee-name-input']");
     private By invoiceMainPricefield = By.xpath("//input[@data-cy='fee-amount-company-main-currecny']");
     private By invoiceCreateButton = By.xpath("//mat-dialog-actions//button[@data-cy='dialog-confirm-button']");
     private By leftMenuFee = By.xpath("//a[@data-cy='sidebar-fee-link']");
-    private By createButtonOnTable = By.xpath("//button[@data-cy='create-fee-button']");
+    private By createButtonOnTable = By.xpath("//act-button[@data-cy='create-fee-button']");
     private By feeNamefield = By.xpath("//input[@data-cy='fee-name-input']");
     private By feeNameExist = By.xpath("//mat-error//div[@data-cy='fee-name-required-error']");
     private By createFeeButton = By.xpath("//button[@data-cy='fee-submit-button']");

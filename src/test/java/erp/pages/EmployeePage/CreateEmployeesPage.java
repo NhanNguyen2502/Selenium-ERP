@@ -22,13 +22,13 @@ public class CreateEmployeesPage {
     private Random random;
     private String _employeeName;
     //Create Employee on the create invoice page
-    private By invoiceAddEmployeeButton = By.xpath("(//button[@apptooltip='regularInvoice.button.createEmployeeTooltip'])[2]");
+    private By invoiceAddEmployeeButton = By.xpath("(//act-button[@apptooltip='regularInvoice.button.createEmployeeTooltip'])[2]");
     private By invoiceEmployeeNameField = By.xpath("//app-create-edit-employee-dialog//input[@data-cy='name']");
     private By invoicePhoneNumberfield = By.xpath("//app-create-edit-employee-dialog//input[@data-cy='phone-number-input']");
-    private By invoiceCreateEmployeeButton = By.xpath("//app-create-edit-employee-dialog//button[@data-cy='dialog-confirm-button']");
+    private By invoiceCreateEmployeeButton = By.xpath("//app-create-edit-employee-dialog//act-button[@data-cy='dialog-confirm-button']");
     private By invoicePhoneNumberWarning = By.xpath("//div[@data-cy='phone-invalid-error-message']");
     private By employeeLeftMenu = By.xpath("//a[@data-cy='sidebar-employee-link']");
-    private By tableEmployeeCreateButton = By.xpath("//button[@data-cy='create-employee-button']");
+    private By tableEmployeeCreateButton = By.xpath("//act-button[@data-cy='create-employee-button']");
     private By employeeName = By.xpath("//input[@data-cy='name-input']");
     private By phoneDialCodeField = By.xpath("//input[@data-cy='phone-dial-code-input']");
     private By phonenumberField = By.xpath("//input[@data-cy='phone-number-input']");

@@ -39,7 +39,7 @@ public class UpdateEmployeePage {
     private By phoneNumberWarning = By.xpath("//div[@data-cy='phone-invalid-error-message']");
     private By employeePhoneDial = By.xpath("//mat-option[@data-cy='phone-dial-code-option']");
     private By employeeDuplicatePhoneAndName = By.xpath("//div[@data-cy='duplicate-phone-number-and-name']");
-    private By employeeDetailPageSaveButton = By.xpath("//button[@data-cy='create-employee-button']");
+    private By employeeDetailPageSaveButton = By.xpath("//act-button[@data-cy='create-employee-button']");
     private By employeeTabledTitle = By.xpath("//span[@data-cy='employee-list-title']");
     private By employeeAvatarField = By.xpath("//input[@apptooltip='avatar.tooltips.uploadImageTooltip']");
     private By employeeConfirmDropAvatarButton = By.xpath("//button[@data-cy='save-imapge-uplaod-button']");

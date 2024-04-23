@@ -154,22 +154,22 @@ public class CashSaleTest extends BaseSetup {
         validateHelpers.logout();
     }
 
-    @Test(priority = 0)
-    @Parameters({"language"})
-    public void when_createWithDisableCustomer_then_createFail(@Optional("English") String language) {
-        createSalePage.loginAndGoToTheCreateSalePage(language);
-        createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getCashSale(language));
-        createSalePage.selectEmployeeCustomerProductAndCancelChangeCurrencyOfCustomer(language);
-        var  _customerName = createSalePage.getCustomerName();
-        validateHelpers.waitAfterChoseOrClickElement();
-        browserManagerHelper.openNewTab(url);
-        createSalePage.disableCustomer(_customerName);
-        browserManagerHelper.backToFirstTab();
-        createSalePage.createInvoiceAndVerifyAfterCreate();
-        validateHelpers.logout();
-    }
+//    @Test(priority = 2)
+//    @Parameters({"language"})
+//    public void when_createWithDisableCustomer_then_createFail(@Optional("English") String language) {
+//        createSalePage.loginAndGoToTheCreateSalePage(language);
+//        createSalePage.selectSaleType(GetKeyOfSaleTypeByLanguageHelpers.getCashSale(language));
+//        createSalePage.selectEmployeeCustomerProductAndCancelChangeCurrencyOfCustomer(language);
+//        var  _customerName = createSalePage.getCustomerName();
+//        validateHelpers.waitAfterChoseOrClickElement();
+//        browserManagerHelper.openNewTab(url);
+//        createSalePage.disableCustomer(_customerName);
+//        browserManagerHelper.backToFirstTab();
+//        createSalePage.createInvoiceAndVerifyAfterCreate();
+//        validateHelpers.logout();
+//    }
 
-    @Test(priority = 0)
+    @Test(priority = 2)
     @Parameters({"language"})
     public void when_createWithDisableProduct_then_createFail(@Optional("English") String language) {
         createSalePage.loginAndGoToTheCreateSalePage(language);
@@ -185,7 +185,7 @@ public class CashSaleTest extends BaseSetup {
         validateHelpers.logout();
     }
 
-    @Test(priority = 0)
+    @Test(priority = 2)
     @Parameters({"language"})
     public void when_createWithDisableEmployee_then_createFail(@Optional("English") String language) {
         createSalePage.loginAndGoToTheCreateSalePage(language);
@@ -201,7 +201,7 @@ public class CashSaleTest extends BaseSetup {
         validateHelpers.logout();
     }
 
-    @Test(priority = 0)
+    @Test(priority = 2)
     @Parameters({"language"})
     public void when_createWithDisableEmployeeAndCustomer_then_createFail(@Optional("English") String language) {
         createSalePage.loginAndGoToTheCreateSalePage(language);

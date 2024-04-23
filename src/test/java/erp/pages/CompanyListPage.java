@@ -43,7 +43,7 @@ public class CompanyListPage {
     private By nameOfAccount = By.xpath("//button//span//span[@class='user-name text-truncate text-initial']");
     private By logoutButton = By.xpath("//button[@data-cy='log-out-button']");
     //private By createButton = By.xpath("//button[@data-cy='create-company-btn']");
-    @FindBy(xpath = "//button[@data-cy='create-company-btn']")
+    @FindBy(xpath = "//act-button[@data-cy='create-company-btn']")
     WebElement createButton;
     //private By companyStatusList = By.xpath("//div//input[@id='company-status-select']");
     @FindBy(xpath = "//div//input[@id='company-status-select']")
