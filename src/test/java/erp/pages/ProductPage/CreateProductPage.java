@@ -23,14 +23,14 @@ public class CreateProductPage {
     private String _nameExist;
 
     //Create product on the invoice page
-    private By invoiceAddProductButton = By.xpath("(//button[@data-cy='add-product-button'])[2]");
+    private By invoiceAddProductButton = By.xpath("(//act-button[@data-cy='add-product-button'])[2]");
     private By invoiceProductDropdownButton = By.xpath("//input[@data-cy='select-product']");
     private By invoiceProductList = By.xpath("//mat-option");
     private By invoiceProductName = By.xpath("//input[@apptooltip='invoicesCommon.dialog.createEditProduct.inputField.productNameTooltip']");
     private By invoiceProuctPrice = By.xpath("//input[@apptooltip='invoicesCommon.dialog.createEditProduct.inputField.standardPriceTooltip']");
-    private By invoiceCreateProductButton = By.xpath("//button[@data-cy='dialog-confirm-button']");
+    private By invoiceCreateProductButton = By.xpath("//act-button[@data-cy='dialog-confirm-button']");
     private By productLinkOnLeftMenu = By.xpath("//a[@data-cy='sidebar-product-link']");
-    private By productCreateButton = By.xpath("//button[@data-cy='create-product-button']");
+    private By productCreateButton = By.xpath("//act-button[@data-cy='create-product-button']");
     private By productImage = By.xpath("//input[@apptooltip='avatar.tooltips.uploadImageTooltip']");
     private By productName = By.xpath("//input[@data-cy='product-name']");
     private By productImageConfirm = By.xpath("//button[@data-cy='save-imapge-uplaod-button']");

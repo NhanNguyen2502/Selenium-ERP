@@ -41,17 +41,17 @@ public class UpdateFeePage {
     private By feeNameList = By.xpath("//span[@data-cy='fee-name-data']");
     private By feeNamefield = By.xpath("//input[@data-cy='fee-name-input']");
     private By feeNameExist = By.xpath("//mat-error//div[@data-cy='fee-name-required-error']");
-    private By createFeeButton = By.xpath("//button[@data-cy='fee-submit-button']");
+    private By createFeeButton = By.xpath("//act-button[@data-cy='create-fee-button']");
     private By feeMainPrice = By.xpath("(//input[@data-cy='fee-currency-amount'])[1]");
     private By feeTableTitle = By.xpath("//span[@data-cy='product-list-page']");
     private By otherPriceList = By.xpath("//input[@data-cy='fee-currency-amount']");
-    private By addOtherPriceButton = By.xpath("//button[@data-cy='add-fee-amount-button']");
+    private By addOtherPriceButton = By.xpath("//act-button[@data-cy='add-fee-amount-button']");
     private By disableEnableCustomerButton = By.xpath("(//mat-slide-toggle)[1]");
     private By confirmDisabledEnable = By.xpath("//button[@data-cy='dialog-yes-button']");
-    private By cancelDisableEnableCustomer = By.xpath("//button[@data-cy='dialog-cancel-button']");
-    private By deleteFeeButton = By.xpath("//button[@data-cy='fee-delete-button']");
-    private By confirmDeleteFee = By.xpath("//button[@data-cy='delete-button']");
-    private By cancelDeleteFee = By.xpath("//button[@data-cy='cancel-button']");
+    private By cancelDisableEnableCustomer = By.xpath("//act-button[@data-cy='dialog-cancel-button']");
+    private By deleteFeeButton = By.xpath("//act-button[@data-cy='fee-delete-button']");
+    private By confirmDeleteFee = By.xpath("//act-button[@data-cy='delete-button']");
+    private By cancelDeleteFee = By.xpath("//act-button[@data-cy='cancel-button']");
 
 
     public void selectFeeToDisableViaSearchFeeName(String feeName) {

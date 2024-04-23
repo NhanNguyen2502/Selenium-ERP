@@ -21,11 +21,11 @@ public class CreateSupplierPage {
     private String _supplierName;
 
     //Create Supplier on the create Invoice Page
-    private By invoiceAddSupplierButton = By.xpath("(//button[@apptooltip='regularInvoice.button.createContactTooltip'])[2]");
+    private By invoiceAddSupplierButton = By.xpath("(//act-button[@apptooltip='regularInvoice.button.createContactTooltip'])[2]");
     private By invoiceSupplierNamefield = By.xpath("//input[@apptooltip='invoicesCommon.dialog.createEditContact.inputField.contactNameTooltip']");
-    private By invoiceCreateSupplierButton = By.xpath("//app-create-edit-contact-dialog//button[@data-cy='dialog-confirm-button']");
+    private By invoiceCreateSupplierButton = By.xpath("//app-create-edit-contact-dialog//act-button[@data-cy='dialog-confirm-button']");
     private By invoiceSupplierNameError = By.xpath("//mat-error//div");
-    private By cusTometTableCreateSupplierButton = By.xpath("//button[@data-cy='create-contact-button']");
+    private By cusTometTableCreateSupplierButton = By.xpath("//act-button[@data-cy='create-contact-button']");
     private By customerNameField = By.xpath("//input[@data-cy='contact-name']");
     private By customerNameExist = By.xpath("//div[@data-cy='name-exist-error-message']");
     private By customerEmailField = By.xpath("//input[@data-cy='email']");

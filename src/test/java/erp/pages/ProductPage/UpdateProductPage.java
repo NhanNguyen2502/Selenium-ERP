@@ -39,7 +39,7 @@ public class UpdateProductPage {
     private By productNameList = By.xpath("//span[@data-cy='product-name-data']");
     private By productName = By.xpath("//input[@data-cy='product-name']");
     private By productNameExist = By.xpath("//div[@data-cy='product-name-exist-error']");
-    private By createProductButton = By.xpath("//button[@data-cy='create-product-button']");
+    private By createProductButton = By.xpath("//act-button[@data-cy='create-product-button']");
     private By productTableTitle = By.xpath("//div[@data-cy='product-list-page']");
     private By productPrice = By.xpath("//input[@data-cy='product-price']");
     private By productImage = By.xpath("//input[@apptooltip='avatar.tooltips.uploadImageTooltip']");

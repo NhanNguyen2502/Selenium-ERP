@@ -20,19 +20,19 @@ public class CreateCustomerPage {
     private String _customerNameExist;
 
     //Create Customer on the create Invoice Page
-    private By invoiceAddCustomerButton = By.xpath("(//button[@apptooltip='regularInvoice.button.createContactTooltip'])[2]");
+    private By invoiceAddCustomerButton = By.xpath("(//act-button[@apptooltip='regularInvoice.button.createContactTooltip'])[2]");
     private By invoiceCustomerNamefield = By.xpath("//input[@apptooltip='invoicesCommon.dialog.createEditContact.inputField.contactNameTooltip']");
     private By invoiceCreateCustomerButton = By.xpath("//app-create-edit-contact-dialog//button[@data-cy='dialog-confirm-button']");
     private By invoiceCustomerNameError = By.xpath("//mat-error//div");
     private By customerLeftMenu = By.xpath("//a[@data-cy='sidebar-customer-link']");
-    private By cusTometTableCreateCustomerButton = By.xpath("//button[@data-cy='create-contact-button']");
+    private By cusTometTableCreateCustomerButton = By.xpath("//act-button[@data-cy='create-contact-button']");
     private By customerNameField = By.xpath("//input[@data-cy='contact-name']");
     private By customerNameExist = By.xpath("//div[@data-cy='name-exist-error-message']");
     private By customerEmailField = By.xpath("//input[@data-cy='email']");
     private By phoneDialCodeField = By.xpath("//input[@data-cy='phone-dial-code-input']");
     private By phoneNumberWarning = By.xpath("//mat-error");
     private By phonenumberField = By.xpath("//input[@data-cy='phone-number-input']");
-    private By createButton = By.xpath("//button[@data-cy='create-contact-button']");
+    private By createButton = By.xpath("//act-button[@data-cy='create-contact-button']");
     private By customerTitle = By.xpath("//span[@data-cy='customer-list-title']");
     private By customerGroup = By.xpath("//input[@data-cy='group-chip-input']");
     private By customerDiscount = By.xpath("//input[@data-cy='contact-discount-setting']");
@@ -231,7 +231,7 @@ public class CreateCustomerPage {
     }
 
     public void enterCustomerName() {
-        validateHelpers.setText(customerNameField, FakeDataHelper.getFakedata().name().name());
+        validateHelpers.setText(customerNameField, FakeDataHelper.getFakedata().name().name().replace("."," "));
         validateHelpers.clickOutside();
         try {
             if (driver.findElement(customerNameExist).isDisplayed()) {

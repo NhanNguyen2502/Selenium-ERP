@@ -27,7 +27,7 @@ public class UpdateCustomerPage {
     private By customerNameList = By.xpath("//div[@data-cy='contact-name']");
     private By customerLeftMenu = By.xpath("//a[@data-cy='sidebar-customer-link']");
     private By customerNameField = By.xpath("//input[@data-cy='contact-name']");
-    private By saveButton = By.xpath("//button[@data-cy='create-contact-button']");
+    private By saveButton = By.xpath("//act-button[@data-cy='create-contact-button']");
     private By customerTitle = By.xpath("//span[@data-cy='customer-list-title']");
     private By customerAvatarField = By.xpath("//input[@apptooltip='avatar.tooltips.uploadImageTooltip']");
     private By customerConfirmDropAvatarButton = By.xpath("//button[@data-cy='save-imapge-uplaod-button']");

@@ -31,11 +31,14 @@ public class ValidateHelpers {
         actions = new Actions(driver);
     }
 
+    public String getCSSValue (By element,String value) {
+        return driver.findElement(element).getCssValue(value);
+    }
+
     public boolean checkElemenNull(By element) {
         try {
             var a = driver.findElements(element);
-            if (a.isEmpty())
-            {
+            if (a.isEmpty()) {
                 return true;
             }
             return false;
@@ -159,7 +162,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(5000);
+            Thread.sleep(9000);
             wait.until(jsWait);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete after click or chose element");
@@ -190,7 +193,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(10000);
+            Thread.sleep(19000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");
@@ -206,7 +209,7 @@ public class ValidateHelpers {
             }
         };
         try {
-            Thread.sleep(5000);
+            Thread.sleep(15000);
             wait.until(jsLoad);
         } catch (Throwable error) {
             Assert.fail("Timeout waiting for Page Load Request to complete.");

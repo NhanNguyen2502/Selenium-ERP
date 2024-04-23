@@ -26,6 +26,7 @@ public class CreatePaymentAccount {
     private DateTimeFormatter date;
     private DateTimeFormatter month;
     private DateTimeFormatter year;
+    private String _paymentCreated="";
 
     public CreatePaymentAccount(WebDriver driver) {
         this.driver = driver;
@@ -39,11 +40,11 @@ public class CreatePaymentAccount {
     }
 
     private By leftMenuLink = By.xpath("//a[@data-cy='sidebar-payment-accounts-link']");
-    private By createPaymentButton = By.xpath("//button[@apptooltip='regularInvoice.button.createBankAccount']");
+    private By createPaymentButton = By.xpath("//act-button[@data-cy='create-payment-account-button']");
     private By paymentNameField = By.xpath("//input[@data-cy='bank-name-input']");
     private By paymentNameExist = By.xpath("//div[@data-cy='account-name-exists-error']");
     private By paymentTableTitle = By.xpath("//span[@data-cy='purchase-list-title']");
-    private By createButton = By.xpath("//button[@data-cy='account-save-create-button']");
+    private By createButton = By.xpath("//act-button[@data-cy='account-save-create-button']");
     private By accountNumber = By.xpath("//input[@data-cy='account-number-input']");
     private By accountNameRequired = By.xpath("//div[@data-cy='account-name-required']");
     private By accountNumberRequired = By.xpath("//div[@data-cy='account-number-required']");
@@ -60,6 +61,7 @@ public class CreatePaymentAccount {
     private By paymentServiceOption = By.xpath("//input[@data-placeholder='Select']");
     private By paymentServiceOptionList = By.xpath("//mat-option[@data-cy='language-select-option']");
     private By ibanWarning = By.xpath("//div[@data-cy='ibanNumber-pattern']");
+    private By swiftBicWarning = By.xpath("//div[@data-cy='swiftNumber-pattern']");
 
 
     public void selectRandomPaymentServiceOption() {
@@ -75,10 +77,11 @@ public class CreatePaymentAccount {
 
     public void selectTypeOfPaymentAccount(String paymentAccountType) {
         validateHelpers.clickElement(bankTypeFiled);
+        validateHelpers.waitAfterChoseOrClickElement();
         var _list = validateHelpers.getList(bankTypeList);
         if (!_list.isEmpty()) {
             for (WebElement a : _list)
-                if (a.getText().contains(paymentAccountType)) {
+                if (a.getText().equals(paymentAccountType)) {
                     a.click();
                     break;
                 }
@@ -89,6 +92,20 @@ public class CreatePaymentAccount {
 
     public void enterBicOrSwift() {
         validateHelpers.setText(bicOrSwift, FakeDataHelper.getFakedata().finance().bic());
+        validateHelpers.clickOutside();
+        try {
+            for (int i = 0; ; i++) {
+                if (driver.findElement(swiftBicWarning).isDisplayed()) {
+                    validateHelpers.clearElement(bicOrSwift);
+                    validateHelpers.setText(bicOrSwift, String.valueOf(FakeDataHelper.getFakedata().finance().iban()));
+                    validateHelpers.clickOutside();
+                } else {
+                    break;
+                }
+            }
+        } catch (NoSuchElementException e) {
+            System.out.println("");
+        }
     }
 
     public void enterIban() {
@@ -99,12 +116,13 @@ public class CreatePaymentAccount {
                 if (driver.findElement(ibanWarning).isDisplayed()) {
                     validateHelpers.clearElement(ibanField);
                     validateHelpers.setText(ibanField, String.valueOf(FakeDataHelper.getFakedata().finance().iban()));
+                    validateHelpers.clickOutside();
                 } else {
                     break;
                 }
             }
         } catch (NoSuchElementException e) {
-            System.out.println("Can create with Iban");
+            System.out.println("");
         }
     }
 
@@ -124,7 +142,7 @@ public class CreatePaymentAccount {
 
     public void enterOpeningBalance() {
         decimalFormat.setMaximumFractionDigits(3);
-        validateHelpers.setText(openingBalanceField, String.valueOf(decimalFormat.format(random.nextDouble(1, 100))));
+        validateHelpers.setText(openingBalanceField, decimalFormat.format(random.nextInt(1, 100)));
     }
 
     public void checkAccountNumberRequired() {
@@ -140,17 +158,27 @@ public class CreatePaymentAccount {
     }
 
     public void clickOnCreateButton() {
+        _paymentCreated = validateHelpers.getValueByAttribute(paymentNameField);
         validateHelpers.clickElement(createButton);
     }
 
     public void verifyFailed() {
-        Assert.assertTrue(validateHelpers.checkElemenNull(paymentTableTitle));
-        System.out.println("Create Fail.");
+        try {
+            Assert.assertTrue(validateHelpers.checkElemenNull(createPaymentButton));
+            System.out.println("Create Failed.");
+        } catch (NoSuchElementException e) {
+            Assert.fail("");
+        }
     }
 
     public void verifyCreateSuccess() {
-        Assert.assertTrue(validateHelpers.checkDisplayed(paymentTableTitle), "Create Failed.");
-        System.out.println("Payment account has been create success with name: " + _paymentName);
+        try {
+            Assert.assertTrue(driver.findElement(createPaymentButton).isDisplayed());
+            System.out.println("Payment account has been create success with name: " + _paymentCreated);
+        } catch (NoSuchElementException e) {
+            Assert.fail("Create Failed.");
+        }
+
     }
 
     public String enterPaymentName() {
@@ -162,6 +190,7 @@ public class CreatePaymentAccount {
                 if (driver.findElement(paymentNameExist).isDisplayed()) {
                     _paymentName = FakeDataHelper.getFakedata().finance().stockMarket();
                     validateHelpers.setText(paymentNameField, _paymentName);
+                    validateHelpers.clickOutside();
                 } else {
                     break;
                 }

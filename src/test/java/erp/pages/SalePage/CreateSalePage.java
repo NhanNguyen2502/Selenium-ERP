@@ -118,7 +118,8 @@ public class CreateSalePage {
     private By invoiceAddNewFeeOnFeeLineButton = By.xpath("//button[@data-cy='new-fee-row-button']");
     private By invoiceFeeField = By.xpath("//input[@data-cy='select-fee']");
     private By invoiceFeeList = By.xpath("//mat-option");
-    private By invoiceCreateInvoiceButton = By.xpath("//button[@data-cy='create-invoice-button']");
+    private By invoiceCreateInvoiceButton = By.xpath("//act-button[@data-cy='create-invoice-button']");
+    private By invoiceCreateDraftButton = By.xpath("//act-button[@data-cy='save-draft-button']");
     private By invoiceInstalmentPlanAmount = By.xpath("//app-sale-draft-installment-payments//app-amount-display//span[@data-cy='number-before']");
     private By invoiceInstalamoutField = By.xpath("//input[@data-cy='installment-amount-input']");
     private By invoiceCreatePlanButton = By.xpath("//button[@data-cy='create-plan-button']");
@@ -131,8 +132,8 @@ public class CreateSalePage {
     private By invoiceCurrencyInputField = By.xpath("//input[@data-placeholder='Currency']");
     private By invoiceCurrencyList = By.xpath("//mat-option");
     private By invoiceConfirmChangeCurrencyDialog = By.xpath("//app-confirm-change-currency-dialog");
-    private By invoiceConfirmChangeCurrencyButton = By.xpath("//button[@data-cy='dialog-change-button']");
-    private By invoiceCancelChangeCurrencyButton = By.xpath("//button[@data-cy='dialog-cancel-button']");
+    private By invoiceConfirmChangeCurrencyButton = By.xpath("//act-dialog//act-button[@data-cy='dialog-change-button']");
+    private By invoiceCancelChangeCurrencyButton = By.xpath("//act-dialog//act-button[@data-cy='dialog-cancel-button']");
     private By invoiceProductPriceInput = By.xpath("//input[@id='price-input']");
     private By invoiceHistorySection = By.xpath("//app-invoice-detail-histories");
     private By invoiceRateInput = By.xpath("//input[@data-cy='exchange-rate-input']");
@@ -156,21 +157,22 @@ public class CreateSalePage {
     private By priceFirst = By.xpath("//div[@data-cy='payment-amount-max-amount']");
     private By instalmentPlanInput = By.xpath("//input[@data-cy='installment-amount-input']");
     private By createPlanButton = By.xpath("//button[@data-cy='create-plan-button']");
-    private By addPrePaymentButton = By.xpath("//button[@data-cy='add-prepayment-button']");
+    private By addPrePaymentButton = By.xpath("//act-button[@data-cy='add-prepayment-button']");
     private By prePaymentAmountField = By.xpath("//input[@data-cy='amount']");
     private By prePaymentAmountRequired = By.xpath("//div[@data-cy='payment-amount-required']");
-    private By confirmAddPrePaymentButton = By.xpath("//button[@data-cy='dialog-confirm-button']");
+    private By confirmAddPrePaymentButton = By.xpath("//act-button[@data-cy='create-payment-button']");
     private By instalmentPeriodField = By.xpath("(//app-select//mat-form-field//input)[2]");
     private By periodOptions = By.xpath("//mat-option");
     private By informChangeAmountOfInstalmentPlan = By.xpath("//app-confirm-dialog");
     private By cancelUpdateInstalMentPlan = By.xpath("//button[@data-cy='dialog-cancel-button']");
     private By confirmUpdateInstalmentPlan = By.xpath("//button[@data-cy='dialog-yes-button']");
     private By removeInstalmentLines = By.xpath("//button[@apptooltip='general.button.remove']");
-    private By addInstalmentLine = By.xpath("//button[@apptooltip='installmentInvoice.button.addInstallment']");
+    private By addInstalmentLine = By.xpath("//act-button[@apptooltip='installmentInvoice.button.addInstallment']");
+    private By addInstalmentLineButtonStatus = By.xpath("//act-button[@apptooltip='installmentInvoice.button.addInstallment']//button");
     private By removeProductButton = By.xpath("(//button[@data-cy='product-remove-button'])[1]");
     private By confirmRemoveProductButton = By.xpath("//button[@data-cy='dialog-yes-button']");
-    private By confirmUpdateInstalmentPlanAfterChangeInstalmentAmount = By.xpath("//button[@data-cy='create-plan-confirm-button']");
-    private By cancelUpdateInstalmentPlanAfterChangeInstalmentAmount = By.xpath("//button[@data-cy='create-plan-cancel-button']");
+    private By confirmUpdateInstalmentPlanAfterChangeInstalmentAmount = By.xpath("//act-button[@data-cy='create-plan-confirm-button']");
+    private By cancelUpdateInstalmentPlanAfterChangeInstalmentAmount = By.xpath("//act-button[@data-cy='create-plan-cancel-button']");
     private By customerNameField = By.xpath("(//app-select-object-control)[3]//input");
     private By productName = By.xpath("//input[@data-cy='select-product']");
     private By employeeName = By.xpath("//input[@data-cy='select-our-reference']");
@@ -242,6 +244,12 @@ public class CreateSalePage {
         validateHelpers.waitAfterChoseOrClickElement();
         confirmUpdateInstalmentPlan();
         validateHelpers.waitAfterChoseOrClickElement();
+        confirmUpdateInstalmentPlan();
+        validateHelpers.waitAfterChoseOrClickElement();
+        skipSetFirstInvoiceNumber();
+        validateHelpers.waitForLoadJs();
+        checkInvoiceAfterClickCreateButton();
+        validateHelpers.waitAfterChoseOrClickElement();
     }
 
     public void reAddInstalmentLineViaPlusIcon() {
@@ -251,7 +259,7 @@ public class CreateSalePage {
 
     public void addInstalmentPlanViaPlusIconOnInstalmentPlanSection() {
         enterAmountToInstalmentAmount();
-        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.waitForLoadJs();
         addInstalmentLinesViaPlusIcon();
         validateHelpers.waitAfterChoseOrClickElement();
     }
@@ -282,7 +290,7 @@ public class CreateSalePage {
         changeCurrencyOnInvoice();
         validateHelpers.waitAfterChoseOrClickElement();
         confirmChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.waitForLoadJs();
         fillRate();
         validateHelpers.waitAfterChoseOrClickElement();
     }
@@ -297,6 +305,8 @@ public class CreateSalePage {
         validateHelpers.waitForLoadJs();
         checkInvoiceAfterClickCreateButton();
         validateHelpers.waitAfterChoseOrClickElement();
+        browserManagerHelper.closingTab1();
+        validateHelpers.waitForLoadJs();
     }
 
     public void selectPaymentAccountEmployeeCustomerProductFeeAndCancelChangeCurrencyOfCustomer(String language) {
@@ -307,10 +317,8 @@ public class CreateSalePage {
         validateHelpers.waitAfterChoseOrClickElement();
         selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
         validateHelpers.waitForLoadJs();
-        checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitAfterChoseOrClickElement();
         cancelChangeCurrency();
-        validateHelpers.waitAfterChoseOrClickElement();
+        validateHelpers.waitForLoadJs();
         selectProduct();
         validateHelpers.waitAfterChoseOrClickElement();
         selectFee();
@@ -385,8 +393,6 @@ public class CreateSalePage {
         validateHelpers.waitAfterChoseOrClickElement();
         selectCustomer(TranslationHelpers.setFile(language, "$.invoicesCommon.dialog.createEditContact.text.language"));
         validateHelpers.waitForLoadJs();
-        checkConfirmChangeCurrencyDialog();
-        validateHelpers.waitForLoadJs();
         cancelChangeCurrency();
         validateHelpers.waitAfterChoseOrClickElement();
         selectProduct();
@@ -405,6 +411,7 @@ public class CreateSalePage {
         checkInvoiceAfterClickCreateButton();
         validateHelpers.waitAfterChoseOrClickElement();
          browserManagerHelper.closingTab1();
+         validateHelpers.waitForLoadJs();
     }
 
     public void disableProduct(String productName) {
@@ -485,10 +492,12 @@ public class CreateSalePage {
 
     public void addInstalmentLinesViaPlusIcon() {
         try {
+            var _check = driver.findElement(addInstalmentLineButtonStatus).getAttribute("disabled");
             for (int i = 0; ; i++) {
-                if (driver.findElement(addInstalmentLine).isEnabled()) {
+                if (_check == null) {
                     validateHelpers.clickElement(addInstalmentLine);
                     validateHelpers.waitAfterChoseOrClickElement();
+                    _check = driver.findElement(addInstalmentLineButtonStatus).getAttribute("disabled");
                 } else {
                     break;
                 }
@@ -624,7 +633,9 @@ public class CreateSalePage {
                 _actualAmount = _amount[1].replace(" ", "");
             }
             validateHelpers.clickElement(addPrePaymentButton);
+            validateHelpers.waitAfterChoseOrClickElement();
             validateHelpers.clickElement(confirmAddPrePaymentButton);
+            validateHelpers.waitAfterChoseOrClickElement();
             Assert.assertTrue(driver.findElement(prePaymentAmountRequired).isDisplayed());
             double a = Float.parseFloat(_actualAmount) / 2;
             int num = (int) a;
@@ -911,7 +922,7 @@ public class CreateSalePage {
     }
 
     public void fillRate() {
-        validateHelpers.clearElement(invoiceRateInput);
+        //validateHelpers.clearElement(invoiceRateInput);
         Random ran = new Random();
         var random = ran.nextInt(1, 10);
         System.out.println("Rate: " + random);
@@ -953,8 +964,8 @@ public class CreateSalePage {
 
     public void cancelChangeCurrency() {
         try {
-            validateHelpers.waitAfterChoseOrClickElement();
             driver.findElement(invoiceCancelChangeCurrencyButton).click();
+            validateHelpers.clickOutside();
             System.out.println("Cancel change currency");
         } catch (NoSuchElementException e) {
             System.out.println("Cancel button does not exist!");
@@ -1096,7 +1107,7 @@ public class CreateSalePage {
                 checkConfirmChangeCurrencyDialog();
                 validateHelpers.waitForLoadJs();
                 cancelChangeCurrency();
-                validateHelpers.waitAfterChoseOrClickElement();
+                validateHelpers.waitForLoadJs();
                 _name = validateHelpers.getValueByAttribute(customerNameField);
             } else {
                 break;
